@@ -1,0 +1,259 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Global Safety Net (Default-Deny Catch-All)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 2. Hardened Global Primitives
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSharedMinistryWorkspace(workspaceId) {
+      return isValidId(workspaceId) && workspaceId == 'ieb_horta_main';
+    }
+
+    function isValidActorUid(uidField) {
+      return uidField is string &&
+        uidField.size() >= 1 &&
+        uidField.size() <= 128 &&
+        uidField.matches('^[a-zA-Z0-9_\\-]+$') &&
+        (
+          (request.auth != null && uidField == request.auth.uid) ||
+          (request.auth == null && uidField == 'membro-ieb-horta')
+        );
+    }
+
+    // Master Gate helper: verifies parent shared workspace exists and matches ieb_horta_main
+    function hasParentWorkspace(workspaceId) {
+      return exists(/databases/$(database)/documents/workspaces/$(workspaceId)) &&
+        get(/databases/$(database)/documents/workspaces/$(workspaceId)).data.workspaceId == 'ieb_horta_main';
+    }
+
+    // Validation Blueprint: SharedWorkspace
+    function isValidSharedWorkspace(data, workspaceId) {
+      return data.keys().hasAll([
+          'workspaceId',
+          'updatedByUid',
+          'playlistTitle',
+          'playlistSongIds',
+          'playlistTranspose',
+          'repertoireTranspose',
+          'deletedSongIds',
+          'scheduleRoles',
+          'scheduleMembers',
+          'scheduleEntries',
+          'randomCount',
+          'createdAt',
+          'updatedAt'
+        ]) &&
+        data.keys().hasOnly([
+          'workspaceId',
+          'updatedByUid',
+          'playlistTitle',
+          'playlistSongIds',
+          'playlistTranspose',
+          'repertoireTranspose',
+          'deletedSongIds',
+          'scheduleRoles',
+          'scheduleMembers',
+          'scheduleEntries',
+          'randomCount',
+          'createdAt',
+          'updatedAt'
+        ]) &&
+        data.workspaceId is string &&
+        data.workspaceId.size() >= 1 &&
+        data.workspaceId.size() <= 64 &&
+        data.workspaceId == 'ieb_horta_main' &&
+        data.workspaceId == workspaceId &&
+        isValidActorUid(data.updatedByUid) &&
+        data.playlistTitle is string &&
+        data.playlistTitle.size() >= 1 &&
+        data.playlistTitle.size() <= 200 &&
+        data.playlistSongIds is list &&
+        data.playlistSongIds.size() <= 100 &&
+        (data.playlistSongIds.size() == 0 || (data.playlistSongIds[0] is string && data.playlistSongIds[0].size() <= 128)) &&
+        data.playlistTranspose is map &&
+        data.playlistTranspose.size() <= 100 &&
+        data.repertoireTranspose is map &&
+        data.repertoireTranspose.size() <= 1000 &&
+        data.deletedSongIds is list &&
+        data.deletedSongIds.size() <= 500 &&
+        (data.deletedSongIds.size() == 0 || (data.deletedSongIds[0] is string && data.deletedSongIds[0].size() <= 128)) &&
+        data.scheduleRoles is list &&
+        data.scheduleRoles.size() <= 30 &&
+        (data.scheduleRoles.size() == 0 || data.scheduleRoles[0] is map) &&
+        data.scheduleMembers is list &&
+        data.scheduleMembers.size() <= 100 &&
+        (data.scheduleMembers.size() == 0 || (data.scheduleMembers[0] is string && data.scheduleMembers[0].size() <= 100)) &&
+        data.scheduleEntries is list &&
+        data.scheduleEntries.size() <= 200 &&
+        (data.scheduleEntries.size() == 0 || data.scheduleEntries[0] is map) &&
+        data.randomCount is number &&
+        data.randomCount >= 1 &&
+        data.randomCount <= 50 &&
+        data.createdAt is timestamp &&
+        data.updatedAt is timestamp;
+    }
+
+    // Validation Blueprint: SharedSong
+    function isValidSharedSong(data, workspaceId, songId) {
+      return data.keys().hasAll([
+          'id',
+          'workspaceId',
+          'updatedByUid',
+          'title',
+          'artist',
+          'originalKey',
+          'bpm',
+          'category',
+          'youtubeUrl',
+          'cifra',
+          'songUpdatedAt',
+          'createdAt',
+          'updatedAt'
+        ]) &&
+        data.keys().hasOnly([
+          'id',
+          'workspaceId',
+          'updatedByUid',
+          'title',
+          'artist',
+          'originalKey',
+          'bpm',
+          'category',
+          'youtubeUrl',
+          'cifra',
+          'songUpdatedAt',
+          'createdAt',
+          'updatedAt'
+        ]) &&
+        data.id is string &&
+        data.id.size() >= 1 &&
+        data.id.size() <= 128 &&
+        data.id.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.id == songId &&
+        data.workspaceId is string &&
+        data.workspaceId.size() >= 1 &&
+        data.workspaceId.size() <= 64 &&
+        data.workspaceId == 'ieb_horta_main' &&
+        data.workspaceId == workspaceId &&
+        isValidActorUid(data.updatedByUid) &&
+        data.title is string &&
+        data.title.size() >= 1 &&
+        data.title.size() <= 200 &&
+        data.artist is string &&
+        data.artist.size() >= 1 &&
+        data.artist.size() <= 200 &&
+        data.originalKey is string &&
+        data.originalKey.size() >= 1 &&
+        data.originalKey.size() <= 20 &&
+        data.bpm is number &&
+        data.bpm >= 0 &&
+        data.bpm <= 300 &&
+        data.category is string &&
+        data.category.size() >= 5 &&
+        data.category.size() <= 20 &&
+        (data.category == 'Normal' || data.category == 'Crianças' || data.category == 'Hinos') &&
+        data.youtubeUrl is string &&
+        data.youtubeUrl.size() <= 500 &&
+        data.cifra is string &&
+        data.cifra.size() >= 1 &&
+        data.cifra.size() <= 50000 &&
+        data.songUpdatedAt is number &&
+        data.songUpdatedAt >= 0 &&
+        data.createdAt is timestamp &&
+        data.updatedAt is timestamp;
+    }
+
+    // Collection 1: /workspaces/{workspaceId}
+    match /workspaces/{workspaceId} {
+      allow get: if isSharedMinistryWorkspace(workspaceId) &&
+        (resource == null || existing().workspaceId == 'ieb_horta_main');
+
+      allow create: if isSharedMinistryWorkspace(workspaceId) &&
+        isValidSharedWorkspace(incoming(), workspaceId) &&
+        incoming().createdAt == request.time &&
+        incoming().updatedAt == request.time;
+
+      allow update: if isSharedMinistryWorkspace(workspaceId) &&
+        isValidSharedWorkspace(incoming(), workspaceId) &&
+        incoming().workspaceId == existing().workspaceId &&
+        incoming().createdAt == existing().createdAt &&
+        incoming().updatedAt == request.time && (
+          // Action: Sync Shared Ministry Workspace State
+          incoming().diff(existing()).affectedKeys().hasOnly([
+            'updatedByUid',
+            'playlistTitle',
+            'playlistSongIds',
+            'playlistTranspose',
+            'repertoireTranspose',
+            'deletedSongIds',
+            'scheduleRoles',
+            'scheduleMembers',
+            'scheduleEntries',
+            'randomCount',
+            'updatedAt'
+          ])
+        );
+
+      // Subcollection 2: /workspaces/{workspaceId}/songs/{songId}
+      match /songs/{songId} {
+        allow get: if isSharedMinistryWorkspace(workspaceId) &&
+          isValidId(songId) &&
+          (resource == null || existing().workspaceId == 'ieb_horta_main') &&
+          hasParentWorkspace(workspaceId);
+
+        allow list: if isSharedMinistryWorkspace(workspaceId) &&
+          resource.data.workspaceId == 'ieb_horta_main';
+
+        allow create: if isSharedMinistryWorkspace(workspaceId) &&
+          isValidId(songId) &&
+          isValidSharedSong(incoming(), workspaceId, songId) &&
+          incoming().createdAt == request.time &&
+          incoming().updatedAt == request.time &&
+          hasParentWorkspace(workspaceId);
+
+        allow update: if isSharedMinistryWorkspace(workspaceId) &&
+          isValidId(songId) &&
+          isValidSharedSong(incoming(), workspaceId, songId) &&
+          incoming().id == existing().id &&
+          incoming().workspaceId == existing().workspaceId &&
+          incoming().createdAt == existing().createdAt &&
+          incoming().updatedAt == request.time && (
+            // Action: Update Shared Song Details
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'updatedByUid',
+              'title',
+              'artist',
+              'originalKey',
+              'bpm',
+              'category',
+              'youtubeUrl',
+              'cifra',
+              'songUpdatedAt',
+              'updatedAt'
+            ])
+          ) &&
+          hasParentWorkspace(workspaceId);
+
+        allow delete: if isSharedMinistryWorkspace(workspaceId) &&
+          isValidId(songId) &&
+          existing().workspaceId == 'ieb_horta_main' &&
+          hasParentWorkspace(workspaceId);
+      }
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "entities": {
+    "SharedWorkspace": {
+      "title": "SharedWorkspace",
+      "description": "Stores the shared church worship ministry state (Louvor IEB Horta) visible and editable by all team members across devices.",
+      "type": "object",
+      "properties": {
+        "workspaceId": {
+          "type": "string",
+          "description": "Fixed shared workspace identifier ('ieb_horta_main').",
+          "enum": ["ieb_horta_main"],
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "updatedByUid": {
+          "type": "string",
+          "description": "UID of the authenticated user or 'membro-ieb-horta' for direct team access.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "playlistTitle": {
+          "type": "string",
+          "description": "Title of the current Culto do Dia setlist.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "playlistSongIds": {
+          "type": "array",
+          "description": "Ordered list of song IDs in the current setlist (bounded to 100)."
+        },
+        "playlistTranspose": {
+          "type": "object",
+          "description": "Map of songId to transpose semitone offset for the active setlist."
+        },
+        "repertoireTranspose": {
+          "type": "object",
+          "description": "Map of songId to transpose semitone offset in the general repertoire."
+        },
+        "deletedSongIds": {
+          "type": "array",
+          "description": "List of catalog song IDs removed from the shared repertoire (bounded to 500)."
+        },
+        "scheduleRoles": {
+          "type": "array",
+          "description": "Ordered list of worship schedule role definitions (bounded to 30)."
+        },
+        "scheduleMembers": {
+          "type": "array",
+          "description": "List of worship team member names (bounded to 100)."
+        },
+        "scheduleEntries": {
+          "type": "array",
+          "description": "List of worship schedule rows/dates and role assignments (bounded to 200)."
+        },
+        "randomCount": {
+          "type": "number",
+          "description": "Configured number of songs for random setlist generation (1 to 50)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the shared workspace was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the shared workspace was last updated."
+        }
+      },
+      "required": [
+        "workspaceId",
+        "updatedByUid",
+        "playlistTitle",
+        "playlistSongIds",
+        "playlistTranspose",
+        "repertoireTranspose",
+        "deletedSongIds",
+        "scheduleRoles",
+        "scheduleMembers",
+        "scheduleEntries",
+        "randomCount",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "SharedSong": {
+      "title": "SharedSong",
+      "description": "Stores a shared custom or edited song in the church repertoire so all musicians see the same lyrics, chords, and keys.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the song.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "workspaceId": {
+          "type": "string",
+          "description": "Fixed shared workspace identifier ('ieb_horta_main').",
+          "enum": ["ieb_horta_main"],
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "updatedByUid": {
+          "type": "string",
+          "description": "UID of the authenticated user or 'membro-ieb-horta' for direct team access.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "title": {
+          "type": "string",
+          "description": "Song title.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "artist": {
+          "type": "string",
+          "description": "Song artist or ministry name.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "originalKey": {
+          "type": "string",
+          "description": "Original musical key of the song.",
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "bpm": {
+          "type": "number",
+          "description": "Tempo in beats per minute (0 to 300)."
+        },
+        "category": {
+          "type": "string",
+          "description": "Repertoire category.",
+          "enum": ["Normal", "Crianças", "Hinos"],
+          "minLength": 5,
+          "maxLength": 20
+        },
+        "youtubeUrl": {
+          "type": "string",
+          "description": "Optional YouTube or reference URL.",
+          "maxLength": 500
+        },
+        "cifra": {
+          "type": "string",
+          "description": "Complete formatted chord sheet and lyrics.",
+          "minLength": 1,
+          "maxLength": 50000
+        },
+        "songUpdatedAt": {
+          "type": "number",
+          "description": "Client numeric timestamp for ordering newly created songs."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the song record was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the song record was last updated."
+        }
+      },
+      "required": [
+        "id",
+        "workspaceId",
+        "updatedByUid",
+        "title",
+        "artist",
+        "originalKey",
+        "bpm",
+        "category",
+        "youtubeUrl",
+        "cifra",
+        "songUpdatedAt",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/workspaces/{workspaceId}": {
+      "schema": {
+        "$ref": "#/entities/SharedWorkspace"
+      },
+      "description": "Shared church ministry workspace ('ieb_horta_main') storing setlist, worship schedule, transpose maps, and deleted song IDs for all users."
+    },
+    "/workspaces/{workspaceId}/songs/{songId}": {
+      "schema": {
+        "$ref": "#/entities/SharedSong"
+      },
+      "description": "Subcollection of shared custom or edited songs belonging to the church workspace."
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+.font-cifra {
+  font-family: var(--font-mono);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.print-only {
+  display: none;
+}
+
+/* Interactive Print Sheet Mode (works inside sandboxed preview iframes & mobile) */
+.is-print-mode {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  min-height: 100vh;
+}
+
+.is-print-mode header,
+.is-print-mode footer,
+.is-print-mode nav,
+.is-print-mode [role="navigation"],
+.is-print-mode .no-print,
+.is-print-mode .print-hidden {
+  display: none !important;
+}
+
+.is-print-mode .print-only {
+  display: block !important;
+}
+
+.is-print-mode main.print-chord-sheet {
+  max-width: 52rem !important;
+  margin: 0 auto !important;
+  padding: 2rem 1.5rem 4rem !important;
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.is-print-mode [data-testid="chord-sheet-content"],
+.is-print-mode [data-testid="chord-sheet-content"] p,
+.is-print-mode [data-testid="chord-sheet-content"] div {
+  color: #0f172a !important;
+}
+
+@media print {
+  @page {
+    margin: 14mm 12mm;
+  }
+
+  html,
+  body,
+  .print-chord-sheet {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  header,
+  footer,
+  nav,
+  [role="navigation"],
+  .no-print,
+  .print-hidden,
+  .print-mode-bar {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-chord-sheet,
+  .is-print-mode main.print-chord-sheet {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .print-chord-sheet [data-testid="chord-sheet-content"],
+  .print-chord-sheet [data-testid="chord-sheet-content"] p,
+  .print-chord-sheet [data-testid="chord-sheet-content"] div {
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+    color: #0f172a !important;
+  }
+
+  .print-chord-sheet h2 {
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

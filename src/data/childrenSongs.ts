@@ -1,0 +1,1425 @@
+import { Song } from '../types/music';
+
+export const CHILDREN_SONGS: Song[] = [
+  {
+    "id": "song-criancas-001-se-conversarmos-com-jesus",
+    "number": 1,
+    "title": "Se conversarmos com Jesus",
+    "artist": "Autor desconhecido · (APEC, Cânticos de Salvação para Crianças, Vol. I)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D Fº/D D D64 D A A7\nSe conversarmos com Jesus vai tudo bem.\n\nA7 D#º/A A7 A A79 D/A A7 D D64  D\nSe conversarmos com Jesus vai tudo bem.\n\nD Fº/D D G G6  G5+  G6 Em/G\nNas aflições aqui eu sempre descobri\n\nD/A A A79  F#m/A  Em/A D/A  A7  D\nQue, se falarmos com Jesus, vai tudo bem.",
+    "createdAt": 1710000000000
+  },
+  {
+    "id": "song-criancas-002-quem-fez-as-lindas-estrelas",
+    "number": 2,
+    "title": "Quem fez as lindas estrelas?",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "Intro: G....D....G\n\n..G...D......G\nQuem fez as lindas estrelas?\n....D\nAs lindas estrelas?\n....G\nAs lindas estrelas?\n......D......G\nQuem fez as lindas estrelas?\n.D...........G....C....G\nDeus, nosso Pai\n..G...D.....G\nQuem fez as aves que voam?\n...D\nAs aves que voam?\n...G\nAs aves que voam?\n......D.....G\nQuem fez as aves que voam?\n.D..........G....C....G\nDeus nosso Pai\n..G...D.....G\nQuem fez o mar azul?\n...D\nO mar azul?\n\n...G\nO mar azul?\n......D.....G\nQuem fez o mar azul?\n.D...........G....C....G\nDeus, nosso Pai\n\n..G...D.....G\nQuem fez você e eu?\n...D\nVocê e eu?\n...G\nVocê e eu?\n......D.....G\nQuem fez você e eu?\n.D...........G....C....G\nDeus, nosso Pai\n..G...D......G\nQuem fez as lindas estrelas?\n...D\nAs aves que voam?\n\n...G\nO mar azul?\n......D.....G\nQuem fez você e eu?\n\n.D...........G....C....G\nDeus, nosso Pai",
+    "createdAt": 1710000001000
+  },
+  {
+    "id": "song-criancas-003-meus-deus-e-tao-grande",
+    "number": 3,
+    "title": "Meus Deus é tão grande",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "F",
+    "category": "Crianças",
+    "cifra": "    F\nMeu Deus é tão grande,\n\nTão forte e potente,\n     C7                 F   Bb_F\nNada há que não possa fazer! 2X\n\n   F\nOs montes são Dele, os rios são Dele,\n              C7\nOs céus lhe pertencem também.\n\n    F\nMeu Deus é tão grande,\n\nTão forte e potente,\n    C7                 F\nNada há que não possa fazer!\n    C7                 F\nNada há que não possa fazer!",
+    "createdAt": 1710000002000
+  },
+  {
+    "id": "song-criancas-004-eu-sou-um-barquinho",
+    "number": 4,
+    "title": "Eu sou um barquinho",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C                        G         C\nEu sou um barquinho, que anda a navegar (2x)\n                 G            C\nCristo é o piloto que vai comandar (2x)\n\nC\nPor mim Ele morreu\nF             C\nPor mim Ele morreu\n\n   F           C       G     C\nNa cruz Ele morreu para me salvar\nC\nPor mim Ele morreu\nF              C\nPor mim Ele morreu\n   F           C       G     C\nNa cruz Ele morreu para me salvar",
+    "createdAt": 1710000003000
+  },
+  {
+    "id": "song-criancas-005-e-facil-de-entender",
+    "number": 5,
+    "title": "É fácil de entender",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C\nÉ fácil de entender,\n   G\nTão claro como a luz,\n                                              C\nEm meu lugar, p'ra me salvar, Jesus morreu na cruz!\nC7                                  F\nÉ crer só Nele agora, de todo o coração\nG                                  C\nMeninos sem demora, aceitai a salvação",
+    "createdAt": 1710000004000
+  },
+  {
+    "id": "song-criancas-006-jesus-e-genial",
+    "number": 6,
+    "title": "Jesus é genial",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "  C\nJesus é o meu Super-Herói,\n    Am            F   G\nQue me conduz à Vitória\nC               Am\nVive em meu coração\n  F                    G\nE não apenas em uma história.\n\nAm                C\nJesus é o meu campeão,\n    F            Am   G\nQue me ajuda a vencer o mal\n    Am       Em\nEle p'ra mim é um amigão,\n  F     G Am\nJesus é Genial\n  F    G   C\nJesus é Genial\n\n         F        G\nLa la la la la la la\n   C\nGenial\n         F       G     Am  F G\nLa la la la la la la   Genial\n   C\nGenial",
+    "createdAt": 1710000005000
+  },
+  {
+    "id": "song-criancas-007-jesus-e-o-nosso-melhor-amigo",
+    "number": 7,
+    "title": "Jesus é o nosso melhor amigo",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": " G                C\nJesus é o nosso, melhor amigo\nD                           G\nEle se importa, comigo e contigo\nG                   C\nJesus veio à Terra, para nos salvar\nD                      C     D     G\nJesus veio à Terra, por tanto nos amar\n\nG\nPalmas ao nosso Rei (palmas)\nC\nPalmas ao nosso Rei (palmas)\n    D\nE o nosso Rei quem É,\n                   G\nJesus, Jesus de Nazaré",
+    "createdAt": 1710000006000
+  },
+  {
+    "id": "song-criancas-008-grande-e-largo",
+    "number": 8,
+    "title": "Grande e largo",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "G\nGrande e Largo\nC\nGrande e Largo\n   G                       D\nO amor de Jesus é grande e largo\n\nG\nGrande e Largo\nC\nGrande e Largo\n   G        D             G        C_G    (no fim)\nO amor de Jesus é grande e largo",
+    "createdAt": 1710000007000
+  },
+  {
+    "id": "song-criancas-009-celebra-jesus",
+    "number": 9,
+    "title": "Celebra Jesus",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: D G D\n\nRefrão:\n         G    A            D\nCelebra Jesus!    Celebra o Rei!\n                       G    A   D\nCelebra já, celebra já, Cristo o Rei!\n\n        G   A    D       G   A   D\nCristo aqui es - tá, para vi-da  dar\n     G    A   Bm    G        A\nHoje, com vi- gor, celebra o Rei\n\n(Refrão)\n\n     G     A  D       G     A D\nE sem mais tardar, começa a cantar\n    G   A  Bm      G        A\nPara ce-le -brar a Cristo, o Rei!\n\n(Refrão)",
+    "createdAt": 1710000008000
+  },
+  {
+    "id": "song-criancas-010-jesus-ama-as-criancinhas",
+    "number": 10,
+    "title": "Jesus ama as criancinhas",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "Intro: E B7 E\n\nE                       B7\nJesus ama as criancinhas, deste mundo ao derredor\n       E                        A              E\nQuer chinesas, quer hindus, esquimós ou índios nus\n                  B7            E\nJesus ama as criancinhas com fervor.\n\nE                         B7\nJesus ama as criancinhas, em Portugal e no Japão,\n        E                          A          E\nQuer loirinhas, quer de cor, Ele as chama com amor\n                  B7          E      A   E\nJesus ama as criancinhas como são.",
+    "createdAt": 1710000009000
+  },
+  {
+    "id": "song-criancas-011-stop",
+    "number": 11,
+    "title": "Stop",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C                             G              C\nStop, eu vou contar-te, o que Cristo fez por mim\nF                                            C\nStop, eu vou contar-te, o que Cristo fez por mim\n                                                 F   C\nEle me salvou e me deu perdão e agora vive em meu coração\nC                             G              C\nStop, eu vou contar-te, o que Cristo fez por mim\n\nC                              G          C\nSegue, e conta a história, de Jesus O Salvador!\nF                                         C\nSegue, e conta a história, de Jesus O Salvador!\n                                                           F   C\nQue morreu na cruz para nos salvar; ressuscitou e vida nos quer dar!\nC                              G          C       F   C\nSegue, e conta a história, de Jesus O Salvador!",
+    "createdAt": 1710000010000
+  },
+  {
+    "id": "song-criancas-012-eu-gosto-da-minha-biblia-cspc-vol-2-no9",
+    "number": 12,
+    "title": "Eu gosto da minha Bíblia (CSPC vol.2 nº9)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "   D     A7       D            A              A7    D\nEu gosto da minha Bíblia, p'ra mim tem grande valor.\n         A7         Bm     A   D                   E      A\nÉ mais preciosa que o ouro, e tem, que o mel, mais doce sabor.\n\nA7 D                          A        A7       D\n Jamais deixarei a Bíblia! Precioso tesouro é a Bíblia!\n   G                 D          A      A7         D\n Jamais deixarei a Bíblia; tem grande valor para mim!\n\n   D     A7       D             A          A7      D\nEu gosto da minha Bíblia, pois verdadeira ela é.\n          A7    Bm  A  D             E      A\nDo bem me fala, e de Jesus, aprendo o que Ele quer.\n\nRefrão:\n   D     A7      D             A          A7 D\nEu gosto da minha Bíblia, pois ela bem me conduz.\n          A7     Bm   A  D           E        A\nPromessas têm para me animar a trabalhar por Jesus.",
+    "createdAt": 1710000011000
+  },
+  {
+    "id": "song-criancas-013-precioso-tesouro-jesus",
+    "number": 13,
+    "title": "Precioso Tesouro Jesus",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "(CSPC vol.1 nº64)\n\nIntro: A A7 D  G_D\n\n    D       A         D           A\nPreciosos tesouros na Bíblia encontrei,\n    Bm   G       A\nE a minha vida mudou.\n D        Bm7        E         A\nPorém o tesouro mais rico para mim,\n        F#m       A\nMais precioso que ouro, mais que tudo enfim,\n    D                    G        D\nÉ Jesus que aceitei como meu Salvador\n\nRefrão:\n  A            A7     D   G_D\nNa Bíblia encontrei Jesus, Je-sus\n    A      A7        D    G_D\nPrecioso tesouro é Jesus! Je-sus",
+    "createdAt": 1710000012000
+  },
+  {
+    "id": "song-criancas-014-para-nao-pecar-contra-ti",
+    "number": 14,
+    "title": "Para não pecar contra Ti",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "     C                  G\nPara eu não pecar contra Ti\n                  C\nA Tua Palavra escondi\n                 F    C\nA Tua Palavra com atenção,\n   G               C    F   C\nEu guardo no meu coração",
+    "createdAt": 1710000013000
+  },
+  {
+    "id": "song-criancas-015-eu-vou-andar-com-deus",
+    "number": 15,
+    "title": "Eu vou andar com Deus",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Intro: F/G  C  F  G\n\n    F/G  C       F      G\n||: Eu    vou, andar com Deus! :||\n\nF    C     Dm  C         F        G\nTudo pode acontecer, pois seguro estou\n              F    G         C\nPorque Ele, está em cima e em baixo,\nF      G            Em     Am\nMesmo à frente e a atrás de mim\nF                             G               C     (P/ voltar ao início: F G)\nOnde quer que eu vá eu sei que Deus, vai lá estar\n\n F/G    G     F/G\nEstou em Suas mãos  3X\n F/G    G    C\nEstou em Suas mãos!",
+    "createdAt": 1710000014000
+  },
+  {
+    "id": "song-criancas-016-quao-boas-novas",
+    "number": 16,
+    "title": "Quão Boas Novas",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro D A D G D\n\nD                    A                      D\nQuão Boas Novas estas são, que Cristo dá a Salvação\n                  A               Em   Am      D    A  D\nMorrendo Ele na cruz por mim, a vida eterna me deu. Me deu!",
+    "createdAt": 1710000015000
+  },
+  {
+    "id": "song-criancas-017-meu-coracao-era-sujo",
+    "number": 17,
+    "title": "Meu coração era sujo",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": "A                         E                 A\nMeu coração era sujo, mas Cristo aqui já entrou,\n                       E                   A\nE o Seu precioso sangue tão alvo assim o tornou.\nE               A             E             A\nE diz, em Sua Palavra que em ruas de ouro andarei,\n   A                           E               A\nSim lendo a Bíblia e orando, na graça eu crescerei.",
+    "createdAt": 1710000016000
+  },
+  {
+    "id": "song-criancas-018-a-cada-momento",
+    "number": 18,
+    "title": "A cada momento",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "Intro: E A  B E  E A\n\n    E        A\n||: A cada momento\n  B                     E\nEu ando na presença de Jesus. :||\n\n    E     A      B    E\n||: Ao sentar, ao levantar,\nC#m       F#m    B         E\nAo     dormir,    ao despertar. :||\n\n    E  /G#  A     B      E\n||: E  an - dando pelo caminho, :||\n    C#m   F#m     B   E\n||: A-A - A!       Aleluia!\nC#m   F#m     B        E\nA-A - A!       Glória a Deus! :||",
+    "createdAt": 1710000017000
+  },
+  {
+    "id": "song-criancas-019-todo-o-peso",
+    "number": 19,
+    "title": "Todo o peso",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C                           G                     C\nTodo o peso dos pecados meus, Cristo carregou sobre Si\n                               G                       C\nToda a minha vida transformou, desde que a Jesus eu conheci.\nG                    C\nVou alegre no caminho para os Céus\nD                      G\nSalvação achei no sangue de Jesus\nC                           G                       C\nPois o peso dos pecados meus, Cristo carregou sobre a cruz.",
+    "createdAt": 1710000018000
+  },
+  {
+    "id": "song-criancas-020-jesus-nos-manda-orar",
+    "number": 20,
+    "title": "Jesus nos manda orar",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C                              G7\nJesus nos manda orar e sem desanimar\n                                B7\nPorque Deus ouvirá e Deus responderá\nC                             F\nE se a resposta demorar, continue a orar,\n                 Dm    G7\nContinue a orar, continue a orar,\n                C       G7   C\nContinue a orar, e sem desanimar, (falado) até a resposta chegar.",
+    "createdAt": 1710000019000
+  },
+  {
+    "id": "song-criancas-021-livro-incomparavel",
+    "number": 21,
+    "title": "Livro incomparável",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "  G           C               D7              G\nA Bíblia é a Palavra de Deus, o livro incomparável!\n                  C                D7              G\nSó ela mostra o caminho do Céu. Que livro incomparável!\n\nA Bíblia é a Palavra de Deus, o livro incomparável!\n\nAprendo nela a vontade de Deus! Que livro incomparável!\n\nPerdido fui à Palavra de Deus, o Livro incomparável!\n\nAchei Jesus na Palavra de Deus! Que livro incomparável!\n\nEu leio a Bíblia, a Palavra de Deus, o livro incomparável!\n\nEu amo a Bíblia, a Palavra de Deus! Que livro incomparável!",
+    "createdAt": 1710000020000
+  },
+  {
+    "id": "song-criancas-022-o-senhor-e-a-minha-forca",
+    "number": 22,
+    "title": "O Senhor é a minha força",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "F",
+    "category": "Crianças",
+    "cifra": "   F              C7                          F\nO Senhor é a minha força, e o Senhor é a minha força!\n                  Gm            C7 F\nO Senhor é a minha força e o meu canto.\n                    C7                             F\nPorque Ele foi Quem me salvou, porque Ele foi Quem me salvou\n                  Gm            C  F\nO Senhor é a minha força e o meu canto.",
+    "createdAt": 1710000021000
+  },
+  {
+    "id": "song-criancas-023-o-maior-tesouro",
+    "number": 23,
+    "title": "O maior Tesouro",
+    "artist": "APEC - Aliança Pró Evangelização de Crianças (Cd – Caçadores 1)",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "Guitarras: Contra tempo\n\nIntro: E\n\nE                                 A\nNão há tesouro maior que a Palavra de Deus\nE                                           B\nPois ela me diz quem é a Vida, a Verdade e a Luz.\nA                              C#m\nEla me ajuda a encontrar a verdadeira Esperança,\nA                  B                        E\nE me ensina que a esperança encontro só em Jesus.\n\nE                                  A\nNão há tesouro maior que a Palavra de Deus\nE                                         B\nSó nela há poder, poder para minha vida mudar.\nA                                   C#m\nCom ela, eu posso viver muito mais feliz\nA                    B            E\nSó nela eu aprendo, aprendo com Jesus andar.\n\nE                                  A\nNão há tesouro maior que a Palavra de Deus\nE                                 B\nPalavra inspirada, não pode ser destruída\n    A                                     C#m\n||: E quando obedeço a tudo quanto Deus me diz,\nA             B              E\nSó encontro vitórias na minha vida. :||\nFim: A E",
+    "createdAt": 1710000022000,
+    "bpm": 73
+  },
+  {
+    "id": "song-criancas-024-quando-oramos",
+    "number": 24,
+    "title": "Quando oramos",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "Em",
+    "category": "Crianças",
+    "cifra": "Intro: ||:Em C D:||\n\nEm                     C    D\nSentimos Seu amor quando oramos\nEm                    C   D\nEncontramos paz quando oramos\nC                                       D\nSua graça e bênçãos vêm, sim, quando oramos\n    Em                       C     D\nRenova a esperança quando oramos\n\n            Em               C\n||: Quando oramos, vamos nos ajoelhar\n         Em            C          D\nQuando oramos, o mal vai se dissipar\n         Em        C                 D\nQuando oramos, corações vão se quebrantar\n        Em        C  D         Em\nQuando oramos Oh, Oh, quando oramos\n    D          Em\nOh, Oh, quando oramos  :||\n\nP/repetir: C D",
+    "createdAt": 1710000023000
+  },
+  {
+    "id": "song-criancas-025-somos-acampantes",
+    "number": 25,
+    "title": "Somos acampantes",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "     G            C               G         D\nSomos acampantes, acampantes, que amam ao Senhor! Hei! Hei!\n   G          C           G          D     G\nSim acampantes, acampantes, cantando com fervor!\n\n C                                G\nUsamos a Bíblia noite e dia, em oração com alegria,\nA                        D\nVamos parar? Vamos negar? Nunca!\n\n    G        C            G           D\nCom alegria e com firmeza, vamos sem temor! Hei! Hei!\n   G          C                 G   D    G\nSim acampantes, acampantes, que amam ao Senhor!\n    C   D     G\nQue amam ao Senhor! Hei!",
+    "createdAt": 1710000024000
+  },
+  {
+    "id": "song-criancas-026-eco-missionario",
+    "number": 26,
+    "title": "Eco missionário",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C  G                          G7               C\nMensagem boa eu tenho a dar aos filhos de além-mar\n               G     F#      G    D7   G\nQue não conhecem a meu Rei, e assim direi:\nG7               C\nPor nossas culpas padeceu\nE7               A    D7        A7\nMostrando o Seu amor, contente repetirei:\n\nC       G7   C       G7           C\nDeus É amor! Deus É amor! Deus É amor!\n\nC  G                         G7         C\nNa China, Índia e Portugal e terras em geral\n               G      F#     G   D7 G\nCantando, falarei do amor do meu Senhor\n   G7         C    E7                    A\nNas várias ilhas do Japão, onde a mensagem for,\nD7                    A7\nVai voando o alegre e belo som",
+    "createdAt": 1710000025000
+  },
+  {
+    "id": "song-criancas-027-musica-do-uauuau",
+    "number": 27,
+    "title": "Música do UAUUAU",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "             E\nIa indo no caminho\n              F#m\nE encontrei um cãozinho\n                 B\nE o cãozinho me falououou\n\n(pára para o cão dizer: auau)\n\n                E    A E                      A\nFoi Deus Quem me criououou. Foi Deus Quem me criououou\n     G#m       F#m   B      E   A E\nauauauauauauauauauauauauauau   (Rosna/pára a música)\n\n(repete)",
+    "createdAt": 1710000026000
+  },
+  {
+    "id": "song-criancas-028-grande-e-o-amor-do-senhor",
+    "number": 28,
+    "title": "Grande é o amor do Senhor",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C\nDeus ama a mim e ti\n F          C\nAo papá e à mamã\n                            G\nE a todas as pessoas que conheces\n    C                   G          C\nFoi Ele que nos criou e sempre nos amou\nF            G       C\nSim Deus sempre nos amou\n\nC\nGrande é o amor do Senhor\n\nGrande é o amor do Senhor\nG\nTão grande é o amor do Senhor\n  C          F                G         C\nTão grande e profundo que nem posso imaginar",
+    "createdAt": 1710000027000
+  },
+  {
+    "id": "song-criancas-029-nao-vais-para-o-ceu",
+    "number": 29,
+    "title": "Não vais para o Céu",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": "1.\n    A\nNão vais para o céu num cavalo ou num\n\ncamelo\n        D                 A  (D/A    A)\nTu não vais para céu de trotinete\n    A\nNão vais para o céu numa nave espacial,\n       E                   E7\nTu não vais para o céu num elefante!\n    A\nA rodar, a rodar, ainda vais é vomitar,\n       D                      A (D/A   A)\nDe automóvel – esta ideia não é má!\n  A\nAndar a acelerar é mesmo de rebentar,\n     E                     A\nPodes crer que assim não chegas lá!\n\nRefrão:\n  A     D\nCaminho há um (há um)\nA\nSó um (só um)\n  E                         A\nCaminho para tu chegares ao céu!\n  A     D\nCaminho há um (há um)\nA\nSó um (só um)\n  E             D\nE o Seu nome é Jesus,\n    A\nEle é o Caminho!\n\n2.\nNão vais para o céu por seres muito estiloso,\n\nTu não vais para o céu por crescer.\n\nNão vais para o céu por saltares de um avião\n\nE voar com os teus braços a bater!\n\nPodes subir num balão até à nuvens atingir,\n\nE esquecer quem ficou lá.\n\nPodes voar até Marte – o que não te falta é\n\narte,\n\nÉ que ainda não chegas lá\n\n(Refrão)\n\n3.\nNão vais para o céu por dizeres que és\n\ncristão\n\nTu não vais para o céu por seres bonzinho.\n\nNão vais para o céu por ires à superigreja,\n\nHá quem pense que esse é o caminho.\n\nSe o teu pai, a tua mão, a tua irmã, amam a\n\nJesus,\n\nMesmo assim não chegas lá\n\nTens o favor do Salvador, mas não podes\nesquecer,\n\nTu tens mesmo que o conhecer!\n\n(Refrão)",
+    "createdAt": 1710000028000
+  },
+  {
+    "id": "song-criancas-030-soldado-do-rei",
+    "number": 30,
+    "title": "Soldado do Rei",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D9\nDe noite ou de dia, aqui ou ali\n                 A9\nAo meu lado está o anjo do senhor\n D9          D/C\nEu sou corajoso, soldado do rei\n    G/B    G/A   D9\nVou marchando como um vencedor!\n\n1, 2, 3, 4 marcha soldado! (3x)\n1, 2, 3, 4\n\nD9         D4  D9\nNão tenho medo do escuro\n\nNão tenho medo de trovão\nEm7           Em/D#   Em7\nEm minha vida estou seguro\n          G/A\nJesus está em meu coração\n\nD9            D4 D9\nSe alguma coisa me atormenta\n\nEu digo: sai. Em nome de jesus\nEm7            Em/D#  Em7\nO mal pra mim não faz careta\n          G/A  G/E    D/F# A9  D9\nSou um soldado da luz, sou vencedor em jesus!",
+    "createdAt": 1710000029000
+  },
+  {
+    "id": "song-criancas-031-noe-andava-com-deus",
+    "number": 31,
+    "title": "Noé andava com Deus",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": " D             G         A\nNoé era um homem justo e bom ele andava\n\ncom Deus\n           G      A         D\nUm homem legal! muito especial ele andava\n\ncom Deus\n  E           A           E/G#     A\nNo seu coração ele tinha amor e perdão\n  E           A      E/G#           A\nNão fazia mal nem a um animal que legal\n\nera o “seu noé\"\n\n       E           A       E/G#         A\nDentro do seu lar um pai exemplar para Sem\n\nCão e Jafé\n       E          A      E/G#         A\nSempre carinhoso, um bom esposo legal era\n\no “seu noé\"\n\n  D                 G      A       D\nNoé era um homem justo e bom ele andava\n\ncom Deus\n   G       A           D               A\nUm homem legal! muito especial ele andava\n\ncom Deus\n\n D       Em      D   Em      D      A\nQue legal! Noé homem justo e bom! ele\n\nandava com Deus\nD      Em      D    Em     D          A\nQue legal! um homem muito especial! ele\n\nandava com Deus\n      Bm                         Em\nQue legal! andar com Deus é mesmo muito\n\nbom\n   A        D                 D/F#\nEnquanto o mundo está perdido você tem\n\num salvador\n    Bm                         Em\nQue legal! andar com Deus é mesmo bom\n\ndemais\n        A         D            A\nVocê se torna um bom amigo até dos\n\nanimais\n\n(Bm  A/C#  D  Eb)\n\nE      F#m      E  F#m       E\nQue legal! noé homem justo e bom ele\n          A/B\nandava com Deus\n   E        F#m   E        A/B\nQue legal! um homem muito especial ele\n  E\nandava com Deus\n    A/B        E  C#m7     A F#m7        E\nQue legal! ele andava com Deus!\nque legal!",
+    "createdAt": 1710000030000
+  },
+  {
+    "id": "song-criancas-032-presentes-para-jesus",
+    "number": 32,
+    "title": "Presentes para Jesus",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Intro: C\n\nC       Em    F        C\nNa manjedoura em linda noite\nF   Em   F   F#º   G7\nCristo o Rei Je  -  sus nasceu!\nC      Em     F       C/E\nE os pastores deram presentes\nF Em    F  G C\nAo be - bé Jesus\nAm   Em      F      C/E\nVamos juntos com alegria\nF  Em   F   F#º    G7        C      Em\nA - do - rar o     Rei Jesus presenteando\nF         Em    F  Em   F     G  C\nCom nossas vidas ao me - ni - no  Deus",
+    "createdAt": 1710000031000
+  },
+  {
+    "id": "song-criancas-033-ja-rolou",
+    "number": 33,
+    "title": "Já rolou",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "Intro: G  C  G  D7  G\n\nG           C          G\nJá rolou, já rolou, já rolou\n      Em         Am           D7        G\nDo sepulcro a grande pedra já rolou\nG           C          G\nJá rolou, já rolou, já rolou\n      Em         Am           D7        G   G7\nDo sepulcro a grande pedra já rolou\n     C                 G\nMeu Jesus ressurgiu para o Céu subiu\n   A7       D7\nAleluia!\nG           C          G\nJá rolou, já rolou, já rolou\n      Em         Am           D7        G\nDo sepulcro a grande pedra já rolou",
+    "createdAt": 1710000032000
+  },
+  {
+    "id": "song-criancas-034-deus-e-bom",
+    "number": 34,
+    "title": "Deus é bom",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "     G                                          D\nDeus é bom! Ele cuida de mim, Ele cuida do céu, da terra e mar.\n             G\nDeus é bom! Deus é bom!\nC                                          D           E\nEle cuida dos meus pais e dos meus irmãos também.\nAm          D             G\nDeus é tão bom pra mim.",
+    "createdAt": 1710000033000
+  },
+  {
+    "id": "song-criancas-035-ha-vitoria",
+    "number": 35,
+    "title": "Há vitória",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D            A   D                         A\nHá vitória para mim, há vitória para mim\n        D          G               D     A      D\nPelo sangue do Cordeiro, há vitória para mim\nA          D       A       D\nVencer, vencer, vencer, vencer.\n       G      7     D           A     D\nPelo Sangue do Cordeiro eu irei vencer.",
+    "createdAt": 1710000034000
+  },
+  {
+    "id": "song-criancas-036-a-chuva-cai",
+    "number": 36,
+    "title": "A chuva cai",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": "   A   E/G#\nA chuva cai\n    D/F#       A/E\nPing ping ping pom\n D       A/C#\nPing ping pom\nBm       E7\nPing ping pom!\n\n   A   E/G#\nA chuva cai\n    D/F#       A/E\nPing ping ping pom\nE    E7    A\nDeus é tão bom!\nE A\nÁmen!",
+    "createdAt": 1710000035000
+  },
+  {
+    "id": "song-criancas-037-a-fe",
+    "number": 37,
+    "title": "A Fé",
+    "artist": "Rui Morais",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": " D             G      D\nA fé, a fé vem pelo ouvir,\n  G       D         A\nOuvir a palavra de Deus;\n\n  D             G     D\nA fé, a fé vem pelo ouvir,\n  G       D         A\nOuvir a palavra de Deus;\n      G\nQuando abres tua Bíblia\n     D\nE te pões a meditar,\n A                     D\nÉ Deus que te está a falar;\n\n       G\nQuando abres tua Bíblia\n     D\nE te pões a pensar,\n A                    A7\nA tua fé começa a cresce – e – e – e – er…!",
+    "createdAt": 1710000036000
+  },
+  {
+    "id": "song-criancas-038-assim-deus-nos-amou",
+    "number": 38,
+    "title": "Assim Deus nos amou",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Vitória Kids\n\n  D             B7(5#)\nAssim Deus nos amou,\nE7(9)         E7\nAté seu Filho dar.\n   A             A7\nO qual morreu na cruz\n  D             A7(13)\nA fim de nos salvar;\n\n   D            B7(5#)\nUm dia ele há de vir,\n    E7(9)       E7/G#\nCom glória a reluzir.\nA         A7(13)   A7  (G D/F# Em7)          D\nTal é seu amor     sem par.",
+    "createdAt": 1710000037000
+  },
+  {
+    "id": "song-criancas-039-biblia",
+    "number": 39,
+    "title": "Bíblia",
+    "artist": "The B-I-B-L-E, Autor desconhecido",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": "   A\nB – Í – B – L – I – A,\n   D\nB – Í – B – L – I – A,\n E\nÉ a Palavra do Senhor,\n  E7               A\nB – Í – B – L – I – A!",
+    "createdAt": 1710000038000
+  },
+  {
+    "id": "song-criancas-040-cristo-nasceu",
+    "number": 40,
+    "title": "Cristo nasceu",
+    "artist": "Richard Torrans",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D       D/F#  G         Em\nCristo nasceu, Cristo nasceu,\n   D/A                 E7       A7\nPresente de Deus, seu Filho nos deu;\n   D        D/F#     G        Em\nNasceu em Belém, nasceu em Belém,\nD/A            Em/A  A7     D\nAnjos do céu cantaram “Á - men”!",
+    "createdAt": 1710000039000
+  },
+  {
+    "id": "song-criancas-041-deus-criou-este-universo-imenso",
+    "number": 41,
+    "title": "Deus criou este universo imenso",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Vitória Kids (Autor desconhecido)\n\n        D                 D7\nDeus criou este universo imenso\n          G                   D\nQue é tão belo p'ra nele habitar.\n                       D7\nCriou rios, montanhas e vales,\n       G          A7        D\nMas não tinha ninguém para amar.\n\nRefrão:\n\n      D           D7              G\nÉ por isso, é por isso, que para Deus,\n         D      A7\nTu vales muito mais,\n      D           D7              G\nÉ por isso, é por isso, que para Deus,\n          D        Trans:     G/A     A  D\nTu vales muito!\n\nCriou monstros marinhos e feras\n\nQue habitassem a terra e o mar.\n\nCriou pássaros, plantas e peixes,\n\nMas não tinha ninguém para amar.\n\nFoi então que Deus criou o homem\n\nDe uma forma única e singular.\n\nFormou dele a sua companheira,\n\nE já tinha alguém para amar.\n\nFoi por isso que Jesus um dia\n\nBaixou a este mundo tão triste,\n\nPorque para ele uma alma\n\nVale mais do que tudo o que existe.",
+    "createdAt": 1710000040000
+  },
+  {
+    "id": "song-criancas-042-deus-e-amor",
+    "number": 42,
+    "title": "Deus é amor",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "E\nDeus é amor, Deus é amor,\n                 B\nA Bíblia assim o diz;\n\nDeus é amor, Deus é amor,\n          E\nTodos o repitam;\nE\nDeus é amor, Deus é amor,\nE7          A\nNinguém o merece;\n\n    A               E         C#m     F#m\n||: Diz o capítulo quatro, versículo  oito,\n   B     B7   E\nPrimeira de João. :||",
+    "createdAt": 1710000041000
+  },
+  {
+    "id": "song-criancas-043-deus-fez-o-arco-iris",
+    "number": 43,
+    "title": "Deus fez o arco-íris",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C                     F\nDeus fez o arco-íris, fez o arrebol,\n                 C\nDeus criou o dia junto com o sol;\nC              F  Em   Dm\nDeus criou a lua p’ra bri\n- lhar\n    C         F   G7  C  G          C\nE as estrelinhas p’ra piscar.  Plim! Plim!\n\nC                     F\nDeus criou as flores, árvores também;\n                  C\nDeus criou a chuva que nos faz tão bem;\nC               F   Em  Dm\nDeus criou a relva p’ra brin\n-car;\n C          F  G7   C            G              C\nE este ar p’ra res\n-pi - rar. (Inspirar / Expirar)\n\nC                  F\nDeus fez a gatinha, fez também o cão;\n                     C\nDeus fez a galinha e o pato grandão;\nC             F      Em    Dm\nDeus fez o coelhinho branco assim;\n   C      F       G7  C     G        C\nE a vaca dá leitinho p’ra\n mim. Muuuú!\n\nC                 F  Em    Dm\nDeus fez o papá, mamã p’ra  mim!\n   C             F    G7  C   G        C\nPor isso eu sou feliz as--sim! Ah! Ah! Ah!",
+    "createdAt": 1710000042000
+  },
+  {
+    "id": "song-criancas-044-deus-mandou-o-sol-brilhar",
+    "number": 44,
+    "title": "Deus mandou o sol brilhar",
+    "artist": "Génesis 1:31a",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D             A\nDeus mandou o sol brilhar,\n A7             D\nCair a chuva, abrir a flor;\nD             A\nManda as aves gorjear,\n  Em     A7     D\nE tudo assim se fez!\n\nD             A\nDeus mandou a relva crescer,\n  A7          D\nOs vegetais frutificar,\nD         A\nBelos rios fez correr,\n Em     A7    Bm\nE tudo assim se fez,\n Em    A7      D\nE tudo assim se fez!",
+    "createdAt": 1710000043000
+  },
+  {
+    "id": "song-criancas-045-e-maravilhoso-ter-a-cristo",
+    "number": 45,
+    "title": "É maravilhoso ter a Cristo",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "G\nÉ maravilhoso ter a Cristo e com ele sempre caminhar,\nC                    G Em    A                  D\nNosso bom pastor nos guia    e do mal nos vem livrar.\nG\nBem-aventurado o que confia nesse bom pastor e salvador,\nC                  G   Em   A            D7      G\nPois somente Cristo salva   pelo seu tão grande amor.\n\nC                           G\nSe estás aflito neste mundo caminhando sem ter direção,\nC                               A                   D\nÉ porque a Cristo tu desprezas, sem lhe dar teu coração.\n\nG\nÉ maravilhoso ter a Cristo e com ele sempre caminhar,\nC                 G Em\nVem segui-Lo hoje mesmo,\nC        D   C        D    C        D      G\nTua vida vai, tua vida vai, tua vida vai mudar!",
+    "createdAt": 1710000044000
+  },
+  {
+    "id": "song-criancas-046-ele-e-o-rei-dos-reis",
+    "number": 46,
+    "title": "Ele é o Rei Dos reis",
+    "artist": "He’s the King of kings · - Rob Evans (Mr. Donut Man)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: D  A  D  D/F#  G  G#º  A7  D\n\n       D\nEle é o Rei dos reis,\n                   A\nEle é Senhor dos senhores,\n           D   D/F#      G     G#º\nSeu nome é Jesus! Jesus! Jesus! Jesus!\nA7         D        B\nOh! Ele é o Rei!\n\nSubida de tom:\n       E\nEle é o Rei dos reis,\n                   B\nEle é Senhor dos senhores,\n           E      E/G#   A      A#º\nSeu nome é Jesus! Jesus! Jesus! Jesus!\nB7         E     C\nOh! Ele é o Rei!\n\nSubida de meio-tom:\n       F\nEle é o Rei dos reis,\n                  C\nEle é Senhor dos senhores,\n           F      F/A    Bb     Bº\nSeu nome é Jesus! Jesus! Jesus! Jesus!\nC       C7\nOh! Ele é o…\nC       C7\nOh! Ele é o…\nC        C7    F\nOh! Ele é o    Rei!",
+    "createdAt": 1710000045000
+  },
+  {
+    "id": "song-criancas-047-esta-e-a-minha-pequena-luz",
+    "number": 47,
+    "title": "Esta é a minha pequena luz",
+    "artist": "This little light of mine - Harry Dixon Loes",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C\nEsta é a minha pequena luz:\nG      G7      C\nVou deixar brilhar.\nF\nEsta é a minha pequena luz:\n\n                C          Am\nVou deixar brilhar, vou brilhar,\n       G7            C\nVou brilhar, vou brilhar.\n\nC\nEscondida no cesto: NÃO!\nG      G7      C\nVou deixar brilhar.\nF\nEscondida no cesto: NÃO!\n\nC\nSatanás não a apagará: Pfffffff!\nG      G7      C\nVou deixar brilhar.\nF\nSatanás não a apagará: Pfffffff!",
+    "createdAt": 1710000046000
+  },
+  {
+    "id": "song-criancas-048-estou-seguindo-a-jesus-cristo",
+    "number": 48,
+    "title": "Estou seguindo a Jesus Cristo",
+    "artist": "Autor desconhecido (Melodia tradicional indiana)",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "        C              C7\nEstou seguindo a Jesus Cristo,\n        F             C\nDeste caminho eu não desisto,\n        Em            Am\nEstou seguindo a Jesus Cristo,\n         D   G7           C\nAtrás não vol - to, nunca mais.\n\n        C                 C7\nSe me deixarem os pais e amigos,\n        F              C\nSe me cercarem muitos perigos,\n        Em                Am\nSe me deixarem os pais e amigos,\n         D   G7         C\nAtrás não vol-to, nunca mais.\n\n       C              C7\nAtrás o mundo, Jesus à frente,\n          F          C\nJesus meu guia, Omnipotente,\n        Em            Am\nAtrás o mundo, Jesus à frente\n          D  G7         C\nAtrás não vol-to, nunca mais.\n\n         C              C7\nDepois da luta ganho a coroa,\n       F               C\nA recompensa é certa e boa,\n         Em             Am\nDepois da luta ganho a coroa,\n         D   G7         C\nAtrás não vol-to, nunca mais.",
+    "createdAt": 1710000047000
+  },
+  {
+    "id": "song-criancas-049-eu-abri-meu-coracao-d",
+    "number": 49,
+    "title": "Eu abri meu coração (D)",
+    "artist": "Vitória Kids (Autor desconhecido)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: D A D\n\n   D       G/D   D\nEu abri meu cora-ção\n           G/D   D\nE Jesus veio habitar,\n  G       Em\nDe manso bateu,\n      F#m      Bm\nLogo a porta abri eu…\n    D/A      A7(13) D\nE ele veio em mim morar.\n\nApocalipse 3:20",
+    "createdAt": 1710000048000
+  },
+  {
+    "id": "song-criancas-049-eu-abri-meu-coracao-a",
+    "number": 49,
+    "title": "Eu abri meu coração (A)",
+    "artist": "Vitória Kids (Autor desconhecido)",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": "Intro: A E A\n\n       A       D/A   A\n||: Eu abri meu cora-ção\n           D/A   A\nE Jesus veio habitar,\n  D       Bm\nDe manso bateu,\n      C#m      F#m\nLogo a porta abri eu…\n      A/C#   E7(13) A\nE Ele veio em mim morar. :||",
+    "createdAt": 1710000049000
+  },
+  {
+    "id": "song-criancas-050-eu-quero-amar-a-minha-biblia",
+    "number": 50,
+    "title": "Eu quero amar a minha Bíblia",
+    "artist": "Neaci Pinheiro (APEC, Cânticos de Salvação para Crianças, Vol. I)",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "   E         B  E\nEu quero amar a minha Bíblia,\nB9   E            F#7      F#m7\nO que ela ensina desejo aprender.\nB7 E           C#m  F#m\nPreciso, então, em   cada dia,\nFº E/B   B7      E\nA  minha Bíblia ler.\n\n  E          B  E\nEu quero amar a meu Jesus,\nB9  E         F#7    F#m7\nE a sua vida desejo imitar.\nB7 E           C#m F#m\nPreciso, então, em cada dia,\n\nFº E/B    B7  C#m\nA   Bíblia estudar.\nFº E/B    B7    C#m\nA   minha Bíblia ler.\nFº E/B    B7 E\nA  Bíblia estudar.",
+    "createdAt": 1710000050000
+  },
+  {
+    "id": "song-criancas-051-eu-quero-servir-a-jesus",
+    "number": 51,
+    "title": "Eu quero servir a Jesus",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "   D              Em\nEu quero servir a Jesus,\n  A7                 D\nEu quero a Jesus ser leal;\n   D7\nContar sua história,\n   G        Em\nMostrar sua glória\n    D          A7      D\nE ouvir seu louvor sem par.",
+    "createdAt": 1710000051000
+  },
+  {
+    "id": "song-criancas-052-eu-sou-a-porta",
+    "number": 52,
+    "title": "Eu Sou a Porta",
+    "artist": "Autor desconhecido (APEC, Cânticos de Salvação para Crianças, Vol. I)",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "E               A\n“Eu sou a porta”, disse Jesu s,\n  B7\n“Se alguém entrar por mim\n E\nSalvo será”.\nE               A\nOutro não houve, nem haverá,\nB  B7     E\nVem, entra já!",
+    "createdAt": 1710000052000
+  },
+  {
+    "id": "song-criancas-053-eu-sou-a-videira-verdadeira",
+    "number": 53,
+    "title": "Eu Sou a Videira verdadeira",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "E                     A\nEu sou a videira verdadeira\n        E             B7\nE o meu Pai é o agricultor;\nE                         A\nComo o Pai me amou, eu também vos amei,\n       E      B7  E\nPermanecei no meu amor.\n\n   A                 E\nE o meu mandamento é este,\n   A7                 E    E7\nQue vos ameis uns aos outros.\n A                 E\nAssim como eu vos amei,\n    F#               B7\nQue vos ameis uns aos outros,\n                   A7\nAssim como eu vos amei!",
+    "createdAt": 1710000053000
+  },
+  {
+    "id": "song-criancas-054-eu-vou-andar",
+    "number": 54,
+    "title": "Eu vou andar",
+    "artist": "The wa-wa song, Ernie Rettino e Debby Kerner",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "        E\nEu vou andar: UÁ! UÁ!\n  B\nCantar: LÁ! LÁ!\n        E\nGritar: HEI!\n  A                  E\nE palmas bater até\n\nA/E   E  B          E   A  E      (B7)\nJe - sus Cristo voltar! Oh ya!\nE          A\nEu sei que tenho um amigo\n    E              B\nQue vive dentro de mim,\n  E               A\nE porque ele é o grande Rei,\n     E        B   E    (B7)\nEm vitória eu andarei!",
+    "createdAt": 1710000054000
+  },
+  {
+    "id": "song-criancas-055-gozo",
+    "number": 55,
+    "title": "Gozo",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D                  A\nGozo! Estou muito feliz!\nA7                  D\nGozo! Estou muito feliz!\n            G\nMeu Salvador ao meu redor,\n    A            A7         D\nIsso torna o coração muito feliz!",
+    "createdAt": 1710000055000
+  },
+  {
+    "id": "song-criancas-056-ha-algum-tempo-atras-espaco-vitoria",
+    "number": 56,
+    "title": "Há algum tempo atrás (Espaço Vitória)",
+    "artist": "Luísa Roxo Couto",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "     D                 G\nHá algum tempo atrás ouvi uma história\n    D                Asus  A7\nQue fala de Jesus e do Seu amor;\n   D                       G\nE agora neste espaço – o ESPAÇO VITÓRIA,\n  Bm                    Asus    A7\nVou repeti-la a ti, para Seu louvor:\n\n          G                    D\nÉ que eu andava perdido, sem saber o que fazer,\n       Bm                 Asus     A\nÀs cabeçadas, procurando razão p’ra viver!\n\n      G                   D/F#\nMas Jesus me encontrou e eu quero partilhar,\n       Em                  Asus\nQue com Ele sou feliz, e tu também podes se r…\n\n      D   Bm7       A   F#m        G        Em   Asus\n||: Espaço para crescer, para aprender, para ser mais! :||\n\n    G            D        G                 D\n||: É de Jesus a glória, aqui, no ESPAÇO VITÓRIA! :||",
+    "createdAt": 1710000056000
+  },
+  {
+    "id": "song-criancas-057-ha-um-caminho-cheio-de-luz",
+    "number": 57,
+    "title": "Há um Caminho cheio de luz",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "Intro: E\n\nE             A        E\nHá um caminho cheio de luz\n  B\nE nenhum outro há,\n  E           A   E\nE este é só Jesus;\n           A          E\nUma verdade jorra da cruz:\nB         B7    E    A    E\nVida temos em Jesus!",
+    "createdAt": 1710000057000
+  },
+  {
+    "id": "song-criancas-058-jesus-e-a-rocha-da-minha-salvacao",
+    "number": 58,
+    "title": "Jesus é a Rocha da minha salvação",
+    "artist": "His Banner Over Me - B. C. Laurelton",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "  E\nJesus é a rocha da minha salvação,\n   B                B7\nSeu sinal sobre mim é o amor,\n F#m\nJesus é a rocha da minha salvação,\n    E\nSeu sinal sobre mim é o amor,\n\nJesus é a rocha da minha salvação,\n  F#m\nSeu sinal sobre mim é o amor,\n    B        B7     E\nSeu sinal sobre mim é o amor.",
+    "createdAt": 1710000058000
+  },
+  {
+    "id": "song-criancas-059-la-dentro-ca-fora",
+    "number": 59,
+    "title": "Lá dentro, cá fora",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "   C\nLá dentro, cá fora, em cima, em baixo,\n  F\nJesus me faz feliz!\n   G\nLá dentro, cá fora, em cima, em baixo,\n  C\nJesus me faz feliz!\n     C\nDesde que Jesus entrou,\n      F\nE meu coração limpou,\n   C\nLá dentro, cá fora, em cima, em baixo,\n  F      G7     C\nJesus me faz feliz!",
+    "createdAt": 1710000059000
+  },
+  {
+    "id": "song-criancas-060-jesus-me-ama",
+    "number": 60,
+    "title": "Jesus me ama",
+    "artist": "Yes Jesus loves me - Anna Bartlett Warner e W. B. Bradburry (Hinário para o Culto Cristão)",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": " C       F      C     G7\nJesus me ama! Jesus me ama!\nC        F      C/G   G7    C\nJesus me ama! A Bíblia diz assim.\n\nC                        F                C\nCristo tem amor por mim; sei que a Bíblia diz assim.\nG            C        F     C      G7    C\nPor crianças como eu, numa cruz Jesus morreu.\n\nC                       F              C\nSalvação me deu Jesus; quero andar na sua luz.\nG             C        F    C      G7     C\nQuando a vida terminar viverei no eterno lar.",
+    "createdAt": 1710000060000
+  },
+  {
+    "id": "song-criancas-061-jesus-me-guia",
+    "number": 61,
+    "title": "Jesus me guia",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "         D\nJesus me guia\n     A7          D\nNo caminho desta vida.\n          D\nJesus me guia\n    A7          D\nNo caminho desta vida.\n   G   G/F#   Em\nApesar de pequenino,\n F#m        Bm\nJesus me valerá.\n        D\nJesus me guia\n    A7          D\nNo caminho desta vida.",
+    "createdAt": 1710000061000
+  },
+  {
+    "id": "song-criancas-062-mesmo-que-eu-nao-marche-soldado-de-jesus",
+    "number": 62,
+    "title": "Mesmo que eu não marche (Soldado De Jesus)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "E\nMesmo que eu não marche na infantaria,\nB\nNem na cavalaria,\nE\nNem na artilharia eu vá,\nE\nNem aviador seja eu aqui:\n   A       B7        E    A  E\nSoldado de Cristo eu sou! Eu sou!\n\nE       A    E\nSoldado de Jesus!\nE       A    E\nSoldado de Jesus!\n\nE\nMesmo que eu não marche na infantaria,\nB\nNem na cavalaria,\nE\nNem na artilharia eu vá,\nE\nNem aviador seja eu aqui:\n   A       B7        E    A  E\nSoldado de Cristo eu sou! Eu sou!",
+    "createdAt": 1710000062000
+  },
+  {
+    "id": "song-criancas-063-meu-bom-pastor-e-cristo",
+    "number": 63,
+    "title": "Meu bom pastor É Cristo",
+    "artist": "Autor desconhecido (APEC, Cânticos de Salvação para Crianças, Vol. II)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "    D     Em    D/F#\nMeu bom pastor é Cristo,\n   G    A7  D\nCom Ele andarei;\n   D         Em   D/F#\nConduz-me às calmas águas,\n   G    A7  D\nCom Ele andarei.\n\n   D    Em  D/F#\nSempre, sem-pre,\n   G    A7 D\nCom Ele andarei.\n   D    Em D/F#\nSempre, sem-pre,\n   G    A7  D\nCom Ele andarei.",
+    "createdAt": 1710000063000
+  },
+  {
+    "id": "song-criancas-064-nao-nao-construas-tua-casa-na-areia",
+    "number": 64,
+    "title": "Não, não construas tua casa na areia",
+    "artist": "Sandy Land, Karen Lafferty",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C                     F/C       C\nNão, não construas tua casa na areia,\n                    G        G7\nNão, não construas à beira do mar;\n      C        C/Bb\nMesmo que pareça chique,\n      F/A           F\nÉ impossível que ela fique,\n       C          G7    C   (F/A)\nA tempestade a vai derrubar.\n\n        C\nA rocha é o lugar p’ra construir\n\n                        G7\nO alicerce forte que não vai cair.\n       C     C/Bb   F/A   F\nA tempesta - de     vai e vem\n     C       G7        C  F  C\nMas a paz de Cristo tu tens!",
+    "createdAt": 1710000064000
+  },
+  {
+    "id": "song-criancas-065-ninguem-deve-se-esquecer",
+    "number": 65,
+    "title": "Ninguém deve se esquecer",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C            G\nNinguém deve se esquecer\nG7            C\nDo que Deus na Bíblia diz;\n      C7         F\nMas ouvir e obedecer…\nG                 C   G   C\nPara sempre ser feliz!",
+    "createdAt": 1710000065000
+  },
+  {
+    "id": "song-criancas-066-nao-por-forca-ou-por-poder",
+    "number": 66,
+    "title": "Não por força ou por poder",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": "        A              D         Bm          A\nNão por força ou por poder, o inimigo vou vencer,\n       A             D          A E            A\nPois a Bíblia e a oração são as ar - mas do cristão!\n\nF#m          C#          F#m         C#\nVamos vencer sem falhar, por Jesus lutar;\n E           G#m            F#m  B      E\nQuero sempre obedecer ao mandado do meu Rei;\n\n      A               D          Bm             A\nVou viver p'ra meu Senhor, sempre amando o Salvador,\n        A              D          E7             A\nTransformando treva em luz, vou viver p'ra meu Jesus.\n      E7             A          E7              A\nVou viver p'ra meu Jesus, vou viver p'ra meu Jesus.\n\nZacarias 4:6\n\nSalmo 20:7",
+    "createdAt": 1710000066000
+  },
+  {
+    "id": "song-criancas-067-no-egito-escravo-fui",
+    "number": 67,
+    "title": "No Egito escravo fui",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": "A                       E7\nNo Egito escravo fui, sim, sim, oh sim,\nA                     D       E A\nNo Egito escravo fui do vil Faraó.\nA                    A7    D\nTriste, bem triste estava, meu coração chorava:\nE7            A\nLiberta-me Senhor!\n\nMoisés foi ao Faraó, sim, sim, oh sim,\n\nMoisés foi ao Faraó e lhe disse assim:\n\nDeixa sair o meu povo para prestar-me culto,\n\nAssim diz o Senhor!\n\nFaraó se endureceu, sim, sim, oh sim,\n\nFaraó se endureceu e não deixou ir.\n\nDeus enviou dez pragas,\n\nDesembainhou sua espada,\n\nE assim nos libertou.\n\n    A                  D\n||: Livre, me deixaste livre,\n            E         E7     A\nMe deixaste livre, livre, Senhor. :||\n\nLivre agora então estou, sim, sim, oh sim,\n\nLivre agora então estou, livre para ti:\n\nQuero prestar-te culto,\n\nQuero cantar-te glória, Glória a ti Senhor.\n\n||: Glória, glória aleluia, Glória aleluia a ti, Senhor. :||",
+    "createdAt": 1710000067000
+  },
+  {
+    "id": "song-criancas-068-noe-fez-uma-arca",
+    "number": 68,
+    "title": "Noé fez uma arca",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": " C               G            C\nNoé fez uma arca como Deus mandou\n                 G      G7 C\nE os bichinhos da terra e do céu salvou.\n  C7       F                  C\nSerrou a madeira, muito trabalhou,\n\n                     G\n||: Serrou zum, zum, zum,\n                    C\nMartelou tum, tum, tum. :||\n\n   C7   G                      C\nSalvou o pato, o leão e a formiguinha,\n         G                  C\nO cão, o gato, o peru e a galinha,\n  C7     F                       C\nSalvou o pombo, o canguru e o elefante,\n         G           G7         C\n||: E a girafa com pescoço de gigante. :||\n\n   C              G             C\nDe noite e de dia choveu sem parar,\n                     G       G7   C\nNoé e os bichinhos na arca a esperar;\n  C7      F               C\nA chuva parou! Se alegrou Noé\n                         G\n||: Por ter obedecido a Deus,\n                 C\nPor ser homem de fé. :||",
+    "createdAt": 1710000068000
+  },
+  {
+    "id": "song-criancas-069-num-berco-de-palhas",
+    "number": 69,
+    "title": "Num berço de palhas",
+    "artist": "Away in a Manger - James R. Murray e W. J. Kirkpatrick (Hinário para o Culto Cristão)",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "Intro: E  A  E\n\n    E                  A         E\nNum berço de palhas, humilde, nasceu\n  B7               E\nJesus pequenino sem ter nada seu.\n E                   A        E\nEstrelas brilharam no pobre lugar\n    B7       E      F#m   B7  E\nQue para o menino servia   de  lar.\n\n  E              A     E\nO gado mugindo acorda Jesus,\n     B7               E\nQue, na manjedoura, sorri vendo a luz\n     E              A          E\nEu te amo Menino nascido em Belém,\n  B7       E       F#m     B7  E\nE quero seguir teu exemplo também.",
+    "createdAt": 1710000069000
+  },
+  {
+    "id": "song-criancas-070-o-sabao",
+    "number": 70,
+    "title": "O sabão",
+    "artist": "H. e S. Grandjean (APEC, Cânticos de Salvação para Crianças, Vol. II)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: D\n\nD       A\nO sabão lava o meu rostinho,\n\nLava os meus pezinhos,\nA7             D\nLava as minhas mãos.\n      D7                     G\nMas Jesus, p’ra me deixar limpinho\nD             A7  D     G   D\nQuer lavar meu coração.\n\nD             A\nQuando o mal faz uma manchinha\n\nEu sei muito bem\n     A7         D\nQuem pode me limpar\n    D7                   G\nÉ Jesus, não Lhe escondo nada,\nD             A7  D    (P/repetir tudo: G D)\nTudo Ele pode apa-gar.  (P/ repetir verso: Bm)",
+    "createdAt": 1710000070000
+  },
+  {
+    "id": "song-criancas-071-o-que-tu-fazes-deus-tudo-sabe-e-tudo-ve-",
+    "number": 71,
+    "title": "O que tu fazes (Deus tudo sabe e tudo vê) (E)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "Intro: E\n\n  E\nO que tu fazes,\n\nO que tu dizes,\nB\nDeus tudo sabe e\n    E   B7   E\nTudo vê, vê, vê.\n     E\nSim, Deus tudo vê, sim, Deus tudo vê\nB\nTudo o que tu\n         E_A_E\nPossas fazer.",
+    "createdAt": 1710000071000
+  },
+  {
+    "id": "song-criancas-071-o-que-tu-fazes-deus-tudo-sabe-e-tudo-ve--d",
+    "number": 71,
+    "title": "O que tu fazes (Deus tudo sabe e tudo vê) (D)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: D\n\n  D\nO que tu fazes,\n\nO que tu dizes,\nA\nDeus tudo sabe e\n    D   A7   D\nTudo vê, vê, vê.\n    D\nSim, Deus tudo vê, sim, Deus tudo vê\nA\nTudo o que tu\n         D_G_D\nPossas fazer.",
+    "createdAt": 1710000072000
+  },
+  {
+    "id": "song-criancas-072-poderoso",
+    "number": 72,
+    "title": "Poderoso",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "        E         B       C#m       A\n||: Poderoso, poderoso, Jesus é poderoso,\n  E           B        (A E/G# F#m)          E\nE Ele me ajudará até ao fim! :||\n\n   A                      C#m\nEle cura os oprimidos, os coxos faz andar,\n  F#m                      B\nCativos Ele liberta, e aos cegos vista dá,\n\n        E          B        C#m           A\nPois Ele pode, sim pode, eu sei que Jesus pode,\n E            B         E\nE Ele me ajudará até ao fim!",
+    "createdAt": 1710000073000
+  },
+  {
+    "id": "song-criancas-073-por-mim-morreu-jesus",
+    "number": 73,
+    "title": "Por mim morreu Jesus",
+    "artist": "Herbert G. Tovey (APEC, Cânticos de Salvação para Crianças, Vol. I)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "    D   G D    A  D     F#m    Bm   Em   A  D\nPor mim morreu Jesus crava  -  do   nu - ma cruz,\n   G     Em     D Bm       D   G   D    A  D\nNo monte do  Calvário,  por mim mor-reu Jesus.\n\nPor mim ressuscitou, vitória assim ganhou,\n\nÀ dextra do Seu Pai está, por mim ressuscitou.\n\nP'ra mim, sim, voltará e aos céus me levará,\n\nP'ra sempre cantarei louvor, p'ra mim, sim, voltará.",
+    "createdAt": 1710000074000
+  },
+  {
+    "id": "song-criancas-074-meu-natal-e-diferente",
+    "number": 74,
+    "title": "Meu Natal é diferente",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "Intro:\n\nG\nMeu Natal é diferente\n    C              G\nEu celebro ao Salvador\n                        C      D    G\nO menino que nasceu é Jesus Ele é Senhor\n\nRefrão:\n           G\n||: Ele é o Rei (palmas)\n        C\nMeu salvador (palmas)\n        G\nEle é Jesus (palmas)\n   D    C    D      G\nEle é Senhor! :||\n\nMeu Natal é diferente\n\nPorque Jesus me ensinou\n\nQue com Ele é o melhor presente\n\nComo Ele ninguém me amou",
+    "createdAt": 1710000075000
+  },
+  {
+    "id": "song-criancas-075-quem-e-o-rei-da-selva",
+    "number": 75,
+    "title": "Quem é o Rei da selva",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": " D\nQuem é o Rei da selva?\n                A\nQuem é o Rei do mar?\n\nQuem é o Rei do universo?\n A7          D\nQuem é o meu Rei?\n\n   A     D\nEu digo: J – E – S – U – S – Jesus!\n           A\nEle é o meu Rei;\n                  A7\nEle é o Rei do Universo da terra e do mar!\nA                  D\nTa-ra-ra-ra-ra-ra-ra!\nA                 D\nTa-ra-ra-ra-ra-ra-ra!",
+    "createdAt": 1710000076000
+  },
+  {
+    "id": "song-criancas-076-ressuscitou",
+    "number": 76,
+    "title": "Ressuscitou",
+    "artist": "C. F. Moreira (APEC, Cânticos de Salvação para Crianças, Vol. II)",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": "A            E      A     E     A\nRessuscitou, sim, Jesus, meu Senhor,\n            D    D#º  E\nVivo, vivo, vi - vo está!\nA         E     A  E   A\nDa sepultura saiu vencedor,\nA    C#m    D  E   F#m  E7    A\nVi - vo     meu Se-nhor  es - tá.\n\n   A                    D   Bm\nPor isso eu canto alegremen-te,\n       Bm7     A        E       A\nCanto a-le-gre-men-te em Seu louvor!\n    A                 D  Bm\nPor Ele eu vivo eternamen-te,\n      Bm7     A  E         E7 A\nVivo e-ter-na-men-te, salvo es-tou!\n\nA              E      A   E    A\nCreio em Jesus, Ele é meu Salvador,\n           D     D#º  E\nVivo, vivo, vi - vo estou!\nA             E      A   E    A\nPor Seu poder sou também vencedor,\nA   C#m     D   E   F#m     E7   A\nPa - ra     sem-pre vi -    vo es-tou!",
+    "createdAt": 1710000077000
+  },
+  {
+    "id": "song-criancas-077-sao-tantas-as-historias",
+    "number": 77,
+    "title": "São tantas as histórias",
+    "artist": "Luísa Roxo Couto",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: ||: D C G/B A :||\n\nD                G\nSão tantas as histórias\n       D                  G\nQue fascinam minha imaginação,\n  D                  G\nDe tempos que hão de vir\n D                G\nE outros que já lá vão.\n   Em                   D/F#\nSão cenas incríveis, aventuras fantásticas;\n  G                A7\nComeçam: “Era uma vez…”\n\n        D               G                     D    G/D     A/D\nEra uma vez uma bela princesa num castelo a dormir,\n   D                     G\nFlorestas encantadas, um gato com botas,\n  A                   A7\nFamílias incríveis de super-heróis!\n        D                G                    D    G/D     A/D\nEra uma vez, uma menina pequena como o meu polegar,\n     D                G\nCasas de chocolate, sereias e gnomos,\n   A              A7\nUm lobo deitado vestido de avó!\n\n       D        C2        G/B   A\nMas eu sei de Alguém que é bem real,\n   D        C           G/B      A7   D    C   G/B    A\nFabuloso, incrível, espantoso, excecional:\n\n        G           A        G/B   A/C#     D\n|| : É Jesus, meu Herói, que era,  é e há de vir.:||\nFim: C G/B A D",
+    "createdAt": 1710000078000
+  },
+  {
+    "id": "song-criancas-078-quem-e-salvo-e-tem-certeza",
+    "number": 78,
+    "title": "Quem é salvo e tem certeza",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "        C                        G\n1.Quem é salvo e tem certeza bate palmas! (bater palmas)\n       C                        G\nQuem é salvo e tem certeza bate palmas! (bater palmas)\n       F              G/F\nQuem é salvo e tem certeza,\n   Em            Am\nSua vida é uma beleza,\n       Dm7           G         C\nQuem é salvo e tem certeza bate palmas! (bater palmas)\n\n         C                          G\n2.Quem é salvo e tem certeza bate os pés! (bater com os pés)\n       C                          G\nQuem é salvo e tem certeza bate os pés! (bater com os pés)\n       F              G/F\nQuem é salvo e tem certeza,\n   Em            Am\nSua vida é uma beleza,\n       Dm7           G            C\nQuem é salvo e tem certeza bate os pés! (bater com os pés)\n\n         C                        G\n3.Quem é salvo e tem certeza diz amém! (dizer amém)\n       C                        G\nQuem é salvo e tem certeza diz amém!  (dizer amém)\n       F              G/F\nQuem é salvo e tem certeza,\n   Em            Am\nSua vida é uma beleza,\n       Dm7           G          C\nQuem é salvo e tem certeza diz amém! (dizer amém)\n\n          C                          G\n4. Quem é salvo e tem certeza faz os três (fazer os três)\n       C                          G\nQuem é salvo e tem certeza faz os três  (fazer os três)\n       F              G/F\nQuem é salvo e tem certeza,\n   Em            Am\nSua vida é uma beleza,\n       Dm7           G           C\nQuem é salvo e tem certeza faz os três (fazer os três)",
+    "createdAt": 1710000079000
+  },
+  {
+    "id": "song-criancas-079-sou-uma-florzinha-um-soldadinho",
+    "number": 79,
+    "title": "Sou uma florzinha/Um soldadinho",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C                 F    C\nSou uma florzinha de Jesus,\nC                 F    C\nSou uma florzinha de Jesus,\nC        G      G7\nAbro a boquinha para cantar,\nC        G        G7\nFecho os olhinhos para orar,\nC                 F    C\nSou uma florzinha de Jesus,\nG   G7   C\nSim de Jesus!\n\nC                 F     C\nSou um soldadinho de Jesus,\nC                 F     C\nSou um soldadinho de Jesus,\n   C         G          G7\nNão ando nas trevas, só ando na luz,\n   C         G          G7\nNão ando nas trevas, só ando na luz,\nC                 F     C\nSou um soldadinho de Jesus,\nG  G7    C\nSim de Jesus!",
+    "createdAt": 1710000080000
+  },
+  {
+    "id": "song-criancas-080-tres-palavrinhas-so",
+    "number": 80,
+    "title": "Três palavrinhas só",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": " E               A\nTrês palavrinhas só\n    B       B7     E\nQue eu aprendi de cor:\n  E   E7  A\n“Deus é amor”\nE           B7           E\nTrá-lá-lá-lá-lá-lá-lá-lá-lá!",
+    "createdAt": 1710000081000
+  },
+  {
+    "id": "song-criancas-081-vai-abalar",
+    "number": 81,
+    "title": "Vai abalar",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Mateus 24:30\n\n D           G\nVai abalar, vai abalar,\n     A                      D\nQuando Jesus voltar o mundo vai abalar.\nD                    G\nCristo descendo, os céus se abrindo,\n            A                 D\nOs anjos tocando e a igreja subindo!",
+    "createdAt": 1710000082000
+  },
+  {
+    "id": "song-criancas-082-nao-foi-o-coelhinho",
+    "number": 82,
+    "title": "Não foi o coelhinho",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "Intro:\n\nE                         B\nNão foi o coelhinho que morreu na cruz.\n                           E\nQuem foi crucificado foi o meu Jesus.\n                               A\nNa sexta Ele morreu, mas morto não ficou.\n  B                    E  A     E\nDomingo de manhã Ele ressusci - tou.    3x no fim.",
+    "createdAt": 1710000083000
+  },
+  {
+    "id": "song-criancas-083-vivo-cada-dia-com-jesus-no-coracao",
+    "number": 83,
+    "title": "Vivo cada dia com Jesus no coração",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C         Am        F          G\nVivo cada dia com Jesus no coração\nC        Am          F           G\nMinha alegria faz da vida uma canção.\nAm             Em         F             C      Am\nQuando a Cristo encontrei, toda a minha vida Lhe dei,\nDm             C        F      C          Dm    G7 C\nGozo, paz e alegria sem fim, vieram fazer parte de mim!",
+    "createdAt": 1710000084000
+  },
+  {
+    "id": "song-criancas-084-o-fruto-do-espirito",
+    "number": 84,
+    "title": "O fruto do Espírito",
+    "artist": "Don Stell (Asaph Borba - Life Kids Vol 1 - Cantando o Fruto do Espírito)",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "  C       G/B          F/A   F   G\nO fruto do Espírito é o amor,\n  D       G/B            D    D7\nO fruto do Espírito é o amor,\n   F     G/F\nAlegria, paz,\n F               Am\nLonganimidade, benignidade,\n   Dm          G7\nBondade, fidelidade,\n    C              C7\nMansidão, domínio próprio.\nF            F#m           Em      Am\nContra estas coisas não há lei,\n  Dm        G7           C\nO fruto do Espírito é o amor,",
+    "createdAt": 1710000085000
+  },
+  {
+    "id": "song-criancas-085-vou-contar-aos-outros-que-jesus",
+    "number": 85,
+    "title": "Vou contar aos outros que Jesus",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "||: Intro: Riff notas: E  F#  G#  A\n\nA                                 E    A\n   Vou contar aos outros que Jesus\n                  B      E\nÉ o Caminho, a Verdade e Luz.\n     D              E7         A             F#m\nNa escola, em minha casa, onde quer que eu andar,\nB             B7             E            E7\nP'ra falar de Cristo vou por onde Deus mandar.\n     A                                  E      A\nPois,    vou contar aos outros que Jesus\n                  B      E\nÉ o Caminho, a Verdade e Luz.\n  A           A7         D            Bm\nJesus está voltando, não posso perder tempo:\nA              F#m\n   Ser um missionário,\nA              F#m\n   De Deus emissário,\nA              E        A   E    A\nP'ra levar aos outros Jesus.\n\nVAMOS! :||",
+    "createdAt": 1710000086000
+  },
+  {
+    "id": "song-criancas-086-as-maos-e-os-dedos",
+    "number": 86,
+    "title": "As mãos e os dedos",
+    "artist": "Hands, hands, fingers, thumbs - Doug Harley",
+    "originalKey": "Em",
+    "category": "Crianças",
+    "cifra": "Em\nAs mãos e os dedos,\n D             A\nVou erguer p’ra louvar;\n\nEm\nAs mãos e os dedos,\nD             A\nErguer p’ra louvar!\n\nEm\nAs mãos e os dedos,\nD              A\nVou erguer p’ra louvar;\n\nEm                 D\nÀ frente, atrás, YEAH!\n\n                Em  Bm7        Em    Bm7\nNascemos p’ra louvar!\n\n   Em\n||:    Temos as mãos p’ra levantar;\nD\n       Temos a voz para gritar – JESUS!\nA7\n    E com os pés vamos dançar;\nEm\n     Deus nos criou para louvar! :||\n\n    Em    Bm7\n||: EU VOU ADORAR-TE,\nEm    Bm7\nEU VOU ADORAR! :||",
+    "createdAt": 1710000087000
+  },
+  {
+    "id": "song-criancas-087-o-pai-abraao",
+    "number": 87,
+    "title": "O pai Abraão",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "     C\nO pai Abraão tem muitos filhos,\n                        G\nMuitos filhos tem o pai Abraão\n\nEu sou um deles,\n\ne tu também o és;\n   G     G7    C\nLouvemos ao Senhor!\n\nBRAÇO DIREITO!\n(Repete início)\n\nBRAÇO ESQUERDO!\n(Repete início)\n\nPERNA DIREITA!\n(Repete início)\n\nPERNA ESQUERDA!\n(Repete início)\n\nA CABEÇA!\n(Repete início)\n\nO CORPO TODO!\n(Repete início)",
+    "createdAt": 1710000088000
+  },
+  {
+    "id": "song-criancas-088-se-eu-fosse-c",
+    "number": 88,
+    "title": "Se eu fosse… (C)",
+    "artist": "If I were a butterfly - Brian Howard (adaptado)",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Intro: C\n\n     C\nSe eu fosse um elefante,\n          F\nCom minha tromba louvaria ao Senhor;\n\n      C\nSe eu fosse um grande urso polar,\n      G\nCom a minha barriga eu iria louvar;\n\n     C                        C7\nSe eu fosse um peixinho lá no fundo do mar,\n     F                   Fm\nLouvaria ao Senhor sem parar de nadar,\n\n     C                 F\nMas, nem elefante, nem urso,\n      G7        C   F/C_C\nNem peixinho eu sou!\n\n       C\nMas se sou o que sou, tenho um coração,\n   F                    Fm\nUm grande sorriso e uma linda canção!\n  C             G                    C     F_C\nSe Deus me fez assim, assim eu vou louvar!\n\n       C\nMas se sou o que sou, tenho um coração,\n   F                    Fm\nUm grande sorriso e uma linda canção!\n\n   C            G7                    C   Am\nSe Deus me fez assim, assim eu vou louvar!\n                Dm    G7                    C    F   C\nAssim eu vou louvar,        assim eu vou louvar!",
+    "createdAt": 1710000089000
+  },
+  {
+    "id": "song-criancas-088-se-eu-fosse-g",
+    "number": 88,
+    "title": "Se eu fosse… (G)",
+    "artist": "If I were a butterfly - Brian Howard (adaptado)",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "Intro: G\n\n     G\nSe eu fosse um elefante,\n          C\nCom minha tromba louvaria ao Senhor;\n\n      G\nSe eu fosse um grande urso polar,\n      D\nCom a minha barriga eu iria louvar;\n\n     G                        G7\nSe eu fosse um peixinho lá no fundo do mar,\n     C                   Cm\nLouvaria ao Senhor sem parar de nadar,\n\n     G                 C\nMas, nem elefante, nem urso,\n      D7        G   C/G_G\nNem peixinho eu sou!\n\n       G\nMas se sou o que sou, tenho um coração,\n   C                     Cm\nUm grande sorriso e uma linda canção!\n  G             D                    G     C_G\nSe Deus me fez assim, assim eu vou louvar!\n\n       G\nMas se sou o que sou, tenho um coração,\n   C                     Cm\nUm grande sorriso e uma linda canção!\n\n   G            D7                    G   Em\nSe Deus me fez assim, assim eu vou louvar!\n                Am    D7                    G      C G\nAssim eu vou louvar,        assim eu vou louvar!",
+    "createdAt": 1710000090000
+  },
+  {
+    "id": "song-criancas-089-aos-olhos-do-pai",
+    "number": 89,
+    "title": "Aos Olhos Do Pai",
+    "artist": "Ana Paula Valadão (in Diante do Trono Crianças I)",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Intro: | F C/E F Am7 Bb G |\n\nC           Dm   Dm/C         F            C/E               Dm      Dm/C\nAos olhos do Pai,          você é uma obra prima que ele planeou,\n    F              C      C/E\nCom Suas próprias mãos pintou;\n  F             F/C    C               C/E\nA cor de sua pele,     os seus cabelos desenhou;\nDm         F/G        C              (Para bridge: Am7(9) Bb F/A G)\nCada detalhe,      num toque de amor.\n\n    G/F        C/E             G/F       G\nVocê é linda demais, perfeita aos olhos do Pai;\nF    C/E     Dm     C Bb9    F/A   Gsus\nAlguém igual a você não vi,  ja -  mais;\n     G/F        C/E              G/F       G\nPrincesa, linda demais, perfeita aos olhos do Pai,\n  F   C/E      Dm    C  Bb   G9\nAlguém igual a você não vi, jamais.\n\n       F7M             Am7     Em           F\n||: Nunca deixe alguém dizer,  que não é querida\n   Am7         Em7          Gsus       G\nAntes de você nascer, Deus sonhou com você :||\n\n     G/F       C/E              G/F       G\nVocê é linda demais, perfeita aos olhos do Pai;\n   F     C/E    Dm     C        Bb9                         (Subida de tom)\nAlguém igual a você não vi, ja - mais;\n\n          A/G     D/F#              A/G       A\nPrincesa, linda demais, perfeita aos olhos do Pai;\n   G    D/F#     Em    D       C      G/B  A\nAlguém igual a você não vi, jamais.\n         A/G      D/F#               A/G      A\nPrincesa, linda demais, perfeita aos olhos do Pai;\n    G   D/G          D        G\nPrincesa ....    aos olhos do Pai..",
+    "createdAt": 1710000091000
+  },
+  {
+    "id": "song-criancas-090-estende-a-tua-mao",
+    "number": 90,
+    "title": "Estende a tua mão",
+    "artist": "Rebeca e Luísa Roxo Couto",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "  C                      F\nEstende a tua mão, Deus já estendeu a Sua;\n  C                      F\nEstende a tua mão, Deus vai te agarrar;\n  C                     F\nEstende a tua mão, Ele cuidará de ti;\n C                   F\nEstende a tua mão e mostra gratidão.\n\n  G       G7   C  F C\nEstende a tua mão (4X)\n\n Dm            Em\nEu já agradeci, ele também\n    F                         G   F/G     G\nNós já agradecemos, só faltas tu!",
+    "createdAt": 1710000092000
+  },
+  {
+    "id": "song-criancas-091-havia-um-homenzinho-torto",
+    "number": 91,
+    "title": "Havia um homenzinho torto",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": " A9\nHavia um homenzinho torto,\n Bm7\nMorava numa casa torta,\n  E7\nAndava num caminho torto,\n   D/A       A\nSua vida era torta.\n\n                   A/G\nUm dia o homenzinho torto\n D/F#           D\nA Bíblia encontrou,\n  A/E           F#m7\nE tudo o que era torto,\n  Bm7   E4    A\nJesus endireitou!\n\nHEY!",
+    "createdAt": 1710000093000
+  },
+  {
+    "id": "song-criancas-092-em-meu-coracao",
+    "number": 92,
+    "title": "Em meu coração",
+    "artist": "E. Leslie e Harry D. Clarke · (APEC, Cânticos de Salvação para Crianças, Vol. I)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "   D       Em7     D/F#     Bm7\nEm meu coração, em meu coração,\n    Em7      Asus     G D\nMeu Jesus vem hoje entrar.\n    G       D/F#   Em    D\nVem hoje entrar, vem p’ra ficar\n   G   D/F#   Em7     G/A   D\nNo meu cora - ção, oh Je - sus.",
+    "createdAt": 1710000094000
+  },
+  {
+    "id": "song-criancas-093-eu-ja-estou-livre",
+    "number": 93,
+    "title": "Eu já estou livre",
+    "artist": "I am so free, Rob Evans (Mr. Donut Man)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D          G     D           G\nEu já estou livre, eu já estou livre,\nD  Bm      Em              A        D      (G A   D)\nEu já estou livre porque o Pai me amou.\n\n  D             A/E\nBater as mãos! Bater os pés!\nD/F#       G       Em\nNo tambor! Subir à árvore!\nD  Bm     Em               A       D   (G   A   D)\nEu já estou livre porque o Pai me amou.\n\nG                  A     Bm\nEle é o Pão que te vai saciar;\n    G    A        D\nNós somos filhos e filhas;\nG      A       F#m    B\nTe perdoou e a mim também;\n      E            A  G    D/F#    Em\nO seu Reino veio a nós.\n\nBater as mãos…\n\nEu já estou livre…\n\nG                     A     Bm\nFaz Tua vontade, livra-nos do mal;\n    G    A        D\nNós somos filhos e filhas;\n     G      A            F#m     B\nPois Tua é a honra, o poder e a glória,\n      E           A    G   D/F#     Em\nO teu Reino veio a nós.\n\nBater as mãos…\n\nEu já estou livre…",
+    "createdAt": 1710000095000
+  },
+  {
+    "id": "song-criancas-094-a-palavra-de-deus-e-semente",
+    "number": 94,
+    "title": "A palavra de Deus é semente",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "    D\nA Palavra de Deus é semente\n      A               D\nVai caindo, caindo, caindo.\n       G                      D\nQuando todos pensam que está morta,\n       A                     D\nVai nascendo, brotando e crescendo!",
+    "createdAt": 1710000096000
+  },
+  {
+    "id": "song-criancas-095-se-eu-olhasse-alem-do-ceu",
+    "number": 95,
+    "title": "Se eu olhasse além do Céu",
+    "artist": "O Céu No Meu Coração · Heaven in My Heart - David Wakerley e Beci Wakerley (Hillsong)",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "Intro: ||: E | F#m7 | E/G# | A :||\n\nE                       F#m7\n  Se eu olhasse além do céu,\n              E/G#             A9\nVeria o teu sorrir, veria a tua majestade.\nE                        F#m7\n  Se eu alcançasse as estrelas,\n               E/G#                        A9\nPegava em tuas mãos, p´ra me mostrares a eternidade.\n\n       E/G#                 A9\nMas só posso, fechar meus olhos, orar,\n       E/G#             B4\nMas só posso, erguer as mãos, dizer:\n\n    E            F#m7       C#m4      F#4    B4\n||: Jesus, meu Sal - va  -  dor, és o céu no meu coração. :||",
+    "createdAt": 1710000097000
+  },
+  {
+    "id": "song-criancas-096-jesus-ama-todas-as-criancas",
+    "number": 96,
+    "title": "Jesus ama todas as crianças",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "A",
+    "category": "Crianças",
+    "cifra": "Intro: | A A7 | D A/D D |\n\n                D\nJesus ama todas as crianças;\nA                     A7\nJesus ama todas as crianças;\n D\nJesus ama todas as crianças;\nA           A7     D  A/D D\nTodas as crianças são bem-vindas!\n\nD\nUma, duas, três crianças,\n A                    A7\nQuatro, cinco, seis crianças,\nD\nSete, oito, nove crianças,\nA      A7    D  A/D  D\nDez crianças são bem-vindas!\n\nD\nDez, nove, oito crianças,\nA                    A7\nSete, seis, cinco crianças,\n D\nQuatro, três, duas crianças,\nA      A7  D  A/D  D\nUma criança é bem-vinda!",
+    "createdAt": 1710000098000
+  },
+  {
+    "id": "song-criancas-097-eu-danco-como-david",
+    "number": 97,
+    "title": "Eu danço como David",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D          G      A\n  Eu danço como David,\n                   D\nDanço p’ra meu Senhor.\n         G      A\nEu salto como David,\n          D\nEm Seu louvor!\n         G      A\nGuerreio como David,\n                  D\nCom a força de um Rei.\n        G         A\nE venço mais uma vez!\n\nD      G        A\nOh, oh, oh, oh, oh!\nCom palmas louvo ao Senhor!\n\nD      G        A\nOh, oh, oh, oh, oh!\nCom danças louvo ao Senhor!\n\nD      G        A\nOh, oh, oh, oh, oh!\nEu venço e louvo ao Senhor!\n\nD      Em       A\nOh, oh, oh, oh, oh!\n\nBm                A\n  Quem me ajuda habita em mim,\nG              F#m\n  É o Espírito do Senhor.\nBm                  A\n  Dá-me força e com Ele eu vou\n Em       F#m    G        A\nPular, dançar, lutar e vencer!",
+    "createdAt": 1710000099000
+  },
+  {
+    "id": "song-criancas-098-a-biblia",
+    "number": 98,
+    "title": "A Bíblia",
+    "artist": "(in “Grandes Aventuras”)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": " D          F#m          G          A\nA Bíblia, a Bíblia foi escrita para mim!\n D         F#m          G          A\nA Bíblia, a Bíblia me faz feliz assim!\n\nD          Em                G             A\nÉ um livro emocionante de aventuras sem igual,\nD                     Em\nFoi escrito há muito tempo atrás,\n        G        A\nAinda assim é atual!\nD               D/C\nTem histórias e profecias,\n    G/B       A\nÉ um livro genial. (É a Bíblia… )\n\nD             Em            G               A\nÉ um livro sensacional, não vais deixar de ler;\nD                 Em\nMe dá todas as respostas\n            G          A\nQuando não sei o que fazer;\n  D             D/C\nE diz que Deus me ama\n     G/B          A\nE também te ama a ti! (É a Bíblia … )",
+    "createdAt": 1710000100000
+  },
+  {
+    "id": "song-criancas-099-pedro-tiago-e-joao-num-barquinho",
+    "number": 99,
+    "title": "Pedro, Tiago E João Num Barquinho",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D\nPedro, Tiago, João no barquinho,\nA\nPedro, Tiago, João no barquinho,\nD\nPedro, Tiago, João no barquinho,\n   G      A    D\nNo Mar da Galileia.\n\n   D\nLançaram a rede mas não apanharam peixe,\n   A\nLançaram a rede mas não apanharam peixe,\n   D\nLançaram a rede mas não apanharam peixe,\n   G      A    D\nNo Mar da Galileia.\n\n  D\nO Mestre mandou lançar do outro lado,\n  A\nO Mestre mandou lançar do outro lado,\n  D\nO Mestre mandou lançar do outro lado,\n  G       A   D\nNo Mar da Galileia.\n\n  D\nPuxaram a rede cheia de peixinhos,\n  A\nPuxaram a rede cheia de peixinhos,\n  D\nPuxaram a rede cheia de peixinhos,\n   G      A    D\nNo Mar da Galileia.",
+    "createdAt": 1710000101000
+  },
+  {
+    "id": "song-criancas-100-a-biblia-e-um-livro-especial",
+    "number": 100,
+    "title": "A Bíblia é um livro especial",
+    "artist": "Ana Paula Valadão (in Diante do Trono Crianças I)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: | Bm7 A/C# D | Em D/F# G | D/A Asus A |\n\n  D           A/C#       Bm7      D/F#\nA Bíblia é um livro especial,\n   G            Dsus         Asus     A\nCom ela aprendo mais sobre Jesus;\nD         D/C\nEle é meu grande amigo,\n  G/B           Bb6\nEu quero o conhecer mais;\n   D/A         Bm7      Em       Asus/E          A    Bm7       A/C#     A\nVou ler a Bíblia,        todo di - a      mais e mais.\n\n       D                  Em\nVou entrar no meu quarto, fechar minha porta,\n     D/F#              Bm7         C Asus     A\nVamos ficar juntinhos, só eu e o Senhor,\n      Bm7       A/C#     D     Em         D/F#     G\nVou pegar minha Bí - bli-a, vou ler com ca-ri  -  nho,\n       D/A               Asus     A  (Trans: D G A)\nSei que Deus vai falar comigo.\n\n D           A/C#       Bm7      D/F#\nA Bíblia é o pão que alimenta\n  G          Dsus          Asus    A\nA fome que está em meu coração;\n D         D/C\nÉ a palavra de Jesus\nG/B          Bb6\nQue me cura e fortalece;\n   D/A          Bm7      Em       A         Bm7     A/C#     A\nVou ler a Bíblia,         todo di-a mais e mais.",
+    "createdAt": 1710000102000
+  },
+  {
+    "id": "song-criancas-101-os-livros-da-biblia",
+    "number": 101,
+    "title": "Os livros da Bíblia",
+    "artist": "Ana Paula Valadão (in Diante do Trono Crianças I)",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D                 A       D\nGénesis, Êxodo, Levítico, Números,\n                 G           A\nDeuteronómio, Josué, Juízes, Rute,\n   Em                 D      D/F#\nSamuel, Samuel, Reis, Reis e Crónicas,\nG        D/F#        A            D\nCrónicas, Esdras, Neemias, Ester, Jó;\n                          A        D\nSalmos, Provérbios, Eclesiastes, Cantares,\n                 G       A\nIsaías Jeremias e Lamentações,\nEm        D D/F#      G       D/F#      A       D\nEzequiel e Daniel,   Oséias, Joel,     Amós, Obadias;\nD                  A       D\nJonas, Miquéias, Naum, Habacuque,\n                    G          A\nSofonias, Ageu, Zacarias, Malaquias:\n   Em            D         D/F#\nOs trinta e nove livros, então,\nG        D/F# A            D       Bm7     A\nDo Velho Testamento aqui estão!\n\n   D             A       D                    G          A\nMateus, Marcos, Lucas e João; Atos, Romanos, Coríntios, Coríntios,\n           Em      D   D/F#   G     D/F#       A     D\nGálatas, Efésios , Filipenses, Colossenses, Tessalonicenses;\n   D               A        D                         G     A\nTessalonicenses, Timóteo, Timóteo, Tito, Filemom, Hebreus, Tiago,\nEm             D            D/F#    G       D/F#  A       D\nPedro, Pedro, João, João, João,     Judas, Apocalipse de João:\n   Em          D         D/F#\nOs vinte e sete livros, então,\nG      D/F#   A           D\nDo Novo Testamento aqui estão!",
+    "createdAt": 1710000103000
+  },
+  {
+    "id": "song-criancas-102-jesus-foi-crianca-como-eu",
+    "number": 102,
+    "title": "Jesus foi criança como eu",
+    "artist": "Almir Rosa",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "  E                   F#7\nJesus foi criança como eu,\n  B7                   E\nJesus foi criança como eu.\n            E7      A             A6\nEle as criancinhas muito compreendeu\n    E     C#m     F#7    B7  E   A/E    E\nPorque foi cri-an-ci-nha como eu.\n\n   E                       A6  B\n1.Quando certa vez foi passear,\nB7                    E F#m7       B7\nNo caminho Ele se perdeu.\n      E          E7    A           A6\nSeus pais o procuraram sem poder achar\n    E C#m    F#7   B7   E  A/E     E\nPorque foi criança como eu.\n\n   E                            A6   B\n2.Quando as mães quiseram ver Jesus,\nB7                       E  F#m7       B7\nSeus filhinhos Ele abençoou;\n        E        E7      A           A6\n “Que venham as crianças”, Ele respondeu\n    E C#m     F#7  B7   E  A/E     E\nPorque foi criança como eu.\n\n   E                      A6  B\n3.Aos que O seguiram ensinou:\n B7                          E    F#m7       B7\n “Se alguém quiser chegar ao Céu,\n     E        E7    A         A6\nTal qual uma criança deve se tornar,”\n\n   E   C#m    F#7  B7   E   A/E     E\nPorque foi criança como eu.",
+    "createdAt": 1710000104000
+  },
+  {
+    "id": "song-criancas-103-deus-fez-os-peixinhos",
+    "number": 103,
+    "title": "Deus fez os peixinhos",
+    "artist": "Génesis 1:20",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": " D                    A7\nDeus fez os peixinhos para o rio e o mar;\n                                  D\nDeus fez os peixinhos, pô-los a nadar;\n                D7     G\nQuando brincam n’água até ao fundo vão ;\n D                   A7                 D\nBrincam com cuidado, vejam só como eles são!\n\nUm é pequenino, outro é grandalhão;\n\nUm é bem magrinho, outro é gorduchão;\n\nQuando brincam n’água até ao fundo vão ;\n\nBrincam com cuidado, vejam só como eles são!",
+    "createdAt": 1710000105000
+  },
+  {
+    "id": "song-criancas-104-meu-barco-e-pequeno-d",
+    "number": 104,
+    "title": "Meu barco é pequeno (D)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "     D                 G\nMeu barco é pequeno e grande é o mar,\n  A7                 D\nJesus segura a minha mão.\n   D               G\nEle é meu piloto e tudo vai bem\n   A7               D  A7    D\nNa viagem p’ra Jerusalém.\n\n    D                   G\nMeu barco sem Cristo ao Céu não irá,\n   A7              D\nNas águas se afundará;\n      D                 G\nMas quando Jesus, o meu barco guiar,\n  A7               D   A7    D\nO Céu poderei alcançar.",
+    "createdAt": 1710000106000
+  },
+  {
+    "id": "song-criancas-104-meu-barco-e-pequeno-c",
+    "number": 104,
+    "title": "Meu barco é pequeno (C)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "    C                 F\nMeu barco é pequeno e grande é o mar,\n  G7                 C\nJesus segura a minha mão.\n   C               F\nEle é meu piloto e tudo vai bem\n   G7              C   G7    C\nNa viagem p’ra Jerusalém.\n\n    C                   F\nMeu barco sem Cristo ao Céu não irá,\n   G7              C\nNas águas se afundará;\n      C                 F\nMas quando Jesus, o meu barco guiar,\n  G7               C   G7    C\nO Céu poderei alcançar.",
+    "createdAt": 1710000107000
+  },
+  {
+    "id": "song-criancas-105-forte-e-deus",
+    "number": 105,
+    "title": "Forte é Deus",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "         C           Em\nForte é Deus, meu Senhor,\n       Am        Em\nTerno, sim, seu amor,\n    G      G7   C\nEle não me deixará!\n\n         C           Em\nRei dos reis, Criador,\n     Am         Em\nRocha é, bom pastor,\n   G       G7   C\nEle não me deixará!\n\nF C\nMesmo quando sou provado,\nF C G\nNão me falta o seu cuidado, não!\n\n         C          Em\nForte é Deus, me Senhor,\n       Am         Em\nTerno, sim, seu amor,\n    G       G7  C\nEle não me deixará!\nG C\nJAMAIS!",
+    "createdAt": 1710000108000
+  },
+  {
+    "id": "song-criancas-106-mais-que-tudo",
+    "number": 106,
+    "title": "Mais que tudo",
+    "artist": "Don Moen",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "F/G           C    Dm7\n     Mais que tudo,\n         C/E  Am9\nMais que tudo,\n        Dm7   Gsus\nAmo-te, Jesus,\n          C   Dm7\nMais que tudo.\n\n(Subida de tom):\n\nG/A           D    Em7\n     Mais que tudo,\n         D/F#     Bm9\nMais que tudo,\n        Em7  Asus\nAmo-te, Jesus,\n         D   (Tag: Bm)\nMais que tudo.",
+    "createdAt": 1710000109000
+  },
+  {
+    "id": "song-criancas-107-crianca-e-importante",
+    "number": 107,
+    "title": "Criança é importante",
+    "artist": "Daniel Solyon Jr",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "          C  G/B   Am7   C/G\nCriança é im-por - tan - te,\nF      F#º7  G\nPois Jesus falou\n        G    G/B   Am7      C/G\nQue dos pe - que  -  ni  -  nos\nF   G         C C7\nÉ o reino dos Céus.\n\n   F       G      Em  Am7\nEu posso estar em ora-ção\n      F    G   C  C7\nE a família ajudar;\n     F    G    Em7    A7\nNa igreja posso trabalhar\n Dm7          G           C\nE Cristo, aos outros, mostrar.\n\nF/G            C G/B   Am7    C/G\n     Por isso, im-por - tan - te\nF      D7   G\nEu sou para Deus.\n      C   G/B   Am7     C/G\nNão importa o tama    -  nho\n     F      G     C\nPara ser um servo Seu.\n\n F   G           Em7      Am7\nNeste mundo in  -  tei  -  ro\n      F     G   Em7     Am7\nHá crianças como eu,\nF      E       E/G# Am7\nSempre prontas a ser-vir,\n     Dm7       G    C\nPois Jesus nos escolheu.",
+    "createdAt": 1710000110000
+  },
+  {
+    "id": "song-criancas-108-a-biblia-e",
+    "number": 108,
+    "title": "A Bíblia é…",
+    "artist": "Autor Desconhecido (Publicações Graça e Verdade)",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "  G             C               D7          G\nA Bíblia é a Palavra de Deus, o livro incomparável!\n  G               C                 D7           G\nSó ela mostra o caminho do céu. Que livro incomparável!\n\n G             C               D7            G\nA Bíblia é a Palavra de Deus, o livro incomparável!\n  G                C                  D7           G\nAprendo, nela, a vontade de Deus. Que livro incomparável!\n\n  G             C               D7            G\nPerdido fui à Palavra de Deus, o livro incomparável!\n  G              C                 D7            G\nAchei Jesus na Palavra de Deus. Que livro incomparável!\n\n   G                  C               D7            G\nEu leio a Bíblia, a Palavra de Deus, o livro incomparável!\n  G                 C                  D7            G\nEu amo a Bíblia, a Palavra de Deus. Que livro incomparável!",
+    "createdAt": 1710000111000
+  },
+  {
+    "id": "song-criancas-109-boas-vindas",
+    "number": 109,
+    "title": "Boas vindas",
+    "artist": "N. R. Schaper",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "E  A/E  E       B7       E4\nBo - as  vin-das há, bem-vindos são,\nE/G#   B     B7     E\nBo - as vindas p’ra vocês;\n         E    A/E   E       B7      E4\nAleluia! Bo - as    vin-das há, bem-vindos sim,\nE/G#     B     B4   B7  E\nVenham, venham, outra   vez!",
+    "createdAt": 1710000112000
+  },
+  {
+    "id": "song-criancas-110-o-telemovel-do-ceu",
+    "number": 110,
+    "title": "O Telemóvel do Céu",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "E                          B7\nO telemóvel do céu é a oração,\n                                    E\nO telemóvel do céu é de joelhos no chão,\n\nLigue uma vez,\n\nDuas ou três…\n\nCristo vai atender,\n\nCristo vai atender,\n\nVocê vai ver!",
+    "createdAt": 1710000113000
+  },
+  {
+    "id": "song-criancas-111-a-porta-e-uma-so",
+    "number": 111,
+    "title": "A Porta é uma só",
+    "artist": "E. Leslie e Albert Hardy · (APEC, Cânticos de Salvação para Crianças, Vol. I)",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "E                      B    E   B7 E\nA porta é uma só, porém dois la-dos há:\nA        E       A#º  F#7       B7\nDentro e fora, e tu,   on-de estás?\nE                       B   E   B7 E\nA porta é uma só, porém dois la-dos há:\nA           E   F#7   B64    B6 B7  E\nEu já estou dentro, e  tu,   on-de estás?",
+    "createdAt": 1710000114000
+  },
+  {
+    "id": "song-criancas-112-me-me-me-faz-a-ovelha",
+    "number": 112,
+    "title": "Mé mé mé faz a ovelha",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Intro: C  G7  C\n\nRefrão:\nC                      G7\nMé mé mé faz a ovelha\n                        C\nMé mé mé Deus a criou\nC                      F\nMé mé mé faz a ovelha\n       C          G7          C\nEla é obra do nosso criador\n       F          G7          C\nEla é obra do nosso criador\n\nEstrofe:\nF                          C\nDeus fez a ovelha toda branquinha\n       G7                C    C7\nO seu pêlo é feito de lã\nF                        C\nCom a lã fazem meus casacos\n       G7                     C    C7\nE do frio já posso me abrigar\n       F          G7          C\nE do frio já posso me abrigar\n\nRefrão:\nC                      G7\nMé mé mé faz a ovelha\n                        C\nMé mé mé Deus a criou\nC                      F\nMé mé mé faz a ovelha\n       C          G7          C\nEla é obra do nosso criador\n       F          G7          C\nEla é obra do nosso criador",
+    "createdAt": 1710000115000
+  },
+  {
+    "id": "song-criancas-113-tudo-deus-criou",
+    "number": 113,
+    "title": "Tudo Deus criou",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: D  G  A7  D\n\nEstrofe 1:\nD                       A7\nDeus criou os animais\n                  D\nOs animais do campo\n                  G\nOs animais do mar\n        D          A7            D    D7\nOs animais que voam lá no céu\n\nRefrão:\n     G                 D\nSim Deus criou, tudo Deus criou\n     Em       A7       D       D7\nSim Deus criou, tudo Ele criou\n   G          A7       F#m         Bm\nA terra, o céu e o mar e tudo o que existe\n   Em        A7     D\nO Papá do céu criou\n\nEstrofe 2:\nD                           A7\nDeus criou as lindas flores\n                   D\nE a erva dos campos\n                            G\nDeus criou as lindas árvores\n     D          A7         D    D7\nQue dão frutos saborosos\n\nRefrão:\n     G                 D\nSim Deus criou, tudo Deus criou\n     Em       A7       D       D7\nSim Deus criou, tudo Ele criou\n   G          A7       F#m         Bm\nA terra, o céu e o mar e tudo o que existe\n   Em        A7     D\nO Papá do céu criou",
+    "createdAt": 1710000116000
+  },
+  {
+    "id": "song-criancas-114-deus-criou-os-passarinhos",
+    "number": 114,
+    "title": "Deus criou os passarinhos",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "Intro: G  D7  G\n\nEstrofe:\nG                          D7\nDeus criou os passarinhos\n                   G\nBem alegres a cantar\nG                          C\nDeus criou os passarinhos\n      G          D7       G    G7\nE os pôs no céu a voar\n\nRefrão:\n         C                      G\nBate as asas e voa o passarinho!\n         D7                     G    G7\nBate as asas e voa o passarinho!\n     C              G            Em\nEle canta lá no céu e bate as asas\n          Am       D7       G\nPara ao papá do Céu louvar!\n\nEstrofe:\nG                          D7\nDeus criou os passarinhos\n                   G\nBem alegres a cantar\nG                          C\nDeus criou os passarinhos\n      G          D7       G    G7\nE os pôs no céu a voar\n\nRefrão:\n         C                      G\nBate as asas e voa o passarinho!\n         D7                     G    G7\nBate as asas e voa o passarinho!\n     C              G            Em\nEle canta lá no céu e bate as asas\n          Am       D7       G\nPara ao papá do Céu louvar!\n          C        D7       G\nPara ao papá do céu louvar",
+    "createdAt": 1710000117000
+  },
+  {
+    "id": "song-criancas-115-deus-fez-a-vaquinha",
+    "number": 115,
+    "title": "Deus fez a vaquinha",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Intro: C  F  G7  C\n\nC                        F              C\nDeus fez a vaquinha ela mora lá no campo\n         Dm              G7        C\nCome a ervinha e faz mú mú mú\n       F                      C          Am\nAi eu gosto tanto da minha vaquinha\n         Dm       G7        C\nEla dá leitinho para eu beber\n\nC                        F              C\nDeus fez a vaquinha ela mora lá no campo\n         Dm              G7        C\nCome a ervinha e faz mú mú mú\n       F                      C          Am\nAi eu gosto tanto da minha vaquinha\n         Dm       G7        C\nEla dá leitinho para eu beber\n\nC                        F              C\nDeus fez a vaquinha ela mora lá no campo\n         Dm              G7        C\nCome a ervinha e faz mú mú mú\n       F                      C          Am\nAi eu gosto tanto da minha vaquinha\n         Dm       G7        C\nEla dá leitinho para eu beber\n         F         G7    C\nDeus fez a vaquinha: mú!",
+    "createdAt": 1710000118000
+  },
+  {
+    "id": "song-criancas-116-deus-me-criou",
+    "number": 116,
+    "title": "Deus me criou",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: D  G  A7  D\n\nEstrofe 1:\nD                        G                D\nDeus criou meus olhos minha boca e meu nariz (palmas)\nD                        Em               A7\nDeus criou meus olhos minha boca e meu nariz (palmas)\n     G              A7       D     Bm\nSim com Jesus eu sou feliz\n     Em             A7       D\nSim com Jesus eu sou feliz\n\nEstrofe 2:\nD                        G                D\nDeus criou minhas mãos joelhos e meus pés (hey hey)\nD                        Em               A7\nDeus criou minhas mãos joelhos e meus pés (hey hey)\n     G               A7          D     Bm\nCom Jesus mais forte tu és\n     Em              A7          D\nCom Jesus mais forte tu és\n\nEstrofe 1:\nD                        G                D\nDeus criou meus olhos minha boca e meu nariz (palmas)\nD                        Em               A7\nDeus criou meus olhos minha boca e meu nariz (palmas)\n     G              A7       D     Bm\nSim com Jesus eu sou feliz\n     Em             A7       D\nSim com Jesus eu sou feliz\n\nEstrofe 2:\nD                        G                D\nDeus criou minhas mãos joelhos e meus pés (hey hey)\nD                        Em               A7\nDeus criou minhas mãos joelhos e meus pés (hey hey)\n     G               A7          D     Bm\nCom Jesus mais forte tu és\n     Em              A7          D\nCom Jesus mais forte tu és",
+    "createdAt": 1710000119000
+  },
+  {
+    "id": "song-criancas-117-a-carga-e-pesada-para-levar-e",
+    "number": 117,
+    "title": "A carga é pesada para levar (E)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "Intro: E  A  F#m  B  E  A  E\n\n  E              A\nA carga é pesada para levar,\n  F#m            B\nA carga é pesada para levar;\n G#         C#m      A\nE a montanha eu subirei,\n  E/B  B         E      A  E\nSe tu orares por mim.\n\n   E             A\nEu oro por ti, tu oras por mim,\n  F#m            B\nEu oro por ti, tu oras por mim;\n G#         C#m      A\nE a montanha eu subirei,\n  E/B   B         E  A   E\nSe tu  orares por mim",
+    "createdAt": 1710000120000
+  },
+  {
+    "id": "song-criancas-117-a-carga-e-pesada-para-levar-f",
+    "number": 117,
+    "title": "A carga é pesada para levar (F)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "F",
+    "category": "Crianças",
+    "cifra": "Intro: F  A#  Gm  C  F  A#  F\n\n  F              A#\nA carga é pesada para levar,\n  Gm            C\nA carga é pesada para levar;\n A          Dm      A#\nE a montanha eu subirei,\n  F/C   C         F  A#     F\nSe tu  orares por mim.\n\n   F             A#\nEu oro por ti, tu oras por mim,\n  Gm              C\nEu oro por ti, tu oras por mim;\n A           Dm     A#\nE a montanha eu subirei,\n  F/C   C         F A#     F\nSe tu  orares por mim.",
+    "createdAt": 1710000121000
+  },
+  {
+    "id": "song-criancas-118-vou-anunciar",
+    "number": 118,
+    "title": "Vou anunciar",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "C\nVou, vou, vou contar; vou anunciar:\nC          Am              G7         C\nNosso mundo Deus criou por muito nos amar!\nC\nVou, vou, vou contar; vou anunciar:\n             Am            G7             C\nLá na cruz Jesus morreu e a todos Quer salvar!",
+    "createdAt": 1710000122000
+  },
+  {
+    "id": "song-criancas-119-pra-frente-e-para-tras",
+    "number": 119,
+    "title": "Pra frente e para trás",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": " C       Bm7        C             G\nPra frente um peso, pra trás, outro passo\nC        G        A7               D\n      Aprendo a brincar como muita animação\nD7   G          Bm7        C              G\n      Pra frente um passo, pra trás, outro passo\nC    G              Am           D7   G\n      Aprendo a brincar como muita animação\n\nPra esquerda um passo, pra direita outro passo\n\nAprendo a brincar com animação   2X\n\nPra cima eu pulo, pra baixo eu abaixo\n\nAprendo a brincar com animação   2X",
+    "createdAt": 1710000123000
+  },
+  {
+    "id": "song-criancas-120-tenho-alegria",
+    "number": 120,
+    "title": "Tenho alegria",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "    D*                  G*\n||: Tenho alegria dentro do meu coração\nA*                   D*\nPela salvação que recebi do meu Senhor\nD*           G*                   A               D\nHoje tenho paz tenho comunhão por Aquele que me salvou\nD     G     A*                    D*\nGozo, gozo, pela salvação que recebi do meu Senhor\nD     G         A               D\nGozo, gozo, por Aquele que me salvou :||\n\n* - Um toque em cada nota",
+    "createdAt": 1710000124000
+  },
+  {
+    "id": "song-criancas-121-eu-vou-saltar-g",
+    "number": 121,
+    "title": "Eu vou saltar (G)",
+    "artist": "Fabularinário Doug Horley",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "          G\nEu vou saltar sem parar,\n       D\nMuitas voltas eu vou dar,\n       C      D   G\nVou louvar-Te para sempre\n                     D\nTambém vou gritar até rouco ficar,\n       C      D    G\nVou louvar-Te para sempre\n\n       D            C           G\nVou correr pra Ele e nunca vou parar\n   D           C            G\nEu vou seguir Jesus até desmaiar\n\nD      C                   Em\nPosso fazer tudo pois Ele está em mim\nD\nQuando tu tiveres muito\nC                         D\nQuando tu tiveres pouco o quê? Sê feliz!",
+    "createdAt": 1710000125000
+  },
+  {
+    "id": "song-criancas-121-eu-vou-saltar-e",
+    "number": 121,
+    "title": "Eu vou saltar (E)",
+    "artist": "Fabularinário Doug Horley",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "          E\nEu vou saltar sem parar,\n       B\nMuitas voltas eu vou dar,\n       A     B    E\nVou louvar-Te para sempre\n                     B\nTambém vou gritar até rouco ficar,\n       A      B    E\nVou louvar-Te para sempre\n\n       B            A           E\nVou correr pra Ele e nunca vou parar\n   B           A            E\nEu vou seguir Jesus até desmaiar\n\nB                    A             C#m\nPosso fazer tudo pois Ele está em mim\nB\nQuando tu tiveres muito\nA                         B\nQuando tu tiveres pouco o quê? Sê feliz!",
+    "createdAt": 1710000126000
+  },
+  {
+    "id": "song-criancas-122-um-bom-amigo-e",
+    "number": 122,
+    "title": "Um bom amigo é",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "G          C6   G        C               G\nUm bom amigo é! Sempre quando precisares,\n     C            G             C6           G\nEle vai-Te ajudar, tem muito amor pra dar.\n         C            G          C          G    C         D      G\nCaso alguém te abandonar do teu lado vai ficar.  Um bom amigo é\nC          G            D     C              D\n     Mesmo se tu pecares     podes confiar\n    G           D        C           D       G\nJesus vai perdoar pois Ele um bom amigo é!",
+    "createdAt": 1710000127000
+  },
+  {
+    "id": "song-criancas-123-seu-nome-e-maravilhoso",
+    "number": 123,
+    "title": "Seu nome é Maravilhoso",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "E",
+    "category": "Crianças",
+    "cifra": "  E      B7       E          B7            E     B7   A              E\nSeu nome é Maravilhoso, Seu nome é Maravilhoso, Seu nome é Maravilhoso,\n\n               B7               E\nPai da Eternidade, Príncipe da Paz,\n\nSeu nome é Conselheiro,\n\nPai da Eternidade, Príncipe da Paz,\n\nSeu nome é Deus Forte – 3X\n\nPai da Eternidade, Príncipe da Paz,\n\nIrei segui-Lo para sempre pois Ele dá felicidade\n\nSeu nome é Maravilhoso,\n\nPai da Eternidade,\n\nPríncipe da Paz.",
+    "createdAt": 1710000128000
+  },
+  {
+    "id": "song-criancas-124-louva-canta-e-ora",
+    "number": 124,
+    "title": "Louva, canta e ora",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "G      C                        G\nLouva, louva, louva bem cedinho, louva ao meio-dia.\n       B   C   G              D7     G\nLouva, louva, louva quando o sol se for.\n\nCanta, canta, canta bem cedinho, canto ao meio-dia.\n\nCanta, canta, canta quando o sol se for.\n\nOra, ora, ora bem cedinho, ora ao meio-dia.\n\nOra, ora, ora quando o sol se for.",
+    "createdAt": 1710000129000
+  },
+  {
+    "id": "song-criancas-125-as-criancinhas",
+    "number": 125,
+    "title": "Às criancinhas",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": "       G                 Am      A\nÀs criancinhas de toda a nação\n     D7                                  G\nSeja África, Portugal, China ou Japão.\n                   Am        A\nJesus ama e Quer Boas Novas dar\n       D          D7              G\nA elas pois vamos de Cristo falar.",
+    "createdAt": 1710000130000
+  },
+  {
+    "id": "song-criancas-126-bom-dia",
+    "number": 126,
+    "title": "Bom dia",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D             A                             D\nBom dia com alegria, desejo para ti um belo dia\n                A                                    D\nAndando, na companhia, do nosso Salvador que nos quer bem\nA        D\nVai tudo bem!",
+    "createdAt": 1710000131000
+  },
+  {
+    "id": "song-criancas-127-ao-cantar",
+    "number": 127,
+    "title": "Ao cantar",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Am   C                Em            Am\nAo cantar, ao brincar, ao dormir, ao orar\n   G7      Em   G  C\nDeus nos dá satisfação\nAm    C                  Em          Am\nAo comer, ao crescer, ao nadar, ao remar,\n  G7        Em   G  C\nDeus nos dá satisfação\n\nF                 C     Fm               C    G\nDe Jesus nós aprendemos, cara feia nós temos não.\n  Am   C                   Em         Am\nAo cantar, ao brincar, ao dormir ao orar\nG7          Em   G  C\nDeus nos dá satisfação, pois não!\n\nContra-canto:\n\nAlegria no acampamento, sim!\n\nNós temos alegria no acampamento, sim.\n\nDe Jesus nós aprendemos, cara feia nós não temos não.",
+    "createdAt": 1710000132000
+  },
+  {
+    "id": "song-criancas-128-brilhando",
+    "number": 128,
+    "title": "Brilhando",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Intro: D  A\n\n            D                                A\nEstá tudo escuro, mas eu vou chegar pra iluminar   x3\n          G                   A\nEu tenho a luz de Deus vou brilhar\n\nD                            A\nMais que lamparina, mais que lâmpada\n                D\nQue vela, que lanterna\n              A\nIlumino muito mais\nD                      A\nSou a Luz do mundo e o sal desta terra\n      D                          A\nJesus disse que eu sou, então eu vou brilhar.\n\nG                       D/F#\nResgatar quem está no escuro e trazer\n G         A\nAqui para a luz\n         G\nCom as armas preparadas\n       D/F#\nEu não tenho medo não\nG                                 A\nJesus me ilumina em qualquer escuridão\n\n(Repetir: Está tudo escuro….)\n\n    D                       G\n||: Brilhando, Brilhando, Brilhando o amor :||\nD                       A\nBrilhando, Brilhando, Brilhando o amor.\n\n            D                            A\nEstá tudo escuro, mas eu vou chegar pra iluminar  x3\n           G\nEu tenho a luz de Deus\n\nEu tenho a luz de Deus\n                               A\nEu tenho a luz de Deus vou brilhar\n\nBrilhar!",
+    "createdAt": 1710000133000
+  },
+  {
+    "id": "song-criancas-129-ja-chegou-o-natal",
+    "number": 129,
+    "title": "Já chegou o Natal",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Intro: C  F\n\nC     G      C\nJá chegou o Natal\nF                G\nHoje há festa no céu\nC\nAnjos tocando\n   F\nTrombetas soando\nG            C\nJá chegou o Natal.\n\nAm               Em\nTribos, povos e raças louvai\nF             Am\nCelebrai-o também\nC        G          F\nCristo, Senhor, Salvador das nações\nG                C\nHoje nasceu em Belém.\n\nD         A       D\nOs sinos ecoam no céu\nG                    A\nO anjo proclama em Belém\nD                   G\nGlória a Deus nas alturas dos céu\nA                   D\nE paz aos homens de bem\n\nG  D    Bm.       F#m        G    D\nÉ Natal,    é     Natal,       é Natal\nG        A        D\nCristo nasceu em Belém\n\nD     A      D\nJá chegou o Natal\nG                A\nHoje há festa no céu\nD\nAnjos tocando\n   G\nTrombetas soando\nA            D\nJá chegou o Natal.",
+    "createdAt": 1710000134000
+  },
+  {
+    "id": "song-criancas-130-e-bom-e-bom-demais",
+    "number": 130,
+    "title": "É Bom! É bom demais!",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "G",
+    "category": "Crianças",
+    "cifra": " G\nÉ bom!\n        C\nÉ bom demais!\n        D\nÉ muito bom\n               G\nTer Jesus no coração.\n\n          C\nAndar com Ele\n         G\nJuntinho Dele\n        D                   G\nÉ muito bom ter Jesus no coração",
+    "createdAt": 1710000135000
+  },
+  {
+    "id": "song-criancas-131-meu-livro-companheiro",
+    "number": 131,
+    "title": "Meu livro companheiro",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Intro: C  G  C\n\nC          G                     C\nBíblia, meu livro, meu livro companheiro\n    F         C            G         C\nMeu livro companheiro é a palavra de Deus\n\nC      G                  C\nEla me fala, me fala cada dia\n   F        C       G        C\nMe fala cada dia do meu Salvador\n\nC       G                      C\nEla me ensina, me ensina com certeza\n     F          C        G        C\nMe ensina com certeza o caminho do céu\n\nC       G                    C\nNela eu aprendo, aprendo cada dia\n F            C       G         C\nAprendo cada a dia a andar com Jesus",
+    "createdAt": 1710000136000
+  },
+  {
+    "id": "song-criancas-132-o-coracao-do-menino-e-da-menina",
+    "number": 132,
+    "title": "O coração do menino e da menina",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "      D                    A\nO coração do menino e da menina\n                    D\nQue tem Jesus, é diferente\n     G\nNão é triste\n       D\nNem zangado,\n   A\nIrritado,\n       D\nOu assustado.\n\n        A             D\nMas é feliz e sorridente,\n        A             D\nMas é feliz e sorridente,\n        A             D\nMas é feliz e sorridente!",
+    "createdAt": 1710000137000
+  },
+  {
+    "id": "song-criancas-133-sementinha-eu-vou-crescer-c",
+    "number": 133,
+    "title": "Sementinha – eu vou crescer (C)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "Uma sementinha escondida no chão\nDormia um sono profundo e bom\nCaiu a chuva, o sol brilhou\nE a sementinha mexeu, mexeu e acordou\nSaiu de casa, era muito apertada\nEstendeu seus galhos e ficou ajeitada\nDepois de cresceu, cresceu e trepou no varal\nE cheiinha de flores alegrou o quintal\n\nC\nEu vou crescer, eu vou crescer\n\nCrescer, crescer, crescer\nG\nCrescer para Jesus\n  C                    F\nE quando eu estiver, deste tamanho assim\n  C          F              G       C\nEu quero trabalhar pra meu Jesus sem fim.\n\nC\nTrá –lá –lá – lá\nC\nTrá –lá –lá – lá\n\nCrescer, crescer, crescer\n   G\nCrescer para Jesus\n  C                    F\nE quando eu estiver, deste tamanho assim\n  C          F              G       C\nEu quero trabalhar pra meu Jesus sem fim.",
+    "createdAt": 1710000138000
+  },
+  {
+    "id": "song-criancas-133-sementinha-eu-vou-crescer-d",
+    "number": 133,
+    "title": "Sementinha – eu vou crescer (D)",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "Uma sementinha escondida no chão\nDormia um sono profundo e bom\nCaiu a chuva, o sol brilhou\nE a sementinha mexeu, mexeu e acordou\nSaiu de casa, era muito apertada\nEstendeu seus galhos e ficou ajeitada\nDepois de cresceu, cresceu e trepou no varal\nE cheiinha de flores alegrou o quintal\n\n  D\nEu vou crescer, eu vou crescer\n\nCrescer, crescer, crescer\n               A\nCrescer para Jesus\n  D                  D7             G\nE quando eu estiver, deste tamanho assim\n  D          G              A       D\nEu quero trabalhar pra meu Jesus sem fim.\n\nTrá –lá –lá – lá\n\nTrá –lá –lá – lá\n\nCrescer, crescer, crescer\n   A\nCrescer para Jesus\n  D                                 G\nE quando eu estiver, deste tamanho assim\n  D          G              A       D\nEu quero trabalhar pra meu Jesus sem fim.",
+    "createdAt": 1710000139000
+  },
+  {
+    "id": "song-criancas-134-vem-ca",
+    "number": 134,
+    "title": "Vem cá!",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "C",
+    "category": "Crianças",
+    "cifra": "   C        G\nVem cá! Vem cá!\n    F        G              C\nVem cá que Jesus quer-te ensinar\n   C               G\nVem cá menino! Vem cá, menina!\n  F            G               C\nEscuta o que Jesus quer-te ensinar.\n\n    Cm         Fm         G         C\nEscolher, conhecer, agradecer, anunciar\n    C         Dm           G                C\nRepartir, confiar para quem quer aprender a amar\n    C         Dm          G         C\nEscolher, conhecer, agradecer, anunciar\n     C        Dm              G               C\nRepartir, confiar, tudo isto Jesus quer-te ensinar\n\n   C        G\nVem cá! Vem cá!\n    F        G              C\nVem cá que Jesus quer-te ensinar\n   C               G\nVem cá menino! Vem cá, menina!\n  F            G               C\nEscuta o que Jesus quer-te ensinar.\n\nVEM!",
+    "createdAt": 1710000140000
+  },
+  {
+    "id": "song-criancas-135-cuidado",
+    "number": 135,
+    "title": "Cuidado",
+    "artist": "Coletânea Crianças IEBH",
+    "originalKey": "D",
+    "category": "Crianças",
+    "cifra": "D                      A\nCuidado olhinho o que vês,\n                         D      D7\nCuidado olhinho o que vês,\n    G                     D          Bm\nO nosso Criador está a olhar para ti,\n   G         A           D\nCuidado olhinho o que vês.\n\nCuidado boquinha com o que dizes,\n\nCuidado boquinha com o que dizes,\n\nO nosso Criador está a olhar para ti,\n\nCuidado boquinha com o que dizes\n\nCuidado mãozinha no que pegas,\n\nCuidado mãozinha no que pegas,\n\nO nosso Criador está a olhar para ti,\n\nCuidado mãozinha no que pegas,\n\nCuidado pezinho onde pisas,\n\nCuidado pezinho onde pisas,\n\nO nosso Criador está a olhar para ti,\n\nCuidado pezinho onde pisas\n\nCuidado olho, boca mão e pé\n\nCuidado olho, boca mão e pé\n\nO nosso Criador está a olhar para ti,\n\nCuidado olho, boca mão e pé.",
+    "createdAt": 1710000141000
+  }
+];
