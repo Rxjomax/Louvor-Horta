@@ -56,10 +56,10 @@ export function SongFormView({
     const nextErrors: Record<string, string> = {};
 
     if (!title.trim()) {
-      nextErrors.title = 'Informe o nome da música.';
+      nextErrors.title = 'Indique o nome da música.';
     }
     if (!artist.trim()) {
-      nextErrors.artist = 'Informe o artista ou ministério.';
+      nextErrors.artist = 'Indique o intérprete ou grupo.';
     }
     const trimmedBpm = bpm.trim();
     const parsedBpm = trimmedBpm ? Number(trimmedBpm) : undefined;
@@ -67,13 +67,13 @@ export function SongFormView({
       parsedBpm !== undefined &&
       (!Number.isFinite(parsedBpm) || parsedBpm < 30 || parsedBpm > 260)
     ) {
-      nextErrors.bpm = 'Informe um BPM válido entre 30 e 260 (ou deixe em branco).';
+      nextErrors.bpm = 'Indique um BPM válido entre 30 e 260 (ou deixe em branco).';
     }
     if (!cifra.trim()) {
       nextErrors.cifra = 'Cole a letra com cifra para que os músicos possam tocar.';
     }
     if (youtubeUrl.trim() && !/^https?:\/\/.+/i.test(youtubeUrl.trim())) {
-      nextErrors.youtubeUrl = 'O link deve começar com http:// ou https://';
+      nextErrors.youtubeUrl = 'A ligação deve começar por http:// ou https://';
     }
 
     if (Object.keys(nextErrors).length > 0) {
@@ -110,7 +110,7 @@ export function SongFormView({
             {editingSong ? 'Editar Música' : 'Adicionar Música'}
           </h1>
           <p className="mt-1 text-sm sm:text-base text-slate-600 dark:text-slate-400">
-            Salva automaticamente no repertório local deste dispositivo.
+            Guardada automaticamente no repertório partilhado do grupo.
           </p>
         </div>
 
@@ -163,7 +163,7 @@ export function SongFormView({
                 htmlFor="song-artist"
                 className="block text-sm font-semibold text-slate-800 dark:text-slate-200"
               >
-                Artista / Ministério *
+                Intérprete / Grupo *
               </label>
               <input
                 id="song-artist"
@@ -263,7 +263,7 @@ export function SongFormView({
               htmlFor="song-youtube"
               className="block text-sm font-semibold text-slate-800 dark:text-slate-200"
             >
-              Link do YouTube / Referência (opcional)
+              Ligação do YouTube / Referência (opcional)
             </label>
             <input
               id="song-youtube"
@@ -293,7 +293,7 @@ export function SongFormView({
               Letra com Cifra *
             </label>
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
-              Coloque os acordes em uma linha própria acima da letra. Use [Verso], [Refrão] ou [Ponte] para marcar seções.
+              Coloque os acordes numa linha própria acima da letra. Utilize [Verso], [Refrão] ou [Ponte] para identificar as secções.
             </p>
             <textarea
               id="song-cifra"
@@ -324,7 +324,7 @@ export function SongFormView({
                   className="min-h-[46px] px-4 py-2 rounded-xl border border-rose-200 dark:border-rose-900/60 text-rose-700 dark:text-rose-400 text-sm font-semibold inline-flex items-center justify-center gap-2 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-colors duration-150"
                 >
                   <Trash2 className="w-4 h-4" aria-hidden="true" />
-                  <span>Excluir Música</span>
+                  <span>Eliminar Música</span>
                 </button>
               ) : (
                 <div className="flex items-center gap-2">
@@ -334,7 +334,7 @@ export function SongFormView({
                     className="min-h-[46px] px-4 py-2 rounded-xl bg-rose-600 text-white text-sm font-semibold inline-flex items-center gap-1.5 hover:bg-rose-700"
                   >
                     <Check className="w-4 h-4" aria-hidden="true" />
-                    <span>Confirmar exclusão</span>
+                    <span>Confirmar eliminação</span>
                   </button>
                   <button
                     type="button"
@@ -354,7 +354,7 @@ export function SongFormView({
               className="min-h-[48px] px-6 py-2.5 rounded-xl bg-[#B85414] dark:bg-amber-500 text-white dark:text-slate-950 text-sm font-semibold inline-flex items-center justify-center gap-2 hover:opacity-95 transition-opacity duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-400"
             >
               <Save className="w-4 h-4 shrink-0" aria-hidden="true" />
-              <span>{editingSong ? 'Salvar Alterações' : 'Salvar Música no Repertório'}</span>
+              <span>{editingSong ? 'Guardar Alterações' : 'Guardar Música no Repertório'}</span>
             </button>
           </div>
         </form>
@@ -368,13 +368,13 @@ export function SongFormView({
             Pré-visualização de Alinhamento
           </h2>
           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-            Linhas reconhecidas como acordes ficam destacadas em destaque para conferência instantânea.
+            As linhas reconhecidas como acordes surgem realçadas para verificação imediata.
           </p>
 
           <div className="mt-3 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0F172A] min-h-[220px] overflow-x-auto font-cifra text-xs sm:text-sm leading-relaxed">
             {previewLines.length === 0 ? (
               <p className="text-slate-400 dark:text-slate-500 font-sans text-sm">
-                Digite ou cole a cifra ao lado para visualizar o destaque dos acordes.
+                Escreva ou cole a cifra ao lado para pré-visualizar o realce dos acordes.
               </p>
             ) : (
               previewLines.map((line, i) => {

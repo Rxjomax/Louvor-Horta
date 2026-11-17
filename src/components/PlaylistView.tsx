@@ -159,7 +159,7 @@ export function PlaylistView({
             Culto do Dia
           </h1>
           <p className="mt-1 text-sm sm:text-base text-slate-600 dark:text-slate-400">
-            Organize a ordem do louvor, sorteie um repertório equilibrado e envie no grupo da equipe.
+            Organize a ordem do louvor, sorteie um repertório equilibrado e partilhe no grupo da equipa.
           </p>
         </div>
 
@@ -222,10 +222,10 @@ export function PlaylistView({
                 aria-hidden="true"
               />
               <p className="mt-3 text-base font-semibold text-slate-900 dark:text-slate-100">
-                Nenhuma música na playlist deste culto
+                Nenhuma música na lista deste culto
               </p>
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-sm mx-auto">
-                Adicione músicas pelo botão + no Repertório ou use o gerador de setlist aleatório.
+                Adicione músicas através do botão + no Repertório ou utilize o gerador de lista aleatória.
               </p>
               <button
                 type="button"
@@ -318,7 +318,7 @@ export function PlaylistView({
         {/* Magic Setlist Generator */}
         <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 sm:p-5">
           <h2 className="text-base font-semibold text-slate-900 dark:text-slate-50">
-            Gerar Setlist Aleatório
+            Gerar Lista Aleatória
           </h2>
           <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Combina músicas de celebração, adoração e hinos do seu repertório sem repetir faixas.
@@ -333,7 +333,7 @@ export function PlaylistView({
             </label>
             <div
               role="group"
-              aria-label="Quantidade de músicas no setlist aleatório"
+              aria-label="Quantidade de músicas na lista aleatória"
               className="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80"
             >
               <button
@@ -388,7 +388,7 @@ export function PlaylistView({
           >
             <Shuffle className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span>
-              Gerar Setlist Aleatório ({effectiveRandomCount}{' '}
+              Gerar Lista Aleatória ({effectiveRandomCount}{' '}
               {effectiveRandomCount === 1 ? 'música' : 'músicas'})
             </span>
           </button>
@@ -397,10 +397,10 @@ export function PlaylistView({
         {/* WhatsApp Share Box */}
         <div className="lg:col-span-5 lg:col-start-1 lg:row-start-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 sm:p-5">
           <h2 className="text-base font-semibold text-slate-900 dark:text-slate-50">
-            Compartilhar Setlist no WhatsApp
+            Partilhar Lista no WhatsApp
           </h2>
           <pre
-            aria-label="Prévia da mensagem do WhatsApp"
+            aria-label="Pré-visualização da mensagem para o WhatsApp"
             className="mt-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-cifra text-slate-700 dark:text-slate-300 whitespace-pre-wrap break-words leading-relaxed"
           >
             {whatsAppMessage}
@@ -421,7 +421,7 @@ export function PlaylistView({
               ) : (
                 <>
                   <Copy className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  <span>Copiar Setlist</span>
+                  <span>Copiar Lista</span>
                 </>
               )}
             </button>
@@ -441,7 +441,7 @@ export function PlaylistView({
               }`}
             >
               <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
-              <span>Enviar no WhatsApp</span>
+              <span>Partilhar no WhatsApp</span>
             </a>
           </div>
         </div>

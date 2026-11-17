@@ -58,7 +58,7 @@ export function formatScheduleWhatsApp(
   ];
 
   if (entries.length === 0) {
-    lines.push('Nenhuma data cadastrada para este filtro.');
+    lines.push('Nenhuma data registada para este filtro.');
     return lines.join('\n');
   }
 
@@ -78,7 +78,7 @@ export function formatScheduleWhatsApp(
     if (assignedLines.length > 0) {
       lines.push(...assignedLines);
     } else {
-      lines.push('  • (Sem integrantes definidos)');
+      lines.push('  • (Sem elementos definidos)');
     }
     lines.push('');
   }
@@ -379,7 +379,7 @@ export function ScheduleView({
             }`}
           >
             <Settings2 className="w-4 h-4 shrink-0" aria-hidden="true" />
-            <span>Equipe e Funções</span>
+            <span>Equipa e Funções</span>
           </button>
 
           <button
@@ -400,7 +400,7 @@ export function ScheduleView({
           <div>
             <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
               <Users className="w-4 h-4 text-[#386641] dark:text-amber-400" aria-hidden="true" />
-              <span>Integrantes do Grupo ({schedule.members.length})</span>
+              <span>Elementos do Grupo ({schedule.members.length})</span>
             </h2>
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
               Nomes disponíveis para seleção rápida na escala.
@@ -412,7 +412,7 @@ export function ScheduleView({
                 value={newMemberName}
                 onChange={(e) => setNewMemberName(e.target.value)}
                 placeholder="Ex: Lucas, Ana..."
-                aria-label="Nome do novo integrante"
+                aria-label="Nome do novo elemento"
                 className="flex-1 min-w-0 min-h-[44px] px-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
               />
               <button
@@ -434,7 +434,7 @@ export function ScheduleView({
                   <button
                     type="button"
                     onClick={() => handleRemoveMember(member)}
-                    aria-label={`Remover integrante ${member}`}
+                    aria-label={`Remover elemento ${member}`}
                     className="w-6 h-6 inline-flex items-center justify-center rounded hover:bg-rose-100 dark:hover:bg-rose-950/60 text-slate-400 hover:text-rose-600 dark:hover:text-rose-400"
                   >
                     <X className="w-3.5 h-3.5" aria-hidden="true" />
@@ -591,7 +591,7 @@ export function ScheduleView({
               }`}
             >
               <Table2 className="w-4 h-4" aria-hidden="true" />
-              <span>Planilha</span>
+              <span>Tabela</span>
             </button>
             <button
               type="button"
@@ -612,11 +612,11 @@ export function ScheduleView({
         {/* Member Quick Filter Chips */}
         <div
           role="group"
-          aria-label="Filtrar escala por integrante"
+          aria-label="Filtrar escala por elemento"
           className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1"
         >
           <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 mr-1 shrink-0">
-            Integrante:
+            Elemento:
           </span>
           {['Todos', ...schedule.members].map((member) => {
             const active = selectedMember === member;
@@ -826,8 +826,8 @@ export function ScheduleView({
                             <button
                               type="button"
                               onClick={() => onUseInCultoDoDia(entry)}
-                              title="Usar esta data no Culto do Dia (Setlist)"
-                              aria-label={`Montar repertório para o dia ${entry.day} de ${entry.month}`}
+                              title="Utilizar esta data no Culto do Dia"
+                              aria-label={`Preparar repertório para o dia ${entry.day} de ${entry.month}`}
                               className="min-h-[38px] min-w-[38px] flex items-center justify-center rounded-lg text-[#386641] dark:text-amber-400 hover:bg-white/80 dark:hover:bg-slate-800 transition-colors"
                             >
                               <ListMusic className="w-4 h-4" aria-hidden="true" />
@@ -901,7 +901,7 @@ export function ScheduleView({
                     className="min-h-[36px] px-2.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-semibold inline-flex items-center gap-1"
                   >
                     <ListMusic className="w-3.5 h-3.5" aria-hidden="true" />
-                    <span>Setlist</span>
+                    <span>Culto do Dia</span>
                   </button>
                   <button
                     type="button"
@@ -1006,10 +1006,10 @@ export function ScheduleView({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 className="text-base font-semibold text-slate-900 dark:text-slate-50">
-              Compartilhar Escala no WhatsApp
+              Partilhar Escala no WhatsApp
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              Envia a escala filtrada acima com as datas, temas e funções de cada integrante.
+              Partilha a escala filtrada acima com as datas, temas e funções de cada elemento.
             </p>
           </div>
 
@@ -1048,13 +1048,13 @@ export function ScheduleView({
               }`}
             >
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
-              <span>Enviar no WhatsApp</span>
+              <span>Partilhar no WhatsApp</span>
             </a>
           </div>
         </div>
 
         <pre
-          aria-label="Prévia da escala para WhatsApp"
+          aria-label="Pré-visualização da escala para o WhatsApp"
           className="mt-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-cifra text-slate-700 dark:text-slate-300 whitespace-pre-wrap break-words leading-relaxed max-h-60 overflow-y-auto"
         >
           {whatsAppMessage}

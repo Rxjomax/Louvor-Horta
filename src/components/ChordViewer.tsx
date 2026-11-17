@@ -184,7 +184,7 @@ export function ChordViewer({
                 className="min-h-[44px] px-3.5 py-2 rounded-lg bg-[#B85414] hover:bg-[#9E460F] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
               >
                 <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
-                <span>Baixar PDF</span>
+                <span>Transferir PDF</span>
               </button>
 
               <button
@@ -263,7 +263,7 @@ export function ChordViewer({
               type="button"
               onClick={handleOpenPrintSheet}
               aria-label={`Imprimir cifra de ${song.title}`}
-              title="Imprimir / Baixar PDF da cifra"
+              title="Imprimir / Transferir PDF da cifra"
               className="min-h-[44px] min-w-[44px] px-2.5 flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
             >
               <Printer className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -357,14 +357,14 @@ export function ChordViewer({
             <span className="hidden sm:inline">{song.category}</span>
             <div
               role="group"
-              aria-label="Tamanho da fonte"
+              aria-label="Tamanho da letra"
               className="flex items-center rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shrink-0"
             >
               <button
                 type="button"
                 onClick={() => setFontSize((s) => Math.max(11, s - 1))}
                 disabled={fontSize <= 11}
-                aria-label="Diminuir fonte"
+                aria-label="Diminuir tamanho da letra"
                 className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-l-lg text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
               >
                 <span className="flex items-center">
@@ -375,7 +375,7 @@ export function ChordViewer({
                 type="button"
                 onClick={() => setFontSize((s) => Math.min(24, s + 1))}
                 disabled={fontSize >= 24}
-                aria-label="Aumentar fonte"
+                aria-label="Aumentar tamanho da letra"
                 className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-r-lg border-l border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
               >
                 <span className="flex items-center">
@@ -479,7 +479,7 @@ export function ChordViewer({
 
       {/* Fixed Stage Toolbar at Bottom (Ergonomic Thumb Zone, >= 44px buttons) */}
       <footer
-        aria-label="Controles de palco"
+        aria-label="Controlos de palco"
         className="no-print fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0F172A]/95 backdrop-blur-md pb-safe"
       >
         <div className="max-w-4xl mx-auto px-2 sm:px-4">
@@ -545,7 +545,7 @@ export function ChordViewer({
                   <button
                     type="button"
                     onClick={onResetTranspose}
-                    aria-label={`Tom atual ${activeKey}. Toque para restaurar tom original`}
+                    aria-label={`Tom atual ${activeKey}. Toque para repor o tom original`}
                     className="min-h-[44px] min-w-[36px] px-1.5 flex items-center justify-center font-cifra text-sm font-bold text-[#B85414] dark:text-amber-400 border-x border-slate-200 dark:border-slate-700"
                   >
                     {activeKey}
@@ -589,7 +589,7 @@ export function ChordViewer({
                 onClick={() => setIsScrolling((prev) => !prev)}
                 aria-pressed={isScrolling}
                 aria-label={
-                  isScrolling ? 'Pausar rolagem automática' : 'Iniciar rolagem automática'
+                  isScrolling ? 'Pausar deslocamento automático' : 'Iniciar deslocamento automático'
                 }
                 className={`min-h-[44px] min-w-[44px] px-2.5 flex items-center justify-center gap-1 rounded-l-xl text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
                   isScrolling
@@ -607,7 +607,7 @@ export function ChordViewer({
               <button
                 type="button"
                 onClick={cycleSpeed}
-                aria-label={`Velocidade da rolagem: ${SCROLL_SPEEDS[speedIndex].label}. Toque para alterar`}
+                aria-label={`Velocidade do deslocamento: ${SCROLL_SPEEDS[speedIndex].label}. Toque para alterar`}
                 className="min-h-[44px] min-w-[44px] px-2 flex items-center justify-center rounded-r-xl border-l border-slate-200 dark:border-slate-700 font-cifra text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
               >
                 {SCROLL_SPEEDS[speedIndex].label}

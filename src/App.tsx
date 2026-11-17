@@ -9,13 +9,10 @@ import { SongFormView } from './components/SongFormView';
 import {
   User,
   auth,
-  deleteSharedCustomSong,
   ensureAndSyncSharedWorkspace,
   onAuthStateChanged,
-  saveSharedCustomSong,
   signInWithGoogle,
   signOutGoogle,
-  subscribeToSharedSongs,
   subscribeToSharedWorkspace,
   updateSharedWorkspace,
 } from './firebase';
@@ -126,13 +123,13 @@ export default function App() {
   useEffect(() => {
     let isCancelled = false;
     let unsubWorkspace: (() => void) | undefined;
-    let unsubSongs: (() => void) | undefined;
 
     const currentDeltas = computeSongDeltas(songs);
     const initialSnapshot = {
       playlist,
       repertoireTranspose,
       deletedSongIds: currentDeltas.deletedIds,
+      upsertedSongs: currentDeltas.upserted,
       schedule,
       randomCount: loadRandomCount(),
     };
@@ -152,19 +149,16 @@ export default function App() {
           setSchedule(remoteWorkspace.schedule);
           saveRandomCount(remoteWorkspace.randomCount);
           const mergedDeltas = {
-            upserted: computeSongDeltas(songs).upserted,
+            upserted: {
+              ...computeSongDeltas(songs).upserted,
+              ...remoteWorkspace.upsertedSongs,
+            },
             deletedIds: remoteWorkspace.deletedSongIds,
           };
           setSongs(applySongDeltas(mergedDeltas));
           setTimeout(() => {
             isApplyingRemoteUpdateRef.current = false;
           }, 120);
-        }
-
-        // Upload any local custom/edited songs to the shared subcollection
-        const upsertedList = Object.values(currentDeltas.upserted);
-        for (const customSong of upsertedList) {
-          await saveSharedCustomSong(customSong);
         }
 
         cloudBootstrappedRef.current = true;
@@ -178,37 +172,18 @@ export default function App() {
             setRepertoireTranspose(cloudState.repertoireTranspose);
             setSchedule(cloudState.schedule);
             saveRandomCount(cloudState.randomCount);
-            setSongs((prevSongs) => {
-              const latestDeltas = computeSongDeltas(prevSongs);
-              return applySongDeltas({
-                upserted: latestDeltas.upserted,
+            setSongs(
+              applySongDeltas({
+                upserted: cloudState.upsertedSongs,
                 deletedIds: cloudState.deletedSongIds,
-              });
-            });
+              })
+            );
             setLastSavedAt(new Date());
             setTimeout(() => {
               isApplyingRemoteUpdateRef.current = false;
             }, 120);
           }
         );
-
-        unsubSongs = subscribeToSharedSongs((remoteUpserted) => {
-          isApplyingRemoteUpdateRef.current = true;
-          setSongs((prevSongs) => {
-            const latestDeltas = computeSongDeltas(prevSongs);
-            return applySongDeltas({
-              upserted: {
-                ...latestDeltas.upserted,
-                ...remoteUpserted,
-              },
-              deletedIds: latestDeltas.deletedIds,
-            });
-          });
-          setLastSavedAt(new Date());
-          setTimeout(() => {
-            isApplyingRemoteUpdateRef.current = false;
-          }, 120);
-        });
       } finally {
         if (!isCancelled) {
           setIsSyncing(false);
@@ -221,7 +196,6 @@ export default function App() {
     return () => {
       isCancelled = true;
       if (unsubWorkspace) unsubWorkspace();
-      if (unsubSongs) unsubSongs();
     };
   }, []);
 
@@ -237,6 +211,7 @@ export default function App() {
         playlist,
         repertoireTranspose,
         deletedSongIds: deltas.deletedIds,
+        upsertedSongs: deltas.upserted,
         schedule,
         randomCount: loadRandomCount(),
       }).finally(() => {
@@ -319,19 +294,9 @@ export default function App() {
     existingId?: string
   ) => {
     if (existingId) {
-      let updatedSongObj: Song | null = null;
       setSongs((prev) =>
-        prev.map((s) => {
-          if (s.id === existingId) {
-            updatedSongObj = { ...s, ...data };
-            return updatedSongObj;
-          }
-          return s;
-        })
+        prev.map((s) => (s.id === existingId ? { ...s, ...data } : s))
       );
-      if (updatedSongObj) {
-        void saveSharedCustomSong(updatedSongObj);
-      }
       setEditingSong(null);
       if (viewer && viewer.songId === existingId) {
         return;
@@ -344,7 +309,6 @@ export default function App() {
         createdAt: Date.now(),
       };
       setSongs((prev) => [newSong, ...prev]);
-      void saveSharedCustomSong(newSong);
       setEditingSong(null);
       setActiveTab('repertoire');
     }
@@ -356,7 +320,6 @@ export default function App() {
       ...prev,
       items: prev.items.filter((item) => item.songId !== songId),
     }));
-    void deleteSharedCustomSong(songId);
     setEditingSong(null);
     if (viewer?.songId === songId) {
       setViewer(null);
@@ -425,9 +388,6 @@ export default function App() {
       if (parsed.songDeltas && typeof parsed.songDeltas === 'object') {
         const restoredSongs = applySongDeltas(parsed.songDeltas);
         setSongs(restoredSongs);
-        for (const custom of Object.values(parsed.songDeltas.upserted || {})) {
-          await saveSharedCustomSong(custom);
-        }
       }
       if (parsed.playlist && Array.isArray(parsed.playlist.items)) {
         setPlaylist(parsed.playlist);
@@ -457,7 +417,7 @@ export default function App() {
     const hh = String(lastSavedAt.getHours()).padStart(2, '0');
     const mm = String(lastSavedAt.getMinutes()).padStart(2, '0');
     const ss = String(lastSavedAt.getSeconds()).padStart(2, '0');
-    return `salvo às ${hh}:${mm}:${ss}`;
+    return `guardado às ${hh}:${mm}:${ss}`;
   }, [lastSavedAt]);
 
   // Viewer Mode

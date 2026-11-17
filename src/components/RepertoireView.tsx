@@ -127,7 +127,7 @@ export function RepertoireView({
             aria-hidden="true"
           />
           <label htmlFor="song-search" className="sr-only">
-            Buscar música ou artista
+            Pesquisar música ou intérprete
           </label>
           <input
             id="song-search"
@@ -137,7 +137,7 @@ export function RepertoireView({
               setSearchQuery(e.target.value);
               setVisibleLimit(VISIBLE_BATCH);
             }}
-            placeholder="Buscar por nome, número (#89) ou ministério..."
+            placeholder="Pesquisar por nome, número (#89) ou intérprete..."
             className="w-full min-h-[46px] pl-10 pr-11 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-base text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500 focus:border-transparent transition-colors duration-150"
           />
           {searchQuery && (
@@ -147,7 +147,7 @@ export function RepertoireView({
                 setSearchQuery('');
                 setVisibleLimit(VISIBLE_BATCH);
               }}
-              aria-label="Limpar busca"
+              aria-label="Limpar pesquisa"
               className="absolute right-1 top-1/2 -translate-y-1/2 min-h-[44px] min-w-[44px] flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 rounded-lg"
             >
               <X className="w-4 h-4" aria-hidden="true" />
@@ -226,7 +226,7 @@ export function RepertoireView({
             Nenhuma música encontrada
           </p>
           <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
-            Tente outro termo de busca ou limpe os filtros para ver todo o repertório do ministério.
+            Tente outro termo de pesquisa ou limpe os filtros para ver todo o repertório do grupo.
           </p>
           {hasActiveFilters && (
             <button
@@ -324,10 +324,10 @@ export function RepertoireView({
                     aria-pressed={inPlaylist}
                     aria-label={
                       inPlaylist
-                        ? `Remover ${song.title} da playlist`
-                        : `Adicionar ${song.title} à playlist`
+                        ? `Remover ${song.title} da lista do culto`
+                        : `Adicionar ${song.title} à lista do culto`
                     }
-                    title={inPlaylist ? 'Na playlist do culto' : 'Adicionar ao culto'}
+                    title={inPlaylist ? 'Na lista do culto' : 'Adicionar ao culto'}
                     className={`min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
                       inPlaylist
                         ? 'bg-emerald-600/10 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border border-emerald-600/30 dark:border-emerald-500/30 hover:bg-emerald-600/20'

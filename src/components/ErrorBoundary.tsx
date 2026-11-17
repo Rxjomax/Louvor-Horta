@@ -38,8 +38,8 @@ export class ErrorBoundary extends Component<
               Aviso de Sincronização
             </h1>
             <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              Ocorreu um erro ao sincronizar ou exibir os dados. Seus dados
-              locais continuam salvos com segurança neste dispositivo.
+              Ocorreu um erro ao sincronizar ou apresentar os dados. Os seus
+              dados locais continuam guardados com segurança neste dispositivo.
             </p>
             {this.state.errorMessage && (
               <pre className="text-xs font-mono bg-slate-100 dark:bg-slate-950 p-3 rounded-lg overflow-x-auto text-slate-700 dark:text-slate-300">
@@ -54,7 +54,7 @@ export class ErrorBoundary extends Component<
               }}
               className="min-h-[44px] px-4 py-2 rounded-lg bg-[#B85414] dark:bg-amber-500 text-white dark:text-slate-950 font-semibold text-sm hover:opacity-95"
             >
-              Recarregar Aplicativo
+              Recarregar Aplicação
             </button>
           </div>
         </div>

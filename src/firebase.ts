@@ -10,8 +10,6 @@ import {
 import {
   Timestamp,
   Unsubscribe,
-  collection,
-  deleteDoc,
   doc,
   getDoc,
   getDocFromServer,
@@ -143,8 +141,33 @@ export interface CloudWorkspaceSnapshot {
   playlist: PlaylistState;
   repertoireTranspose: Record<string, number>;
   deletedSongIds: string[];
+  upsertedSongs: Record<string, Song>;
   schedule: ScheduleState;
   randomCount: number;
+}
+
+function sanitizeSongForMap(song: Song): Record<string, unknown> {
+  const safeId = sanitizeId(song.id, 'song');
+  const category: SongCategory = VALID_CATEGORIES.has(song.category)
+    ? song.category
+    : 'Normal';
+  const bpm =
+    typeof song.bpm === 'number' && Number.isFinite(song.bpm)
+      ? Math.max(0, Math.min(300, Math.round(song.bpm)))
+      : 0;
+  return {
+    id: safeId,
+    title: clampString(song.title, 1, 200, 'Sem Título'),
+    artist: clampString(song.artist, 1, 200, 'IEB Horta'),
+    originalKey: clampString(song.originalKey, 1, 20, 'C'),
+    bpm,
+    category,
+    youtubeUrl: clampString(song.youtubeUrl ?? '', 0, 500, ''),
+    cifra: clampString(song.cifra, 1, 45000, song.title || 'Letra'),
+    createdAt: Number.isFinite(song.createdAt)
+      ? Math.max(0, Math.round(song.createdAt))
+      : Date.now(),
+  };
 }
 
 function buildSanitizedWorkspaceFields(state: CloudWorkspaceSnapshot) {
@@ -184,6 +207,16 @@ function buildSanitizedWorkspaceFields(state: CloudWorkspaceSnapshot) {
   const deletedSongIds = (state.deletedSongIds || [])
     .slice(0, 500)
     .map((id) => sanitizeId(id, 'song'));
+
+  const upsertedSongs: Record<string, Record<string, unknown>> = {};
+  const upsertedEntries = Object.entries(state.upsertedSongs || {}).slice(
+    0,
+    200
+  );
+  for (const [rawId, songObj] of upsertedEntries) {
+    const safeSongId = sanitizeId(rawId, 'song');
+    upsertedSongs[safeSongId] = sanitizeSongForMap(songObj);
+  }
 
   const scheduleRoles: ScheduleRole[] = (state.schedule.roles || [])
     .slice(0, 30)
@@ -233,6 +266,7 @@ function buildSanitizedWorkspaceFields(state: CloudWorkspaceSnapshot) {
     playlistTranspose,
     repertoireTranspose,
     deletedSongIds,
+    upsertedSongs,
     scheduleRoles,
     scheduleMembers,
     scheduleEntries,
@@ -301,6 +335,34 @@ export function parseCloudWorkspaceDoc(
     ? (data.deletedSongIds as string[]).map(String)
     : fallback.deletedSongIds;
 
+  const upsertedSongs: Record<string, Song> = {};
+  if (data.upsertedSongs && typeof data.upsertedSongs === 'object') {
+    for (const [id, rawSong] of Object.entries(
+      data.upsertedSongs as Record<string, Record<string, unknown>>
+    )) {
+      if (!rawSong || typeof rawSong !== 'object') continue;
+      const category: SongCategory = VALID_CATEGORIES.has(
+        rawSong.category as SongCategory
+      )
+        ? (rawSong.category as SongCategory)
+        : 'Normal';
+      upsertedSongs[id] = {
+        id: String(rawSong.id ?? id),
+        title: String(rawSong.title ?? 'Sem Título'),
+        artist: String(rawSong.artist ?? 'IEB Horta'),
+        originalKey: String(rawSong.originalKey ?? 'C'),
+        bpm: typeof rawSong.bpm === 'number' ? rawSong.bpm : 0,
+        category,
+        youtubeUrl: rawSong.youtubeUrl ? String(rawSong.youtubeUrl) : undefined,
+        cifra: String(rawSong.cifra ?? ''),
+        createdAt:
+          typeof rawSong.createdAt === 'number'
+            ? rawSong.createdAt
+            : Date.now(),
+      };
+    }
+  }
+
   const schedule: ScheduleState = {
     roles: Array.isArray(data.scheduleRoles)
       ? (data.scheduleRoles as ScheduleRole[])
@@ -324,6 +386,7 @@ export function parseCloudWorkspaceDoc(
     playlist,
     repertoireTranspose,
     deletedSongIds,
+    upsertedSongs,
     schedule,
     randomCount,
   };
@@ -351,6 +414,7 @@ export async function updateSharedWorkspace(
         playlistTranspose: sanitized.playlistTranspose,
         repertoireTranspose: sanitized.repertoireTranspose,
         deletedSongIds: sanitized.deletedSongIds,
+        upsertedSongs: sanitized.upsertedSongs,
         scheduleRoles: sanitized.scheduleRoles,
         scheduleMembers: sanitized.scheduleMembers,
         scheduleEntries: sanitized.scheduleEntries,
@@ -360,75 +424,6 @@ export async function updateSharedWorkspace(
     }
   } catch (error) {
     handleFirestoreError(error, OperationType.WRITE, path);
-  }
-}
-
-export async function saveSharedCustomSong(song: Song): Promise<void> {
-  const safeSongId = sanitizeId(song.id, 'song');
-  const path = `workspaces/${SHARED_WORKSPACE_ID}/songs/${safeSongId}`;
-  const ref = doc(db, 'workspaces', SHARED_WORKSPACE_ID, 'songs', safeSongId);
-
-  const category: SongCategory = VALID_CATEGORIES.has(song.category)
-    ? song.category
-    : 'Normal';
-
-  const payload = {
-    id: safeSongId,
-    workspaceId: SHARED_WORKSPACE_ID,
-    updatedByUid: getActorUid(),
-    title: clampString(song.title, 1, 200, 'Sem Título'),
-    artist: clampString(song.artist, 1, 200, 'IEB Horta'),
-    originalKey: clampString(song.originalKey, 1, 20, 'C'),
-    bpm:
-      typeof song.bpm === 'number' && Number.isFinite(song.bpm)
-        ? Math.max(0, Math.min(300, Math.round(song.bpm)))
-        : 0,
-    category,
-    youtubeUrl: clampString(song.youtubeUrl ?? '', 0, 500, ''),
-    cifra: clampString(song.cifra, 1, 50000, song.title || 'Letra'),
-    songUpdatedAt: Number.isFinite(song.createdAt)
-      ? Math.max(0, Math.round(song.createdAt))
-      : Date.now(),
-  };
-
-  try {
-    const existingSnap = await getDoc(ref);
-    if (!existingSnap.exists()) {
-      await setDoc(ref, {
-        ...payload,
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp(),
-      });
-    } else {
-      await updateDoc(ref, {
-        updatedByUid: payload.updatedByUid,
-        title: payload.title,
-        artist: payload.artist,
-        originalKey: payload.originalKey,
-        bpm: payload.bpm,
-        category: payload.category,
-        youtubeUrl: payload.youtubeUrl,
-        cifra: payload.cifra,
-        songUpdatedAt: payload.songUpdatedAt,
-        updatedAt: serverTimestamp(),
-      });
-    }
-  } catch (error) {
-    handleFirestoreError(error, OperationType.WRITE, path);
-  }
-}
-
-export async function deleteSharedCustomSong(songId: string): Promise<void> {
-  const safeSongId = sanitizeId(songId, 'song');
-  const path = `workspaces/${SHARED_WORKSPACE_ID}/songs/${safeSongId}`;
-  const ref = doc(db, 'workspaces', SHARED_WORKSPACE_ID, 'songs', safeSongId);
-  try {
-    const snap = await getDoc(ref);
-    if (snap.exists()) {
-      await deleteDoc(ref);
-    }
-  } catch (error) {
-    handleFirestoreError(error, OperationType.DELETE, path);
   }
 }
 
@@ -452,44 +447,6 @@ export function subscribeToSharedWorkspace(
     },
     (error) => {
       handleFirestoreError(error, OperationType.GET, path);
-    }
-  );
-}
-
-export function subscribeToSharedSongs(
-  onUpdate: (upsertedSongs: Record<string, Song>) => void
-): Unsubscribe {
-  const path = `workspaces/${SHARED_WORKSPACE_ID}/songs`;
-  const colRef = collection(db, 'workspaces', SHARED_WORKSPACE_ID, 'songs');
-  return onSnapshot(
-    colRef,
-    (snap) => {
-      if (snap.metadata.hasPendingWrites) return;
-      const upserted: Record<string, Song> = {};
-      snap.forEach((docSnap) => {
-        const d = docSnap.data();
-        const category: SongCategory = VALID_CATEGORIES.has(
-          d.category as SongCategory
-        )
-          ? (d.category as SongCategory)
-          : 'Normal';
-        upserted[docSnap.id] = {
-          id: String(d.id ?? docSnap.id),
-          title: String(d.title ?? 'Sem Título'),
-          artist: String(d.artist ?? 'IEB Horta'),
-          originalKey: String(d.originalKey ?? 'C'),
-          bpm: typeof d.bpm === 'number' ? d.bpm : 0,
-          category,
-          youtubeUrl: d.youtubeUrl ? String(d.youtubeUrl) : undefined,
-          cifra: String(d.cifra ?? ''),
-          createdAt:
-            typeof d.songUpdatedAt === 'number' ? d.songUpdatedAt : Date.now(),
-        };
-      });
-      onUpdate(upserted);
-    },
-    (error) => {
-      handleFirestoreError(error, OperationType.LIST, path);
     }
   );
 }
