@@ -105,7 +105,7 @@ export function RepertoireView({
             <span className="tabular-nums font-medium text-slate-800 dark:text-slate-200">
               {filteredSongs.length}
             </span>{' '}
-            {filteredSongs.length === 1 ? 'música encontrada' : 'músicas disponíveis'} · Toque para abrir a cifra
+            {filteredSongs.length === 1 ? 'música encontrada' : 'músicas disponíveis'} · Toque numa música para ver a cifra e ouvir
           </p>
         </div>
         <button

@@ -122,7 +122,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Hinos",
     "cifra": "     A                     E               A               E\n1 - Louvamos, louvamos, Senhor, e adoramos\n   F#m          E                        B7     E\nA ti, ó Deus Homem, no Céu assentado;\n                                          A               E\nQue em tempo devido, na terra humilhado,\n       A\nPor nossos pecados morreste na cruz.\n       D   Bm     E             E7          A\nPor nossos pecados morreste na cruz.\n\n     A                E                    A               E\n2 - Louvamos, louvamos, Senhor, e adoramos\n   F#m             E                  B7      E\nA Ti, que a justiça de Deus sustentaste,\n                                  A            E\nA pena sofrendo por nós merecida,\nA\nA vida depondo pra assim nos remir.\n    D  Bm      E                 E7              A\nA vi--da    depondo pra assim nos remir.\n\n     A                E                    A                E\n3 - Louvamos, louvamos, Senhor, e adoramos\n    F#m     E               B7   E\nA glória divina por Ti revelada,\n                                      A       E\nQue para nós brilha na luz esplendente,\nA\nFazendo-nos ver a real perfeição.\n    D    Bm      E          E7        A\nFazendo-nos ver a real perfeição.\n\n     A                 E          A           E\n4 - Em Ti concilia-se a santa justiça,\n        F#m      E                   B7         E\nQue não pode a culpa deixar sem castigo.\n                                            A           E\nCom a compaixão que por graça recebe\n     A\nE exime de culpas o réu pecador.\n   D   Bm      E           E7          A\nE exi-me de culpas o réu pecador.",
-    "createdAt": 1730000010000
+    "createdAt": 1730000010000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=aqjbVQTc5Qw&list=RDaqjbVQTc5Qw&start_radio=1"
   },
   {
     "id": "song-hinos-012-louvamos-g",
@@ -253,7 +254,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Hinos",
     "cifra": "C\nNasce Jesus Fonte de luz,\n                                  G\nDescem os anjos cantando;\n\nNasce Jesus é nossa Luz,\n                                   C\nTrevas vem pois dissipando.\n\nNasce Jesus Fonte de luz,\n                                    F\nRompe as cadeias do forte,\n                 C                   D             G\nRaia o dia da salvação, triunfante vem!\n                           D                            G\nSalve Jesus, oh! Firma Teu justo império,\n                          D                             G\nGrato louvor, os homens e os anjos deem!\n\nC                                                                            F\nNasce Jesus, Fonte de luz Oh glória Deus nas alturas;\n                           C                F                      C\nPaz na terra aos homens, a quem quer Ele bem!\n\nDeus nos amou e nos mandou,\n                                G\nCristo seu Filho querido.\n\nDeus nos amou Deus encarnou,\n                               C\nVede o menino nascido!\n\nDeus nos amou Deus nos amou,\n                               F\nDigam-no todos os povos;\n                      C             D                   G\nGozam paz e salvação todos os que creem.\n                        D                         G\nReino bendito, Reino de amor divino!\n                                     D                     G\nEis que as nações, resgate por Cristo tem!",
-    "createdAt": 1730000022000
+    "createdAt": 1730000022000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=eowvLIwFF9M&list=RDeowvLIwFF9M&start_radio=1"
   },
   {
     "id": "song-hinos-033-nasceu-jesus-a",
@@ -580,7 +582,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Hinos",
     "cifra": "Intro: E A E  B  E\n\nE                     A   E   B                E\nTempo de ser santo   tu deves tomar,\n                       A    E    F#m              B\nViver com teu Mestre, Seu livro estudar,\nA                       E         A                    E\nAndar com Seu povo, e aos fracos valer,\n                       A         B                          E\nAs bênçãos celestes de Deus sempre obter.\n\nE                     A  E   B              E\nTempo de ser pu-ro  tu deves achar,\n                         A     E   F#m             B\n A sós, sempre orando, com Cristo ficar,\nA                        E     A                          E\nTeus olhos bem fitos em Deus sempre ter,\n                  A     B                    E\nNa tua conduta provar Seu poder\n\nE                     A  E   B                  E\nTempo de ser for-te  tu deves buscar,\n                    A    E   F#m             B\nO Mestre seguindo  por onde guiar;\nA                      E     A                    E\nNo gozo ou tristeza sempre obedecer,\n                 A     B                       E\nDa fonte divina jamais te esquecer.\n\nE                     A  E   B                   E\nTempo de ser ú - til  tu deves guardar,\n                        A  E     F#m                B\nMui calmo nas lu -tas, em Deus confiar;\nA                   E       A                 E\nSocorre os a-flitos, repleto de amor,\n                      A    Cm   B                 E\nOs passos seguindo     do teu Salvador.",
-    "createdAt": 1730000052000
+    "createdAt": 1730000052000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=-CUP-fMnbD8"
   },
   {
     "id": "song-hinos-176-tempo-de-ser-santo-d",
@@ -640,7 +643,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Hinos",
     "cifra": "      C                               F                          G                         G7                C\n1 - Oh! Que belos hinos cantam lá no céu, pois do mundo o filho mau voltou.\n                                F                          G                   G7                C\nVede no caminho o bom Pai abraçar, esse filho que   Ele tanto amou.\n\nRefrão:\nC         G                      Am      Em   F         D                        G   D    G\nGlória, glória os anjos cantam lá,    Glória, glória as harpas to--cam já.\nC                      F                                G                     G7                     C\nÉ o santo Refrão: dando glória a Deus, por mais um remido entrar nos céus.\n\n     C                                F                              G                G7        C\n2 - Oh! Que belos hinos cantam lá nos céus, é que já se reconciliou.\n                            F                                  G                  G7                   C\nA alma revoltosa que submissa a Deus, convertida o mundo abandonou!\n\n     C                        F                   G                     G7                   C\n3 - Ó arrependidos, hoje festejai, como os anjos fazem com fervor!\n                             F                       G                 G7                C\nIde, pressurosos, vós e anunciai, que se resgatou um pecador",
-    "createdAt": 1730000058000
+    "createdAt": 1730000058000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=HdsK2L_F4ys&list=RDHdsK2L_F4ys&start_radio=1"
   },
   {
     "id": "song-hinos-274-refrao-santo-e",
@@ -650,7 +654,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Hinos",
     "cifra": "      E                               A                          B                         B7                E\n1 - Oh! Que belos hinos cantam lá no céu, pois do mundo o filho mau voltou.\n                                A                          B                   B7                E\nVede no caminho o bom Pai abraçar, esse filho que   Ele tanto amou.\n\nRefrão:\nE         B                      C#m     G#m   A         F#                      B   F#    B\nGlória, glória os anjos cantam lá,       Glória, glória as harpas to--cam já.\nE                      A                                B                     B7                     E\nÉ o santo Refrão: dando glória a Deus, por mais um remido entrar nos céus.\n\n      E                               A                              B                B7         E\n2 - Oh! Que belos hinos cantam lá nos céus, é que já se reconciliou.\n                            A                                  B                  B7                   E\nA alma revoltosa que submissa a Deus, convertida o mundo abandonou!\n\n      E                        A                  B                      B7                  E\n3 - Ó arrependidos, hoje festejai, como os anjos fazem com fervor!\n                             A                      B                  B7                E\nIde, pressurosos, vós e anunciai, que se resgatou um pecador",
-    "createdAt": 1730000059000
+    "createdAt": 1730000059000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=HdsK2L_F4ys&list=RDHdsK2L_F4ys&start_radio=1"
   },
   {
     "id": "song-hinos-283-mais-perto-g",
@@ -720,7 +725,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Hinos",
     "cifra": "      A                        D                            A                                        E\n1 – Que consolação tem meu coração, descansando no poder de Deus.\nA                      D                         A                             E7      A\nEle tem prazer em me proteger, descansando no poder de Deus.\n\nRefrão:\nA    A7 D         A                                          E\nDescansando, nos eternos braços do meu Deus.\nA     A7 D       A                              E7      A\nVou se--guro, descansando no poder de Deus.\n\n      A                              D                                A                                        E\n2 – Sempre avante vou, bem contente estou, descansando no poder de Deus.\nA                             D                        A                             E7       A\nTudo hei de vencer pelo Seu poder, descansando no poder de Deus.\n\n      A                    D                    A                                         E\n3 – Não recearei, nada temerei, descansando no poder de Deus.\nA                          D                               A                             E7       A\nGozo paz e amor junto a meu Senhor, descansando no poder de Deus.\n\n     A                           D                           A                                        E\n4 - Lutas sem cessar hei de atravessar, descansando no poder de Deus.\nA                         D                         A                             E7       A\nNão me deixará, mas me susterá, descansando no poder de Deus.",
-    "createdAt": 1730000066000
+    "createdAt": 1730000066000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=nidCMo7haGo"
   },
   {
     "id": "song-hinos-314-estou-seguro-g",
@@ -780,7 +786,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Hinos",
     "cifra": "     E                            A            E       B7                       E           B7\n1 - Sendo remido por Cristo na cruz, vivo gozando no reino da luz;\nE                              A            E                      F#m          B7                E\nCheio da graça que vem de Jesus, cada momento o Senhor me conduz.\n\nRefrão:\n                               B             E                     C#m        F#7       B7\nCada momento me guia o Senhor, cada momento dispensa favor,\nE                               C#7     F#m              F#7           B     B7     E\nSua presença me outorga vigor, cada momento sou Teu, ó  Senhor!\n\n      E                              A         E       B7                            E              B7\n2 - Junto com Cristo na luta moral, o erro combato, os pecados e o mal,\nE                              A          E                F#m            B7           E\nErgo bem alto a bandeira real, cada momento mais firme e leal.\n\n     E                              A       E        B7                             E           B7\n3 - Salvo por Cristo da vil perdição, posso sentir que Ele dá proteção;\nE                               A                 E                    F#m          B7         E\nNunca os contritos o buscam em vão, cada momento concede perdão.\n\n     E                                 A               E    B7                       E             B7\n4 - Nas minhas lutas me pode amparar, e do maligno também me livrar;\nE                              A                E                       F#m            B7            E\nCada momento por onde eu andar, Cristo, meu Mestre, me pode guardar.",
-    "createdAt": 1730000072000
+    "createdAt": 1730000072000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=lmkNe7EbqKw"
   },
   {
     "id": "song-hinos-366-firmeza-d",
@@ -800,7 +807,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "F",
     "category": "Hinos",
     "cifra": "      F                  Bb              F    C   F\n1 - Que alicerce tendes pra construir\n         C                    G      C\nUma casa firme pra resistir\n             F         C                 C7       F\nGrande tempestade que há de chegar\n           Bb    F                C7    F\nE a instável casa há de derrubar?\n\nRefrão:\nF                           Bb           F                                      C\nNossa morada na Rocha está; firme e segura ela ficará;\nF                                        Bb F  Bb   F               Bb           F     C7 F\nQuando o temporal contra e---la der. Há de resistir todo o Seu po-der.\n\n     F                 Bb          F   C F\n2 - Como faz a areia na fundação,\n            C                        G      C\nFazem nossas obras na salvação.\n               F           C            C7        F\nPois alguém que só em si mesmo crê\n          Bb       F            C7          F\nNo Senhor Jesus inda não tem fé.\n\n      F                     Bb              F  C   F\n3 - Os cristãos, porém, que deveras creem,\n          C                         G        C\nPelas obras mostram a fé que têm;\n       F      C            C7     F\nSua fé firmada no Salvador,\n           Bb     F                C7       F\nNa maior procela, ei-los sem temor!",
-    "createdAt": 1730000074000
+    "createdAt": 1730000074000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=ez0hQAODE6M"
   },
   {
     "id": "song-hinos-375-seguranca-d",
@@ -810,7 +818,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Hinos",
     "cifra": "                D          G             D                  Bm  F#m  E          A\n1 - Vivo feliz, pois sou de Jesus, e já desfru---to o   gozo na luz.\n                 D         G            D                    G  A                      D\nSou por Jesus herdeiro de Deus, Ele me le--va à glória dos céus.\n\nRefrão:\nA                 D       G                 D\nCanta minh’alma! Canta ao Senhor!\n                 G              A            A7\nRende-lhe sempre ardente louvor.\n                  D        G                  D\nCanta minh’alma! Canta ao Senhor!\n                 G              A            D\nRende-lhe sempre ardente louvor.\n\n(Refrão:)\n\n                     D         G              D             Bm  F#m E               A\n2 – Ao seu amor eu me submeti, e extasiado en----tão me senti.\n                D        G                 D                        G   A                 D\nAnjos descendo, trazem dos céus, ecos da excel-sa graça de Deus.\n\n(Refrão:)\n\n                      D              G                   D                   Bm  F#m  E               A\n3 – Sempre vivendo em Seu grande amor, me regozijo  em     meu Salvador.\n              D      G          D                  G  A                  D\nEsperançoso vivo na luz, pela bonda-de do meu Jesus.\n\n(Refrão:)",
-    "createdAt": 1730000075000
+    "createdAt": 1730000075000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=qytzILuN19U&list=RDqytzILuN19U&start_radio=1"
   },
   {
     "id": "song-hinos-375-seguranca-c",
@@ -832,7 +841,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Hinos",
     "cifra": "             D                                              G                 A7\n1 – Não sei por que de Deus o amor a mim se revelou.\n       D                 G                  A7              D    D7\nPor que razão o Salvador pra si me resgatou.\n\nRefrão:\n             G                            D                            A7                       D      D7\nMas eu sei em quem tenho crido, e estou bem certo que é poderoso.\n              G                 D          A7          D\nPra guardar o meu tesouro até o dia final.\n\n       D                                       G                    A7\n2 – Ignoro como o Espírito convence-nos do mal.\n     D                G                       A7           D  D7\nRevela Cristo, Verbo Seu, Consolador real.\n\n      D                                                G                 A7\n3 – Não sei o que de mal ou bem é destinado a mim.\n     D                        G                A7               D   D7\nSe maus ou áureos dias vêm, até da vida o fim.\n\n      D                                                  G                      A7\n4 – E quando vem Jesus não sei, se breve ou tarde vem.\n        D                      G                   A7                  D     D7\nMas sei que meu Senhor virá, na glória que Ele tem.",
-    "createdAt": 1730000077000
+    "createdAt": 1730000077000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Chh2iYB_sZw"
   },
   {
     "id": "song-hinos-379-lacos-benditos-f",
@@ -972,7 +982,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Hinos",
     "cifra": "Intro: G D G\n\n          G                D\nMinha pátria para Cristo,\n                          G\nEis a minha petição;\n                                C\nMinha pátria tão querida,\n          A                  D\nEu te dei meu coração!\n\n           G                 D\nLar prezado, lar formoso,\n                         G\nÉ por ti o meu amor!\n                                              C\nQue o meu Deus de excelsa graça,\n          D                  G\nTe dispense Seu favor!\n\nRefrão:\n          D                     G\nSalve Deus a minha pátria,\n                        C\nLusitânia sem igual;\n                                 G\nSalve Deus a minha terra,\n          C       D      G\nMeu amado Portugal!\n\n           G                  D\nQuero pois ardentemente,\n                              G\nVer feliz meu Portugal;\n                               C\nConvertida ao evangelho,\n        A                     D\nEsta Pátria sem igual!\n          G             D\nBrava gente lusitana,\n                                G\nQuem bravura tudo val,\n                                C\nQue amor de Jesus Cristo,\n                                 G\nTe conquiste ó Portugal!",
-    "createdAt": 1730000091000
+    "createdAt": 1730000091000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=9SRgmkPA-i0"
   },
   {
     "id": "song-hinos-447-nunca-ouvir-de-cristo-g",
@@ -982,7 +993,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Hinos",
     "cifra": "               G                                C\nNão te importa se algum dos amigos morrer\n              D                         G\nSem ter conhecimento de Cristo?\n                                       C\nDeixas que no juízo Ele venha a dizer:\n             G          D             G\n\"A mim nunca falaram de Cristo?\"\n\n                                 C\n\"Não me falaram de Cristo!\nD                             G\nNão me falaram de Cristo!\n\nTantos vi que salvou,\n             C\nMas ninguém se importou\n                                        D   G\nDe falar-me da graça de Cristo!\"\n\n               G                                    C\nNão te importa que as almas preciosas a Deus,\n              D                        G\nOh, não sejam levadas a Cristo?!\n                                           C\nPois dirão quando Cristo vier outra vez:\n            G          D             G\n\"A nós nunca falaram de Cristo!\"\n\n               G                                 C\nNão te importa se entrares sem jóias no céu\n              D                              G\nPor não teres trazido alma a Cristo?\n                                          C\nOh, não venhas tu ser acusado de réu\n             G          D          G\nPor não teres falado de Cristo!\n\n           G                                C\nNão te cales jamais; pede a Deus graça, irmão,\n         D                            G\nPara dar testemunho de Cristo;\n                                       C\nPra ninguém no juízo exclamar com razão:\n            G           D             G\n\"A mim nunca falaram de Cristo!\"",
-    "createdAt": 1730000092000
+    "createdAt": 1730000092000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Jx8z_5wc7rk"
   },
   {
     "id": "song-hinos-456-o-estandarte-a",
@@ -1022,7 +1034,8 @@ export const HYMN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Hinos",
     "cifra": "                 E                         B                       E        F#             B\n1 - Peregrinando vou pelos montes e pelos vales, sempre na luz\n                E                     B                             E         B          E\nCristo promete nunca deixar-me; eis Me convosco, disse Jesus.\n\nRefrão:\nE            A                    E                                                            B\nBrilho celeste, brilho celeste! Enche a minha alma, a glória de Deus\n              E                   B                       E       B                 E\nCom aleluias sigo cantando, canto louvores indo pra os céus.\n\n                        E                          B                  E           F#              B\n2 – Sombras à roda, nuvens em cima o Salvador não hão de ocultar\n            E                            B                          E      B                         E\nEle é a luz que nunca se apaga, junto a Seu lado sempre hei de andar\n\n                        E                      B                         E          F#              B\n3 – Vão me guiando raios benditos, que me conduzem para a mansão\n                    E                           B                             E        B           E\nMais e mais perto, o Mestre seguindo, canto os louvores da salvação",
-    "createdAt": 1730000096000
+    "createdAt": 1730000096000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=EQG9xe3IwUc"
   },
   {
     "id": "song-hinos-560-ano-novo-a",

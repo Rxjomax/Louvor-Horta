@@ -486,6 +486,15 @@ export default function App() {
           onToggleTheme={toggleTheme}
           onBack={() => setViewer(null)}
           onEdit={handleStartEdit}
+          onUpdateYoutubeUrl={(nextUrl) => {
+            setSongs((prev) =>
+              prev.map((s) =>
+                s.id === activeSong.id
+                  ? { ...s, youtubeUrl: nextUrl.trim() || undefined }
+                  : s
+              )
+            );
+          }}
           playlistContext={
             viewer.source === 'playlist' && playlistIdx >= 0
               ? {

@@ -79,7 +79,7 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "        Em          D    C      D     Em\nTe louvamos e adoramos, Cristo  nosso Rei\n        Em          D    C      D     Em\nTe louvamos e adoramos, Cristo  nosso Rei.\n\n  G           D       C           D  Em\nE Te seguimos juntos, Te seguimos juntos,\n  G           D       C      D    Em\nE Te seguimos juntos, Cristo nosso Rei!",
     "createdAt": 1720000006000,
-    "youtubeUrl": "https://www.igreja-lusitana.org/index.php/oracao-e-louvor/salmos-hinos"
+    "youtubeUrl": "https://www.youtube.com/watch?v=WaJ2765Ujeo"
   },
   {
     "id": "song-normal-008-enquanto-tenho-eu-voz-para-cantar",
@@ -124,7 +124,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "Intro: D  A/C#  Bm7  D/A  Em7  G/A  D  G/A\n\n  D   G/B     A/C#       D   G\nRenova-me  Senhor Jesus,\n          D/F#          Em7     A7\nJá não quero ser igual;\n  D    G/B     A/C#       D  G\nRenova-me  Senhor Jesus,\n    D/F#          Em    A7\nPõe em mim Teu coração!\n\nRefrão:\n       D            A/C#       G/B         D/A    G\nPorque muito do que há      dentro de mim,\n     D/F#          Em       A4   A\nNecessita ser mudado, Senhor.\n      D          A/C#            G/B        D/A   Em7\nPorque tudo o que há dentro de meu coração,\n     G/A            D   Em7\nNecessita mais de Ti.\n    G/A             D\nNecessita mais de Ti.",
-    "createdAt": 1720000010000
+    "createdAt": 1720000010000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=CSd-I2LUGv0&list=RDCSd-I2LUGv0&start_radio=1"
   },
   {
     "id": "song-normal-011-santo-santo-santo-meu-coracao-te-adora",
@@ -145,7 +146,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "    C                         F C\n||: Santo, Santo, Santo és Tu Senhor!   :||\n\n       Am    Em            F  C          F  Dm      G7      C\nEu Te lou - vo,   eu Te lou-vo, eu Te  lou    -         vo!\n\nFiel e verdadeiro és Tu Senhor!...\n\nTodo-Poderoso és Tu Senhor!...",
-    "createdAt": 1720000012000
+    "createdAt": 1720000012000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=_FPmMnylz84"
   },
   {
     "id": "song-normal-013-oh-eu-te-amo-com-o-amor-do-senhor",
@@ -247,7 +249,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "D             Em7     A7            D\nQuem é, lá no céu,  semelhante a Ti?\nBm             Em7        A7               D\nQuem é grande como Tu, meu Senhor meu Rei;\nBm              Em7        G             D\nQuem é grande como Tu, meu Senhor meu Rei?\n\nBm   Bm/A     G           A7          D     F#\nTu és Adonai Jireh, tudo sempre nos darás;\nBm   Bm/A     G          E7            Asus       A\nTu és Adonai Raphe, Senhor Deus, Tu curarás!\n\nTu és Adonai Shamah, ouves e responderás.\n\nEl Shadai, Deus Poderoso, Tu proteges e sustentas!\n\nEl Olam, eterno Deus, El Hai, Tu vives hoje.\n\nTu és Adonai Shalom, Deus de Paz p'ra todos nós!",
-    "createdAt": 1720000021000
+    "createdAt": 1720000021000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=1_t_RYaegvA"
   },
   {
     "id": "song-normal-022-v1-olha-para-o-ceu-tom-dm",
@@ -270,7 +273,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro:\n\n           Am                 Dm\nOlha para o céu, olha para o mar,\n           G               Am\nVê que maravilhas teu Deus criou.\n            Am                      Dm\nSobe para os montes, desce para os vales,\n           G                E\nVê que maravilhas teu Deus criou\n\n   Am              Dm\nSenhor, criaste o sol que nos aquece,\n   G              C\nSenhor, criaste a lua que ilumina,\n   F                Dm\nSenhor, criaste a estrela que orienta,\n   E7            Am\nSenhor,  És o caminho!\n\n  Am                   Dm\nSenhor, Te louvo pelo Teu cuidado,\n  G               C\nSenhor, És meu Pastor meu Bem-Amado,\n  F                 Dm\nSenhor, Te quero sempre a meu lado,\nE      E7      Am\nFica comigo Senhor!",
     "createdAt": 1720000023000,
-    "bpm": 75
+    "bpm": 75,
+    "youtubeUrl": "https://www.youtube.com/watch?v=0Jnq6NcXL0s&t=81s"
   },
   {
     "id": "song-normal-023-se-o-meu-povo",
@@ -281,7 +285,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: F Bb F\n\nEstrofe 1:\n         Bb\nSe o Meu povo\nGm                           F\n      Que se chama pelo Meu Nome\nDm             Gm     C7           F\n     Se humi-lhar, orar e Me buscar\n\nEstrofe 2:\n         Bb\nSe o Meu povo\nGm                           F\n      Que se chama pelo Meu Nome\nDm              Gm       C7             F\n      Se converter dos seus caminhos maus\n\nRefrão:\nF       Bb           C7\nEntão Eu ouvirei do Céu,\n      Am             Dm\nPerdoarei os seus pecados,\n      Gm          C7         F     F7\nE sararei, e sararei a sua terra.\n         Bb              C7\nEstarão abertos os Meus olhos\n   Am                Dm\nE atentos os Meus ouvidos\n     Gm            C7           F   Bb    F\nÀ oração que se fizer neste lugar.",
     "createdAt": 1720000024000,
-    "bpm": 112
+    "bpm": 112,
+    "youtubeUrl": "https://www.youtube.com/watch?v=MmS2gBTCHGg"
   },
   {
     "id": "song-normal-024-a-alegria-esta-no-coracao",
@@ -397,7 +402,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Normal",
     "cifra": "Intro:\n\n  A         D        E7\nQuão suaves sobre os montes\n       D      A   F#           Bm   E7          A  A7\nSão os pés daquele   que boas – no  -  vas traz.\n                D      E7          D   A\nProclama a paz, felicidade e salvação\nF#         Bm     E7            A\n    Porque  rei   - na o Senhor!\n\n   A7          D  Bm     E7     A  F#m\n||:     Nosso Deus       reina aqui,\n   A7          D     E7            A\n        Nosso Deus         reina sim!   :||",
-    "createdAt": 1720000034000
+    "createdAt": 1720000034000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=_YqrJ2nR2pI"
   },
   {
     "id": "song-normal-033-v1-os-ceus-proclamam-tom-a",
@@ -499,7 +505,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: A  E  A\n\nEstrofe 1:\n         A\nVamos cantar - cantar louvores ao nosso Deus!\n                                  E\nVamos cantar - cantar louvores ao nosso Deus!\n           A\nQue nos criou - que nos criou\n         D\nE nos salvou - e nos salvou\n         A                    E7      A\nVamos cantar e louvar o nosso grande Deus!\n\nEstrofe 2:\n       A\nVamos orar - pedir que venha o poder de Deus!\n                                       E\nVamos orar - pedir que venha o poder de Deus!\n           A\nQue nos criou - que nos criou\n         D\nE nos salvou - e nos salvou\n        A                      E7      A\nVamos orar sem cessar ao nosso grande Deus!\n\nEstrofe3:\n           A\nVamos confiar - nosso sustento provém de Deus!\n                                         E\nVamos confiar - nosso sustento provém de Deus!\n           A\nQue nos criou - que nos criou\n         D\nE nos salvou - e nos salvou\n           A                     E7      A\nVamos confiar e entregar a nossa vida a Deus!",
     "createdAt": 1720000043000,
-    "bpm": 120
+    "bpm": 120,
+    "youtubeUrl": "https://www.youtube.com/watch?v=9MDyBVWTnpw"
   },
   {
     "id": "song-normal-041-aleluia-salvacao-e-gloria",
@@ -624,7 +631,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "Intro: D  D7M  D6 D7M  D  D7M  D6  D7M\n\nD      D7M            D7               G             Gm\nCalmo, sereno e tranquilo, sinto descanso neste viver.\nD    D7M          D7              G            Gm6\nIsto devo a um amigo, e só por Ele eu pude obter.\n\nRefrão:\n        D D7M              D7           G(add9)                 Gm6\nEle é Jesus,        meu amigo, meu Senhor,      o Salvador,\n       D     D7M       G               A     G   A\nSó por Ele ganhei  a vida eterna com Deus, com Deus.\n\nD      D7M              D7              G                 Gm6\nTriste foi    Sua história: levado à cruz sem pecado algum,\nD     D7M       D7               G            Gm6\nSó porque me amou, morreu por mim e não hesitou.\n\n(Refrão)\n\nD      D7M            D7               G             Gm\nCalmo, sereno e tranquilo, sinto descanso neste viver.\nD    D7M          D7              G            Gm6\nIsto devo a um amigo, e só por Ele eu pude obter.\n\n            D D7M              D7           G            Gm6\n||: Ele é Jesus,        meu amigo, meu Senhor, o Salvador,\n       D     D7M       G               A     G   A\nSó por Ele ganhei  a vida eterna com Deus, com Deus. :||\n                                                             (Fim: A      D)",
-    "createdAt": 1720000054000
+    "createdAt": 1720000054000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=NhSBvZvN-4g"
   },
   {
     "id": "song-normal-051-vivo-cada-dia-com-jesus-no-coracao",
@@ -645,7 +653,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "Intro:\n\nG            C     G      Em\nCantarei Tuas misericórdias\n    Am                 D\nÓ Senhor agora e p'ra sempre!\n     G      C           G  Em          Am         D           G   G7\nCantarei de Teu grande amor    que na minha vida Tu tens mostrado!\n       C              G                  C              D\nPorque Tu és digno de ser louvado, porque Tu és digno de receber,\n        G             C        G       Em\nToda honra, toda a glória e adoração!\n C            D         G        Em     Am        D          G     (G7)\nAgora e p'ra sempre, Senhor cantarei, a Ti com todo o meu ser!   (2X)",
-    "createdAt": 1720000056000
+    "createdAt": 1720000056000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=7x7j2W-kpH4"
   },
   {
     "id": "song-normal-053-nos-damos-gracas-ao-senhor",
@@ -739,7 +748,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: A7M  E/G#  D/F#  Dm/F\n          A7M  D/E  E  A7M  D/E\n\nEstrofe 1:\n     A7M                A7M(9)\n||: Aquele que tem os Meus mandamentos\n     D7M       A7M       A7M(9)                    D7M\nE os guarda, esse é              o que Me ama\n A7M                E/G#                     D/F#     Dm/F\nAquele que tem os Meus mandamentos e os guarda,\n        A7M        D/E      E       A7M     D/E\n1ª vez: Esse é o que Me ama! :||\n        A7M        D/E      E    A7M    Bm7    C#m7\n2ª vez: Esse é o que Me ama!\n\nRefrão:\n   D7M                      C#m7\nE aquele que Me ama será amado por Meu Pai,\n  C7M                       Bm7              E4\nE Eu também o amarei e Me manifestarei a ele.\n\nEstrofe 2:\n A7M                A7M(9)\nAquele que tem os Meus mandamentos\n     D7M       A7M       A7M(9)                    D7M\nE os guarda, esse é              o que Me ama\n A7M                E/G#                     D/F#     Dm/F\nAquele que tem os Meus mandamentos e os guarda,\nA7M        D/E      E    A7M   D/F#    Dm/F\nEsse é o que Me ama!\nA7M        D/E      E   A7M(9)\nEsse é o que Me a - ma!",
     "createdAt": 1720000064000,
-    "bpm": 55
+    "bpm": 55,
+    "youtubeUrl": "https://www.youtube.com/watch?v=TXmKk7vmcXc&list=RDTXmKk7vmcXc&start_radio=1"
   },
   {
     "id": "song-normal-058-rei-dos-reis-senhor-dos-senhores",
@@ -749,7 +759,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "Em",
     "category": "Normal",
     "cifra": "Em                                  B7                Em\nRei dos Reis, Senhor dos Senhores, Glória, Aleluia!\n\nJesus, Principe da Paz, Glória, Aleluia!",
-    "createdAt": 1720000065000
+    "createdAt": 1720000065000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=cG0k09tRqHE"
   },
   {
     "id": "song-normal-059-v1-nas-estrelas-vejo-a-sua-mao",
@@ -770,7 +781,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Normal",
     "cifra": "Intro: A  G/A  A  D C#m Bm7  A/E  D/E  A  D/A  A\n\n      F#m7             Bm7     E    A        F#m7            Bm7      E   A\nNas estrelas vejo a Sua   mão,     e no vento ouço a Sua   voz\n       G/A            D7M           C7M                 Bm7           D/E      A\nDeus domina sobre a terra e mar;        o que Ele é      p'ra mim?\n       F#m7         Bm7       E     A             F#m7           Bm7       E   A\nEu sei o sentido do    Natal,     pois na história tem o seu   lugar:\n       G/A         D7M         C7M                 Bm7      Em7     G/A\nCristo veio para nos salvar;       o que Ele é p'ra mim?\n\n   D7M                                     C#m7                               Bm7\n||:       'Té que um dia Seu amor senti,          Sua imensa graça recebi,\n                                 D/E\nDescobri então que Deus não vive longe lá no céu,\n                        A       F#m7          Bm7      D/E    A\nSem se importar comigo,    mas agora a meu lado está,\n     F#m7           Bm7      D/E      A      G/A     A    D  C#m7        Bm7    A/E\nCada dia sinto o Seu cuidar,       ajudando-me a ca-mi   -   nhar;\n         D/E      A      (P/repetir:           Em7    G/A)\nTudo Ele é p'ra mim :||\nBm7               D/E      A    F#m7            D          D/E        A(add9)\n       Tudo Ele é p'ra mim.                Tudo é Jesus p’ra mim.",
-    "createdAt": 1720000067000
+    "createdAt": 1720000067000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=sZg4_xzE_Kk&t=36s"
   },
   {
     "id": "song-normal-060-do-pao-do-ceu-me-nutrirei",
@@ -815,7 +827,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "F",
     "category": "Normal",
     "cifra": "F               D+          D7     Gm\nMaravilhoso sim, ma – ra – vi - lhoso sim,\nC7      Bb/F        F  G7         C7\nMaravi-lho-so   sim, é meu Jesus.\nF               Daug         D7   Gm\nÉ Rei e Salvador, do mun-do  Cri-ador,\nC7       Bb/F     F   C7        F\nMaravi-lho-so sim, é meu Jesus.\nC7                  F           G7              C7\nÉ Rocha eterna, o Rei prometido, Omnipotente Deus!\nF               Daug            D7   Gm\nVinde adorá-lo, p'ra sempre hon – rá - lO,\nC7      Bb/F      F   C7        F\nMaravi-lho-so sim, é meu Jesus.",
-    "createdAt": 1720000071000
+    "createdAt": 1720000071000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=3baDLg0Ugbg"
   },
   {
     "id": "song-normal-064-a-tua-palavra-escondi",
@@ -906,7 +919,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "    D    F#      Bm\n||: Ando só com Cristo, meu Senhor,\nEm     A7       D\nMinha vida Lhe entreguei,\n      F#       Bm\nProvo mais do Seu imenso amor,\nEm     A7       D\nEle é meu, eu sei.    :||\n\nG          D          F#               Bm\nSe tu não sentes paz,   não esperes, vem!\nEm               A         Em       E       A  A7\nCristo deu-me a salvação, quer te dar também!\n                         D\n(Vozes masc.) Eu\n(Vozes fem.)   Ando só com Cristo, meu\n                F#\n(Vozes masc.) Senhor,\n(Vozes fem.)    Provo mais do Seu imenso\n                G\n(Vozes masc.)  Amor.\n                              Em\n(Vozes fem.)    Ele é meu, eu sei,\n           A7\n(Todos) Eu sei!\n\nAndo só com Cristo...",
-    "createdAt": 1720000079000
+    "createdAt": 1720000079000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=XYvvdYLJcyU"
   },
   {
     "id": "song-normal-071-senhor-eu-quero-sentir-a-tua-presenca",
@@ -1031,7 +1045,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "F",
     "category": "Normal",
     "cifra": "Intro: Dm  Dm/C  Bb7M  Asus4\n\n    A  Dm            Dm/C        Bb7M           G/A\n||: O  meu louvor é fruto do meu amor por Ti, Jesus\n  Dm              Dm/C            Bb7M        Gm   Bb/C\nDe lábios que confessam o Teu No   -   me!\n   F7M           Bb7M          Em7(b5)                          G/A\nÉ fruto da Tua graça, e da       paz que encontro em Ti,\nDm          Dm/C            Bb7M       Asus4       G/A        Dm       Dm/C\nE do Teu Espírito que habita em mim   que ha  -  bita em mim! :||\n                                                                                 2ª vez: Dsus4  D7\n                                                                                 3ª vez: D9\n\n Gm           C7      F7M            Bb7M\nAinda que as trevas venham me cercar,\n Gm           Bb/C        F7M           Bb7M\nAinda que os montes desabem sobre mim,\n     Em7(b5)            G/A           Dm   Dm/C              Bb7M      Dm/A      G/A     Dm    Dsus4       D7\nMeus lábios       não se fecharão,          p'ra sempre hei-de Te louvar.\n Gm           C7     F7M            Bb7M\nAinda que cadeias venham me prender,\n Gm           Bb/C           F7M            Bb7M\nAinda que os homens se levantem contra mim,\n     Em7(b5)            G/A           Dm   Dm/C             Bb7M      Dm/A       G/A     Dm    Dm/C\nMeus lábios       não se fecharão,         p'ra sempre hei-de  Te louvar.\n\n(Repete início x1)",
-    "createdAt": 1720000090000
+    "createdAt": 1720000090000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=WTTDbM5JXjg&list=PL2Fq03UjZTjjykPtYg93HvJjeChS1RK8U&index=9"
   },
   {
     "id": "song-normal-081-ao-que-esta-sentado-no-trono",
@@ -1077,7 +1092,7 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "G       C G               C        Am\nMajestade!    Louvai  a   Majestade!\nC/D       D  G        Em7            A7        Am7     D\n      A Je-sus seja a glória,    honra e poder!\nG     C G                 C     Am7\nMajestade,   o reino e autoridade,\nD7          G        Em7        Am       D           G C/G    G\nVindo dos céus, p'ro povo de Deus erguer seu louvor.\n    D             Am     C/D     D G     C  G\nExaltai e engrandecei o Nome de Cristo.\n   D          Am       D            B   D\nAdorai, glorificai Jesus Cristo o Rei.\nG       C G            C       Am7\nMajestade!   Louvai a  Majestade!\n   D7         G      Em7        Am     Am/D              G  C/G     G\nJesus que sofreu, a morte venceu,    é   Rei dos reis!",
     "createdAt": 1720000094000,
-    "youtubeUrl": "https://hinario.igrejamana.com/majestade/"
+    "youtubeUrl": "https://www.youtube.com/watch?v=pyo3qFoeovQ"
   },
   {
     "id": "song-normal-085-eu-tenho-em-mim-um-canto-de-vitoria",
@@ -1121,7 +1136,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "        G          C\nLouva a Deus oh minh'alma!\n      A           D\nLouva Deus oh minh'alma!\n   G          C     A        G/D     D7  G\nE tudo quanto há em mim louve  ao  Senhor!  (Fim)\n\n G\n(Vozes fem.) Rei dos reis,\n                  C   G     C  G\n(Vozes masc.) p'ra sempre e sempre!\n               A\n(Vozes fem.) Senhor dos senhores,\n                   D  A    D   A\n(Vozes masc.) p'ra sempre e sempre!\n             B\n(Vozes fem.) Rei dos reis,\n                   Em   B    Em   B\n(Vozes masc.) p'ra sem-pre e sempre!\n        Am        G/B     Am/C       A7/C#        G/D      D       G\n(Todos)          Rei   dos    reis,   Se  -  nhor   dos senhores!",
-    "createdAt": 1720000098000
+    "createdAt": 1720000098000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=ANfpF0pNob4"
   },
   {
     "id": "song-normal-089-dai-gracas-de-coracao",
@@ -1226,7 +1242,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Normal",
     "cifra": "A                A7\nSemear a Palavra sem se importar,\nD                     A\nSe Ela cairá em terra boa;\nD\nAo plantar uma semente\nA             F#\nSaiba que o Senhor somente\nD         E         A\nPoderá fazê-la germinar.\n\nSemear a Palavra sem se importar,\n\nSe Ela cairá em terra boa,\n\nPois quem planta a Palavra\n\nÉ como quem a terra lavra,\n\nTem que no Senhor Deus esperar\n\nAo plantar uma semente\n\nSaiba que o Senhor somente\n\nPoderá fazê-la germinar!",
-    "createdAt": 1720000107000
+    "createdAt": 1720000107000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=WQ9wr4XiJW4"
   },
   {
     "id": "song-normal-096-estamos-muito-alegres",
@@ -1236,7 +1253,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Normal",
     "cifra": "Intro:||: A     E    C#m   F#m  B7    E  : ||\n\n  E                                B7\nEstamos muito alegres, Jesus está aqui,\n                              E   E7\nSentimos muito amor, sentimos união,\n      A                 E                C#m\n||: Sabemos que Jesus está aqui no nosso meio,\n     F#m         B7          E\nPor isso temos paz no coração. :||\n\n                E                B7\n||: Desde o dia em que aceitei Jesus\n                        E\nA minha vida se transformou :||\n A               E\nAgora sou feliz, agora vivo bem\n  B7                   E    B7          E\nJesus salvou-me a mim e salva a ti também\n A                E\nAgora sou feliz, agora vivo bem\n    F#m       B7        E\nCom Jesus e mais ninguém\n\n  E                         B7\nEsta alegria não vai mais sair,  (não vai mais não)\n                          E\nEsta alegria não vai mais sair,  (não vai mais não)\n         E7                A\nEsta alegria não vai mais sair,\n    E           A      B7   E\nDe dentro do meu co-ra-ção!\n\nE            A\nFé mais fé, amor mais amor\nE             B7\nQuem não tem, peça ao Salvador,\n         E   A\nPois sem fé e sem amor,\n    E        B7        E\nNão pode agradar ao Senhor.",
-    "createdAt": 1720000108000
+    "createdAt": 1720000108000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=7fjhDduCePc"
   },
   {
     "id": "song-normal-097-pois-tu-senhor-es-rei-exaltar-te-ei",
@@ -1290,7 +1308,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "     C\nAté aqui nos ajudou o Senhor,\n     F           Am       Dm\nAté aqui nos ajudou o Senhor,\n     G          G7       Em\nAté aqui nos ajudou o Senhor,\n                          F  G    (1ª vez)     F G C (2ª vez)\nE sempre ajudará!\n\nC            F\nPor isso nós dizemos Ebenezer,\n                 G           Em\nEbenezer, Deus está connosco aqui,\n     Am       Dm            G          C  C7  (1ªvez)        C (fim)\nAté aqui, Aleluia, nos ajudou o Senhor!",
-    "createdAt": 1720000113000
+    "createdAt": 1720000113000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=FaFLAWQv3V0"
   },
   {
     "id": "song-normal-102-restauracao",
@@ -1368,7 +1387,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "Intro: D G D A\n\n  D          D7\nSuave como a chuva que cai,\nG            Em\nBrando como a brisa sai,\nD      Bm                Em   A\nDoce, o Teu Espírito em mim;\nD            D7\nSempre expressando amor,\nG          Em\nDando para mim o melhor,\nD      Bm                Em    A   G   A\nDoce, o Teu Espírito em mim,      ooooh!\n\nRefrão:\n\n  D       G         D     G\nEstá trabalhando, está moldando,\nD              G           D   A\nSempre transformando o meu ser,\nD          G    D        G\nCriando em mim, vida sem fim!\n  D          A7           G   D\nEstá transformando o meu ser!",
-    "createdAt": 1720000120000
+    "createdAt": 1720000120000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=-7Q3k1cnJxY"
   },
   {
     "id": "song-normal-109-v1-ele-e-exaltado-tom-c",
@@ -1425,7 +1445,7 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: |  G  D  Em  C  |  G  D  C  |\n\n  G    G/B           C\nMagnifiquemos ao Senhor,\n      G         G/B          C\nDemos glória ao nosso Salvador,\n  G             D            C  Am     D\nMagnificai ao Altíssimo pois Ele digno é,\n  G             D            C   D    G\nMagnificai ao Altíssimo pois Ele digno é!\n\nRefrão:\n      G                Am\n||: Hosana! (Hosana) Hosana! (Hosana)\n  C       D     G\nHosana ao nosso Rei!   :||",
     "createdAt": 1720000125000,
-    "youtubeUrl": "https://hinario.igrejamana.com/magnifiquemos-ao-senhor/"
+    "youtubeUrl": "https://www.youtube.com/watch?v=bRp4xr5CJ_0"
   },
   {
     "id": "song-normal-113-andam-procurando-a-razao-de-viver",
@@ -1504,7 +1524,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: Em(add9)  Am7  Em(add9)  Am7\n\n       Em(add9)                        Bm7\n||: Eu sei que foi pago um alto preço\nC           Am7            Em(add9)\nPara que contigo eu fosse um meu irmão.\nEm(add9)                 Bm7\nQuando Jesus derramou Sua vida,\nC                  D              D#m7                Em(add9)            P/repetir:          Am7\nEle pensava em ti, Ele pensava em mim, pensava em  nós! :||\n\n      C       Dsus4       D       G  C/G    G\nE nos via redimidos   por Seu sangue,\n  C              Dsus4         D    G   D/G    G\nLutando o bom combate      do Senhor,\nG/B     C                       C#º\nLado a lado trabalhando, Sua Igreja edificando,\n     G                        D4   D  C/D\nE rompendo as barreiras pelo amor!\n\nRefrão:\n         G                 D/F#         C/E            Gadd2\n||: E na força do Espírito Santo nós proclamamos aqui,\n    C           G/B                  Asus4         A        C/D    D/F#\nQue pagaremos o preço de sermos um só cora - ção no Senhor,\n      G                    D/F#           C/E      C/D    G\nE por mais que as trevas militem e nos tentem sepa-rar,\nG/B         C               G/B        Am7        C/D       G      P/repetir:          Dsus4      D/F#\n   Com os nossos olhos em Cristo, unidos, i–remos andar. :||\n                                                                                2ª vez: Em7   G/D\n\n C        Dsus4          D#º     Em7    G/D\nUnidos, i–re    -    mos andar.\n Am7        C/D     D      Gadd9\nUnidos, i–re  -  mos andar.",
     "createdAt": 1720000132000,
-    "bpm": 70
+    "bpm": 70,
+    "youtubeUrl": "https://www.youtube.com/watch?v=4MFsMX0Hf-g&list=PL2Fq03UjZTjjykPtYg93HvJjeChS1RK8U&index=2"
   },
   {
     "id": "song-normal-119-cantai-pois-a-vitoria-e-ganha",
@@ -1548,7 +1569,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": " G                  D7\nAchei alegria, achei   paz com Deus,\n                            G\nEncontrei gozo e graça porque  Cristo é meu,\n       G7                     C\nEu achei  a vitória em Jesus Cristo Salvador,\n      G             D7\nAchei satisfação sem fim,\n                 G            C       G\nCristo vivendo em mim por Seu grande amor.",
-    "createdAt": 1720000136000
+    "createdAt": 1720000136000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=CyLjqNuKSEg"
   },
   {
     "id": "song-normal-123-jesus-e-a-rocha-da-minha-salvacao",
@@ -1603,7 +1625,7 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "  E                  B7\nViver com Jesus é cantar\n                     E\nViver com Jesus é sorrir,\n         A                  E\n||: É sentir o calor de chegar,\n      B7                 E\nMesmo quando se tem de partir.   :||\n\nRefrão:\n\nOh, oh aleluia, aleluia, aleluia, amém\n\nOh, oh aleluia, aleluia, aleluia, amém\n\nMas também nunca se esquecer\n\nDe que há muitos que vivem na dor,\n\n||: Que mostrar nosso Cristo é viver,\n\nQue viver é mostrar Seu amor :||",
     "createdAt": 1720000141000,
-    "youtubeUrl": "http://www.luteranos.com.br/conteudo/wolodymir-boruszewski"
+    "youtubeUrl": "https://www.youtube.com/watch?v=9LG96SKbaNc"
   },
   {
     "id": "song-normal-128-v1-brilha-jesus",
@@ -1637,7 +1659,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "     C         F          C            Am\nEntrarei na presença do Senhor com gratidão\n       C          F           Dm    G7\nEm Seus átrios com hinos de louvor,\n    C             F       C       Am\nE direi este é o dia que fez o Senhor,\n    F               G7            C\nMe alegrarei porque Ele me fez feliz.\n\n    C            F  C           Am\n||: Ele me fez feliz, Ele me fez feliz;       (transição:)\n    F             G7             C  (Dm       C/E)\nMe alegrarei porque Ele me fez feliz.   :||",
-    "createdAt": 1720000144000
+    "createdAt": 1720000144000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=BVJkfNWMcQw"
   },
   {
     "id": "song-normal-130-queremos-conhecer-te",
@@ -1647,7 +1670,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "Em",
     "category": "Normal",
     "cifra": "Intro: Em7  D/F#  Gmaj7\n\nA7   D    G/D      D A/C#       G/B\nQue-re-mos co - nhe-cer - Te,\n  D/A      E/G#       D/A       A\nViver p'ra mostrar - Te\n       G   A/G     F#m     Bm\nO amor que Te de-ve - mos,\n      Em7        Em/A         D\nE Teu co – ra - ção  buscar!",
-    "createdAt": 1720000145000
+    "createdAt": 1720000145000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=rBVjbjGVVjo"
   },
   {
     "id": "song-normal-131-eu-sou-teu",
@@ -1670,7 +1694,7 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "D\nEste é o dia, este é o dia,\n       Gmaj7/A              A7           Gmaj7/A            A7\nQue fez    o      Senhor, que fez    o    Senhor;\n\nRegozijemo-nos, regozijemo-nos,\n      D\nE alegremo-nos Nele, e alegremo-nos Nele!\n\nG maj7        C#m7/G            F#m7        Bm7\nEste é o   dia   que  fez o Senhor,\nG maj7       C#m7/G                F#m7          Bm7     A7\nRe-go-zi-jemo-nos, e ale-gre-mo-nos Nele!\nD                               F#m/A         A7    D\nEste é o dia, este é o dia que fez   o    Se - nhor!",
     "createdAt": 1720000147000,
-    "youtubeUrl": "https://www.hymnal.net/en/hymn/c/4"
+    "youtubeUrl": "https://www.youtube.com/watch?v=GhGUNR7I6Jw"
   },
   {
     "id": "song-normal-133-estou-cantando-alegre",
@@ -1681,7 +1705,7 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "   C             Am         Dm       G7             C\nEstou cantando alegre no caminho da vida e da verdade\n   C           Am          Dm          G7           C (...)\nA cada passo encontro um motivo de amor e felicidade!\n\n(vozes masc.) Sim, alegre, vou cantando!  (4X)\n\n(vozes fem.) Estreito é o caminho e por vezes\n\n                     É difícil continuar\n\n                     Alegre eu prossigo, pois meu lar\n\n                     Finalmente hei-de encontrar\n\n                     E ali, p'ra sempre viverei!   (4X)\n\n(vozes masc.) Com Jesus, meu Salvador,\n\n                        Ali eu viverei por toda a eternidade!\n\n(vozes fem.)    Oh sim, meu Senhor,\n\n(vozes masc.) Eu viverei!\n\n(vozes fem.)   Com Jesus, com Jesus,\n\n(vozes masc.) Eu  viverei!",
     "createdAt": 1720000148000,
-    "youtubeUrl": "https://www.alabanzahimnario.com/coros/117-estoy-cantando-alegre/"
+    "youtubeUrl": "https://www.youtube.com/watch?v=JD-WCjFI_10"
   },
   {
     "id": "song-normal-134-v1-gloria-p-ra-sempre-ao-cordeiro-de-deus",
@@ -1702,7 +1726,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "Ab",
     "category": "Normal",
     "cifra": "Intro: Ab  Fm  Bb  Eb\n\nAb           Fm            Bb        Eb\nGlória p'ra sempre ao Cordeiro de Deus\n    Ab        Fm          Bb       Eb\nA Jesus, o Senhor, ao Leão de Judá,\n    Ab        Fm         Bb                  Eb   Db/Eb\nÀ raíz  de Davi que venceu e o Livro abrirá.\n    Ab      Db    Db/Eb            Ab    Db/Eb\nO céu, a ter - ra       e o mar\n  Ab      Fm         Bbm     Db/Eb\ne tudo o que neles há\n  Ab     Gb/Ab         Db        Bbº7    (Bbº7      muda     compasso           para    4/4)\nO adorarão      e confessarão:\n\n   Ab/Eb        Fm      Bbm        Eb7      Ab   Db/Eb\nJesus       Cristo é        o    Senhor.\n     Ab         Bbm         Db/Eb              Ab    Db/Eb       Ab\n    Ele é Senhor,            Ele é Senhor,\nDb/Eb      Ab               Fm           Bbm     Db/Eb\nRessur-recto dentre os mortos, é Senhor!\n       Ab              Gb/Ab                Db              Gb7\nTodo o joelho se dobrará,       toda a língua confessará\n      Ab   Fm      Bbm        Db/Eb            Ab   Db/Eb       Ab\nQue Jesus Cristo é         o         Senhor!",
-    "createdAt": 1720000150000
+    "createdAt": 1720000150000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Pk7MGoPjpTs&t=21s"
   },
   {
     "id": "song-normal-135-estou-alegre",
@@ -1745,7 +1770,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "D  A          Bm  Bm/A         G       A   D\nLouvar-Te-ei  Senhor      de todo o coração\n   G    A      F#      Bm          Em     E      D/A   A\nEu cantarei as Tuas maravilhas, eu louvarei Teu No-me.\nD  A         Bm   Bm/A         G       A   D\nLouvar-Te-ei Senhor       de todo o coração,\n   G           A      F#            Bm     Em   A7    D\nEm Ti me alegrarei, saltarei de prazer , a-le-lu-ia!",
-    "createdAt": 1720000154000
+    "createdAt": 1720000154000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=GelimTB9a40"
   },
   {
     "id": "song-normal-139-nao-por-forca-ou-por-poder",
@@ -1755,7 +1781,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Normal",
     "cifra": "         A             D        Bm            A\nNão por força ou por poder, o inimigo vou vencer,\n       A              D        A  E          A\nPois a Bíblia e a oração são as armas do cristão!\nF#m             C#         F#m            C#\nVamos vencer sem falhar, por Jesus lutar;\nE             G#m             F#m     B      E\nQuero sempre obedecer ao mandado do meu Rei;\n       A              D            Bm             A\nVou viver p'ra meu Senhor, sempre amando o Salvador,\n                       D         E7               A\nTransformando treva em luz, vou viver p'ra meu Jesus.\n      E7               A         E7              A\nVou viver p'ra meu Jesus, vou viver p'ra meu Jesus.",
-    "createdAt": 1720000155000
+    "createdAt": 1720000155000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=mhLGgXWS678"
   },
   {
     "id": "song-normal-140-sim-com-deus-seremos-vencedores",
@@ -1823,7 +1850,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "G\nÉ maravilhoso ter a Cristo e com Ele sempre caminhar,\nC                    G Em     A                 D\nNosso bom pastor nos guia    e do mal nos vem livrar.\nG\nBem-aventurado o que confia nesse bom pastor e salvador,\nC                  G  Em   A            D7       G\nPois somente Cristo salva pelo Seu tão grande amor.\nC                           G\nSe estás aflito neste mundo caminhando sem ter direcção,\nC                               A                   D\nÉ porque a Cristo tu desprezas, sem lhE dar teu coração.\nG\nÉ maravilhoso ter a Cristo e com Ele sempre caminhar,\nC               G  Em\nVem segui-lo hoje mesmo,\nC         D    C        D    C        D    G\nTua vida vai, tua vida vai, tua vida vai mudar!",
-    "createdAt": 1720000161000
+    "createdAt": 1720000161000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=3es6q9bx1Z4"
   },
   {
     "id": "song-normal-145-que-sentiste-tu-quando-deixaste-o-mundo",
@@ -1833,7 +1861,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Normal",
     "cifra": "A\nQue sentiste tu quando deixaste o mundo,\nE                  A\n   Deixaste o mundo,   deixaste o mundo,\n                                           E     E7     A\nQue sentiste tu quando deixaste o mundo, andando com Jesus.\n                     D           A\nAndando com Jesus, andando com Jesus,\n                                           E     E7    A\nQue sentiste tu quando deixaste o mundo, andando com Jesus.\n\nO diabo não gostou quando\n\nDeixei o mundo, (3X)\n\nO diabo não gostou quando deixei o mundo, andando com Jesus.\n\nAndando com Jesus, andando com Jesus,\n\nO diabo não gostou quando deixei o mundo, andando com Jesus.\n\nEstou feliz agora porque\n\nDeixei o mundo, (3X)\n\nEstou feliz agora porque deixei o mundo, andando com Jesus.\n\nAndando com Jesus, andando com Jesus,\n\nEstou feliz agora porque deixei o mundo, andando com Jesus.\n\nFeliz serás também quando\n\nDeixares o mundo,  (3X)\n\nFeliz serás também quando deixares o mundo, andando com Jesus.\n\nAndando com Jesus, andando com Jesus.\n\nFeliz serás também quando deixares o mundo, andando com Jesus.",
-    "createdAt": 1720000162000
+    "createdAt": 1720000162000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=nKS3TEvf0TU"
   },
   {
     "id": "song-normal-146-diante-do-trono-de-deus-nos-ceus",
@@ -1856,7 +1885,7 @@ export const NORMAL_SONGS: Song[] = [
     "cifra": "Intro: C\n\nEstrofe 1:\n        C              C7\nEstou seguindo a Jesus Cristo,\n        F              C\nDeste caminho eu não desisto,\n         Em             Am\nEstou seguindo a Jesus Cristo,\n          D   G7             C\nAtrás não vol  -  to, nunca mais.\n\nEstrofe 2:\n         C               C7\nSe me deixarem os pais e amigos,\n         F              C\nSe me cercarem muitos perigos,\n         Em                Am\nSe me deixarem os pais e amigos,\n          D   G7             C\nAtrás não vol  -  to, nunca mais.\n\nEstrofe 3:\n        C              C7\nAtrás o mundo, Jesus à frente,\n          F           C\nJesus meu guia, Omnipotente,\n        Em               Am\nAtrás o mundo, Jesus à frente\n          D   G7             C\nAtrás não vol  -  to, nunca mais.\n\nEstrofe 4:\n          C              C7\nDepois da luta ganho a coroa,\n       F               C\nA recompensa é certa e boa,\n          Em               Am\nDepois da luta ganho a coroa,\n          D   G7             C     (Repetir        verso:      Am)\nAtrás não vol  -  to, nunca mais.",
     "createdAt": 1720000164000,
     "bpm": 118,
-    "youtubeUrl": "https://www.letras.mus.br/rr-soares/610123/"
+    "youtubeUrl": "https://www.youtube.com/watch?v=J3UH0T418Ow"
   },
   {
     "id": "song-normal-148-v1-tudo-pra-ti",
@@ -1877,7 +1906,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Normal",
     "cifra": "Intro: F  A7(#5)  Bb  Gm7(b5)\n          F/C  Dm7  Gm7  C7(b9)  F  Bb/C\n\n    F       Dm7      Gm7           Bb/C\n||: Em cada dia, Senhor, Te buscar,\nGm7      C7(b9)         Bbm6/F        F    Bb/C      C\nCada momento Teu Nome       louvar,\nF        A7(#5)       Bb      Gm7(b5)\nMeu pensamento cativo levar,\nF      Gm7       C7(b9)          F  F/Eb\nTudo ó Cristo  p'ra       Ti!  :||\n\nDb       Eb/Db        Cm7          Fm7       Bbm7        Eb7        Ab7M\nA minha vida e   tudo o que sou     é Teu, Senhor, eu Te dou!\nCm7          F7      F/Eb       Dm7         Gm7      Dm7           F/G           Bb6/C       C/D\nTudo o que tenho, ta   -   lentos e bens,  são Teus, Senhor, Tu os tens.\n\nSubida de tom:\nG      Em7            Am7          C/D\nCada palavra que eu venha a dizer,\nAm7        D7(b9)             Cm6/G        G     C/D    D\nTodas as coisas que eu possa        fazer,\nG       B7(#5)         C             Am7(b5)\nSejam repletas de glória ao Teu ser,\nG/D   Em7         Am7     D7(b9)               G\nTudo        ó Cristo            p'ra Ti.",
-    "createdAt": 1720000166000
+    "createdAt": 1720000166000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Ii9e7Wnr1K0&t=1s"
   },
   {
     "id": "song-normal-149-ele-e-meu",
@@ -2069,7 +2099,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "      C      C/E          F  Dm7\n||: Senhor, Senhor quão majestoso\n  C/E        C          G  G7/B\nEm toda a terra é Teu Nome   :||\n\n   F Dm7           G Am7       G7/B        C    C/E\nSenhor!    Te    lou   -   va  -  rei.\n   F Dm7           G  Am     G/B     C\nSenhor!        Exaltarei  Teu  Nome,\nB   B7/D#         Em      D  D7/F#         G   G/F\nPrín – ci  -  pe  da Paz   e     Rei,\n   C/E     F G7   C\nOh Deus Poderoso.",
-    "createdAt": 1720000183000
+    "createdAt": 1720000183000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=VHBWd9JoJ7A"
   },
   {
     "id": "song-normal-163-sei-que-jesus-vai-por-onde-eu-andar",
@@ -2271,7 +2302,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "C               Gsus4       G         C\nViemos p'ra louvar-Te  com o coração,\n           Gsus4        G               C  C7\nViemos para dar-Te     a nossa gratidão,\n           F  G             Em   Am\nE o nosso amor   vem do coração,\n                Dm   G7          C  C7\nTudo em nós proclama    \"Abba Pai\"!\n            F    G7             Em   Am\nViemos entregar-Te  o nosso louvor,\n            Dm        G7             C\nMente e coração dirão:   \"Te amo Senhor\".",
-    "createdAt": 1720000201000
+    "createdAt": 1720000201000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=uEmGsmGOOCs"
   },
   {
     "id": "song-normal-179-pela-graca-sois-salvos",
@@ -2281,7 +2313,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "     D          G     A7\nPela graça  sois salvos,\n      D          G    A\nPela graça sois salvos,\n    Em       G       F#m      Bm\nPor meio da fé, por meio da fé,\n    Em                A\nPor meio da fé em Jesus.\n\nE isto não vem de vós\n\nP'ra que ninguém se glorie,\n\nMas é o dom, mas é o dom,\n\nSim é o dom de Deus!\n\n            D    F#m          Bm   G\n||: P'ra louvor e glória da Sua Graça\n     F#m              Bm      A7\nPela qual nos abençoou no Amado.   :||\n\n     D          G     A7\nPela graça  sois salvos,\n     D          G    A\nPela graça sois salvos,\n    Em      G        F#m      Bm\nPor meio da fé, por meio da fé,\n    Em       A7       D\nPor meio da fé em Jesus.",
-    "createdAt": 1720000202000
+    "createdAt": 1720000202000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=84--GlHainU"
   },
   {
     "id": "song-normal-180-que-maravilha-e-ser-uma-familia",
@@ -2292,7 +2325,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: Dm\nRiff piano: A C D x4\n\n            Dm\n||: Que maravilha é ser uma família\n      A7                 Dm\nUma família em Cristo Jesus.   :||\n\n    D7            Gm     C7             F\n||: Uma família unida, uma família leal,\nBb               Gm    A7                 Dm\nUma família que ama, uma família sem i-gual.   :||\n\n(Repete cântico)",
     "createdAt": 1720000203000,
-    "bpm": 125
+    "bpm": 125,
+    "youtubeUrl": "https://www.youtube.com/watch?v=zBTYF8AaPe8"
   },
   {
     "id": "song-normal-181-quero-louvar-te-mais-e-mais-senhor",
@@ -2325,7 +2359,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "D       Em   Em7        A          A7    G/D           D\nReina em mim,            oh meu Deus, reina em mim,\nD       Em   Em7        A          A7   Em/D           D G/D    D\nReina em mim,           oh meu Deus, reina em mim.\n   B7(b9)            Em   Em7    A7\nTe dou meu coração,\nA7(b9)                  Dmaj9\n    Reina em mim Senhor,\nA7(b9)              Em   Em7     A7\n    Peço-Te, Jesus,\n  A7          Dmaj9\nTua vontade faz,\n    D        Em   Em7        A        A7    G/D         D\n||: Reina em mim,           oh meu Deus, reina em mim.   :||",
-    "createdAt": 1720000206000
+    "createdAt": 1720000206000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=ZzEkhTwiODc&list=RDZzEkhTwiODc&start_radio=1"
   },
   {
     "id": "song-normal-184-meu-pensamento-e-para-ti-senhor",
@@ -2483,7 +2518,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "Intro: G  A  F#m  Bm   Em  A D\n\n           D           A               Bm\n||: Como o cervo brama por correntes de  água\n           G       Em        A7\nAssim minh'alma suspira por Ti, oh Deus.\n        D        G           Bm\nA minha alma tem sede do Deus vivo,\n         G          A7     D        D7\nPerante a face do Senhor irei. :||\n\nRefrão:\n      G       A      D      Bm\n||: Espero em Deus e o louvarei,\nEm       A             D   D7\nHá salvação em Sua presen-ça,\n       G        A          F#m       Bm\nEle me unge com óleo de alegri  -  a,\n          Em        A   D\nEle é meu Deus, Alelui-a! :||        (P/repetir último verso: Bm)",
-    "createdAt": 1720000220000
+    "createdAt": 1720000220000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=AQffaP4HWKE"
   },
   {
     "id": "song-normal-198-na-presenca-do-teu-povo",
@@ -2762,7 +2798,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "Intro: ||: G  G  F  G :||\n\n              G\n||: Em todo o tempo eu louvarei ao Senhor\n           F                  G\nSempre estará nos meus lábios o Seu louvor! :||\n\nRefrão:\n       Eb7M              F           G\n||: Alegrar-se-á no Senhor, a minh’alma! :||\n             G\n||: Engrandecei ao Senhor, engrandecei-O comigo\n  F                   G\nE todos à uma Lhe exaltemos o Nome! :||\n        Eb7M        F          G\n||: Seu Glo      -    rioso Nome! :||\n\n(Refrão)\n\n       Eb7M              F\n||: Alegrar-se-á no Senhor\n   Eb7M              F\nAlegrar-se-á no Senhor\n   Eb7M              F          G\nAlegrar-se-á no Senhor, a minh’alma! :||",
-    "createdAt": 1720000244000
+    "createdAt": 1720000244000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=CUZdrTUFhXA"
   },
   {
     "id": "song-normal-217-deus-supremo-es",
@@ -2784,7 +2821,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Normal",
     "cifra": "E           B/G#      A9        A9/B\nHaja paz e amor em todos nós.\nE       B/G#       A9       A9/B\nHaja união e    muita fé.\n\n    Asus4                B/A\n||: Testemunhando de Cristo\nG#         G#/C        C#m\nPara o louvor do Senhor,\n       A/F#                 B\nMostrando a toda a gente                    (2ª vez, transição p/subida de tom):\n    A/F#        A/B    E    (A/F#         E/G#)      (Csus2         C7)\nQue Cristo é Salvador.     :||\n\nSubida de tom:\nF           C/A      Bb9        Bb9/C\nHaja paz e amor em todos nós.\nF       C/A    Bb9        Bb9/C\nHaja união e muita fé.\n\n    Bbsus4                C/Bb\n||: Testemunhando de Cristo\nA         A/C#        Dm\nPara o louvor do Senhor,\n   Bb/G               C\nMostrando a toda a gente\n    Bb/G        Bb/C       F    (Bb/G         F/A)\nQue Cristo é Salva - dor.     :||\n\n(Fim: F)",
-    "createdAt": 1720000246000
+    "createdAt": 1720000246000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=9M1juhW8uMI"
   },
   {
     "id": "song-normal-219-enquanto-eu-calei-os-meus-pecados",
@@ -2805,7 +2843,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "G               C\nDentro de mim, dentro de ti,\nG               D\nDentro de nós habita Alguém;\n  G             C\nComigo está, contigo está,\n   D               D7\nConnosco está como mais ninguém;\n C7M                             D\nEu tenho a minha própria personalidade,\n Bm7                       Em\nE tu também és muito especial;\n   C          G/B       Em         C           G\nEu sou daqui, vieste dali, mas não nos interessa;\n  C        G/B       Em          Am                D7\nFamília nós somos, sim, com o mesmo Pai celestial!\n   G           C            Bm7                 Em\nJesus é meu, Jesus é teu, Jesus é o nosso Alguém:\n     C                   G/B     Em\nEstá dentro de mim, está entre nós,\n C7M      D   G   C/G          D    D7    G\nÉ Jesus Cristo!           Jesus Cristo!",
-    "createdAt": 1720000248000
+    "createdAt": 1720000248000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=bHnaUf2WtWg"
   },
   {
     "id": "song-normal-221-v1-ao-unico-que-e-digno-de-receber-tom-c",
@@ -2943,7 +2982,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Normal",
     "cifra": "A            D/E             A\nO Senhor está em Seu Santo Templo,\n F#sus4               F#         Bm\nSentado em Seu Trono celestial,\n C#sus4             C#          F#m7     F#m7/E\nA Ele nossos louvores trazemos,\n   Dm6                    Esus4       E\nPor Seu amor que é sem igual.\n\nContemplamos Sua Glória e ouvimos,\n\nUm grito de triunfo a ecoar:\n\n“Digno é o Cordeiro que foi morto”\n\nA nós só nos resta adorar,\n\n       E     A         A/G      F#sus4             Bm      D/E      E    A\n||: Cantando “Aleluia,  A – le  - lu – i  a,  A-le - lu   -   ia”!   :||\n\nO Senhor está em Seu Santo Templo,\n\nE nós diante Dele a nos prostrar,\n\nAqueles que outrora tão distantes\n\nJuntos a Deus vêm exaltar,",
-    "createdAt": 1720000260000
+    "createdAt": 1720000260000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=9w4e6ncQG6U"
   },
   {
     "id": "song-normal-231-o-espirito-do-senhor-esta-sobre-mim",
@@ -2953,7 +2993,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "Bb",
     "category": "Normal",
     "cifra": "Bb/C          F           F/A                Gm7\n       O Espírito do Senhor está sobre mim,\nBb/C          F           F/A                Gm7\n       O Espírito do Senhor está sobre mim,\nBb/C               F  F/A      Gm7\n        Para salvar,\nBb/C               F  F/A      Gm7\n        Para salvar.\n\nO Espírito do Senhor está sobre mim,\n\nO Espírito do Senhor está sobre mim,\n\nPara curar, para curar.\n\nAm7     Dm7      Gm7     C7\nQuebrantar o coração,\nAm7      Dm7      Gm7     C7\nProclamar a libertação,\nAsus4        A  Dm7           Dm\nE apregoar o ano do Senhor,\nEb      Bb/C              Bb/C\nE a consolar todos que choram.\n\n    F         F/A         Gm7          Bb/C     C  F   F/A\nEle Reina (Ele Reina), Ele Reina (Ele Rei-na)\n              Gm7        Bb/C      F  F/A    Gm7      Bb/C\nSobre todas as coisas,  Ele  Reina.\n\nEle fala (Ele fala), Ele fala (Ele fala),\n\nSobre todas as coisas, Ele fala.\n\nEle vence (Ele vence), Ele vence (Ele vence),\n\nSobre todas as coisas, Ele vence.  (3X:  transição – Em  Dm)",
-    "createdAt": 1720000261000
+    "createdAt": 1720000261000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=nXvkRyfWOgk"
   },
   {
     "id": "song-normal-232-salmos-19-que-as-palavras-dos-meus-labio",
@@ -2975,7 +3016,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "  D2                 G2     (Fim:     D)\nJesus, Tu És o meu destino;\n  D2                G2\nJesus, És minha esperança.\n     Em     D         A\nOnde irei sem Ti, Senhor?\n     Em     D        A\nOnde irei sem Teu amor?\n     G/B                  A/C#          G/B      A/C#\nMinha vida está em Tuas mãos, o  o  o     oh!\n\n  D2                  G2\nJesus, Tu És o meu caminho,\n         D        A/D           G              A/G\nSempre em Ti vou achar toda a paz que eu precisar;\n       D        A/C#            G            A4\n‘Meu viver vou fazer tudo o que tens para mim;\nBm7           G        Bm7            G\nForça Tu me dás p’ras lutas enfrentar;\n   Em     D/F#      A   G  C2       D2\nContigo   eu   vou con-tar, eu sei!...",
-    "createdAt": 1720000263000
+    "createdAt": 1720000263000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=gREy3ec80Vk"
   },
   {
     "id": "song-normal-234-ama-ao-senhor",
@@ -3019,7 +3061,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "    G                 Cmaj7         D/C\n||: Canto louvor ao Teu Nome, Senhor.\n             Bm7        Em\nLouvor ao Teu Nome, Senhor.\n     Am7\nPorque Tu És grande\n  C/D      D  C/D      D     Gmaj7          (Fim:C/G            G)\nE dig  - no  de   lou  -  vor.  :||",
-    "createdAt": 1720000267000
+    "createdAt": 1720000267000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=IkV_svrCnzg"
   },
   {
     "id": "song-normal-238-nao-ha-outra-rocha",
@@ -3053,7 +3096,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "F",
     "category": "Normal",
     "cifra": "Intro: F  C2/E  Dm  C  F/A  Bb\n               (1º verso)\n\nEstrofe 1:\nF            C2/E            Dm\n   Tu és o tesouro do meu ser,\n        C       F/A     Bb\nÉs a alegria do meu viver,\n         C     F   C\nEu quero Te louvar;\nF           C2/E              Dm\n   Como uma jóia buscar-Te-ei,\n         C            Bb\nE nunca, nunca desistirei,\n         C       Bb/F\nEu quero Te   lou-var.\n\nRefrão:\nF   C2/E         Dm      C\nJe - sus,     dom  de Deus,\nBb     F/C     C    F   C\nDigno de     lou-vor.\nF   C2/E        Dm      C\nJe - sus,    dom  de Deus,\nBb     F/C     C    F\nDigno de     lou-vor.\n\nEstrofe 2:\nF               C2/E           Dm\n   Morreste por mim na rude cruz,\n       C          F/A     Bb\nRessuscitaste em eterna luz,\n        C      F  C\nEu quero Te louvar;\nF              C2/E               Dm\n   Quando eu cair, levantar-me-ás,\n           C         F/A       Bb\nQuando esgotar, Tu encher-me-ás,\n        C      F   C\nEu quero Te louvar.\n\n(Refrão)",
-    "createdAt": 1720000270000
+    "createdAt": 1720000270000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=jHNOOQL24xo"
   },
   {
     "id": "song-normal-241-com-o-senhor-a-meu-lado",
@@ -3063,7 +3107,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "         G\nCom o Senhor a meu lado, a meu lado\n\nShu bi du bap  bap ye;\n\n        C                     G\nEle me livra e me guarda do pecado,\n\nShu bi du bap bap ye ;\n\n         D                      G\nCom o Senhor a meu lado, a meu lado!\n\nShu bi du bap bap ye !\n\nCom o Senhor a teu lado, a teu lado,\n\nShu bi du bap  bap ye;\n\nEle te livra e te guarda do pecado,\n\nShu bi du bap bap ye ;\n\nCom o Senhor a teu lado, a teu lado!\n\nShu bi du bap bap ye !",
-    "createdAt": 1720000271000
+    "createdAt": 1720000271000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=KKgefQLd-m0"
   },
   {
     "id": "song-normal-242-de-hoje-em-diante",
@@ -3190,7 +3235,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "Intro: ||: G  D/F#  G  A :||\n\n            D     G/D       D\nLevantai as mãos, deixem brilhar,\n         A    E      A\nSendo o Seu povo, proclamai\n D/F#            G         G2          D\nA Glória do Senhor, Sua Graça, Seu Amor\n    D2           A Bm/A\nQue veio sobre vós.\n\nA terra está coberta de escuridão,\n\nE vê a Vossa luz, está a ouvir o som\n\nDa Glória do Senhor, Gua graça, Seu Amor\n\nQue veio sobre vós.\n\nD     A/C#       G/B     D/A\nLouvai, louvai, louvai,\nG   D/F#      Em        A\nLevantai e celebrai-O;\nD    A/C#       G/B      D/A\nLouvai, louvai, louvai,\n    G    D/F#       Em7           A\nCom vossas vidas glori  -  ficai!\n\nLouvai, louvai, louvai,\n\nLevantai e celebrai-O;\n\nLouvai, louvai, louvai,\n       G    D/A     Em      G     D    ||:   G D/F#     G  A :||\nQue a glória do Senhor possa brilhar.",
-    "createdAt": 1720000282000
+    "createdAt": 1720000282000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=8tjD09TWA04"
   },
   {
     "id": "song-normal-252-quao-bom-e-agradavel-vem-louvar",
@@ -3201,7 +3247,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: E B A B\n\n        E          B\n||: Quão bom e agradável é estar\n A           B\nUnidos em Teu nome\n     A              Bsus\nPara Te louvar, para Te louvar. :||\n\nRefrão:\n       E    B    A\nVem louvar.          (4X)\n\n(Repete tudo)\n\nPonte:\nA        E2/G#        F#m7         Bsus      B\nChuva de bênçãos, caí sobre nós,\n       D         D/G       G\nQuando há amor e u  -  nião,\n       F#m7            A/B      B  A/B     B\nQuando há louvor de co - ração.\n\n(Refrão)",
     "createdAt": 1720000283000,
-    "bpm": 94
+    "bpm": 94,
+    "youtubeUrl": "https://www.youtube.com/watch?v=GRIWeGFBT9A"
   },
   {
     "id": "song-normal-253-v1-o-poder-do-teu-amor-tom-a",
@@ -3248,7 +3295,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro:\n\nEstrofe 1:\nC    D        /F#     G     G2/B\n   Senhor do uni  - verso,\nC          D      /F#    G   G2/B\n   Revela o Teu cora - ção,\nC        D         Em     Bm/D\n   À geração que levan - tas,\nAm7                       D  C/D    D\n      E marchará p’la nação;\n\nEstrofe 2:\nC        D          /F#    G    G2/B\n   A criação está espe - rando,\nC           D      /F#     G  G2/B\n   O surgir do Teu po  - der,\nC            D       Em   Bm/D\n    Vem libertar a unção,\nAm7                           Dsus4       D\n        Tua glória queremos ver.\n\nRefrão:\n          G      D/G       C/E    G/D\nQue a Tua Glória caia em nós,\n        C      G/B            Dsus4      D\nQue Ela flua de nós p’ras nações,\n        G    D/G           C/E     G/D\nJuntos viemos p’ra Te adorar,\n      Am7       Dsus4           D   G  (Transição:             G2/B)\nDoce aroma te en     -    tre-gar.\n\nEstrofe 3:\nC      D    /F#    G     G2/B\n   Deus omnipo  - tente,\nC            D    /F#      G  G2/B\n   O mundo a-inda ve  -  rá,\nC         D          Em   Bm/D\n   O libertar das promes-sas,\nAm7                        D  C/D     D\n       A Igreja que vencerá.\n\nEstrofe 4:\nC          D     D/F#        G     G2/B\n   Toca em nós hoje       Senhor,\nC            D      D/F#        G   G2/B\n   Tua força vem derra   -   mar,\nC         D        Em     Bm/D\n  Ultrapassando fraque - zas,\nAm7                        Dsus4        D\n       Preparados p’ra lutar.\n\n(Refrão)",
     "createdAt": 1720000287000,
-    "bpm": 80
+    "bpm": 80,
+    "youtubeUrl": "https://www.youtube.com/watch?v=WWDPtjj8-zM"
   },
   {
     "id": "song-normal-256-v1-dou-te-o-meu-coracao",
@@ -3271,7 +3319,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro:  ||: C7M | D/C | Bm7 | C/D :||\n\nG           D/F#       Em7        C/G     G        D/F#\nSenhor, meu de   -  sejo,  é Te a - do  -   rar,\nEm         D/F#        G          F7M      C   C/D\nE    de cora   -   ção, Te honrar.\n   G              D/F#      Em7           C/G     G    D/F#\nCom tudo o que há em     mim,    Te  dou    lou-vor\nEm        D/F#       G             F7M      C   C/D\nMinha adora   -  ção é só p’ra Ti.\n\nRefrão:\nG                    D/F#                  Am7\n    Dou-Te o meu coração   e todo o meu ser,\n     C/D\nP’ra Ti quero viver;\nG                  D/F#                    Am7\n   Todo o meu respirar e por onde eu andar,\n    C/D              C7M\nFaz Tua vontade em mim.\n\nInstrumental: D/C  Bm7  C/D(Refrão)\nInstrumental: ||: D/C  Bm7  C/D :||  G9",
     "createdAt": 1720000289000,
-    "bpm": 72
+    "bpm": 72,
+    "youtubeUrl": "https://www.youtube.com/watch?v=sj62hX119vs&t=125s"
   },
   {
     "id": "song-normal-257-entregar-louvor-fizeste-tudo-por-mim",
@@ -3282,7 +3331,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: ||:  A/C#  D | G  :||\n\nEstrofe 1:\n\n     A/C#      D       G\nEntregar louvor é o meu querer,\n     A/C#     D      G\nPelo Teu amor no meu viver,\n      A/C#       D        G   Em7      D/A       A\nSó render meu ser, meu coração a   Ti…  Senhor;\n\nEstrofe 2:\n    A/C#      D      G\nCada sopro do meu respirar\n      A/C#      D      G\nDa Tua graça sempre vai falar,\n       A/C#       D     G     Em7\nDa Tua liber - dade e Teu amor\n     G/A               G/D      D\nP’ra todo aquele que quer ouvir.\n\nRefrão:\n   ||:   Gmaj7     A/G:||               Bm      A/B    Bm    A/B\nTeu Amor…              faz-me crer e esperar;\n   ||:   Gmaj7     A/G:||                 Bm     A/B    Bm     A/B\nTeu Poder…             e a Tua Graça me libertará;\n   ||:   Gmaj7     A/G:||           Em7      D/F#     G\nA Tua Cruz…           dá paz ao meu  viver,\n       D/A       A     (intro:       A/C#    D  G)\nFizeste tu  -  do por mim…",
     "createdAt": 1720000290000,
-    "bpm": 90
+    "bpm": 90,
+    "youtubeUrl": "https://www.youtube.com/watch?v=9H8jyP5U-OA"
   },
   {
     "id": "song-normal-258-meu-amor-maior-es-tu",
@@ -3431,7 +3481,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: ||: E2/G#  A2  E/B  Bsus4 :||\n                     (1º verso)\n\nE2/G#              A2       E/B            Bsus4\n       Fui perdoado, Jesus foi condenado;\nE2/G#              A2    E/B            Bsus4\n       Eu fui aceite,    Jesus morreu;\nE2/G#                A2         E/B          Bsus4\n       Com Seu Espírito, eu tenho nova vida,\n       A2     Bsus4            E\nPorque meu Senhor ressuscitou.\n\nRefrão:\nE                A\n   Precioso amor e paz sem fim\nE                            Bsus4\n   Porque meu Rei morreu por mim;\nE               A\n   Precioso amor veio ofertar;\nE                       Bsus4\n   O meu prazer é Te honrar,\n    A2        Bsus4                     E\nCom meu viver,           vou Te louvar.\n\nPonte:\nE              E2\nTu és meu Rei, Tu és meu Rei! (Jesus)\nE              E2   A     B   E\nTu és meu Rei, Tu     és meu Rei!",
     "createdAt": 1720000303000,
-    "bpm": 70
+    "bpm": 70,
+    "youtubeUrl": "https://www.youtube.com/watch?v=0DJDIx6J3Pw"
   },
   {
     "id": "song-normal-268-v2-fui-perdoado-tom-f",
@@ -3442,7 +3493,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: ||: F2/A  Bb2  F/C  Csus4 :||\n                (1º verso)\n\nF2/A              Bb2      F/C            Csus4\n      Fui perdoado, Jesus foi condenado;\nF2/A             Bb2       F/C           Csus4\n      Eu fui aceite,     Jesus morreu;\nF2/A               Bb2          F/C          Csus4\n      Com Seu Espírito, eu tenho nova vida,\n       Bb2     Csus4             F\nPorque meu Senhor ressuscitou.\n\nRefrão:\nF               Bb\n  Precioso amor e paz sem fim\nF                           Csus4\n  Porque meu Rei morreu por mim;\nF               Bb\n  Precioso amor veio ofertar;\nF                      Csus4\n  O meu prazer é Te honrar,\n    Bb2        Csus4                    F\nCom meu viver,          vou Te louvar.\n\nPonte:\nF              F2\nTu és meu Rei, Tu és meu Rei! (Jesus)\nF              F2   Bb        C   F\nTu és meu Rei, Tu        és meu Rei!",
     "createdAt": 1720000304000,
-    "bpm": 70
+    "bpm": 70,
+    "youtubeUrl": "https://www.youtube.com/watch?v=0DJDIx6J3Pw"
   },
   {
     "id": "song-normal-269-deus-poderoso",
@@ -3602,7 +3654,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Normal",
     "cifra": "Intro: ||: Bsus4/E  B/E  |  Bsus4/E  B/E  |  Esus4/A  B7/A  :||   Esus4/A  B7/A  |\n\nA             E\n   Todos os sedentos,\n         G#m7\nTodos os fracos,\n         A2\nVenham à fonte\n               F#m       E/G#       A\nE mergulhem no rio     da      vida.\n      A/B         E\nQue a dor e a angústia\n        G#m7\nSejam saradas\n             A2\nNas ondas da Graça;\n       F#m      E/G#       A      A/B\nDe coração   cla  -  mamos (cantai:)\n\nRefrão:\nE    F#m/E        E      A2    (Fim:     E)\nSe - nhor     Jesus, vem. (4 X)",
-    "createdAt": 1720000318000
+    "createdAt": 1720000318000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=coWRDjX02pU&list=RDcoWRDjX02pU&start_radio=1"
   },
   {
     "id": "song-normal-277-perto-quero-estar",
@@ -3625,7 +3678,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: E\n\nEstrofe 1:\nE     /B       A/E             E\nMeu Jesus, pensando em Teu amor por mim,\nA          E/G#     A          Bsus4      B\nFoste humilhado, entregue à morte.\nE     /B        A/E         E\nVida eterna quiseste me oferecer,\n      A       Bsus4          B    E   E7\nEstou nesse lugar       outra vez,\n      A       Bsus4          B    E   E7\nEstou nesse lugar       outra vez.\n\nRefrão:\n   E2/G#          A           E2/G#        Bsus4       B\nDe novo Te imagino lá na cruz a morrer.\n     E2/G#           A            E2/G#           Bsus4       B\nMe entrego à Tua graça, Tu quebrantas meu ser.\nC#m             A       E2/G#            Bsus4        B   A   B\nOutra vez dou graças, outra vez me rendo    a   Ti.\n\nEstrofe 2:\nE       /B     A/E           E\nRei do céu, Senhor És exaltado,\n  A           E/G#      A         Bsus4       B\nPerante o Teu Trono, me prostrarei.\nE   /B        A/E            E\nMaravilha, a graça do meu Salvador,\n     A        Bsus4         B    E   E7\nE eu quero louvar     outra  vez,\n    A         Bsus4         B    E   E7\nE eu quero louvar     outra  vez.\n\nPonte:\n    A      Amaj7         Bsus4        B\n||: Graças pela      cruz,\nEsus4/G#           E/G#\nGraças pela cruz,\nA           Bsus4         B    E\nGraças pela cruz,     meu  Rei. :||\n\n(Refrão)",
     "createdAt": 1720000320000,
-    "bpm": 70
+    "bpm": 70,
+    "youtubeUrl": "https://www.youtube.com/watch?v=RDE92wU2maU"
   },
   {
     "id": "song-normal-278-v2-meu-jesus-pensando-em-teu-amor-tom-d",
@@ -3636,7 +3690,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: D\n\nEstrofe 1:\nD     /A       G/D             D\nMeu Jesus, pensando em Teu amor por mim,\nG          D/F#     G          Asus4      A\nFoste humilhado, entregue à morte.\nD     /A        G/D          D\nVida eterna quiseste me oferecer,\n      G       Asus4          A    D   D7\nEstou nesse lugar       outra vez,\n      G       Asus4          A    D\nEstou nesse lugar       outra vez.\n\nRefrão:\n   D2/F#          G           D2/F#        Asus4       A\nDe novo Te imagino lá na cruz a morrer.\n     D2/F#           G            D2/F#           Asus4       A\nMe entrego à Tua graça, Tu quebrantas meu ser.\nBm             G       D2/F#            Asus4        A   G   A\nOutra vez dou graças, outra vez me rendo    a   Ti.\n\nEstrofe 2:\nD       /A     G/D           D\nRei do céu, Senhor És exaltado,\n   G          D/F#      G         Asus4        A\nPerante o Teu Trono, me prostrarei.\nD   /A        G/D            D\nMaravilha, a graça do meu Salvador,\n     G        Asus4          A    D  D7\nE eu quero louvar     outra   vez,\n     G        Asus4          A   D\nE eu quero louvar     outra  vez.\n\n(Refrão)\n\nPonte:\n    G      Gmaj7         Asus4        A\n||: Graças pela      cruz,\nDsus4/F#           D/F#\nGraças pela cruz,\nG           Asus4         A    D\nGraças pela cruz,     meu  Rei. :||\n\n(Refrão)",
     "createdAt": 1720000321000,
-    "bpm": 70
+    "bpm": 70,
+    "youtubeUrl": "https://www.youtube.com/watch?v=RDE92wU2maU"
   },
   {
     "id": "song-normal-279-deus-do-universo",
@@ -3767,7 +3822,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: ||:  D7M  |  C7M :||\n\nD             Em7       A              D\nDeus do meu viver, Te dou todo o meu ser;\n   Bm7           Em7         G/A     A\nEstou nas Tuas mãos, usa-me Senhor!\nD              Em7     A           Bm7\nTenho que escolher e mudar o meu ser\n     G             Em7\nP’ra que possa agradar,\nA      D\nAo Meu Deus!\n\nRefrão:\n    G              A/G            F#m        Bm\nE saber que na tristeza, na dor e na aflição,\n   Em9         A7           G/A          Dmaj7      C/D\nEu posso confiar, pois estou na Tua mão!\n      Gmaj7          A/G      A7         F#m7                Bsus4       Bm7\nPosso mesmo nada ter         de valor p’ra Te oferecer,\n   Em7               G/A         D\nMas o que tenho Te dou: o meu ser!",
     "createdAt": 1720000332000,
-    "bpm": 120
+    "bpm": 120,
+    "youtubeUrl": "https://www.youtube.com/watch?v=RGwuWAg6x6M"
   },
   {
     "id": "song-normal-286-eu-so-posso-imaginar",
@@ -3874,7 +3930,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro:  ||:  C   G/C   F/C   G/C:||\n\nEstrofe 1:\n            C   G/C               F/C     G/C\nVeio p’ra viver,       viver em perfeição;\n          C  G/C             F/C    G/C\nVeio para ser      a nossa salvação;\n            C   G/C             F/C          G/C\nVeio p’ra morrer       e oferecer-nos perdão;\n        C   G/C              F    G  F/A    G/B\nRessuscitou       e quer viver  em nós!\n\nRefrão:\n   C        G/C          F       G\nPor isso louvamos e adoramos Jesus;\n     C        G        F  G   F/A      G/B\nPor isso entregamos as nossas vi  -  das;\n     C      G/C           F     Am/E\nPor isso rendemo-nos ao nosso Rei,\n     Dm7       C/E      F   G     Am7     Cmaj7/G\nPois tu   -  do     Ele    nos deu,\n     Dm7        C/E     F   G      C\nPois tu   -   do    Ele    nos deu.\n\n(Intro)\n\nEstrofe 2:\n           C   G/C              F/C    G/C\nVeio p’ra viver       no nosso cora-ção;\n          C  G/C             F/C      G/C\nVeio para ser       nosso Amigo e Rei;\n            C  G/C             F/C        G/C\nVeio p’ra curar       e oferecer-nos amor;\n          C   G/C          F   G    F/A   G/B\nVeio preparar       um lugar p’ra nós!\n\n(Refrão)\n\nPonte:\nC   G    F/A        G/B       C\n   Ale,  A – le - luia!  :||4\n\n(Refrão)",
     "createdAt": 1720000341000,
-    "bpm": 84
+    "bpm": 84,
+    "youtubeUrl": "https://www.youtube.com/watch?v=BsxhpKL7Xc8"
   },
   {
     "id": "song-normal-292-bendirei-o-senhor-p-ra-sempre-em-ti-sou-",
@@ -3909,7 +3966,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: ||:  F  C A# :||\n\nEstrofe 1:\n      F        C     A#\n||: A graça de meu Senhor\n     F           C      A#\nÉ maior do que o meu errar;\nDm           A#\nSeu amor mostrou na cruz,\nA#/C            Csus4          C\nOnde o meu pecado    apagou.\n\nEstrofe 2:\n    F     C    A#\nQue Graça esta é?\n    F       C     A#\nQue grande amor o Seu?\n  Dm        A#\nO soberano Rei dos céus\n A#/C                  Csus4          C\nÀ cruz desceu e por mim     morreu!\n\nPré-refrão:\n      Am7          A#\nO meu fardo carregou,\n  Am7              A#2          A#2/D\nO preço que eu devia   pagar,\n      C/E\nEle pagou!\n\nRefrão:\n  F   C/F       F   Fsus4               F  C/F     F   Fsus4\nJesus!                          Jesus!\n  Dm/A#               C/A#\nNa dor da cruz mostraste Teu amor,\n        A#2            Csus4\nP’ra que  eu tivesse vida,\n                (Intro      p/repetir)\nTua Graça me bastou. :||\n\n(Pré-refrão)\n\n(Refrão)",
     "createdAt": 1720000344000,
-    "bpm": 94
+    "bpm": 94,
+    "youtubeUrl": "https://www.youtube.com/watch?v=VD4Mls0cX6I"
   },
   {
     "id": "song-normal-294-v2-a-graca-de-meu-senhor-tom-e",
@@ -3920,7 +3978,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: ||:  E  B A :||\n\nEstrofe 1:\n      E        B     A\n||: A graça de meu Senhor\n     E           B     A\nÉ maior do que o meu errar;\nC#m           A\nSeu amor mostrou na cruz,\nA/B            Bsus4           B\nOnde o meu pecado     apagou.\n\nEstrofe 2:\n    E     B    A\nQue Graça esta é?\n    E       B     A\nQue grande amor o Seu?\n  C#m        A\nO soberano Rei dos céus\n  A/B                 Bsus4          B\nÀ cruz desceu e por mim     morreu!\n\nPré-refrão:\n      G#m7           A\nO meu fardo carregou,\n  G#m7              A2         A2/C#\nO preço que eu devia pagar,\n      B/D#\nEle pagou!\n\nRefrão:\n  E    B/E       E   Esus4              E   B/E     E   Esus4\nJesus!                          Jesus!\n   C#m/A              B/A\nNa dor da cruz mostraste Teu amor,\n        A2            Bsus4\nP’ra que  eu tivesse vida,\n                (Intro       p/repetir)\nTua Graça me bastou.  :||\n\n(Pré-refrão)\n\n(Refrão)",
     "createdAt": 1720000345000,
-    "bpm": 94
+    "bpm": 94,
+    "youtubeUrl": "https://www.youtube.com/watch?v=vBtfj0MGing"
   },
   {
     "id": "song-normal-295-v1-rei-de-majestade-tom-a",
@@ -3955,7 +4014,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: ||:  C  G/B  Am  F  |  C  G/B  Am  Em/G  F  :||\n\nEstrofe 1:\n    C         Am                  F\nDerramarei meu coração em Tua presença,\n     G            C    F/C\nEm silêncio esperarei;\n     C        Am         F\nÉs a razão da minha esperança,\n      G          F G            F  G\nDe Ti vem a salvação,    a salvação.\n\nRefrão:\n   F/G       C            G2/B\nSó Tu és a Rocha, meu refúgio,\n            Am7       /G           F\nAquietar-me-ei, pois sei que És Deus!\n   F/G       C            G2/B\nSó Tu és a Rocha, meu refúgio,\n           Am7      /G   F\nAquietar-me-ei!\n\nEstrofe 2:\nC         Am              F\nO poder pertence a Ti somente,\n    G     C   F/C\nE a misericórdia;\nC      Am           F\nEm Ti está a minha glória,\n       G        F  G         F G\nO mundo é desilusão,  desilusão.\n\n(Refrão)\n\nPonte:\n                 Am7        /G   F\n||:  Aquietar-me-ei!  :||\n           C   G2/B\nAquietar-me-ei!\n            Am7         /G           F\nAquietar-me-ei, pois sei que És Deus!",
     "createdAt": 1720000348000,
-    "bpm": 114
+    "bpm": 114,
+    "youtubeUrl": "https://www.youtube.com/watch?v=mckrOiugkUw"
   },
   {
     "id": "song-normal-297-v1-juntos-viemos-para-celebrar-que-este-san",
@@ -3966,7 +4026,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro:  ||:  C  C2/E  F2  Gsus  :||\n\nEstrofe 1:\nC           C2/E      F2      Gsus\n  Juntos vi-emos para celebrar\n   Am7       Fmaj7              Gsus     G\nE adorar Tua         Majestade;\nF   G/B            C/E     Am7\nTuas obras vamos proclamar,\n    Bbmaj7                Gsus      G\nTua excelência demonstrar.\n\nEstrofe 2:\nC         C2/E       F2          Gsus\n  Terra e céus reflectem Tua Glória,\n  Am7       Fmaj7               Gsus      G\nA lua e o sol      dão louvor;\nF      G/B    C/E    Am7\nTu és o poderoso Deus\n Bbmaj7                     Gsus     G\nAquele que sempre reinará.\n     Gm4     F/F#\nReinará!\n\nRefrão:\n   Fmaj7\nQue  este santuário\n   Em7        Am7\nSe encha de glória,\n  Dm7             Dm7/G          G   Cmaj7        F/F#\nLevanto a voz em Teu        louvor;\n   Fmaj7\nQue   este santuário\n   Em7        Am7\nSe encha de glória,\n    Dm7           Dm7/G         G   C   C2/E    F2   Gsus     (p/repetir          coro)\nOs instrumentos dão        louvor!\n                                              C    F/F# (p/repetir refrão)\n\nAm (p/repetir último verso)\n\n       Dm7            Dm7/G         G   C   Am\n||: Os instrumentos dão        louvor!  :||",
     "createdAt": 1720000349000,
-    "bpm": 105
+    "bpm": 105,
+    "youtubeUrl": "https://www.youtube.com/watch?v=7_napzaiSn8"
   },
   {
     "id": "song-normal-297-v2-juntos-viemos-para-celebrar-que-este-san",
@@ -3977,7 +4038,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro:  ||:  A  A2/C#  D2  Esus  :||\n\nEstrofe 1:\nA        A2/C#        D2      Esus\nJuntos viemos   para celebrar\n   F#m7        Dmaj7              Esus     E\nE adorar  Tua         Majestade;\nD    E/G#           A/C#     F#m7\nTuas obras vamos proclamar,\n    Gmaj7                Esus      E\nTua excelência demonstrar.\n\nEstrofe 2:\nA       A2/C#         D2          Esus\nTerra e céus   reflectem Tua Glória,\n  F#m7       Dmaj7               Esus      E\nA lua e o sol      dão louvor;\nD       E/G#      A/C#      F#m7\nTu és o pode – roso   Deus\n Gmaj7                     Esus     E\nAquele que sempre reinará.\n     Em4    D/D#\nReinará!\n\nRefrão:\n   Dmaj7\nQue este santuário\n   C#m7        F#m7\nSe encha de glória,\n  Bm7             Bm7/E          E  Amaj7       A/E    D/D#\nLevanto a voz em Teu       louvor;\n   Dmaj7\nQue este santuário\n  C#m7         F#m7\nSe encha de glória,\n  Bm7            Bm7/E          E  A   A2/C#       D2   Esus     (p/repetir          coro)\nOs instrumentos dão       louvor!\n                                             A     D/D# (p/repetir refrão)\n\nF#m (p/repetir último verso)\n\n      Bm7             Bm7/E          E  A   F#m\n||: Os instrumentos dão        louvor!  :||",
     "createdAt": 1720000350000,
-    "bpm": 105
+    "bpm": 105,
+    "youtubeUrl": "https://www.youtube.com/watch?v=N_q9E0xNtuM"
   },
   {
     "id": "song-normal-297-v3-juntos-viemos-para-celebrar-que-este-san",
@@ -3988,7 +4050,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro:  ||:  G  G2/B  C2  Dsus  :||\n\nEstrofe 1:\nG       G2/C         C2      Dsus\nJuntos viemos   para celebrar\n   Em7        Cmaj7              Dsus     D\nE adorar  Tua         Majestade;\nC    D/F#           G/B     Em7\nTuas obras vamos proclamar,\n    Fmaj7                Dsus      D\nTua excelência demonstrar.\n\nEstrofe 2:\nG       G2/B        C2           Dsus\nTerra e céus   reflectem Tua Glória,\n  Em7       Cmaj7               Dsus      D\nA lua e o sol      dão louvor;\nC       D/F#      G/B      Em7\nTu és o pode – roso   Deus\n Fmaj7                     Dsus      D\nAquele que sempre reinará.\n      Dm4    C/C#\nReinará!\n\nRefrão:\n   Cmaj7\nQue este santuário\n   Bm7        Em7\nSe encha de glória,\n  Am7              Am7/D          D  Gmaj7       G/D     C/C#\nLevanto a voz em Teu        louvor;\n   Cmaj7\nQue este santuário\n   Bm7        Em7\nSe encha de glória,\n   Am7            Am7/D          D  G      (Intro      para    repetir       coro)\nOs instrumentos dão        lou-vor!\n                                               G    C/C# (p/repetir refrão)\n\nEm (p/repetir último verso)\n\n      Am7             Am7/D           D  G    Em\n||: Os instrumentos dão         lou-vor!  :||",
     "createdAt": 1720000351000,
-    "bpm": 105
+    "bpm": 105,
+    "youtubeUrl": "https://www.youtube.com/watch?v=N_q9E0xNtuM"
   },
   {
     "id": "song-normal-298-bendiz-minha-alma-ao-senhor",
@@ -4034,7 +4097,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Normal",
     "cifra": "E/A                      B\n    És Deus, ||:  restaurador dos povos,\nE/A               B\n    Novo pacto temos em Ti;\nE/A                  B\n   Fonte da vida, paz e cura,\n     F#m           E/A     (2ªX:       B)\nVem remir o povo aqui.  :||\n\nE        B/D#      B/C#        C#m\nLouvai a Deus, oh i  -  lhas!\nE       B/D#       B/C#      C#m\nBuscai aquele que vos criou!\n  A2            E/G#\nO Único digno de adoração,\nBsus          C#m\nRei eterno, Soberano,\n F#m7         A2     E/C#     E/A\nGoverna em nós Senhor!\n\nPonte:\n     B/D#          C#m\nAguardamos nosso Deus,\n       B/D#             C#m7\nEm Seu braço forte esperamos;\n     F#m       E/G#        A2          A\nNo Senhor que reina em todas as nações!",
-    "createdAt": 1720000355000
+    "createdAt": 1720000355000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=gS0Y4ID0HbY"
   },
   {
     "id": "song-normal-301-jesus-amado-meu-tudo-e-sobre-ti",
@@ -4258,7 +4322,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Estrofe 1:\nG           Bm       C             D\nQuem, nos separará,    do amor de Cristo?\nG         Bm       C             D\nQuem nos afastará     do amor do nosso Deus?\nEm\nNem tribulação ou angústia,\nD\n   Perigo, fome ou nudez\nC                Am             D\n   Nos poderão separar do Seu amor\n\nEstrofe 2:\nG           Bm       C             D\nQuem, nos separará,    do amor de Cristo?\nG         Bm       C             D\nQuem nos afastará     do amor do nosso Deus?\nEm\n      Nem altura nem profundidade\nD\n    Nem qualquer outra criatura\nC                   Am           D\n    Nos poderão separar do Seu amor\n\nRefrão:\n    G           Bm     C                D\n||:   Em Cristo somos    mais que vencedores :||\nC                   D     Bm                Em\n   Nem a vida nem a morte      poderão separar-nos\nC             D                 G\n   Do amor de Deus, em Cristo Jesus",
     "createdAt": 1720000374000,
-    "bpm": 135
+    "bpm": 135,
+    "youtubeUrl": "https://www.youtube.com/watch?v=mLYp2WjYueo"
   },
   {
     "id": "song-normal-314-eis-me-aqui",
@@ -4328,7 +4393,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: A D A D\n\nEstrofe 1:\n   D   A     D      A\nNa ora-ção encontro calma\n   D  A     D      A   C#m\nNa oração encontro paz\n       D              A    D\nOrar a Deus faz bem à alma\n          E            A    D\nFalar com Deus me satisfaz\n\nEstrofe 2:\n  D      A         D     A\nFalar com Deus que privi-légio\n D       A       D    A  C#m\nA-brir a alma ao cria-dor\n              D           A      D\nSentir que os céus estão abertos\n          E           A   E/G#\nE ouvir a voz do salvador\n\nRefrão:\nF#m     D                  A    E/G#\nGran   -    de é o nosso Deus\nF#m     D             E4   E\nE as  obras que Ele faz\n       F#m     D             A     D\nO Seu amor       não tem limites\n          E4   E            A   (A  D A D)\nEm Seu perdão     encontro paz\n\nEstrofe 3:\n          A        D      A\nFalar com Deus é o que preciso\n                 D    A   C#m\nPois Ele é fonte de poder\n         D            A    D\nSó Nele a vida faz sentido\n           E            A   E/G#\nPois me dá forças pra viver\n\n||: Refrão :||\n\nEstrofe 4:\n   D   A\nNa ora-ção  encontro calma\n   D   A     D      A   C#m\nNa ora-ção encontro paz\n       D              A    D\nOrar a Deus faz bem à alma\n          E            A\nFalar com Deus me satisfaz\n       D              A    D\nOrar a Deus faz bem à alma\n          E            A\nFalar com Deus me satisfaz",
     "createdAt": 1720000380000,
-    "bpm": 63
+    "bpm": 63,
+    "youtubeUrl": "https://www.youtube.com/watch?v=9bUoWuXvksM&list=RD9bUoWuXvksM&start_radio=1"
   },
   {
     "id": "song-normal-319-v1-juiz-dos-segredos-cma-2019",
@@ -4362,7 +4428,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "Intro: D  G  D  A7  D\n\nEstrofe 1:\nD                A          D\nA Ti a glória, grande Salvador!\nG         D      Em   A7      D\nA Ti a vitória, Rei conquistador!\nD              F#m   Bm     E7     A\nSaíste triunfante, do sepulcro vil,\nD       G    D     Em    A7     D\nAnjos anunciam: eis que ressurgiu!\n\nRefrão:\nD                A          D\nA Ti a glória, grande Salvador!\nG         D      Em   A7      D\nA Ti a vitória, Rei conquistador!\n\nEstrofe 2:\nD                 A           D\nTua presença, Príncipe da Paz,\nG          D       Em    A7      D\nLivra-nos do medo, que conforto trás!\nD              F#m    Bm     E7     A\nEntoe a igreja hinos ao Senhor.\nD          G    D      Em    A7    D\nCristo triunfante, reina Vencedor!\n\nEstrofe 3:\nD                  A            D\nNão mais tememos, És da vida autor,\nG            D     Em     A7        D\nSem Ti não há gozo, vem connosco estar.\nD                F#m   Bm    E7    A\nFaze-nos movidos pelo Teu amor,\nD             G      D      Em   A7   D\nAté chegarmos salvos ao glorioso lar.",
-    "createdAt": 1720000383000
+    "createdAt": 1720000383000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=IsRkz3XPtOc"
   },
   {
     "id": "song-normal-321-acredito-em-deus-o-pai",
@@ -4372,7 +4439,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "Intro: Em  D  C  D  Em\n\nEstrofe 1:\nEm                 D\nAcredito em Deus, o Pai,\nC          D     Em\nCriador do Universo\nEm                 D\nE em Cristo, o Salvador,\nC              D      G\nQue em homem se tornou.\nEm              D\nAcredito que morreu\nC         D         Em\nNuma cruz p’ra nos salvar.\nEm               D\nMas, então, ressuscitou,\nC        D          G\nVenceu a morte, é Senhor\n\nRefrão:\nG      D/F#    Em    C   D\nJesus! Rei dos reis!     (4x)\nG       D/F#\nRei dos reis.\nEm        C\nNome mais alto.\nAm7       D7    G\nNome mais alto.\n\nEstrofe 2:\nEm              D\nAcredito que mandou\nC             D     Em\nSeu Espírito em poder.\nEm                 D\nE a missão da Sua igreja\nC      D         G\nÉ ao mundo anunciar.\nEm                  D\nEle virá em Sua glória,\nC          D          Em\nJulgará com Sua justiça.\nEm               D\nOs joelhos dobrarão,\nC       D           G\nToda a língua O bendirá.",
-    "createdAt": 1720000384000
+    "createdAt": 1720000384000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=t9dz882vNB8"
   },
   {
     "id": "song-normal-322-aqui-estou-jesus",
@@ -4382,7 +4450,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "Intro: C  Am  Dm  G7  C\n\nEstrofe 1:\nC          Am\nAqui estou Jesus\n   Dm        G7\nDe mãos vazias\n    C               Am\nMas todo o meu coração\n     Dm          G7\nEstá cheio de amor\n    C          C7\nPor Ti meu Senhor\n\nRefrão:\nF             G\nTu me chamaste\n       Em              Am\nSou na Tua igreja um servo Teu\n  Dm                  G7                 C    C7\nE dou as mãos aos irmãos que sentem como eu\nF         G7            C\nPrazer de ser um servo Teu",
-    "createdAt": 1720000385000
+    "createdAt": 1720000385000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=29ZClu2a9Qk"
   },
   {
     "id": "song-normal-323-nada-na-terra-e-ceu",
@@ -4428,7 +4497,7 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "Intro: D G\n\nEstrofe 1:\n   D\nBreve muito breve, nós iremos ver o Rei\n   G           A          G       A    D\nBreve muito breve, nós iremos ver o Rei\n   D\nBreve muito breve, nós iremos ver o Rei\n    G        A    G     A     D\nAleluia, aleluia iremos ver o Rei\n\nEstrofe 2:\n    D\nNão mais choro aqui, nós iremos ver o Rei\n    G            A          G       A    D\nNão mais choro aqui, nós iremos ver o Rei\n    D\nNão mais choro aqui, nós iremos ver o Rei\n    G        A    G     A     D\nAleluia, Aleluia iremos ver o Rei",
     "createdAt": 1720000389000,
-    "youtubeUrl": "https://hinario.igrejamana.com/breve-muito-breve/"
+    "youtubeUrl": "https://www.youtube.com/watch?v=Fj11wzzqYbs"
   },
   {
     "id": "song-normal-327-como-aroma",
@@ -4484,7 +4553,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Normal",
     "cifra": "E\nDeixai passar Jesus o Rei\n   B           E\nEm Glória a chegar\n\nAbri as portas do coração\n   A B       E\nDeixai-O entrar\n\n      E\nDeixai (deixai) passar (passar)\n  A      B        A      B\nO Rei dos reis (O Rei dos reis)\n   E\nDeixai (deixai) passar (passar)\n          A     B     E            E E4  E E4\nEm vós reinar também\n\nE\nEle vem sarar os corações\n   B           E\nOs presos libertar\n\nFazer ouvir e os cegos ver\n   A  B      E\nOs co-xos dançar\n\nE\nE quem chorar com contrição\n     B    E\nSe irá alegrar\n\nPois d’Ele terá real perdão\n  A  B        E\nE coroa a brilhar\n\nE\nOh vinde todos adorar\n  B      E\nO grande Rei\n\nE os falsos deuses destronar\n  A  B      E\nSegu-ir Sua lei",
-    "createdAt": 1720000394000
+    "createdAt": 1720000394000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=mLx9fH-_lNU"
   },
   {
     "id": "song-normal-331-o-deus-que-adoramos",
@@ -4566,7 +4636,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "D          A          Bm\nEnquanto o rio correr\n           F#m\nEnquanto o vento soprar\n    G       A       D    A\nMeu ser, pertence a Ti\nD         A           Bm\nEnquanto ondas houver\n              F#m                 G\nEnquanto a gaivota voar sobre o mar,\n    A               D\nMeu ser, pertence a Ti\n\nPonte:\nG             D/F#          Em       D/F#\nPai, eu não mereço o que recebi\nG            D/F#                Em           A\nPara poder viver meu ser Te entregarei (entregarei)\n\nRefrão:\nD         A     Bm        G        D\nTu és meu Deus, Cedo de manhã eu irei\n         A      Bm              G\nAo Teu encontro         Ter contigo\nD       A\nTu és Senhor,\nBm         G       D\nCedo de manhã eu irei\n                A     Bm\nAo Teu encontro\n       G\nTer contigo.\n\nD            A        Bm\nEnquanto o bebé chorar\n                        F#m\nEnquanto uma flor brotar\n    G       A      D   A\nMeu ser, pertence a Ti.\nD            A              Bm\nEnquanto o Inverno frio trouxer\n             F#m           G\nEnquanto o Verão for e vier;\n    A               D\nMeu ser, pertence a Ti.\n\n(Ponte)\n(Refrão)",
-    "createdAt": 1720000401000
+    "createdAt": 1720000401000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Vx8x2QAWCGg"
   },
   {
     "id": "song-normal-337-es-tu-jesus-cristo",
@@ -4576,7 +4647,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "Intro: D  Bm  Em  A7  D\n\nD                  Bm        Em   A7   D\nÉs Tu, Jesus Cristo, és Tu (bis)\n      G          A7\nÉs Tu que me amas,\n      F#m        Bm\nÉs Tu que me guardas,\n   Em        A7          D\nÉs Tu, Jesus Cristo, és Tu!",
-    "createdAt": 1720000402000
+    "createdAt": 1720000402000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=jjSazSEreh8"
   },
   {
     "id": "song-normal-338-eu-vou-passar",
@@ -4597,7 +4669,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "Refrão:\nD        Em    A       F#m     Bm      D\nFaz algo novo, em meu ser    quero ver\n        G    A              D\nFaz algo novo,   faz algo em mim\n\nD            Em    A                D   D/C#     Bm\nMeu coração assim,   eu abrirei pra Ti\n                Em    A                D\nTambém o meu querer     a Ti vou oferecer\n\n(Refrão)\n\nD             Em       A              D   D/C#     Bm\nAnseios e esperanças,   eu ponho no altar\n             Em    A                      D\nHumilde me submeto,   querendo o Teu desejar\n\n(Refrão)\n\nD              Em    A                D  D/C#      Bm\nDesejo assim viver     só pra Te agradar\n                Em      A                 D\nPrazer eu posso dar-Te    e Teu amor mostrar\n\n(Refrão)",
-    "createdAt": 1720000404000
+    "createdAt": 1720000404000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=wWU1Bn6wy9o"
   },
   {
     "id": "song-normal-340-faz-nos-um-o-pai",
@@ -4653,7 +4726,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "G       D      G\nJunto a Ti estarei,\n        D          G\nEm Teus braços ficarei.\n      C     Am      D\nÉs o amante do meu ser,\n      C    Am        D    C D\nDe Ti nada vou esconder.\n      G         Em\nEu Te amo e Te adoro!\n           D     G     C D\nQue mais posso dizer?\n      G        Em\nDia a dia és a causa\n        D       G\nDo meu amor crescer!",
-    "createdAt": 1720000409000
+    "createdAt": 1720000409000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=WSKqnsND33s"
   },
   {
     "id": "song-normal-344-v1-la-esta-o-meu-tesouro",
@@ -4698,7 +4772,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "Em",
     "category": "Normal",
     "cifra": "Intro 1: Em\nIntro 2: Em C G D C\n\nEstrofe 1:\nEm                C          G           D  C\n     Jesus é tão fácil esquecer a Tua pala-vra,\nEm                   C         G               D\n     Tuas promessas vivas para mim eu já esqueci,\n      Em          C          G            D  C\nE com dúvidas eu sigo nos caminhos deste mundo,\nEm                    C          G               D\n     Perdoa o meu desconfiar e acende o fogo em mim.\n\nRefrão:\nAm     G\nMisericórdia,\nD     Em\nMeu Senhor,\nAm     G      C   D\nMisericórdia por mim!\nAm     G\nMisericórdia,\nD     Em\nMeu Senhor,\nAm     G      C    D   G\nMisericórdia por      mim!\n\nEstrofe 2:\nEm                  C         G           D  C\n     Deus em Teu lugar pus valores deste mundo,\nEm                C              G           D\n      Eu andei caminhos que me afastaram de Ti…\n     Em         C          G       D    C\nMas agora eu regresso à Tua misericórdia,\nEm                 C           G            D\n     Tira o meu pecado vou servir-Te outra vez\n\n(Refrão)\n\nEstrofe 3:\nEm                   C          G      D   C\n     Sempre quis buscar-Te e à Tua compaixão,\nEm                  C                G         D\n      A corrente da Tua graça que jamais acabará.\n          Em          C         G        D  C\nCom o meu coração rendido na Tua boa presença,\nEm                     C            G                  D\n      A Graça está brilhando que é a Tua luz na escuridão.\n\n(Refrão)",
-    "createdAt": 1720000413000
+    "createdAt": 1720000413000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=ldK43s9UyQI"
   },
   {
     "id": "song-normal-347-nao-vou-ficar-sozinho",
@@ -4765,7 +4840,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "G           Em           C        D\nO Senhor está no meio de ti, poderoso\nG                    Em        C           D\nPara te salvar se deleitará em ti, com alegria\nG              Em\nCalar-se-á por Seu amor\nC                D\nRegozijar-se-á em ti com júbilo\n\nO Senhor está no meio de ti, Poderoso\n      G        Em      C  D\nPoderosíssimo!                    Poderosíssimo!\n\nPoderosíssimo!",
-    "createdAt": 1720000419000
+    "createdAt": 1720000419000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=q6EM6tv0OlU"
   },
   {
     "id": "song-normal-353-vem-e-deleita-te",
@@ -4775,7 +4851,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "Refrão 1:\n    G         C              G       D\n||: Ó, ó vem! Vem deleita-te só no Senhor\n  G             C\nE Ele te concederá\n        G     D        G\nO que deseja o teu coração! :||\n\nEstrofe:\nEm         Bm       C          G    D/F#\nConfia só n’Ele e Ele tudo fará\nEm         Bm\nEspera só n’Ele\nC            D\nE Ele tudo fará-á-á\n\nOh, oh, oh\n\nRefrão 2:\nG         C              G       D\nÓ, ó vem! Vem deleita-te só no Senhor\n  G             C\nE Ele te concederá\n        G     D        G   Em\nO que deseja o teu coração!\n        G              D                 G  C  G\nO que deseja (palmas) o teu (palmas) coração!",
-    "createdAt": 1720000420000
+    "createdAt": 1720000420000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=e5egNF97yDc"
   },
   {
     "id": "song-normal-354-os-que-confiam-no-senhor",
@@ -4785,7 +4862,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "Intro: D  Bm  Em  A7  D\n\nEstrofe:\nD                    Bm\nOs que confiam no Senhor\n     Em        A7         D\nSão como os montes de Sião.\nD                    Bm\nOs que confiam no Senhor\n     Em        A7         D   D7\nSão como os montes de Sião.\n\nRefrão:\n     G          A7\nSão como as águias,\n          F#m         Bm\nCom suas asas estendidas,\n         Em            A7\nVão procurando nas alturas,\n                  D    D7\nPelas correntes do Espírito.",
-    "createdAt": 1720000421000
+    "createdAt": 1720000421000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=6zM1jyKUa3s"
   },
   {
     "id": "song-normal-355-v1-pai-abre-o-meu-coracao-tom-g",
@@ -4817,7 +4895,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "G                    D\nPai do céu, como Te amamos,\n   C           D       G\nLouvamos o Teu Nome na terra\n          Em                    D\nQue o Teu reino se encha de louvores\n        C      D              G\nE que o povo declare as Tuas obras!\n\nC      D    G\nGlória ao Senhor\nD        C\nDeus poderoso\n    D                   G\nQue Foi, que É, e que Será\nC      D    G\nGlória ao Senhor\nD        C\nDeus poderoso\n    D          G\nQue sempre reinará!",
-    "createdAt": 1720000424000
+    "createdAt": 1720000424000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=SczLn-uWD18"
   },
   {
     "id": "song-normal-357-pai-nos-te-amamos",
@@ -4827,7 +4906,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "Intro: C  Dm7  G7  C\n\nEstrofe 1:\nC           Dm7\nPai nós Te amamos,\nG7            C     G/B\nLouvamos e adoramos\nAm          Dm7     G7        C   C7\nGlorifica-Te em toda a terra\n\nRefrão:\nF            G/F       Em7       Am7\nGlorifica-Te, glorifica-Te,\nDm7          G7        C\nGlorifica-Te em toda a terra\n\nEstrofe 2:\nC             Dm7\nJesus nós Te amamos,\nG7            C     G/B\nLouvamos e adoramos\nAm          Dm7     G7        C   C7\nGlorifica-Te em toda a terra\n\nEstrofe 3:\nC                Dm7\nEspírito nós Te amamos,\nG7            C     G/B\nLouvamos e adoramos\nAm          Dm7     G7        C   C7\nGlorifica-Te em toda a terra",
-    "createdAt": 1720000425000
+    "createdAt": 1720000425000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=pbu9Zx7wDlM"
   },
   {
     "id": "song-normal-358-v1-por-tudo-o-que-tens-feito",
@@ -4861,7 +4941,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "Intro: C C4 C\n\nEstrofe 1:\nC       C4     C       C4     C         C4     C   C4\nQuando estamos juntos,       juntos no    Senhor\nC         C4    C   C4      C         C4    C\nTudo o que acontece       é fruto do amor\n\nRefrão:\nG/B        Am        G\nSim é um tempo sensacional\n    Am        F   G\nHá acordo, é natural\n      C         F     G    C\nQuando   nos juntamos no Senhor\n       F    G     C\nNos juntamos no Senhor\n\nEstrofe 2:\nC     C4     C     C4      C        C4     C   C4\nTodos os presentes   têm algo a parti - lhar\nC          C4      C    C4     C         C4    C\nAlguém traz    mensagem,     alguém quer o – rar\n\n(Refrão)\n\nEstrofe 3:\nC         C4    C   C4      C        C4      C   C4\nAlguém profe - tiza    ou canta uma    canção\nC         C4      C    C4     C          C4   C\nEnquanto outro ensina,      sábio no cora – ção\n\n(Refrão)\n\nEstrofe 4:\nC           C4    C     C4         C        C4      C   C4\nHá quem faça     música,    quem cante uma    canção\nC      C4   C       C4     C       C4   C\nOutro fala  línguas      e há tradu – ção\n\n(Refrão)",
-    "createdAt": 1720000428000
+    "createdAt": 1720000428000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=oJjuERHmyl0"
   },
   {
     "id": "song-normal-360-quanto-a-mim",
@@ -4871,7 +4952,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "Intro: C Bm7 Am7 Em D C G\n\nC B7\nQuanto a mim Deus encontrou-me!\nEm  A\nQuanto a mim Deus deu-me um lar!\nC F\nQuanto a mim me deu uma família\nD\nE não mais estarei só!\nC B7\nA minha vida é abençoada\n\nEm   A\nE no Céu há um galardão\nG G/F#m       Em7    C\nEntão, eu e o meu lar\nD G\nServiremos ao Senhor!\n\nG\nEu tenho Jesus, Jesus, Ele me chama Seu!\n\nC Am   C D\nEle me levanta, eleva Sou atraído a Ele!\nG Em\nDeus está em mim Certeza eu tenho!\nG Em\nDeus está em mim Dentro de mim!\nG Em\nQuanto a ti, quanto a mim!\nC D G\nServiremos ao Senhor!",
-    "createdAt": 1720000429000
+    "createdAt": 1720000429000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=u2Nqsghgv8U"
   },
   {
     "id": "song-normal-361-que-a-terra-ouca-a-sua-voz",
@@ -4930,7 +5012,7 @@ export const NORMAL_SONGS: Song[] = [
     "cifra": "Intro:\n\nEstrofe 1:\nD       A       D             A\nSou nova criação, sem mais condenação\nD          G      A    D     A\nEstou firme na Graça de Deus\nD       A\nMeu coração se alegra\nD       A\nO meu amor aumenta\nD           G     A    D\nEstou firme na Graça de Deus\n\nRefrão:\n         G      D             G     D\nLouvar-Te-ei Senhor, louvar-Te-ei Senhor\n        Em                   A\nE cantarei o que fizeste em mim\n\nEstrofe 2:\nD     A\nAlegria sem fim\nD        A\nO Teu Espírito em mim\nD           G     A     D\nEstou firme na Graça de Deus\n\nLouvar-Te-ei Senhor, louvar-Te-ei Senhor\n\nE cantarei o que fizeste em mim",
     "createdAt": 1720000434000,
     "bpm": 140,
-    "youtubeUrl": "https://igreja-lusitana.org/index.php/oracao-e-louvor/salmos-hinos"
+    "youtubeUrl": "https://www.youtube.com/watch?v=mIezQXZQSSs"
   },
   {
     "id": "song-normal-365-suaviza-a-minha-alma",
@@ -4940,7 +5022,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "C            Dm      G\nSuaviza a minh’alma\n             C      Am\nSuaviza a minh’alma\n             Dm    G\nDe toda a maldade\n            C C7\nAfasta-me ó Pai\n                  F    G\nQuero andar só contigo\n             C      Am\nChorar de alegria\n              F        G\nSuaviza a minh’alma, ó Pai\n          C\nSuaviza Senhor!",
-    "createdAt": 1720000435000
+    "createdAt": 1720000435000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=ANfpF0pNob4"
   },
   {
     "id": "song-normal-366-te-amo-senhor",
@@ -4950,7 +5033,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "G                   D     G\nTe amo Senhor! Como Tu não há!\n C   G    Am     G  D\nPor Ti minha alma anseia\n\nMeu Deus e Rei, limpa o meu ser\n\nPara que a sua fragrância Te agrade",
-    "createdAt": 1720000436000
+    "createdAt": 1720000436000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=0rU0ZNV8L7U"
   },
   {
     "id": "song-normal-367-v1-tu-es-minha-rocha-tom-g",
@@ -4993,7 +5077,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "Intro: G  Em  C  D7  G\n\nEstrofe 1:\nG                Em\nTu oh Senhor, és para mim\n    C             D7\nUm escudo, minha glória,\n      B7       Em     C  D7  G\nMinha rocha e salvação\n\nRefrão:\n   C       D/C      Bm7     Em7\nAleluia, Aleluia, Aleluia\n      Am7      D7     G\nMinha rocha e salvação\n\nEstrofe 2:\nG                  Em\nEu não temerei dez mil\n        C               D7\nÀ minha volta, pois és Tu, Jesus\n      B7       Em     C  D7  G\nMinha rocha e salvação",
-    "createdAt": 1720000440000
+    "createdAt": 1720000440000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=QsP-zBeVcA0"
   },
   {
     "id": "song-normal-370-um-lindo-dia",
@@ -5037,7 +5122,7 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "D               G\nVem juntar-te à vida\nA          D\nEntra na corrida\nD             G\nDeixa o teu caminho\nD           A\nPara O encontrar\nD               G\nVem então experimenta\nA               G   D\nLuz no meio das tre-vas\n          G\nPara ti Jesus\n   A     D\nEstá a falar\n\nD               G\nVem juntar-te à vida\nA          D\nEntra na corrida\nD             G\nDeixa o teu caminho\nD           A\nPara O encontrar\nD               G\nVem então experimenta\nA               G   D\nLuz no meio das tre-vas\n         G\nPor ti Jesus\n   A      D\nEstá a chamar",
     "createdAt": 1720000444000,
-    "youtubeUrl": "https://igreja-lusitana.org/index.php/oracao-e-louvor/salmos-hinos"
+    "youtubeUrl": "https://www.youtube.com/watch?v=nSudSz7zvfE"
   },
   {
     "id": "song-normal-374-v1-santo-santo-santo-cma-2019",
@@ -5071,7 +5156,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "Intro: G  C  G  D7  G\n\nG                  C          G\nVida encontrei em Cristo Jesus,\n             Em     A7        D7\nJá livre eu sou, ao céu eu vou!\nG        C        D7\nQue maravilhas além!\nG         C          G           Em\nPecados e dor para trás eu deixei,\n    Am        D7        Bm       Em\nUm novo dia raiou em mim,\n    Am     D7         G\nEm Jesus vida nova achei!",
-    "createdAt": 1720000447000
+    "createdAt": 1720000447000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Y1GOaPD5Iw0"
   },
   {
     "id": "song-normal-376-tua-presenca",
@@ -5129,7 +5215,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "Intro: ||: C  Fmaj7 :||\n\nC                     Em7     Am7       Fmaj7        G/F      Em7     Am7\nO choro pode a noite durar,      acordai com a sua alegria\n Fmaj7                    Em7          Am7      Dsus        G\nEntrega tudo ao teu Senhor, Ele cuidará de      ti!\nC               Em7      Am7        Fmaj7       G/F     Em7    Am7\nLuta a batalha da fé     não ficando    preocupado,\n F      C/E    Dm7        G      C\nNada nos separará do amor de Deus!\n\nRefrão:\nF/G             C  Dm7/B          Em7       Am7\nGrande é o Senhor e        Todo-Poderoso,\n        F     G7/F      Em7       Am7      Fmaj7      C/F    Dm7    F/G\nEle é o Rei da nossa vida,    descansai no Seu amor!\n            Fmaj7         Dm7/B        Em7      Am7\nGrande é o Senhor, confiai na Sua Palavra\n        F        Em7     Am7     Fmaj7/G         C  Am7\nQue é a nossa esperança, poderosa e real,\n   F        G    Em7       Am7\nSó podemos dar-Lhe graças,\n     F       C      Dm7       G      C\nPois nada nos separará do amor de Deus!\n\n            C            Fmaj7\nJesus nós Te adoramos\nC\nJesus.",
-    "createdAt": 1720000452000
+    "createdAt": 1720000452000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=zgEuZYhVzGs"
   },
   {
     "id": "song-normal-380-minha-vida-te-entreguei-unico-caminho",
@@ -5197,7 +5284,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Normal",
     "cifra": "Intro: ||: E B/ D# E2 A2/C# :||\n\nE          B/D#            A2/C#           E/B\nMais gloriosa que o sol é luz do Teu amor,\nE2/G#          A2          Bsus     B\nTrevas não há em Tua presença.\nE       B/D#           A2/C#            E/B\nQuem poderá ousar ao Teu trono chegar,\nE2/G#       A2          Bsus     B\nÀ majestade nas alturas?\n\nPré-refrão:\nA2/C#       B/D#     E\nPor Teu Sangue vim,\nG#7sus       G#7/C#         C#m4        C#m7\nPor Tua    Gra-ça     che - go\nB  A2      E\nAo al -  tar.\n\nRefrão:\nE2/G#       A2           Bsus           E\nOferta de louvor eu trago a meu Rei;\nE2/G#     A2            Bsus          E\nAdoração a Ti, somente, eu darei;\nE2/G#       A2            Bsus         F#add4\nJesus, só Tu mereces honra e o poder;\nA2                 Bsus                 E\nOferta, em cheiro suave, eu vou render.",
-    "createdAt": 1720000458000
+    "createdAt": 1720000458000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Q7KZMBLCY-s"
   },
   {
     "id": "song-normal-386-gloria-e-honra-pertencem-a-ti-pra-sempre",
@@ -5485,7 +5573,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "Bb",
     "category": "Normal",
     "cifra": "Bb/C     F       Dm7            Gm11          Bb/C\nSe - nhor meu Deus o meu desejo és Tu;\n\nSenhor meu Deus o meu desejo és Tu.\n\n            Bb                  C/Bb\nMais caro que a prata, melhor que o ouro,\nAm7                        Am7/D       D/F#\nNada neste mundo é igual a Ti;\n   Gm11\nQue pode o mundo dar-me,\n       Bb/C             F\nQuando meu desejo és Tu.",
-    "createdAt": 1720000483000
+    "createdAt": 1720000483000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Aa06RtFH0V8"
   },
   {
     "id": "song-normal-405-damos-honra-a-ti",
@@ -5552,7 +5641,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "F",
     "category": "Normal",
     "cifra": "Intro: ||: F | Csus | Bb2 | F/Bb :||\n\nF2      Csus            Bb2                   F\nOh, as promessas de Deus são rocha para mim,\n   Csus             Bb2      F/Bb\nVerdade que me atrai;\nF2   Csus            Bb2                       F2\nSeu amor não tem fim, Sua Graça abunda em mim,\n  Csus              Bb2     F/Bb\nE bênçãos sempre dá.\n\n Gm7        F/A             Bb     F/A\nSe eu tropeço e perco a minha fé,\nGm9     F2/A        Bb         Csus      F\nClamo por Teu nome, Deus Salvador!\n\nF        C      Csus       C   Gm7\nEm Ti confiei, e não desesperei,\n              Bb2              F\nNa promessa que és Deus Salvador;\n            C       Csus       C    Gm\nE na escuridão, Tua graça e Teu poder\n   Gm7           Bb2         Csus      F\nAlcançam o meu ser, Deus Salvador!\n\nOh, o mistério de Deus, da eternidade é Rei,\n\nE atento a mim está;\n\nE quão grande é Seu poder, ao fraco forças dá,\n\nComo águia vou planar!\n\n      Am7         F/A          Gm7              C            C/Bb     Bb2\nNa aflição,       na minha dor, sim, Tu ouviste o meu clamor;\n           Am7        F/A              C/G\nPerdido andei               e cego fui,\nGm11      F/A     Bb2\nMas o Teu amor me alcançou!",
-    "createdAt": 1720000489000
+    "createdAt": 1720000489000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=meiqsELWxNs"
   },
   {
     "id": "song-normal-411-jesus-teu-nome",
@@ -5573,7 +5663,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "D     A    D\nHá um só Caminho\n        A      D\nQue nos leva a Deus,   Bis\n         G  D   A   D\nChama-se Jesus, Jesus\n         G  D   A   D\nChama-se Jesus, Jesus\n\nHá uma só Verdade\n\nQue nos leva a Deus,   (Bis)\n\nChama-se Jesus, Jesus\n\nChama-se Jesus, Jesus\n\nNinguém vai ao Pai\n\nSe não for por Ele,   (Bis)\n\nChama-se Jesus, Jesus\n\nChama-se Jesus, Jesus",
-    "createdAt": 1720000491000
+    "createdAt": 1720000491000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=iDYz8BHbkFU"
   },
   {
     "id": "song-normal-413-v1-sonda-me-senhor",
@@ -5715,7 +5806,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Normal",
     "cifra": "Intro: ||: G  Em  C  G    D  :||\n\n   G\nTu és minha vida\n  Em\nTu és minha força\n   C           G    D\nTu és o meu gozo Senhor\n\n    C      D7        Bm     Em\nTe louvo com a minha  vida\n    C      D7       G7    Em\nTe louvo com a minha força\n   D7       G       Em        Am\nCom a minha vida, com a minha força\n  F                 D7\nMinha alegria está em Ti",
-    "createdAt": 1720000503000
+    "createdAt": 1720000503000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=MiqRq6z1l0w"
   },
   {
     "id": "song-normal-422-creio-em-deus",
@@ -6064,7 +6156,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Normal",
     "cifra": "D        G\nEu sou feliz  (3x)\n       A       D\nCristo vive em mim\n  D\nBater as palmas\n  G\nBater com os pés\n  D\nTocar no amigo\n      G\nE dizer: Jesus\n D         G           A          D\nEu sou feliz e Cristo vive em mim",
-    "createdAt": 1720000533000
+    "createdAt": 1720000533000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=QTAqGfLnuiY"
   },
   {
     "id": "song-normal-450-sim-eu-sei-que-me-amas",
@@ -6074,7 +6167,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "C                G    C\nSim, eu sei que me amas\nF              G\nSim, como ninguém\nC                 G   C\nSim, eu sei que me amas\nF              G\nSeu amor me sustém\n\n    F       C     F      C\nEu sou fraco, mas Tu não\n   F        C         G\nMe vai guardar a Tua mão",
-    "createdAt": 1720000534000
+    "createdAt": 1720000534000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=KTjqZu8LLDc"
   },
   {
     "id": "song-normal-451-hino-da-reforma-cinco-solas",
@@ -6107,7 +6201,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "Em",
     "category": "Normal",
     "cifra": "Intro: Em C\n\nEm           D    C             D\nHoje estou aqui p’ra Te oferecer\nEm              D    Am          D\nTodo o meu louvor, todo o meu ser\nEm            D   C             D\nDá-me a Tua mão, vê o meu coração\nEm              D     Am     G/B        D\nCanto só p’ra Ti, dá-me o Teu perdão\n\n        G                      D/F#\nDou-Te o meu coração e o meu viver\nAm                G/B     C        D\nTudo o que há em mim todo o meu ser\n     G               D\nE o meu respirar, todo o meu andar\n   Am        G/B         C    D           Em      G(fim)\nEnsina-me a ser como Tu, como Tu és\n\nQuero Te honrar, quero Te adorar\n\nDar-te o meu viver, sempre Te amar\n\nDá-me a Tua mão, vê o meu coração\n\nCanto só p’ra Ti, dá-me o Teu perdão",
-    "createdAt": 1720000537000
+    "createdAt": 1720000537000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=sj62hX119vs&t=125s"
   },
   {
     "id": "song-normal-454-ensina-me-a-sentir-teu-coracao-abraca-me",
@@ -6813,7 +6908,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "Em",
     "category": "Normal",
     "cifra": "Em    D     C\nSenhor da terra e do céu\nEm    D    C\nMeu Salvador e Redentor\nEm   D    C  G/B      Am7    G  Fmaj7\nHonra e Glória  e  Poder\n                  D\nA Ele que está no Trono\n\nG  Bm7     Em    D/F#      G\nSanto Santo Tu  és digno (contra canto x1)\nG  Bm7      Em    D/F#    G\nLouvor ao Filho de Deus (contra canto x1)\nG  Bm7     Em      D C\nJesus  Tu  és  coroado\nEm     D\nDe justiça e de paz\n\nG  Bm7      Em     D/F#      G\nGlória  Glória  Aleluia (contra canto x1)\nG  Bm7        Em    D/F#     G\nLouvor   ao   Grande Eu Sou (contra canto x1)\nG  Bm7      Em    D  C\nCantai Hosana com os anjos\nEm                    D\nDigno é o Cordeiro de Deus\n\n(C p/repetir último verso)",
-    "createdAt": 1720000599000
+    "createdAt": 1720000599000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=vyNA2wq3LLg"
   },
   {
     "id": "song-normal-506-v2-senhor-da-terra-e-do-ceu-tom-bm",
@@ -6833,7 +6929,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Normal",
     "cifra": "Intro: C F G C F G\n\nC      F           G\nSenhor Deus, eu sou Teu\n       C\nHoje e sempre\n      F        G\nSó Tu És o meu Rei\n          C\nP’ra quem viverei.\n\n          F             G\nTe dar prazer, eu vou fazer\n         Em                 Am\nFaz meu viver, p’ra sempre ser\n F    G         C\nOferta sacrificial",
-    "createdAt": 1720000601000
+    "createdAt": 1720000601000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=hF-yz1w5lGY"
   },
   {
     "id": "song-normal-508-vamos-adorar-a-deus",
@@ -6918,7 +7015,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "F",
     "category": "Normal",
     "cifra": "F          Bb/F               C/F     F   Eb  Bb  F\nBendita é a Rocha da minha salvação\nF          Bb/F               C/F     F\nBendita é a Rocha da minha salvação\n         C         A/C#\nCom o Senhor ao meu lado,\n          Dm      C   Bb      F/A\nEle já me deu a Sua vitória\nGm7     F/A     Bb    Dm/B         Gm/C               F\nBen---di---ta é     a       Rocha da minha salvação\nEb/F        Bb/F          F\nBendita    é      a Rocha\nEb/F        Bb/F          F\nBendita    é      a Rocha\nF/G       C/G           G\nBendita    é      a Rocha\nF/G       C/G           G\nBendita    é      a Rocha\nGm7     F/A     Bb    Dm/B         Gm/C               F\nBen---di---ta é     a       Rocha da minha salvação",
-    "createdAt": 1720000609000
+    "createdAt": 1720000609000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=9pvWvZZZ3M8"
   },
   {
     "id": "song-normal-515-bendito-e-o-rei-que-vem-no-nome-do-senho",
@@ -7035,7 +7133,8 @@ export const NORMAL_SONGS: Song[] = [
     "category": "Normal",
     "cifra": "  D              G    D\nÓ Graça admirável sem igual\n                    A\nÓ Graça de Deus sem par.\n   D                   G     D\nUm pecador como eu, perdido, mortal,\n            A       D   G_D\nMas Deus me quis salvar!\n\n  D              G     D\nÓ Graça admirável sem igual\n                    A\nÓ Graça de Deus sem par.\n   D                   G     D\nUm pecador como eu, perdido, mortal,\n            A       D  G_D     E  A_E\nMas Deus me quis salvar!\n\n  E                A     E\nNo céu, com Jesus irei gozar\n                             B\nDas bênçãos que Ele tem p’ra mim.\n    E              A     E\nMil anos só será o principiar\n              B       E  A_E     F#  B_F#\nDe um dia que não tem fim!\n\n   F#               B    F#\nNo céu, com Jesus irei gozar\n                             C#\nDas bênçãos que Ele tem p’ra mim.\n    F#              B     F#\nMil anos só será o principiar\n              C#       F#    B_F#\nDe um dia que não tem fim!",
     "createdAt": 1720000620000,
-    "bpm": 80
+    "bpm": 80,
+    "youtubeUrl": "https://www.youtube.com/watch?v=5iou_pSEbEY&list=RD5iou_pSEbEY&start_radio=1"
   },
   {
     "id": "song-normal-525-grandes-coisas",
@@ -7068,7 +7167,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "Gm",
     "category": "Normal",
     "cifra": "Gm\nJesus é Senhor,\n\nJesus é Senhor,\nEbmaj7            /D\nJesus é Senhor,\nCm7           Dm7        /G     Gm\nJesus é Senhor das   na---ç-----ões!\nCm7     Dm7        /G     Gm\nEntronizado sobre as nações!\nCm7     Dm7         /G      Gm\nEntronizado em justi------ça!\nCm7           F\nSeu sangue venceu\n     Bb      F/A     Gm    » /F  » C/E\nO inimigo das nossas almas\n       C         D4       D\nEle é o grande libertador!\n\nGm      F/G      Gm\nJesus  é   Senhor!!",
-    "createdAt": 1720000623000
+    "createdAt": 1720000623000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Fw04g6ibhuY"
   },
   {
     "id": "song-normal-528-jesus-entronizamos-te",
@@ -7222,7 +7322,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Normal",
     "cifra": "A\nTe adoro (Te adoro)\n  G\nCom meu coração (com meu coração)\nD\nE Te Louvo (e Te louvo)\n  A           Bm       E4   E/G#      A\nCom todo o meu ser  (com  to-do‘o   meu      ser)\nA\nBuscarei (buscarei)\n  G\nA Tua face (a Tua face)\nD\nSeguirei (seguirei)\n A        Bm    E4     E/G#       A\nO Teu querer  (O     Teu    Que------rer)\n\n A         E/G#\nTe darei a--do----ração\nBm7         D      E4     E/G#      A\nTe darei o meu lou---vo—o-—o--------or\nA          E/G#\nSó a Ti quero adorar\nBm7          D    E4     E/G#      A\nTu somente És digno do meu   a--------mor\n\nA\nMe’ajoelho (me’ajoelho)\n   G\nTe coroo Rei (Te coroo Rei)\nD\nTe servirei (Te servirei)\n   A        Bm       E4   E/G#      A\nTudo entregarei (tudo en--tree—ga------rei)\nA\nOlharei (olharei)\n G\nPara o Teu trono (para o Teu trono)\n  D\nE confiarei (e confiarei)\n  A       Bm     E4      E/G#      A\nSomente em Ti (so----meente   em        Ti)",
-    "createdAt": 1720000637000
+    "createdAt": 1720000637000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=wmSSzDZUmSY"
   },
   {
     "id": "song-normal-541-te-exaltamos",
@@ -7335,7 +7436,8 @@ export const NORMAL_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Normal",
     "cifra": "        A                            D\nVinde a mim! Vinde a mim! Vós que estais perdidos\n        E\nVinde a mim!\n     A\nLevantai-vos pra servir\n           E                    A\nAo Rei dos céus ao Supremo, o Altíssimo.\n\nObedecei! Vinde a mim!\n                   E\nVinde a mim! Sem temor.\n        A               D\nVinde a mim, oh vinde a mim!\n          E           A\nVenham provar do meu eterno amor.\n\nRefrão:\n    F#m            D\nEu te chamei! Eu te escolhi!\n             E\nPorque temes tanto assim? Porque temes tanto assim?\n           A                       D\nContigo eu caminhei, a Tua mão segurei.\n                 E\nAtravessando o deserto eu estive sempre por perto.",
-    "createdAt": 1720000647000
+    "createdAt": 1720000647000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=e3oX-6I1eUE"
   },
   {
     "id": "song-normal-550-eu-te-agradeco-deus",

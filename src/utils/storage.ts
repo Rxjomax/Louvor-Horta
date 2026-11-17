@@ -112,11 +112,15 @@ export function applySongDeltas(deltas: SongDeltas): Song[] {
       if (override.originalKey === '—' && baseSong.originalKey !== '—') {
         catalogSongs.push({
           ...normalizeSongCategory(override),
+          number: override.number ?? baseSong.number,
           originalKey: baseSong.originalKey,
           cifra: baseSong.cifra,
         });
       } else {
-        catalogSongs.push(normalizeSongCategory(override));
+        catalogSongs.push({
+          ...normalizeSongCategory(override),
+          number: override.number ?? baseSong.number,
+        });
       }
     } else {
       catalogSongs.push(baseSong);

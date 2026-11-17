@@ -79,7 +79,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Crianças",
     "cifra": "G\nGrande e Largo\nC\nGrande e Largo\n   G                       D\nO amor de Jesus é grande e largo\n\nG\nGrande e Largo\nC\nGrande e Largo\n   G        D             G        C_G    (no fim)\nO amor de Jesus é grande e largo",
-    "createdAt": 1710000007000
+    "createdAt": 1710000007000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=CPO_qsoXTrk"
   },
   {
     "id": "song-criancas-009-celebra-jesus",
@@ -89,7 +90,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "Intro: D G D\n\nRefrão:\n         G    A            D\nCelebra Jesus!    Celebra o Rei!\n                       G    A   D\nCelebra já, celebra já, Cristo o Rei!\n\n        G   A    D       G   A   D\nCristo aqui es - tá, para vi-da  dar\n     G    A   Bm    G        A\nHoje, com vi- gor, celebra o Rei\n\n(Refrão)\n\n     G     A  D       G     A D\nE sem mais tardar, começa a cantar\n    G   A  Bm      G        A\nPara ce-le -brar a Cristo, o Rei!\n\n(Refrão)",
-    "createdAt": 1710000008000
+    "createdAt": 1710000008000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=RS8eOngc8nU"
   },
   {
     "id": "song-criancas-010-jesus-ama-as-criancinhas",
@@ -119,7 +121,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "   D     A7       D            A              A7    D\nEu gosto da minha Bíblia, p'ra mim tem grande valor.\n         A7         Bm     A   D                   E      A\nÉ mais preciosa que o ouro, e tem, que o mel, mais doce sabor.\n\nA7 D                          A        A7       D\n Jamais deixarei a Bíblia! Precioso tesouro é a Bíblia!\n   G                 D          A      A7         D\n Jamais deixarei a Bíblia; tem grande valor para mim!\n\n   D     A7       D             A          A7      D\nEu gosto da minha Bíblia, pois verdadeira ela é.\n          A7    Bm  A  D             E      A\nDo bem me fala, e de Jesus, aprendo o que Ele quer.\n\nRefrão:\n   D     A7      D             A          A7 D\nEu gosto da minha Bíblia, pois ela bem me conduz.\n          A7     Bm   A  D           E        A\nPromessas têm para me animar a trabalhar por Jesus.",
-    "createdAt": 1710000011000
+    "createdAt": 1710000011000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=EDwXZaLDt8M"
   },
   {
     "id": "song-criancas-013-precioso-tesouro-jesus",
@@ -179,7 +182,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "Intro: E A  B E  E A\n\n    E        A\n||: A cada momento\n  B                     E\nEu ando na presença de Jesus. :||\n\n    E     A      B    E\n||: Ao sentar, ao levantar,\nC#m       F#m    B         E\nAo     dormir,    ao despertar. :||\n\n    E  /G#  A     B      E\n||: E  an - dando pelo caminho, :||\n    C#m   F#m     B   E\n||: A-A - A!       Aleluia!\nC#m   F#m     B        E\nA-A - A!       Glória a Deus! :||",
-    "createdAt": 1710000017000
+    "createdAt": 1710000017000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=ZM84f7i6fgk"
   },
   {
     "id": "song-criancas-019-todo-o-peso",
@@ -230,7 +234,8 @@ export const CHILDREN_SONGS: Song[] = [
     "category": "Crianças",
     "cifra": "Guitarras: Contra tempo\n\nIntro: E\n\nE                                 A\nNão há tesouro maior que a Palavra de Deus\nE                                           B\nPois ela me diz quem é a Vida, a Verdade e a Luz.\nA                              C#m\nEla me ajuda a encontrar a verdadeira Esperança,\nA                  B                        E\nE me ensina que a esperança encontro só em Jesus.\n\nE                                  A\nNão há tesouro maior que a Palavra de Deus\nE                                         B\nSó nela há poder, poder para minha vida mudar.\nA                                   C#m\nCom ela, eu posso viver muito mais feliz\nA                    B            E\nSó nela eu aprendo, aprendo com Jesus andar.\n\nE                                  A\nNão há tesouro maior que a Palavra de Deus\nE                                 B\nPalavra inspirada, não pode ser destruída\n    A                                     C#m\n||: E quando obedeço a tudo quanto Deus me diz,\nA             B              E\nSó encontro vitórias na minha vida. :||\nFim: A E",
     "createdAt": 1710000022000,
-    "bpm": 73
+    "bpm": 73,
+    "youtubeUrl": "https://www.youtube.com/watch?v=e75O9WGj5sQ"
   },
   {
     "id": "song-criancas-024-quando-oramos",
@@ -240,7 +245,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "Em",
     "category": "Crianças",
     "cifra": "Intro: ||:Em C D:||\n\nEm                     C    D\nSentimos Seu amor quando oramos\nEm                    C   D\nEncontramos paz quando oramos\nC                                       D\nSua graça e bênçãos vêm, sim, quando oramos\n    Em                       C     D\nRenova a esperança quando oramos\n\n            Em               C\n||: Quando oramos, vamos nos ajoelhar\n         Em            C          D\nQuando oramos, o mal vai se dissipar\n         Em        C                 D\nQuando oramos, corações vão se quebrantar\n        Em        C  D         Em\nQuando oramos Oh, Oh, quando oramos\n    D          Em\nOh, Oh, quando oramos  :||\n\nP/repetir: C D",
-    "createdAt": 1710000023000
+    "createdAt": 1710000023000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=UVxrSjkax0E"
   },
   {
     "id": "song-criancas-025-somos-acampantes",
@@ -260,7 +266,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "C  G                          G7               C\nMensagem boa eu tenho a dar aos filhos de além-mar\n               G     F#      G    D7   G\nQue não conhecem a meu Rei, e assim direi:\nG7               C\nPor nossas culpas padeceu\nE7               A    D7        A7\nMostrando o Seu amor, contente repetirei:\n\nC       G7   C       G7           C\nDeus É amor! Deus É amor! Deus É amor!\n\nC  G                         G7         C\nNa China, Índia e Portugal e terras em geral\n               G      F#     G   D7 G\nCantando, falarei do amor do meu Senhor\n   G7         C    E7                    A\nNas várias ilhas do Japão, onde a mensagem for,\nD7                    A7\nVai voando o alegre e belo som",
-    "createdAt": 1710000025000
+    "createdAt": 1710000025000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=XE0IUV_zqhU"
   },
   {
     "id": "song-criancas-027-musica-do-uauuau",
@@ -320,7 +327,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "Intro: C\n\nC       Em    F        C\nNa manjedoura em linda noite\nF   Em   F   F#º   G7\nCristo o Rei Je  -  sus nasceu!\nC      Em     F       C/E\nE os pastores deram presentes\nF Em    F  G C\nAo be - bé Jesus\nAm   Em      F      C/E\nVamos juntos com alegria\nF  Em   F   F#º    G7        C      Em\nA - do - rar o     Rei Jesus presenteando\nF         Em    F  Em   F     G  C\nCom nossas vidas ao me - ni - no  Deus",
-    "createdAt": 1710000031000
+    "createdAt": 1710000031000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=0mVXBpnuj_4"
   },
   {
     "id": "song-criancas-033-ja-rolou",
@@ -380,7 +388,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "Vitória Kids\n\n  D             B7(5#)\nAssim Deus nos amou,\nE7(9)         E7\nAté seu Filho dar.\n   A             A7\nO qual morreu na cruz\n  D             A7(13)\nA fim de nos salvar;\n\n   D            B7(5#)\nUm dia ele há de vir,\n    E7(9)       E7/G#\nCom glória a reluzir.\nA         A7(13)   A7  (G D/F# Em7)          D\nTal é seu amor     sem par.",
-    "createdAt": 1710000037000
+    "createdAt": 1710000037000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=bf_489ivTOY"
   },
   {
     "id": "song-criancas-039-biblia",
@@ -390,7 +399,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Crianças",
     "cifra": "   A\nB – Í – B – L – I – A,\n   D\nB – Í – B – L – I – A,\n E\nÉ a Palavra do Senhor,\n  E7               A\nB – Í – B – L – I – A!",
-    "createdAt": 1710000038000
+    "createdAt": 1710000038000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=PaEDXyMOSmc"
   },
   {
     "id": "song-criancas-040-cristo-nasceu",
@@ -400,7 +410,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "D       D/F#  G         Em\nCristo nasceu, Cristo nasceu,\n   D/A                 E7       A7\nPresente de Deus, seu Filho nos deu;\n   D        D/F#     G        Em\nNasceu em Belém, nasceu em Belém,\nD/A            Em/A  A7     D\nAnjos do céu cantaram “Á - men”!",
-    "createdAt": 1710000039000
+    "createdAt": 1710000039000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=YThB-9XSTaQ"
   },
   {
     "id": "song-criancas-041-deus-criou-este-universo-imenso",
@@ -460,7 +471,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "Intro: D  A  D  D/F#  G  G#º  A7  D\n\n       D\nEle é o Rei dos reis,\n                   A\nEle é Senhor dos senhores,\n           D   D/F#      G     G#º\nSeu nome é Jesus! Jesus! Jesus! Jesus!\nA7         D        B\nOh! Ele é o Rei!\n\nSubida de tom:\n       E\nEle é o Rei dos reis,\n                   B\nEle é Senhor dos senhores,\n           E      E/G#   A      A#º\nSeu nome é Jesus! Jesus! Jesus! Jesus!\nB7         E     C\nOh! Ele é o Rei!\n\nSubida de meio-tom:\n       F\nEle é o Rei dos reis,\n                  C\nEle é Senhor dos senhores,\n           F      F/A    Bb     Bº\nSeu nome é Jesus! Jesus! Jesus! Jesus!\nC       C7\nOh! Ele é o…\nC       C7\nOh! Ele é o…\nC        C7    F\nOh! Ele é o    Rei!",
-    "createdAt": 1710000045000
+    "createdAt": 1710000045000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=kxWZ4Z4lZT4"
   },
   {
     "id": "song-criancas-047-esta-e-a-minha-pequena-luz",
@@ -520,7 +532,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "   D              Em\nEu quero servir a Jesus,\n  A7                 D\nEu quero a Jesus ser leal;\n   D7\nContar sua história,\n   G        Em\nMostrar sua glória\n    D          A7      D\nE ouvir seu louvor sem par.",
-    "createdAt": 1710000051000
+    "createdAt": 1710000051000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=TibEo3tzRB0"
   },
   {
     "id": "song-criancas-052-eu-sou-a-porta",
@@ -530,7 +543,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "E               A\n“Eu sou a porta”, disse Jesu s,\n  B7\n“Se alguém entrar por mim\n E\nSalvo será”.\nE               A\nOutro não houve, nem haverá,\nB  B7     E\nVem, entra já!",
-    "createdAt": 1710000052000
+    "createdAt": 1710000052000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=jNtnneyjBsA"
   },
   {
     "id": "song-criancas-053-eu-sou-a-videira-verdadeira",
@@ -540,7 +554,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "E                     A\nEu sou a videira verdadeira\n        E             B7\nE o meu Pai é o agricultor;\nE                         A\nComo o Pai me amou, eu também vos amei,\n       E      B7  E\nPermanecei no meu amor.\n\n   A                 E\nE o meu mandamento é este,\n   A7                 E    E7\nQue vos ameis uns aos outros.\n A                 E\nAssim como eu vos amei,\n    F#               B7\nQue vos ameis uns aos outros,\n                   A7\nAssim como eu vos amei!",
-    "createdAt": 1710000053000
+    "createdAt": 1710000053000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=INOO-L7hHyI&list=RDINOO-L7hHyI&start_radio=1"
   },
   {
     "id": "song-criancas-054-eu-vou-andar",
@@ -590,7 +605,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "  E\nJesus é a rocha da minha salvação,\n   B                B7\nSeu sinal sobre mim é o amor,\n F#m\nJesus é a rocha da minha salvação,\n    E\nSeu sinal sobre mim é o amor,\n\nJesus é a rocha da minha salvação,\n  F#m\nSeu sinal sobre mim é o amor,\n    B        B7     E\nSeu sinal sobre mim é o amor.",
-    "createdAt": 1710000058000
+    "createdAt": 1710000058000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=4dKw6WnPOg8&list=RD4dKw6WnPOg8&start_radio=1"
   },
   {
     "id": "song-criancas-059-la-dentro-ca-fora",
@@ -610,7 +626,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": " C       F      C     G7\nJesus me ama! Jesus me ama!\nC        F      C/G   G7    C\nJesus me ama! A Bíblia diz assim.\n\nC                        F                C\nCristo tem amor por mim; sei que a Bíblia diz assim.\nG            C        F     C      G7    C\nPor crianças como eu, numa cruz Jesus morreu.\n\nC                       F              C\nSalvação me deu Jesus; quero andar na sua luz.\nG             C        F    C      G7     C\nQuando a vida terminar viverei no eterno lar.",
-    "createdAt": 1710000060000
+    "createdAt": 1710000060000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=eGJRUWY8jdo"
   },
   {
     "id": "song-criancas-061-jesus-me-guia",
@@ -630,7 +647,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "E\nMesmo que eu não marche na infantaria,\nB\nNem na cavalaria,\nE\nNem na artilharia eu vá,\nE\nNem aviador seja eu aqui:\n   A       B7        E    A  E\nSoldado de Cristo eu sou! Eu sou!\n\nE       A    E\nSoldado de Jesus!\nE       A    E\nSoldado de Jesus!\n\nE\nMesmo que eu não marche na infantaria,\nB\nNem na cavalaria,\nE\nNem na artilharia eu vá,\nE\nNem aviador seja eu aqui:\n   A       B7        E    A  E\nSoldado de Cristo eu sou! Eu sou!",
-    "createdAt": 1710000062000
+    "createdAt": 1710000062000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=mNZENZOWSQc"
   },
   {
     "id": "song-criancas-063-meu-bom-pastor-e-cristo",
@@ -670,7 +688,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "A",
     "category": "Crianças",
     "cifra": "        A              D         Bm          A\nNão por força ou por poder, o inimigo vou vencer,\n       A             D          A E            A\nPois a Bíblia e a oração são as ar - mas do cristão!\n\nF#m          C#          F#m         C#\nVamos vencer sem falhar, por Jesus lutar;\n E           G#m            F#m  B      E\nQuero sempre obedecer ao mandado do meu Rei;\n\n      A               D          Bm             A\nVou viver p'ra meu Senhor, sempre amando o Salvador,\n        A              D          E7             A\nTransformando treva em luz, vou viver p'ra meu Jesus.\n      E7             A          E7              A\nVou viver p'ra meu Jesus, vou viver p'ra meu Jesus.\n\nZacarias 4:6\n\nSalmo 20:7",
-    "createdAt": 1710000066000
+    "createdAt": 1710000066000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=TiaDJJDgtPA"
   },
   {
     "id": "song-criancas-067-no-egito-escravo-fui",
@@ -700,7 +719,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "Intro: E  A  E\n\n    E                  A         E\nNum berço de palhas, humilde, nasceu\n  B7               E\nJesus pequenino sem ter nada seu.\n E                   A        E\nEstrelas brilharam no pobre lugar\n    B7       E      F#m   B7  E\nQue para o menino servia   de  lar.\n\n  E              A     E\nO gado mugindo acorda Jesus,\n     B7               E\nQue, na manjedoura, sorri vendo a luz\n     E              A          E\nEu te amo Menino nascido em Belém,\n  B7       E       F#m     B7  E\nE quero seguir teu exemplo também.",
-    "createdAt": 1710000069000
+    "createdAt": 1710000069000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=516heu4cIl4"
   },
   {
     "id": "song-criancas-070-o-sabao",
@@ -710,7 +730,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "Intro: D\n\nD       A\nO sabão lava o meu rostinho,\n\nLava os meus pezinhos,\nA7             D\nLava as minhas mãos.\n      D7                     G\nMas Jesus, p’ra me deixar limpinho\nD             A7  D     G   D\nQuer lavar meu coração.\n\nD             A\nQuando o mal faz uma manchinha\n\nEu sei muito bem\n     A7         D\nQuem pode me limpar\n    D7                   G\nÉ Jesus, não Lhe escondo nada,\nD             A7  D    (P/repetir tudo: G D)\nTudo Ele pode apa-gar.  (P/ repetir verso: Bm)",
-    "createdAt": 1710000070000
+    "createdAt": 1710000070000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=r87JrGEC45s"
   },
   {
     "id": "song-criancas-071-o-que-tu-fazes-deus-tudo-sabe-e-tudo-ve-",
@@ -740,7 +761,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "        E         B       C#m       A\n||: Poderoso, poderoso, Jesus é poderoso,\n  E           B        (A E/G# F#m)          E\nE Ele me ajudará até ao fim! :||\n\n   A                      C#m\nEle cura os oprimidos, os coxos faz andar,\n  F#m                      B\nCativos Ele liberta, e aos cegos vista dá,\n\n        E          B        C#m           A\nPois Ele pode, sim pode, eu sei que Jesus pode,\n E            B         E\nE Ele me ajudará até ao fim!",
-    "createdAt": 1710000073000
+    "createdAt": 1710000073000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=3nn0R3Cxv5U"
   },
   {
     "id": "song-criancas-073-por-mim-morreu-jesus",
@@ -750,7 +772,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "    D   G D    A  D     F#m    Bm   Em   A  D\nPor mim morreu Jesus crava  -  do   nu - ma cruz,\n   G     Em     D Bm       D   G   D    A  D\nNo monte do  Calvário,  por mim mor-reu Jesus.\n\nPor mim ressuscitou, vitória assim ganhou,\n\nÀ dextra do Seu Pai está, por mim ressuscitou.\n\nP'ra mim, sim, voltará e aos céus me levará,\n\nP'ra sempre cantarei louvor, p'ra mim, sim, voltará.",
-    "createdAt": 1710000074000
+    "createdAt": 1710000074000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=9QxZ6VzzVM4&list=RD9QxZ6VzzVM4&start_radio=1"
   },
   {
     "id": "song-criancas-074-meu-natal-e-diferente",
@@ -760,7 +783,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Crianças",
     "cifra": "Intro:\n\nG\nMeu Natal é diferente\n    C              G\nEu celebro ao Salvador\n                        C      D    G\nO menino que nasceu é Jesus Ele é Senhor\n\nRefrão:\n           G\n||: Ele é o Rei (palmas)\n        C\nMeu salvador (palmas)\n        G\nEle é Jesus (palmas)\n   D    C    D      G\nEle é Senhor! :||\n\nMeu Natal é diferente\n\nPorque Jesus me ensinou\n\nQue com Ele é o melhor presente\n\nComo Ele ninguém me amou",
-    "createdAt": 1710000075000
+    "createdAt": 1710000075000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=cFab8Hv06vE"
   },
   {
     "id": "song-criancas-075-quem-e-o-rei-da-selva",
@@ -810,7 +834,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "C                 F    C\nSou uma florzinha de Jesus,\nC                 F    C\nSou uma florzinha de Jesus,\nC        G      G7\nAbro a boquinha para cantar,\nC        G        G7\nFecho os olhinhos para orar,\nC                 F    C\nSou uma florzinha de Jesus,\nG   G7   C\nSim de Jesus!\n\nC                 F     C\nSou um soldadinho de Jesus,\nC                 F     C\nSou um soldadinho de Jesus,\n   C         G          G7\nNão ando nas trevas, só ando na luz,\n   C         G          G7\nNão ando nas trevas, só ando na luz,\nC                 F     C\nSou um soldadinho de Jesus,\nG  G7    C\nSim de Jesus!",
-    "createdAt": 1710000080000
+    "createdAt": 1710000080000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=M73k9TE4TWQ"
   },
   {
     "id": "song-criancas-080-tres-palavrinhas-so",
@@ -820,7 +845,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": " E               A\nTrês palavrinhas só\n    B       B7     E\nQue eu aprendi de cor:\n  E   E7  A\n“Deus é amor”\nE           B7           E\nTrá-lá-lá-lá-lá-lá-lá-lá-lá!",
-    "createdAt": 1710000081000
+    "createdAt": 1710000081000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=by57a60VfqA"
   },
   {
     "id": "song-criancas-081-vai-abalar",
@@ -830,7 +856,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "Mateus 24:30\n\n D           G\nVai abalar, vai abalar,\n     A                      D\nQuando Jesus voltar o mundo vai abalar.\nD                    G\nCristo descendo, os céus se abrindo,\n            A                 D\nOs anjos tocando e a igreja subindo!",
-    "createdAt": 1710000082000
+    "createdAt": 1710000082000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Oe_ja474PRU&list=RDOe_ja474PRU&start_radio=1"
   },
   {
     "id": "song-criancas-082-nao-foi-o-coelhinho",
@@ -850,7 +877,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "C         Am        F          G\nVivo cada dia com Jesus no coração\nC        Am          F           G\nMinha alegria faz da vida uma canção.\nAm             Em         F             C      Am\nQuando a Cristo encontrei, toda a minha vida Lhe dei,\nDm             C        F      C          Dm    G7 C\nGozo, paz e alegria sem fim, vieram fazer parte de mim!",
-    "createdAt": 1710000084000
+    "createdAt": 1710000084000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=KIYLahVEdz4&list=RDKIYLahVEdz4&start_radio=1"
   },
   {
     "id": "song-criancas-084-o-fruto-do-espirito",
@@ -880,7 +908,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "Em",
     "category": "Crianças",
     "cifra": "Em\nAs mãos e os dedos,\n D             A\nVou erguer p’ra louvar;\n\nEm\nAs mãos e os dedos,\nD             A\nErguer p’ra louvar!\n\nEm\nAs mãos e os dedos,\nD              A\nVou erguer p’ra louvar;\n\nEm                 D\nÀ frente, atrás, YEAH!\n\n                Em  Bm7        Em    Bm7\nNascemos p’ra louvar!\n\n   Em\n||:    Temos as mãos p’ra levantar;\nD\n       Temos a voz para gritar – JESUS!\nA7\n    E com os pés vamos dançar;\nEm\n     Deus nos criou para louvar! :||\n\n    Em    Bm7\n||: EU VOU ADORAR-TE,\nEm    Bm7\nEU VOU ADORAR! :||",
-    "createdAt": 1710000087000
+    "createdAt": 1710000087000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=BAjPeUC3mPk"
   },
   {
     "id": "song-criancas-087-o-pai-abraao",
@@ -890,7 +919,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "     C\nO pai Abraão tem muitos filhos,\n                        G\nMuitos filhos tem o pai Abraão\n\nEu sou um deles,\n\ne tu também o és;\n   G     G7    C\nLouvemos ao Senhor!\n\nBRAÇO DIREITO!\n(Repete início)\n\nBRAÇO ESQUERDO!\n(Repete início)\n\nPERNA DIREITA!\n(Repete início)\n\nPERNA ESQUERDA!\n(Repete início)\n\nA CABEÇA!\n(Repete início)\n\nO CORPO TODO!\n(Repete início)",
-    "createdAt": 1710000088000
+    "createdAt": 1710000088000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=rd8ZapNb4UY"
   },
   {
     "id": "song-criancas-088-se-eu-fosse-c",
@@ -910,7 +940,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Crianças",
     "cifra": "Intro: G\n\n     G\nSe eu fosse um elefante,\n          C\nCom minha tromba louvaria ao Senhor;\n\n      G\nSe eu fosse um grande urso polar,\n      D\nCom a minha barriga eu iria louvar;\n\n     G                        G7\nSe eu fosse um peixinho lá no fundo do mar,\n     C                   Cm\nLouvaria ao Senhor sem parar de nadar,\n\n     G                 C\nMas, nem elefante, nem urso,\n      D7        G   C/G_G\nNem peixinho eu sou!\n\n       G\nMas se sou o que sou, tenho um coração,\n   C                     Cm\nUm grande sorriso e uma linda canção!\n  G             D                    G     C_G\nSe Deus me fez assim, assim eu vou louvar!\n\n       G\nMas se sou o que sou, tenho um coração,\n   C                     Cm\nUm grande sorriso e uma linda canção!\n\n   G            D7                    G   Em\nSe Deus me fez assim, assim eu vou louvar!\n                Am    D7                    G      C G\nAssim eu vou louvar,        assim eu vou louvar!",
-    "createdAt": 1710000090000
+    "createdAt": 1710000090000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=N7Ca-ActgTg"
   },
   {
     "id": "song-criancas-089-aos-olhos-do-pai",
@@ -920,7 +951,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "Intro: | F C/E F Am7 Bb G |\n\nC           Dm   Dm/C         F            C/E               Dm      Dm/C\nAos olhos do Pai,          você é uma obra prima que ele planeou,\n    F              C      C/E\nCom Suas próprias mãos pintou;\n  F             F/C    C               C/E\nA cor de sua pele,     os seus cabelos desenhou;\nDm         F/G        C              (Para bridge: Am7(9) Bb F/A G)\nCada detalhe,      num toque de amor.\n\n    G/F        C/E             G/F       G\nVocê é linda demais, perfeita aos olhos do Pai;\nF    C/E     Dm     C Bb9    F/A   Gsus\nAlguém igual a você não vi,  ja -  mais;\n     G/F        C/E              G/F       G\nPrincesa, linda demais, perfeita aos olhos do Pai,\n  F   C/E      Dm    C  Bb   G9\nAlguém igual a você não vi, jamais.\n\n       F7M             Am7     Em           F\n||: Nunca deixe alguém dizer,  que não é querida\n   Am7         Em7          Gsus       G\nAntes de você nascer, Deus sonhou com você :||\n\n     G/F       C/E              G/F       G\nVocê é linda demais, perfeita aos olhos do Pai;\n   F     C/E    Dm     C        Bb9                         (Subida de tom)\nAlguém igual a você não vi, ja - mais;\n\n          A/G     D/F#              A/G       A\nPrincesa, linda demais, perfeita aos olhos do Pai;\n   G    D/F#     Em    D       C      G/B  A\nAlguém igual a você não vi, jamais.\n         A/G      D/F#               A/G      A\nPrincesa, linda demais, perfeita aos olhos do Pai;\n    G   D/G          D        G\nPrincesa ....    aos olhos do Pai..",
-    "createdAt": 1710000091000
+    "createdAt": 1710000091000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=got4aE1ZPww"
   },
   {
     "id": "song-criancas-090-estende-a-tua-mao",
@@ -970,7 +1002,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "    D\nA Palavra de Deus é semente\n      A               D\nVai caindo, caindo, caindo.\n       G                      D\nQuando todos pensam que está morta,\n       A                     D\nVai nascendo, brotando e crescendo!",
-    "createdAt": 1710000096000
+    "createdAt": 1710000096000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=WPtuKg2lOOM"
   },
   {
     "id": "song-criancas-095-se-eu-olhasse-alem-do-ceu",
@@ -980,7 +1013,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "Intro: ||: E | F#m7 | E/G# | A :||\n\nE                       F#m7\n  Se eu olhasse além do céu,\n              E/G#             A9\nVeria o teu sorrir, veria a tua majestade.\nE                        F#m7\n  Se eu alcançasse as estrelas,\n               E/G#                        A9\nPegava em tuas mãos, p´ra me mostrares a eternidade.\n\n       E/G#                 A9\nMas só posso, fechar meus olhos, orar,\n       E/G#             B4\nMas só posso, erguer as mãos, dizer:\n\n    E            F#m7       C#m4      F#4    B4\n||: Jesus, meu Sal - va  -  dor, és o céu no meu coração. :||",
-    "createdAt": 1710000097000
+    "createdAt": 1710000097000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=E9LjnChBtco"
   },
   {
     "id": "song-criancas-096-jesus-ama-todas-as-criancas",
@@ -1030,7 +1064,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "Intro: | Bm7 A/C# D | Em D/F# G | D/A Asus A |\n\n  D           A/C#       Bm7      D/F#\nA Bíblia é um livro especial,\n   G            Dsus         Asus     A\nCom ela aprendo mais sobre Jesus;\nD         D/C\nEle é meu grande amigo,\n  G/B           Bb6\nEu quero o conhecer mais;\n   D/A         Bm7      Em       Asus/E          A    Bm7       A/C#     A\nVou ler a Bíblia,        todo di - a      mais e mais.\n\n       D                  Em\nVou entrar no meu quarto, fechar minha porta,\n     D/F#              Bm7         C Asus     A\nVamos ficar juntinhos, só eu e o Senhor,\n      Bm7       A/C#     D     Em         D/F#     G\nVou pegar minha Bí - bli-a, vou ler com ca-ri  -  nho,\n       D/A               Asus     A  (Trans: D G A)\nSei que Deus vai falar comigo.\n\n D           A/C#       Bm7      D/F#\nA Bíblia é o pão que alimenta\n  G          Dsus          Asus    A\nA fome que está em meu coração;\n D         D/C\nÉ a palavra de Jesus\nG/B          Bb6\nQue me cura e fortalece;\n   D/A          Bm7      Em       A         Bm7     A/C#     A\nVou ler a Bíblia,         todo di-a mais e mais.",
-    "createdAt": 1710000102000
+    "createdAt": 1710000102000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=xbp9tvgR5no"
   },
   {
     "id": "song-criancas-101-os-livros-da-biblia",
@@ -1040,7 +1075,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "D                 A       D\nGénesis, Êxodo, Levítico, Números,\n                 G           A\nDeuteronómio, Josué, Juízes, Rute,\n   Em                 D      D/F#\nSamuel, Samuel, Reis, Reis e Crónicas,\nG        D/F#        A            D\nCrónicas, Esdras, Neemias, Ester, Jó;\n                          A        D\nSalmos, Provérbios, Eclesiastes, Cantares,\n                 G       A\nIsaías Jeremias e Lamentações,\nEm        D D/F#      G       D/F#      A       D\nEzequiel e Daniel,   Oséias, Joel,     Amós, Obadias;\nD                  A       D\nJonas, Miquéias, Naum, Habacuque,\n                    G          A\nSofonias, Ageu, Zacarias, Malaquias:\n   Em            D         D/F#\nOs trinta e nove livros, então,\nG        D/F# A            D       Bm7     A\nDo Velho Testamento aqui estão!\n\n   D             A       D                    G          A\nMateus, Marcos, Lucas e João; Atos, Romanos, Coríntios, Coríntios,\n           Em      D   D/F#   G     D/F#       A     D\nGálatas, Efésios , Filipenses, Colossenses, Tessalonicenses;\n   D               A        D                         G     A\nTessalonicenses, Timóteo, Timóteo, Tito, Filemom, Hebreus, Tiago,\nEm             D            D/F#    G       D/F#  A       D\nPedro, Pedro, João, João, João,     Judas, Apocalipse de João:\n   Em          D         D/F#\nOs vinte e sete livros, então,\nG      D/F#   A           D\nDo Novo Testamento aqui estão!",
-    "createdAt": 1710000103000
+    "createdAt": 1710000103000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=C7gZw6Qr2sw"
   },
   {
     "id": "song-criancas-102-jesus-foi-crianca-como-eu",
@@ -1050,7 +1086,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "  E                   F#7\nJesus foi criança como eu,\n  B7                   E\nJesus foi criança como eu.\n            E7      A             A6\nEle as criancinhas muito compreendeu\n    E     C#m     F#7    B7  E   A/E    E\nPorque foi cri-an-ci-nha como eu.\n\n   E                       A6  B\n1.Quando certa vez foi passear,\nB7                    E F#m7       B7\nNo caminho Ele se perdeu.\n      E          E7    A           A6\nSeus pais o procuraram sem poder achar\n    E C#m    F#7   B7   E  A/E     E\nPorque foi criança como eu.\n\n   E                            A6   B\n2.Quando as mães quiseram ver Jesus,\nB7                       E  F#m7       B7\nSeus filhinhos Ele abençoou;\n        E        E7      A           A6\n “Que venham as crianças”, Ele respondeu\n    E C#m     F#7  B7   E  A/E     E\nPorque foi criança como eu.\n\n   E                      A6  B\n3.Aos que O seguiram ensinou:\n B7                          E    F#m7       B7\n “Se alguém quiser chegar ao Céu,\n     E        E7    A         A6\nTal qual uma criança deve se tornar,”\n\n   E   C#m    F#7  B7   E   A/E     E\nPorque foi criança como eu.",
-    "createdAt": 1710000104000
+    "createdAt": 1710000104000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=Vv5MpSWRCPE"
   },
   {
     "id": "song-criancas-103-deus-fez-os-peixinhos",
@@ -1060,7 +1097,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": " D                    A7\nDeus fez os peixinhos para o rio e o mar;\n                                  D\nDeus fez os peixinhos, pô-los a nadar;\n                D7     G\nQuando brincam n’água até ao fundo vão ;\n D                   A7                 D\nBrincam com cuidado, vejam só como eles são!\n\nUm é pequenino, outro é grandalhão;\n\nUm é bem magrinho, outro é gorduchão;\n\nQuando brincam n’água até ao fundo vão ;\n\nBrincam com cuidado, vejam só como eles são!",
-    "createdAt": 1710000105000
+    "createdAt": 1710000105000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=t8jFDiazLzQ"
   },
   {
     "id": "song-criancas-104-meu-barco-e-pequeno-d",
@@ -1110,7 +1148,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "          C  G/B   Am7   C/G\nCriança é im-por - tan - te,\nF      F#º7  G\nPois Jesus falou\n        G    G/B   Am7      C/G\nQue dos pe - que  -  ni  -  nos\nF   G         C C7\nÉ o reino dos Céus.\n\n   F       G      Em  Am7\nEu posso estar em ora-ção\n      F    G   C  C7\nE a família ajudar;\n     F    G    Em7    A7\nNa igreja posso trabalhar\n Dm7          G           C\nE Cristo, aos outros, mostrar.\n\nF/G            C G/B   Am7    C/G\n     Por isso, im-por - tan - te\nF      D7   G\nEu sou para Deus.\n      C   G/B   Am7     C/G\nNão importa o tama    -  nho\n     F      G     C\nPara ser um servo Seu.\n\n F   G           Em7      Am7\nNeste mundo in  -  tei  -  ro\n      F     G   Em7     Am7\nHá crianças como eu,\nF      E       E/G# Am7\nSempre prontas a ser-vir,\n     Dm7       G    C\nPois Jesus nos escolheu.",
-    "createdAt": 1710000110000
+    "createdAt": 1710000110000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=LIwlDO22zx4"
   },
   {
     "id": "song-criancas-108-a-biblia-e",
@@ -1120,7 +1159,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Crianças",
     "cifra": "  G             C               D7          G\nA Bíblia é a Palavra de Deus, o livro incomparável!\n  G               C                 D7           G\nSó ela mostra o caminho do céu. Que livro incomparável!\n\n G             C               D7            G\nA Bíblia é a Palavra de Deus, o livro incomparável!\n  G                C                  D7           G\nAprendo, nela, a vontade de Deus. Que livro incomparável!\n\n  G             C               D7            G\nPerdido fui à Palavra de Deus, o livro incomparável!\n  G              C                 D7            G\nAchei Jesus na Palavra de Deus. Que livro incomparável!\n\n   G                  C               D7            G\nEu leio a Bíblia, a Palavra de Deus, o livro incomparável!\n  G                 C                  D7            G\nEu amo a Bíblia, a Palavra de Deus. Que livro incomparável!",
-    "createdAt": 1710000111000
+    "createdAt": 1710000111000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=AchhJkIWYfk"
   },
   {
     "id": "song-criancas-109-boas-vindas",
@@ -1170,7 +1210,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "Intro: D  G  A7  D\n\nEstrofe 1:\nD                       A7\nDeus criou os animais\n                  D\nOs animais do campo\n                  G\nOs animais do mar\n        D          A7            D    D7\nOs animais que voam lá no céu\n\nRefrão:\n     G                 D\nSim Deus criou, tudo Deus criou\n     Em       A7       D       D7\nSim Deus criou, tudo Ele criou\n   G          A7       F#m         Bm\nA terra, o céu e o mar e tudo o que existe\n   Em        A7     D\nO Papá do céu criou\n\nEstrofe 2:\nD                           A7\nDeus criou as lindas flores\n                   D\nE a erva dos campos\n                            G\nDeus criou as lindas árvores\n     D          A7         D    D7\nQue dão frutos saborosos\n\nRefrão:\n     G                 D\nSim Deus criou, tudo Deus criou\n     Em       A7       D       D7\nSim Deus criou, tudo Ele criou\n   G          A7       F#m         Bm\nA terra, o céu e o mar e tudo o que existe\n   Em        A7     D\nO Papá do céu criou",
-    "createdAt": 1710000116000
+    "createdAt": 1710000116000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=CrZF3YsK5y8"
   },
   {
     "id": "song-criancas-114-deus-criou-os-passarinhos",
@@ -1180,7 +1221,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Crianças",
     "cifra": "Intro: G  D7  G\n\nEstrofe:\nG                          D7\nDeus criou os passarinhos\n                   G\nBem alegres a cantar\nG                          C\nDeus criou os passarinhos\n      G          D7       G    G7\nE os pôs no céu a voar\n\nRefrão:\n         C                      G\nBate as asas e voa o passarinho!\n         D7                     G    G7\nBate as asas e voa o passarinho!\n     C              G            Em\nEle canta lá no céu e bate as asas\n          Am       D7       G\nPara ao papá do Céu louvar!\n\nEstrofe:\nG                          D7\nDeus criou os passarinhos\n                   G\nBem alegres a cantar\nG                          C\nDeus criou os passarinhos\n      G          D7       G    G7\nE os pôs no céu a voar\n\nRefrão:\n         C                      G\nBate as asas e voa o passarinho!\n         D7                     G    G7\nBate as asas e voa o passarinho!\n     C              G            Em\nEle canta lá no céu e bate as asas\n          Am       D7       G\nPara ao papá do Céu louvar!\n          C        D7       G\nPara ao papá do céu louvar",
-    "createdAt": 1710000117000
+    "createdAt": 1710000117000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=yPCT_AgZHpg"
   },
   {
     "id": "song-criancas-115-deus-fez-a-vaquinha",
@@ -1190,7 +1232,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "Intro: C  F  G7  C\n\nC                        F              C\nDeus fez a vaquinha ela mora lá no campo\n         Dm              G7        C\nCome a ervinha e faz mú mú mú\n       F                      C          Am\nAi eu gosto tanto da minha vaquinha\n         Dm       G7        C\nEla dá leitinho para eu beber\n\nC                        F              C\nDeus fez a vaquinha ela mora lá no campo\n         Dm              G7        C\nCome a ervinha e faz mú mú mú\n       F                      C          Am\nAi eu gosto tanto da minha vaquinha\n         Dm       G7        C\nEla dá leitinho para eu beber\n\nC                        F              C\nDeus fez a vaquinha ela mora lá no campo\n         Dm              G7        C\nCome a ervinha e faz mú mú mú\n       F                      C          Am\nAi eu gosto tanto da minha vaquinha\n         Dm       G7        C\nEla dá leitinho para eu beber\n         F         G7    C\nDeus fez a vaquinha: mú!",
-    "createdAt": 1710000118000
+    "createdAt": 1710000118000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=h0CRnok6L68"
   },
   {
     "id": "song-criancas-116-deus-me-criou",
@@ -1200,7 +1243,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "Intro: D  G  A7  D\n\nEstrofe 1:\nD                        G                D\nDeus criou meus olhos minha boca e meu nariz (palmas)\nD                        Em               A7\nDeus criou meus olhos minha boca e meu nariz (palmas)\n     G              A7       D     Bm\nSim com Jesus eu sou feliz\n     Em             A7       D\nSim com Jesus eu sou feliz\n\nEstrofe 2:\nD                        G                D\nDeus criou minhas mãos joelhos e meus pés (hey hey)\nD                        Em               A7\nDeus criou minhas mãos joelhos e meus pés (hey hey)\n     G               A7          D     Bm\nCom Jesus mais forte tu és\n     Em              A7          D\nCom Jesus mais forte tu és\n\nEstrofe 1:\nD                        G                D\nDeus criou meus olhos minha boca e meu nariz (palmas)\nD                        Em               A7\nDeus criou meus olhos minha boca e meu nariz (palmas)\n     G              A7       D     Bm\nSim com Jesus eu sou feliz\n     Em             A7       D\nSim com Jesus eu sou feliz\n\nEstrofe 2:\nD                        G                D\nDeus criou minhas mãos joelhos e meus pés (hey hey)\nD                        Em               A7\nDeus criou minhas mãos joelhos e meus pés (hey hey)\n     G               A7          D     Bm\nCom Jesus mais forte tu és\n     Em              A7          D\nCom Jesus mais forte tu és",
-    "createdAt": 1710000119000
+    "createdAt": 1710000119000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=6bjZ3ZtFTy4"
   },
   {
     "id": "song-criancas-117-a-carga-e-pesada-para-levar-e",
@@ -1260,7 +1304,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Crianças",
     "cifra": "          G\nEu vou saltar sem parar,\n       D\nMuitas voltas eu vou dar,\n       C      D   G\nVou louvar-Te para sempre\n                     D\nTambém vou gritar até rouco ficar,\n       C      D    G\nVou louvar-Te para sempre\n\n       D            C           G\nVou correr pra Ele e nunca vou parar\n   D           C            G\nEu vou seguir Jesus até desmaiar\n\nD      C                   Em\nPosso fazer tudo pois Ele está em mim\nD\nQuando tu tiveres muito\nC                         D\nQuando tu tiveres pouco o quê? Sê feliz!",
-    "createdAt": 1710000125000
+    "createdAt": 1710000125000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=VirROF1tCmQ"
   },
   {
     "id": "song-criancas-121-eu-vou-saltar-e",
@@ -1290,7 +1335,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "E",
     "category": "Crianças",
     "cifra": "  E      B7       E          B7            E     B7   A              E\nSeu nome é Maravilhoso, Seu nome é Maravilhoso, Seu nome é Maravilhoso,\n\n               B7               E\nPai da Eternidade, Príncipe da Paz,\n\nSeu nome é Conselheiro,\n\nPai da Eternidade, Príncipe da Paz,\n\nSeu nome é Deus Forte – 3X\n\nPai da Eternidade, Príncipe da Paz,\n\nIrei segui-Lo para sempre pois Ele dá felicidade\n\nSeu nome é Maravilhoso,\n\nPai da Eternidade,\n\nPríncipe da Paz.",
-    "createdAt": 1710000128000
+    "createdAt": 1710000128000,
+    "youtubeUrl": "https://www.youtube.com/watch?app=desktop&v=fB8r-ORcgq8"
   },
   {
     "id": "song-criancas-124-louva-canta-e-ora",
@@ -1320,7 +1366,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "D             A                             D\nBom dia com alegria, desejo para ti um belo dia\n                A                                    D\nAndando, na companhia, do nosso Salvador que nos quer bem\nA        D\nVai tudo bem!",
-    "createdAt": 1710000131000
+    "createdAt": 1710000131000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=ChNnERUmwgc"
   },
   {
     "id": "song-criancas-127-ao-cantar",
@@ -1340,7 +1387,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "Intro: D  A\n\n            D                                A\nEstá tudo escuro, mas eu vou chegar pra iluminar   x3\n          G                   A\nEu tenho a luz de Deus vou brilhar\n\nD                            A\nMais que lamparina, mais que lâmpada\n                D\nQue vela, que lanterna\n              A\nIlumino muito mais\nD                      A\nSou a Luz do mundo e o sal desta terra\n      D                          A\nJesus disse que eu sou, então eu vou brilhar.\n\nG                       D/F#\nResgatar quem está no escuro e trazer\n G         A\nAqui para a luz\n         G\nCom as armas preparadas\n       D/F#\nEu não tenho medo não\nG                                 A\nJesus me ilumina em qualquer escuridão\n\n(Repetir: Está tudo escuro….)\n\n    D                       G\n||: Brilhando, Brilhando, Brilhando o amor :||\nD                       A\nBrilhando, Brilhando, Brilhando o amor.\n\n            D                            A\nEstá tudo escuro, mas eu vou chegar pra iluminar  x3\n           G\nEu tenho a luz de Deus\n\nEu tenho a luz de Deus\n                               A\nEu tenho a luz de Deus vou brilhar\n\nBrilhar!",
-    "createdAt": 1710000133000
+    "createdAt": 1710000133000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=i2OVswx7BuE"
   },
   {
     "id": "song-criancas-129-ja-chegou-o-natal",
@@ -1350,7 +1398,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "Intro: C  F\n\nC     G      C\nJá chegou o Natal\nF                G\nHoje há festa no céu\nC\nAnjos tocando\n   F\nTrombetas soando\nG            C\nJá chegou o Natal.\n\nAm               Em\nTribos, povos e raças louvai\nF             Am\nCelebrai-o também\nC        G          F\nCristo, Senhor, Salvador das nações\nG                C\nHoje nasceu em Belém.\n\nD         A       D\nOs sinos ecoam no céu\nG                    A\nO anjo proclama em Belém\nD                   G\nGlória a Deus nas alturas dos céu\nA                   D\nE paz aos homens de bem\n\nG  D    Bm.       F#m        G    D\nÉ Natal,    é     Natal,       é Natal\nG        A        D\nCristo nasceu em Belém\n\nD     A      D\nJá chegou o Natal\nG                A\nHoje há festa no céu\nD\nAnjos tocando\n   G\nTrombetas soando\nA            D\nJá chegou o Natal.",
-    "createdAt": 1710000134000
+    "createdAt": 1710000134000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=SKXMdTHTFrY"
   },
   {
     "id": "song-criancas-130-e-bom-e-bom-demais",
@@ -1360,7 +1409,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "G",
     "category": "Crianças",
     "cifra": " G\nÉ bom!\n        C\nÉ bom demais!\n        D\nÉ muito bom\n               G\nTer Jesus no coração.\n\n          C\nAndar com Ele\n         G\nJuntinho Dele\n        D                   G\nÉ muito bom ter Jesus no coração",
-    "createdAt": 1710000135000
+    "createdAt": 1710000135000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=6sjZfHevftk"
   },
   {
     "id": "song-criancas-131-meu-livro-companheiro",
@@ -1410,7 +1460,8 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "C",
     "category": "Crianças",
     "cifra": "   C        G\nVem cá! Vem cá!\n    F        G              C\nVem cá que Jesus quer-te ensinar\n   C               G\nVem cá menino! Vem cá, menina!\n  F            G               C\nEscuta o que Jesus quer-te ensinar.\n\n    Cm         Fm         G         C\nEscolher, conhecer, agradecer, anunciar\n    C         Dm           G                C\nRepartir, confiar para quem quer aprender a amar\n    C         Dm          G         C\nEscolher, conhecer, agradecer, anunciar\n     C        Dm              G               C\nRepartir, confiar, tudo isto Jesus quer-te ensinar\n\n   C        G\nVem cá! Vem cá!\n    F        G              C\nVem cá que Jesus quer-te ensinar\n   C               G\nVem cá menino! Vem cá, menina!\n  F            G               C\nEscuta o que Jesus quer-te ensinar.\n\nVEM!",
-    "createdAt": 1710000140000
+    "createdAt": 1710000140000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=PMp22tMzo94"
   },
   {
     "id": "song-criancas-135-cuidado",
@@ -1420,6 +1471,7 @@ export const CHILDREN_SONGS: Song[] = [
     "originalKey": "D",
     "category": "Crianças",
     "cifra": "D                      A\nCuidado olhinho o que vês,\n                         D      D7\nCuidado olhinho o que vês,\n    G                     D          Bm\nO nosso Criador está a olhar para ti,\n   G         A           D\nCuidado olhinho o que vês.\n\nCuidado boquinha com o que dizes,\n\nCuidado boquinha com o que dizes,\n\nO nosso Criador está a olhar para ti,\n\nCuidado boquinha com o que dizes\n\nCuidado mãozinha no que pegas,\n\nCuidado mãozinha no que pegas,\n\nO nosso Criador está a olhar para ti,\n\nCuidado mãozinha no que pegas,\n\nCuidado pezinho onde pisas,\n\nCuidado pezinho onde pisas,\n\nO nosso Criador está a olhar para ti,\n\nCuidado pezinho onde pisas\n\nCuidado olho, boca mão e pé\n\nCuidado olho, boca mão e pé\n\nO nosso Criador está a olhar para ti,\n\nCuidado olho, boca mão e pé.",
-    "createdAt": 1710000141000
+    "createdAt": 1710000141000,
+    "youtubeUrl": "https://www.youtube.com/watch?v=ALoKeNzsEaQ"
   }
 ];

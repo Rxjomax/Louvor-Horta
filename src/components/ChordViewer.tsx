@@ -1,24 +1,39 @@
 import {
   ArrowLeft,
+  Check,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   Download,
   ExternalLink,
   Eye,
   EyeOff,
+  Headphones,
+  Link2,
   Minus,
   Moon,
+  Music2,
   Pause,
   Pencil,
   Play,
   Plus,
   Printer,
   RotateCcw,
+  Square,
   Sun,
+  Volume2,
   X,
 } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Song, ThemeMode } from '../types/music';
+import {
+  InstrumentSound,
+  buildSongListeningLinks,
+  extractSongChords,
+  parseYouTubeEmbedInfo,
+  playChordSound,
+} from '../utils/audioPlayer';
 import {
   parseCifraLines,
   stripChords,
@@ -36,6 +51,7 @@ interface ChordViewerProps {
   onToggleTheme: () => void;
   onBack: () => void;
   onEdit: (song: Song) => void;
+  onUpdateYoutubeUrl?: (nextUrl: string) => void;
   playlistContext?: {
     currentIndex: number;
     total: number;
@@ -61,6 +77,7 @@ export function ChordViewer({
   onToggleTheme,
   onBack,
   onEdit,
+  onUpdateYoutubeUrl,
   playlistContext,
 }: ChordViewerProps) {
   const initialPrefs = useMemo(() => loadViewerPrefs(), []);
@@ -69,6 +86,20 @@ export function ChordViewer({
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
   const [speedIndex, setSpeedIndex] = useState<number>(initialPrefs.speedIndex);
   const [isPrintMode, setIsPrintMode] = useState<boolean>(false);
+
+  // Listening & Chord Synthesizer panel state
+  const [isListenOpen, setIsListenOpen] = useState<boolean>(false);
+  const [showEmbeddedVideo, setShowEmbeddedVideo] = useState<boolean>(false);
+  const [instrument, setInstrument] = useState<InstrumentSound>('guitar');
+  const [isPlayingProgression, setIsPlayingProgression] = useState<boolean>(false);
+  const [activeChordIdx, setActiveChordIdx] = useState<number | null>(null);
+  const [lastPlayedChord, setLastPlayedChord] = useState<string | null>(null);
+  const [playbackBpm, setPlaybackBpm] = useState<number>(
+    song.bpm && song.bpm >= 45 && song.bpm <= 180 ? song.bpm : 76
+  );
+  const [youtubeInput, setYoutubeInput] = useState<string>(song.youtubeUrl ?? '');
+  const [showUrlEditor, setShowUrlEditor] = useState<boolean>(false);
+  const [savedUrlBanner, setSavedUrlBanner] = useState<boolean>(false);
 
   useEffect(() => {
     saveViewerPrefs({ fontSize, lyricsOnly, speedIndex });
@@ -87,13 +118,69 @@ export function ChordViewer({
 
   const strippedLines = useMemo(() => stripChords(song.cifra), [song.cifra]);
 
-  // Reset scroll position and pause auto-scroll when switching songs
+  const songChords = useMemo(
+    () => extractSongChords(parsedLines),
+    [parsedLines]
+  );
+
+  const listeningLinks = useMemo(
+    () => buildSongListeningLinks(song),
+    [song]
+  );
+
+  const embedInfo = useMemo(
+    () => parseYouTubeEmbedInfo(song.youtubeUrl),
+    [song.youtubeUrl]
+  );
+
+  // Reset scroll position and audio state when switching songs
   useEffect(() => {
     window.scrollTo({ top: 0 });
     setIsScrolling(false);
+    setIsPlayingProgression(false);
+    setShowEmbeddedVideo(false);
+    setActiveChordIdx(null);
+    setLastPlayedChord(null);
+    setYoutubeInput(song.youtubeUrl ?? '');
+    setShowUrlEditor(false);
+    setPlaybackBpm(
+      song.bpm && song.bpm >= 45 && song.bpm <= 180 ? song.bpm : 76
+    );
     scrollAccumulatorRef.current = 0;
     lastFrameTimeRef.current = null;
-  }, [song.id]);
+  }, [song.id, song.youtubeUrl, song.bpm]);
+
+  // Chord progression playback timer synchronized with the song's actual lines
+  useEffect(() => {
+    if (!isPlayingProgression || songChords.steps.length === 0) {
+      setActiveChordIdx(null);
+      return;
+    }
+
+    let stepIdx = 0;
+    const intervalMs = Math.max(
+      750,
+      Math.round((60 / Math.max(45, Math.min(180, playbackBpm))) * 2000)
+    );
+    const noteDurationSec = Math.min(2.4, (intervalMs / 1000) * 1.15);
+
+    const playStep = () => {
+      const currentStep = songChords.steps[stepIdx];
+      if (currentStep) {
+        setActiveChordIdx(stepIdx);
+        setLastPlayedChord(currentStep.chord);
+        playChordSound(currentStep.chord, instrument, noteDurationSec);
+      }
+      stepIdx = (stepIdx + 1) % songChords.steps.length;
+    };
+
+    playStep();
+    const timer = window.setInterval(playStep, intervalMs);
+
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, [isPlayingProgression, songChords.steps, instrument, playbackBpm]);
 
   // Smooth rAF auto-scroll with fractional pixel accumulation
   useEffect(() => {
@@ -137,9 +224,9 @@ export function ChordViewer({
 
   const handleOpenPrintSheet = () => {
     setIsScrolling(false);
+    setIsPlayingProgression(false);
     setIsPrintMode(true);
     window.scrollTo({ top: 0 });
-    // Trigger native browser print dialog after layout updates to print mode
     setTimeout(() => {
       try {
         window.print();
@@ -147,6 +234,22 @@ export function ChordViewer({
         // Sandboxed iframe environments fallback to on-screen print mode + PDF download
       }
     }, 80);
+  };
+
+  const handlePlaySingleChord = (chord: string) => {
+    setIsPlayingProgression(false);
+    setLastPlayedChord(chord);
+    playChordSound(chord, instrument, 1.8);
+  };
+
+  const handleSaveCustomYoutubeUrl = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!onUpdateYoutubeUrl) return;
+    onUpdateYoutubeUrl(youtubeInput.trim());
+    setShowUrlEditor(false);
+    setShowEmbeddedVideo(true);
+    setSavedUrlBanner(true);
+    window.setTimeout(() => setSavedUrlBanner(false), 2500);
   };
 
   useEffect(() => {
@@ -159,6 +262,9 @@ export function ChordViewer({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isPrintMode]);
+
+  const activeStep =
+    activeChordIdx !== null ? songChords.steps[activeChordIdx] : undefined;
 
   return (
     <div
@@ -221,7 +327,10 @@ export function ChordViewer({
         <div className="max-w-4xl mx-auto px-2 sm:px-6 h-13 sm:h-14 flex items-center justify-between gap-2">
           <button
             type="button"
-            onClick={onBack}
+            onClick={() => {
+              setIsPlayingProgression(false);
+              onBack();
+            }}
             aria-label="Voltar para a lista"
             className="min-h-[44px] min-w-[44px] px-2.5 inline-flex items-center gap-1.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
           >
@@ -246,18 +355,29 @@ export function ChordViewer({
           </div>
 
           <div className="flex items-center gap-1 shrink-0">
-            {song.youtubeUrl && (
-              <a
-                href={song.youtubeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Ouvir referência de ${song.title} no YouTube`}
-                title="Ouvir referência no YouTube"
-                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
-              >
-                <ExternalLink className="w-4 h-4" aria-hidden="true" />
-              </a>
-            )}
+            <button
+              type="button"
+              onClick={() => {
+                setIsListenOpen((prev) => {
+                  const next = !prev;
+                  if (next && embedInfo) {
+                    setShowEmbeddedVideo(true);
+                  }
+                  return next;
+                });
+              }}
+              aria-expanded={isListenOpen}
+              aria-label="Ouvir música (versão original, tocada e acordes)"
+              title="Ouvir música (versão original, tocada e acordes)"
+              className={`min-h-[44px] px-2.5 flex items-center justify-center gap-1.5 rounded-lg border text-xs font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                isListenOpen || isPlayingProgression
+                  ? 'border-[#2F523E] bg-[#2F523E] text-white dark:border-emerald-500 dark:bg-emerald-600'
+                  : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+              }`}
+            >
+              <Headphones className="w-4 h-4 shrink-0" aria-hidden="true" />
+              <span className="hidden sm:inline">Ouvir</span>
+            </button>
 
             <button
               type="button"
@@ -272,7 +392,10 @@ export function ChordViewer({
 
             <button
               type="button"
-              onClick={() => onEdit(song)}
+              onClick={() => {
+                setIsPlayingProgression(false);
+                onEdit(song);
+              }}
               aria-label={`Editar cifra de ${song.title}`}
               title="Editar cifra"
               className="hidden sm:flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
@@ -326,8 +449,8 @@ export function ChordViewer({
         </div>
 
         {/* Key, Category & Font Size Strip (screen only) */}
-        <div className="no-print mb-5 pb-3 border-b border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-          <div className="flex items-center gap-2">
+        <div className="no-print mb-3 pb-3 border-b border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+          <div className="flex flex-wrap items-center gap-2">
             {song.originalKey === '—' ? (
               <span className="font-medium text-slate-600 dark:text-slate-300">
                 Só letra (sem cifra)
@@ -338,11 +461,20 @@ export function ChordViewer({
                 <span className="font-cifra font-bold text-base text-[#B85414] dark:text-amber-400">
                   {activeKey}
                 </span>
+                <button
+                  type="button"
+                  onClick={() => handlePlaySingleChord(activeKey)}
+                  title={`Ouvir o acorde do tom (${activeKey})`}
+                  className="min-h-[38px] px-2.5 py-1 inline-flex items-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
+                >
+                  <Volume2 className="w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                  <span>Ouvir Tom ({activeKey})</span>
+                </button>
                 {transposeOffset !== 0 && (
                   <button
                     type="button"
                     onClick={onResetTranspose}
-                    className="min-h-[36px] px-2 inline-flex items-center gap-1 rounded border border-slate-200 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                    className="min-h-[38px] px-2 inline-flex items-center gap-1 rounded-lg border border-slate-200 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
                     title="Voltar ao tom original"
                   >
                     <RotateCcw className="w-3 h-3" aria-hidden="true" />
@@ -385,6 +517,479 @@ export function ChordViewer({
             </div>
           </div>
         </div>
+
+        {/* Always-accessible "Ouvir Música" Bar & Expandable Audio Studio (screen only) */}
+        <section
+          aria-label="Ouvir música e referências de ensaio"
+          className="no-print mb-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 overflow-hidden"
+        >
+          {/* Compact Quick-Listen Strip */}
+          <div className="p-2.5 sm:px-4 flex flex-wrap items-center justify-between gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setIsListenOpen((prev) => {
+                  const next = !prev;
+                  if (next && embedInfo) {
+                    setShowEmbeddedVideo(true);
+                  }
+                  return next;
+                });
+              }}
+              aria-expanded={isListenOpen}
+              className="min-h-[44px] px-3 py-2 rounded-lg bg-[#2F523E] hover:bg-[#244030] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            >
+              <Headphones className="w-4 h-4 shrink-0" aria-hidden="true" />
+              <span>Ouvir Música (Original, Tocada e Acordes)</span>
+              {isListenOpen ? (
+                <ChevronUp className="w-4 h-4 shrink-0" aria-hidden="true" />
+              ) : (
+                <ChevronDown className="w-4 h-4 shrink-0" aria-hidden="true" />
+              )}
+            </button>
+
+            <div className="flex flex-wrap items-center gap-1.5">
+              {embedInfo ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsListenOpen(true);
+                    setShowEmbeddedVideo(true);
+                  }}
+                  className="min-h-[40px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-100 inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                >
+                  <Play className="w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                  <span>Ouvir Versão Original Aqui</span>
+                </button>
+              ) : (
+                <a
+                  href={listeningLinks.originalYoutube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="min-h-[40px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-100 inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                >
+                  <Play className="w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                  <span>Versão Original</span>
+                  <ExternalLink className="w-3 h-3 text-slate-400 shrink-0" aria-hidden="true" />
+                </a>
+              )}
+
+              <a
+                href={listeningLinks.acousticYoutube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-h-[40px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-100 inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+              >
+                <Music2 className="w-3.5 h-3.5 text-[#2F523E] dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                <span>Tocada / Acústica</span>
+                <ExternalLink className="w-3 h-3 text-slate-400 shrink-0" aria-hidden="true" />
+              </a>
+
+              {songChords.steps.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsListenOpen(true);
+                    setIsPlayingProgression((prev) => !prev);
+                  }}
+                  className={`min-h-[40px] px-3 py-1.5 rounded-lg border text-xs font-semibold inline-flex items-center gap-1.5 transition-colors whitespace-nowrap ${
+                    isPlayingProgression
+                      ? 'border-emerald-600 bg-emerald-600 text-white'
+                      : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100'
+                  }`}
+                >
+                  {isPlayingProgression ? (
+                    <>
+                      <Square className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                      <span>Parar Acordes</span>
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                      <span>Tocar Acordes ({activeKey})</span>
+                    </>
+                  )}
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Expanded "Ouvir & Ensaiar" Panel */}
+          {isListenOpen && (
+            <div className="border-t border-slate-200 dark:border-slate-800 p-3.5 sm:p-5 space-y-5 bg-white dark:bg-slate-900/90">
+              {/* Part 1: Original Recording, Embedded Player, Acoustic, Tutorial, Playback */}
+              <div>
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                  <div>
+                    <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                      1. Ouvir Gravação Original e Versões de «{listeningLinks.cleanTitle}»
+                    </h2>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      {listeningLinks.firstLyricSnippet
+                        ? `Verso inicial: "${listeningLinks.firstLyricSnippet}"`
+                        : 'Escolha a versão para ouvir sem sair da cifra ou abrir no YouTube / Spotify:'}
+                    </p>
+                  </div>
+
+                  {onUpdateYoutubeUrl && (
+                    <button
+                      type="button"
+                      onClick={() => setShowUrlEditor((prev) => !prev)}
+                      className="min-h-[38px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 inline-flex items-center gap-1.5 transition-colors"
+                    >
+                      <Link2 className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                      <span>
+                        {song.youtubeUrl
+                          ? 'Alterar ligação do vídeo'
+                          : 'Fixar ligação do YouTube'}
+                      </span>
+                    </button>
+                  )}
+                </div>
+
+                {/* Embedded YouTube Player right at the top when available */}
+                {embedInfo && (
+                  <div className="mb-3.5">
+                    {!showEmbeddedVideo ? (
+                      <button
+                        type="button"
+                        onClick={() => setShowEmbeddedVideo(true)}
+                        className="w-full sm:w-auto min-h-[44px] px-4 py-2.5 rounded-xl bg-[#B85414] hover:bg-[#9E460F] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 transition-colors"
+                      >
+                        <Play className="w-4 h-4 shrink-0" aria-hidden="true" />
+                        <span>
+                          Reproduzir Vídeo desta Música Aqui na Página
+                          {embedInfo.startSeconds > 0
+                            ? ` (inicia aos ${Math.floor(embedInfo.startSeconds / 60)}m${String(
+                                embedInfo.startSeconds % 60
+                              ).padStart(2, '0')}s)`
+                            : ''}
+                        </span>
+                      </button>
+                    ) : (
+                      <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-black aspect-video max-w-2xl">
+                        <iframe
+                          title={`Vídeo de referência: ${song.title}`}
+                          src={embedInfo.embedUrl}
+                          className="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Form to pin a specific YouTube URL to this song for the whole team */}
+                {showUrlEditor && onUpdateYoutubeUrl && (
+                  <form
+                    onSubmit={handleSaveCustomYoutubeUrl}
+                    className="mb-3.5 p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 space-y-2"
+                  >
+                    <label
+                      htmlFor="song-youtube-pin"
+                      className="block text-xs font-semibold text-slate-700 dark:text-slate-200"
+                    >
+                      Cole a ligação do YouTube da versão exata desta música (fica guardada para todo o grupo):
+                    </label>
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <input
+                        id="song-youtube-pin"
+                        type="url"
+                        value={youtubeInput}
+                        onChange={(e) => setYoutubeInput(e.target.value)}
+                        placeholder="https://www.youtube.com/watch?v=..."
+                        className="flex-1 min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2F523E]"
+                      />
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="submit"
+                          className="min-h-[44px] px-4 py-2 rounded-lg bg-[#2F523E] hover:bg-[#244030] text-white text-xs font-semibold whitespace-nowrap transition-colors"
+                        >
+                          Guardar Vídeo
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setShowUrlEditor(false)}
+                          className="min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-xs font-medium text-slate-700 dark:text-slate-300"
+                        >
+                          Cancelar
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                )}
+
+                {savedUrlBanner && (
+                  <div className="mb-3 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+                    <Check className="w-4 h-4" aria-hidden="true" />
+                    <span>Ligação guardada e sincronizada com o grupo!</span>
+                  </div>
+                )}
+
+                {/* Version Buttons Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                  <a
+                    href={listeningLinks.originalYoutube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-[#B85414] dark:hover:border-amber-500 text-left flex items-center justify-between gap-2 transition-colors"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                        Versão Original (YouTube)
+                      </div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                        {song.youtubeUrl
+                          ? 'Abrir vídeo oficial da coletânea'
+                          : `Ouvir "${listeningLinks.cleanTitle}"`}
+                      </div>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                  </a>
+
+                  <a
+                    href={listeningLinks.acousticYoutube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-[#2F523E] dark:hover:border-emerald-500 text-left flex items-center justify-between gap-2 transition-colors"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                        Versão Tocada / Acústica
+                      </div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                        Voz e guitarra de «{listeningLinks.cleanTitle}»
+                      </div>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-[#2F523E] dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                  </a>
+
+                  <a
+                    href={listeningLinks.tutorialYoutube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-[#B85414] dark:hover:border-amber-500 text-left flex items-center justify-between gap-2 transition-colors"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                        Como Tocar (Aula / Cifra)
+                      </div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                        Ritmo e acordes na guitarra
+                      </div>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                  </a>
+
+                  <a
+                    href={listeningLinks.playbackYoutube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-slate-400 text-left flex items-center justify-between gap-2 transition-colors"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                        Playback / Instrumental
+                      </div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                        Base instrumental para treinar vozes
+                      </div>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-slate-500 shrink-0" aria-hidden="true" />
+                  </a>
+
+                  <a
+                    href={listeningLinks.spotifySearch}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-emerald-600 text-left flex items-center justify-between gap-2 transition-colors"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                        Ouvir no Spotify
+                      </div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                        Pesquisar «{listeningLinks.cleanTitle}» no Spotify
+                      </div>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Part 2: Interactive Chord Synthesizer ("Versão Tocada dos Acordes no Tom Atual") */}
+              {song.originalKey !== '—' && songChords.unique.length > 0 && (
+                <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3">
+                    <div>
+                      <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                        2. Ouvir Acordes desta Cifra Tocados na Aplicação (Tom:{' '}
+                        <span className="font-cifra text-[#B85414] dark:text-amber-400">
+                          {activeKey}
+                        </span>
+                        )
+                      </h2>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        Ouça os acordes exatos de «{listeningLinks.cleanTitle}» acompanhados verso a verso ou toque num acorde:
+                      </p>
+                    </div>
+
+                    {/* Instrument Switcher: Guitarra Acústica vs Piano */}
+                    <div
+                      role="group"
+                      aria-label="Escolher instrumento de reprodução"
+                      className="inline-flex items-center p-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 self-start"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setInstrument('guitar')}
+                        className={`min-h-[36px] px-3 py-1 rounded-md text-xs font-semibold transition-colors ${
+                          instrument === 'guitar'
+                            ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                            : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                        }`}
+                      >
+                        Guitarra Acústica
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setInstrument('piano')}
+                        className={`min-h-[36px] px-3 py-1 rounded-md text-xs font-semibold transition-colors ${
+                          instrument === 'piano'
+                            ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                            : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                        }`}
+                      >
+                        Piano Suave
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Progression Player Controls */}
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                    <button
+                      type="button"
+                      onClick={() => setIsPlayingProgression((prev) => !prev)}
+                      className={`min-h-[44px] px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-2 transition-colors ${
+                        isPlayingProgression
+                          ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                          : 'bg-[#B85414] hover:bg-[#9E460F] text-white'
+                      }`}
+                    >
+                      {isPlayingProgression ? (
+                        <>
+                          <Square className="w-4 h-4 shrink-0" aria-hidden="true" />
+                          <span>Parar Reprodução dos Acordes</span>
+                        </>
+                      ) : (
+                        <>
+                          <Play className="w-4 h-4 shrink-0" aria-hidden="true" />
+                          <span>Tocar Sequência de Acordes da Música</span>
+                        </>
+                      )}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => handlePlaySingleChord(activeKey)}
+                      className="min-h-[44px] px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-100 inline-flex items-center gap-1.5 transition-colors"
+                    >
+                      <Volume2 className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                      <span>Dar o Tom ({activeKey})</span>
+                    </button>
+
+                    {/* Tempo (BPM) adjuster */}
+                    <div className="flex items-center gap-1.5 ml-auto text-xs text-slate-600 dark:text-slate-400">
+                      <span>Ritmo:</span>
+                      <button
+                        type="button"
+                        onClick={() => setPlaybackBpm((b) => Math.max(50, b - 6))}
+                        aria-label="Diminuir velocidade dos acordes"
+                        className="min-h-[36px] min-w-[36px] rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800"
+                      >
+                        <Minus className="w-3.5 h-3.5" aria-hidden="true" />
+                      </button>
+                      <span className="font-cifra font-bold text-slate-800 dark:text-slate-200 tabular-nums min-w-[58px] text-center">
+                        {playbackBpm} BPM
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setPlaybackBpm((b) => Math.min(150, b + 6))}
+                        aria-label="Aumentar velocidade dos acordes"
+                        className="min-h-[36px] min-w-[36px] rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800"
+                      >
+                        <Plus className="w-3.5 h-3.5" aria-hidden="true" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Active Lyric + Chord Synchronized Display when playing */}
+                  {isPlayingProgression && activeStep && (
+                    <div className="mb-3 p-3 rounded-xl border border-[#B85414]/30 dark:border-amber-500/30 bg-[#B85414]/5 dark:bg-amber-500/10 space-y-2">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#B85414] dark:text-amber-400">
+                          {activeStep.section} · Acorde a soar:{' '}
+                          <span className="font-cifra text-sm">{activeStep.chord}</span>
+                        </span>
+                        <span className="text-xs font-cifra text-slate-500 dark:text-slate-400 tabular-nums">
+                          Passo {(activeChordIdx ?? 0) + 1}/{songChords.steps.length}
+                        </span>
+                      </div>
+                      <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                        «{activeStep.lyricLine}»
+                      </p>
+                      <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-1">
+                        {songChords.steps.slice(0, 32).map((step, idx) => (
+                          <button
+                            key={`${step.chord}-${idx}`}
+                            type="button"
+                            onClick={() => handlePlaySingleChord(step.chord)}
+                            className={`px-2 py-1 rounded font-cifra text-xs font-bold shrink-0 transition-colors ${
+                              idx === activeChordIdx
+                                ? 'bg-[#B85414] text-white'
+                                : 'bg-white/80 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                            }`}
+                          >
+                            {step.chord}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Interactive Chords of this Song */}
+                  <div>
+                    <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400 mb-1.5">
+                      Acordes desta música (toque num acorde para o ouvir na{' '}
+                      {instrument === 'guitar' ? 'guitarra' : 'piano'}):
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {songChords.unique.map((chord) => {
+                        const isCurrentlySounding = lastPlayedChord === chord;
+                        return (
+                          <button
+                            key={chord}
+                            type="button"
+                            onClick={() => handlePlaySingleChord(chord)}
+                            className={`min-h-[42px] min-w-[52px] px-3 py-1.5 rounded-lg font-cifra text-sm font-bold border transition-colors inline-flex items-center justify-center gap-1.5 ${
+                              isCurrentlySounding
+                                ? 'border-[#B85414] dark:border-amber-400 bg-[#B85414]/15 dark:bg-amber-400/20 text-[#B85414] dark:text-amber-300'
+                                : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 hover:border-[#B85414] dark:hover:border-amber-400'
+                            }`}
+                          >
+                            <Volume2 className="w-3 h-3 opacity-70 shrink-0" aria-hidden="true" />
+                            <span>{chord}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </section>
 
         {/* Cifra or Lyrics-only content */}
         <article
@@ -448,7 +1053,9 @@ export function ChordViewer({
                         seg.isChord ? (
                           <span
                             key={segIdx}
-                            className="text-[#B85414] dark:text-[#F59E0B]"
+                            onClick={() => handlePlaySingleChord(seg.text.trim())}
+                            title={`Toque para ouvir o acorde ${seg.text.trim()}`}
+                            className="text-[#B85414] dark:text-[#F59E0B] cursor-pointer hover:underline decoration-dotted underline-offset-4"
                           >
                             {seg.text}
                           </span>
