@@ -1,3 +1,5 @@
+import { CifraStyle, Song } from '../types/music';
+
 const SHARP_SCALE = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'] as const;
 const FLAT_SCALE = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'] as const;
 
@@ -279,6 +281,61 @@ export function transposeChord(
   return `${parsed.leading}${newRoot}${parsed.suffix}${newBass ? `${bassSep}${newBass}${bassMinor}` : ''}${parsed.trailing}`;
 }
 
+function simplifyChordSuffix(suffix: string): string {
+  if (!suffix) return '';
+  const cleaned = suffix.trim();
+  // Minor chords (e.g. m, min, m7, m9, m7(11), m7(b5), m11) -> clean "m"
+  if (/^(?:m(?!aj)|min)/i.test(cleaned)) {
+    return 'm';
+  }
+  // Major 7th (7M, M7, maj7) -> clean major triad ""
+  if (/^(?:7M|M7|maj)/i.test(cleaned)) {
+    return '';
+  }
+  // Dominant 7th (e.g. 7, 7(9), 7/4, 7sus4, 7b9, 7#5) -> keep clean "7"
+  if (/^7/.test(cleaned)) {
+    return '7';
+  }
+  // Diminished (° / º / dim) -> clean "m" or keep simple triad
+  if (/^(?:dim|[°º])/i.test(cleaned)) {
+    return 'm';
+  }
+  // All other tensions/suspensions (add9, sus4, sus2, 4, 9, 11, 13, 6, +, aug) -> clean major triad ""
+  return '';
+}
+
+export function simplifyChordToken(rawToken: string): string {
+  const compound = splitCompoundChordToken(rawToken);
+  if (compound) {
+    const simplifiedPieces = compound.map((piece) =>
+      /^[._»]+$/.test(piece) ? piece : simplifyChordToken(piece)
+    );
+    // Drop empty pieces (e.g. standalone bass /D in /D»D7) and their dangling separators
+    const cleaned: string[] = [];
+    for (let i = 0; i < simplifiedPieces.length; i++) {
+      const p = simplifiedPieces[i];
+      if (p === '') {
+        if (cleaned.length > 0 && /^[._»]+$/.test(cleaned[cleaned.length - 1])) {
+          cleaned.pop();
+        }
+        continue;
+      }
+      if (/^[._»]+$/.test(p) && cleaned.length === 0) {
+        continue;
+      }
+      cleaned.push(p);
+    }
+    return cleaned.join('');
+  }
+
+  const parsed = parseSingleChordCore(rawToken);
+  if (!parsed) return rawToken;
+  if (parsed.isStandaloneBass) return '';
+
+  const simpleSuffix = simplifyChordSuffix(parsed.suffix);
+  return `${parsed.leading}${parsed.root}${simpleSuffix}${parsed.trailing}`;
+}
+
 export function transposeKey(originalKey: string, semitones: number): string {
   const trimmed = originalKey.trim();
   if (!trimmed || trimmed === '—') return trimmed || '—';
@@ -479,6 +536,243 @@ function transposeTokensWithSpacing(
   return result;
 }
 
+function simplifySegmentWithCues(segment: string): string {
+  return splitCueSegments(segment)
+    .map((seg) => {
+      if (!seg.isCue) {
+        return simplifyTokensWithSpacing(seg.text);
+      }
+      const inner = seg.text.slice(1, -1);
+      if (PURE_TEXT_CUE_REGEX.test(inner.trim())) {
+        return seg.text;
+      }
+      const labelMatch = inner.match(CHORD_CUE_LABEL_REGEX);
+      if (labelMatch) {
+        return `(${labelMatch[1]}${simplifyTokensWithSpacing(labelMatch[2])})`;
+      }
+      const innerTokens = inner.trim().split(/\s+/).filter(Boolean);
+      if (innerTokens.length > 0 && areTokensAllChords(innerTokens) > 0) {
+        return `(${simplifyTokensWithSpacing(inner)})`;
+      }
+      return seg.text;
+    })
+    .join('');
+}
+
+function simplifyTokensWithSpacing(segment: string): string {
+  const parts = segment.match(/(\s+|\S+)/g);
+  if (!parts) return segment;
+
+  let result = '';
+  let pendingDrift = 0;
+
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i];
+    if (/^\s+$/.test(part)) {
+      if (pendingDrift > 0) {
+        const keep = Math.max(1, part.length - pendingDrift);
+        result += ' '.repeat(keep);
+        pendingDrift = 0;
+      } else if (pendingDrift < 0) {
+        result += part + ' '.repeat(Math.abs(pendingDrift));
+        pendingDrift = 0;
+      } else {
+        result += part;
+      }
+    } else {
+      if (isChordToken(part)) {
+        const simplified = simplifyChordToken(part);
+        if (simplified === '') {
+          // Standalone bass token removed: preserve exact column width with spaces
+          result += ' '.repeat(part.length);
+          pendingDrift = 0;
+        } else {
+          pendingDrift = simplified.length - part.length;
+          result += simplified;
+        }
+      } else {
+        pendingDrift = 0;
+        result += part;
+      }
+    }
+  }
+
+  return result;
+}
+
+export function simplifyLinePreservingAlignment(line: string): string {
+  let prefixAcc = '';
+  let rest = line;
+  while (true) {
+    const prefixMatch = rest.match(SECTION_PREFIX_REGEX);
+    if (!prefixMatch) break;
+    prefixAcc += prefixMatch[1];
+    rest = prefixMatch[2];
+  }
+  return prefixAcc + simplifySegmentWithCues(rest);
+}
+
+const OPEN_FRIENDLY_MAJOR_KEYS = new Set(['G', 'C', 'D', 'A', 'E']);
+const OPEN_FRIENDLY_MINOR_KEYS = new Set(['Em', 'Am', 'Dm']);
+const EASY_OPEN_SHAPES = new Set([
+  'C', 'D', 'E', 'G', 'A',
+  'Am', 'Dm', 'Em',
+  'C7', 'D7', 'E7', 'G7', 'A7', 'B7',
+]);
+
+function isBarreShape(chordToken: string): boolean {
+  const simple = simplifyChordToken(chordToken).replace(/[()|:*.,;]/g, '');
+  if (!simple) return false;
+  return !EASY_OPEN_SHAPES.has(simple);
+}
+
+/**
+ * Recommends the most comfortable guitar Capo fret (1..9) for the song's sounding key
+ * by minimizing barre chords and favoring classic open guitar shapes (G, C, D, A, E, Em, Am, Dm).
+ */
+export function recommendCapoFret(
+  cifraText: string,
+  soundingKey: string
+): number {
+  const sampleChords: string[] = [];
+  const rawLines = cifraText.replace(/\r\n/g, '\n').split('\n');
+  for (const line of rawLines) {
+    if (!isChordLine(line)) continue;
+    const chunks = line.trim().split(/\s+/);
+    for (const chunk of chunks) {
+      if (isChordToken(chunk)) {
+        sampleChords.push(chunk);
+        if (sampleChords.length >= 60) break;
+      }
+    }
+    if (sampleChords.length >= 60) break;
+  }
+
+  let bestFret = 1;
+  let bestScore = -Infinity;
+
+  for (let fret = 1; fret <= 9; fret++) {
+    const fingeredKey = transposeKey(soundingKey, -fret);
+    const preferFlats = shouldUseFlatsForKey(fingeredKey);
+
+    let barreCount = 0;
+    for (const ch of sampleChords) {
+      const shifted = transposeChord(ch, -fret, preferFlats);
+      if (isBarreShape(shifted)) barreCount++;
+    }
+
+    const total = Math.max(1, sampleChords.length);
+    const openRatio = 1 - barreCount / total;
+    let score = openRatio * 100;
+
+    if (OPEN_FRIENDLY_MAJOR_KEYS.has(fingeredKey) || OPEN_FRIENDLY_MINOR_KEYS.has(fingeredKey)) {
+      score += 24;
+    }
+    // Prefer lower frets (1..5) for comfort and tone
+    if (fret <= 5) score += 10 - fret * 1.2;
+    else if (fret <= 7) score += 2 - (fret - 5);
+    else score -= (fret - 6) * 8;
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestFret = fret;
+    }
+  }
+
+  return bestFret;
+}
+
+export interface EffectiveCifraParams {
+  style: CifraStyle;
+  soundingKey: string;
+  fingeredKey: string;
+  capoFret: number;
+  effectiveTransposeOffset: number;
+  simplify: boolean;
+  shortLabel: string;
+  fullLabel: string;
+}
+
+export function getEffectiveCifraParams(
+  song: Song,
+  transposeOffset: number,
+  cifraStyle: CifraStyle = 'original',
+  capoFret?: number
+): EffectiveCifraParams {
+  const soundingKey = transposeKey(song.originalKey, transposeOffset);
+  if (song.originalKey === '—') {
+    return {
+      style: 'original',
+      soundingKey: '—',
+      fingeredKey: '—',
+      capoFret: 0,
+      effectiveTransposeOffset: transposeOffset,
+      simplify: false,
+      shortLabel: 'Só letra',
+      fullLabel: 'Só letra',
+    };
+  }
+
+  if (cifraStyle === 'capo') {
+    const resolvedFret =
+      capoFret !== undefined && capoFret >= 1 && capoFret <= 9
+        ? Math.round(capoFret)
+        : recommendCapoFret(
+            // Recommend relative to sounding key
+            transposeOffset === 0
+              ? song.cifra
+              : song.cifra
+                  .split('\n')
+                  .map((l) =>
+                    isChordLine(l)
+                      ? transposeLinePreservingAlignment(
+                          l,
+                          transposeOffset,
+                          shouldUseFlatsForKey(soundingKey)
+                        )
+                      : l
+                  )
+                  .join('\n'),
+            soundingKey
+          );
+    const fingeredKey = transposeKey(soundingKey, -resolvedFret);
+    return {
+      style: 'capo',
+      soundingKey,
+      fingeredKey,
+      capoFret: resolvedFret,
+      effectiveTransposeOffset: transposeOffset - resolvedFret,
+      simplify: false,
+      shortLabel: `Capo ${resolvedFret}ª (${fingeredKey})`,
+      fullLabel: `Capo ${resolvedFret}ª casa · Formas em ${fingeredKey} (soa em ${soundingKey})`,
+    };
+  }
+
+  if (cifraStyle === 'simplified') {
+    return {
+      style: 'simplified',
+      soundingKey,
+      fingeredKey: soundingKey,
+      capoFret: 0,
+      effectiveTransposeOffset: transposeOffset,
+      simplify: true,
+      shortLabel: 'Simplificada',
+      fullLabel: 'Cifra Simplificada',
+    };
+  }
+
+  return {
+    style: 'original',
+    soundingKey,
+    fingeredKey: soundingKey,
+    capoFret: 0,
+    effectiveTransposeOffset: transposeOffset,
+    simplify: false,
+    shortLabel: 'Completa',
+    fullLabel: 'Cifra Completa',
+  };
+}
+
 export type ParsedLineType = 'section' | 'chords' | 'lyrics' | 'empty';
 
 export interface LineSegment {
@@ -495,7 +789,8 @@ export interface ParsedCifraLine {
 export function parseCifraLines(
   cifraText: string,
   semitones = 0,
-  originalKey = 'C'
+  originalKey = 'C',
+  simplify = false
 ): ParsedCifraLine[] {
   const targetKey = transposeKey(originalKey, semitones);
   const preferFlats = shouldUseFlatsForKey(targetKey);
@@ -521,9 +816,12 @@ export function parseCifraLines(
         semitones,
         preferFlats
       );
+      const renderedLine = simplify
+        ? simplifyLinePreservingAlignment(transposedLine)
+        : transposedLine;
       const segments: LineSegment[] = [];
 
-      let body = transposedLine;
+      let body = renderedLine;
       while (true) {
         const prefixMatch = body.match(SECTION_PREFIX_REGEX);
         if (!prefixMatch) break;
@@ -569,7 +867,7 @@ export function parseCifraLines(
 
       return {
         type: 'chords',
-        raw: transposedLine,
+        raw: renderedLine,
         segments,
       };
     }

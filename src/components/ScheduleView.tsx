@@ -2,6 +2,7 @@ import {
   CalendarPlus,
   Check,
   Copy,
+  Download,
   ExternalLink,
   Filter,
   LayoutGrid,
@@ -16,6 +17,7 @@ import {
 } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { ScheduleEntry, ScheduleRole, ScheduleState } from '../types/music';
+import { downloadSchedulePdf } from '../utils/pdfExport';
 import { buildWhatsAppShareUrl } from '../utils/setlist';
 
 interface ScheduleViewProps {
@@ -104,6 +106,7 @@ export function ScheduleView({
   const [newRoleLabel, setNewRoleLabel] = useState<string>('');
   const [generatorMonth, setGeneratorMonth] = useState<string>('Dezembro');
   const [copied, setCopied] = useState<boolean>(false);
+  const [pdfSaved, setPdfSaved] = useState<boolean>(false);
 
   const availableMonths = useMemo(() => {
     const set = new Set<string>();
@@ -156,6 +159,17 @@ export function ScheduleView({
     () => buildWhatsAppShareUrl(whatsAppMessage),
     [whatsAppMessage]
   );
+
+  const handleDownloadSchedulePdf = () => {
+    if (filteredEntries.length === 0) return;
+    downloadSchedulePdf(filteredEntries, schedule.roles, {
+      month: selectedMonth,
+      day: selectedDay,
+      member: selectedMember,
+    });
+    setPdfSaved(true);
+    setTimeout(() => setPdfSaved(false), 2500);
+  };
 
   const handleUpdateEntryField = (
     entryId: string,
@@ -1001,33 +1015,52 @@ export function ScheduleView({
         </div>
       )}
 
-      {/* WhatsApp Schedule Share Card */}
+      {/* WhatsApp Schedule Share & PDF Card */}
       <div className="mt-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 sm:p-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
           <div>
             <h2 className="text-base font-semibold text-slate-900 dark:text-slate-50">
               Partilhar Escala no WhatsApp
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              Partilha a escala filtrada acima com as datas, temas e funções de cada elemento.
+              Partilha a escala filtrada acima no WhatsApp ou transfira a tabela completa em PDF para guardar e enviar.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+          <div className="grid grid-cols-1 sm:flex sm:flex-wrap items-center gap-2.5 shrink-0">
+            <button
+              type="button"
+              onClick={handleDownloadSchedulePdf}
+              disabled={filteredEntries.length === 0}
+              className="min-h-[44px] px-4 py-2 rounded-xl border border-[#2F523E]/30 dark:border-emerald-700/60 bg-[#2F523E]/5 dark:bg-emerald-950/30 text-[#2F523E] dark:text-emerald-300 text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-[#2F523E]/10 dark:hover:bg-emerald-950/50 disabled:opacity-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] dark:focus-visible:ring-emerald-400"
+            >
+              {pdfSaved ? (
+                <>
+                  <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                  <span>PDF Guardado!</span>
+                </>
+              ) : (
+                <>
+                  <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  <span>Guardar e Baixar PDF</span>
+                </>
+              )}
+            </button>
+
             <button
               type="button"
               onClick={handleCopyWhatsApp}
               disabled={filteredEntries.length === 0}
-              className="min-h-[44px] px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 text-sm font-semibold inline-flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50 transition-colors"
+              className="min-h-[44px] px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] dark:focus-visible:ring-amber-400"
             >
               {copied ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+                  <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
                   <span>Escala Copiada!</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4" aria-hidden="true" />
+                  <Copy className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Copiar Escala</span>
                 </>
               )}
@@ -1041,13 +1074,13 @@ export function ScheduleView({
               onClick={(e) => {
                 if (filteredEntries.length === 0) e.preventDefault();
               }}
-              className={`min-h-[44px] px-4 py-2 rounded-xl text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors ${
+              className={`min-h-[44px] px-4 py-2 rounded-xl text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 ${
                 filteredEntries.length === 0
                   ? 'bg-emerald-600/40 text-white/70 pointer-events-none'
                   : 'bg-emerald-700 hover:bg-emerald-800 text-white'
               }`}
             >
-              <ExternalLink className="w-4 h-4" aria-hidden="true" />
+              <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>Partilhar no WhatsApp</span>
             </a>
           </div>

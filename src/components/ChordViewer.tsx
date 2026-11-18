@@ -26,7 +26,7 @@ import {
   X,
 } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Song, ThemeMode } from '../types/music';
+import { CifraStyle, Song, ThemeMode } from '../types/music';
 import {
   InstrumentSound,
   buildSongListeningLinks,
@@ -35,9 +35,11 @@ import {
   playChordSound,
 } from '../utils/audioPlayer';
 import {
+  getEffectiveCifraParams,
   parseCifraLines,
+  shouldUseFlatsForKey,
   stripChords,
-  transposeKey,
+  transposeChord,
 } from '../utils/chords';
 import { downloadSongPdf } from '../utils/pdfExport';
 import { loadViewerPrefs, saveViewerPrefs } from '../utils/storage';
@@ -45,6 +47,10 @@ import { loadViewerPrefs, saveViewerPrefs } from '../utils/storage';
 interface ChordViewerProps {
   song: Song;
   transposeOffset: number;
+  cifraStyle?: CifraStyle;
+  capoFret?: number;
+  onChangeCifraStyle?: (style: CifraStyle, recommendedCapoFret?: number) => void;
+  onChangeCapoFret?: (fret: number) => void;
   onChangeTranspose: (delta: number) => void;
   onResetTranspose: () => void;
   theme: ThemeMode;
@@ -71,6 +77,10 @@ const SCROLL_SPEEDS = [
 export function ChordViewer({
   song,
   transposeOffset,
+  cifraStyle = 'original',
+  capoFret,
+  onChangeCifraStyle,
+  onChangeCapoFret,
   onChangeTranspose,
   onResetTranspose,
   theme,
@@ -109,11 +119,28 @@ export function ChordViewer({
   const lastFrameTimeRef = useRef<number | null>(null);
 
   const isDark = theme === 'dark';
-  const activeKey = transposeKey(song.originalKey, transposeOffset);
+
+  const cifraParams = useMemo(
+    () => getEffectiveCifraParams(song, transposeOffset, cifraStyle, capoFret),
+    [song, transposeOffset, cifraStyle, capoFret]
+  );
+
+  const activeKey = cifraParams.soundingKey;
 
   const parsedLines = useMemo(
-    () => parseCifraLines(song.cifra, transposeOffset, song.originalKey),
-    [song.cifra, transposeOffset, song.originalKey]
+    () =>
+      parseCifraLines(
+        song.cifra,
+        cifraParams.effectiveTransposeOffset,
+        song.originalKey,
+        cifraParams.simplify
+      ),
+    [
+      song.cifra,
+      cifraParams.effectiveTransposeOffset,
+      song.originalKey,
+      cifraParams.simplify,
+    ]
   );
 
   const strippedLines = useMemo(() => stripChords(song.cifra), [song.cifra]);
@@ -150,6 +177,17 @@ export function ChordViewer({
     lastFrameTimeRef.current = null;
   }, [song.id, song.youtubeUrl, song.bpm]);
 
+  const resolveSoundingChord = (displayedChord: string): string => {
+    if (cifraParams.style === 'capo' && cifraParams.capoFret > 0) {
+      return transposeChord(
+        displayedChord,
+        cifraParams.capoFret,
+        shouldUseFlatsForKey(cifraParams.soundingKey)
+      );
+    }
+    return displayedChord;
+  };
+
   // Chord progression playback timer synchronized with the song's actual lines
   useEffect(() => {
     if (!isPlayingProgression || songChords.steps.length === 0) {
@@ -167,9 +205,17 @@ export function ChordViewer({
     const playStep = () => {
       const currentStep = songChords.steps[stepIdx];
       if (currentStep) {
+        const soundingChord =
+          cifraParams.style === 'capo' && cifraParams.capoFret > 0
+            ? transposeChord(
+                currentStep.chord,
+                cifraParams.capoFret,
+                shouldUseFlatsForKey(cifraParams.soundingKey)
+              )
+            : currentStep.chord;
         setActiveChordIdx(stepIdx);
         setLastPlayedChord(currentStep.chord);
-        playChordSound(currentStep.chord, instrument, noteDurationSec);
+        playChordSound(soundingChord, instrument, noteDurationSec);
       }
       stepIdx = (stepIdx + 1) % songChords.steps.length;
     };
@@ -180,7 +226,15 @@ export function ChordViewer({
     return () => {
       window.clearInterval(timer);
     };
-  }, [isPlayingProgression, songChords.steps, instrument, playbackBpm]);
+  }, [
+    isPlayingProgression,
+    songChords.steps,
+    instrument,
+    playbackBpm,
+    cifraParams.style,
+    cifraParams.capoFret,
+    cifraParams.soundingKey,
+  ]);
 
   // Smooth rAF auto-scroll with fractional pixel accumulation
   useEffect(() => {
@@ -236,10 +290,11 @@ export function ChordViewer({
     }, 80);
   };
 
-  const handlePlaySingleChord = (chord: string) => {
+  const handlePlaySingleChord = (chord: string, isAlreadySounding = false) => {
     setIsPlayingProgression(false);
     setLastPlayedChord(chord);
-    playChordSound(chord, instrument, 1.8);
+    const pitch = isAlreadySounding ? chord : resolveSoundingChord(chord);
+    playChordSound(pitch, instrument, 1.8);
   };
 
   const handleSaveCustomYoutubeUrl = (e: React.FormEvent) => {
@@ -286,7 +341,15 @@ export function ChordViewer({
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => downloadSongPdf(song, transposeOffset, lyricsOnly)}
+                onClick={() =>
+                  downloadSongPdf(
+                    song,
+                    transposeOffset,
+                    lyricsOnly,
+                    cifraParams.style,
+                    cifraParams.capoFret
+                  )
+                }
                 className="min-h-[44px] px-3.5 py-2 rounded-lg bg-[#B85414] hover:bg-[#9E460F] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
               >
                 <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -299,7 +362,13 @@ export function ChordViewer({
                   try {
                     window.print();
                   } catch {
-                    downloadSongPdf(song, transposeOffset, lyricsOnly);
+                    downloadSongPdf(
+                      song,
+                      transposeOffset,
+                      lyricsOnly,
+                      cifraParams.style,
+                      cifraParams.capoFret
+                    );
                   }
                 }}
                 className="min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
@@ -443,6 +512,9 @@ export function ChordViewer({
           </div>
           <p className="mt-0.5 text-xs text-slate-600">
             {song.artist}
+            {song.originalKey !== '—' && !lyricsOnly && cifraParams.style !== 'original'
+              ? ` · ${cifraParams.fullLabel}`
+              : ''}
             {song.bpm && song.bpm > 0 ? ` · ${song.bpm} BPM` : ''}
             {` · ${song.category}`}
           </p>
@@ -463,7 +535,7 @@ export function ChordViewer({
                 </span>
                 <button
                   type="button"
-                  onClick={() => handlePlaySingleChord(activeKey)}
+                  onClick={() => handlePlaySingleChord(activeKey, true)}
                   title={`Ouvir o acorde do tom (${activeKey})`}
                   className="min-h-[38px] px-2.5 py-1 inline-flex items-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
                 >
@@ -517,6 +589,108 @@ export function ChordViewer({
             </div>
           </div>
         </div>
+
+        {/* Cifra Style Switcher: Completa | Simplificada | Capotraste (screen only) */}
+        {song.originalKey !== '—' && !lyricsOnly && (
+          <div className="no-print mb-3 pb-3 border-b border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 min-w-0">
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider shrink-0">
+                Cifra:
+              </span>
+              <div
+                role="group"
+                aria-label="Modo da cifra"
+                className="grid grid-cols-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 p-1 gap-1"
+              >
+                <button
+                  type="button"
+                  onClick={() => onChangeCifraStyle?.('original')}
+                  aria-pressed={cifraParams.style === 'original'}
+                  className={`min-h-[44px] px-2.5 sm:px-3.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                    cifraParams.style === 'original'
+                      ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800'
+                  }`}
+                >
+                  Completa
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onChangeCifraStyle?.('simplified')}
+                  aria-pressed={cifraParams.style === 'simplified'}
+                  className={`min-h-[44px] px-2.5 sm:px-3.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                    cifraParams.style === 'simplified'
+                      ? 'bg-[#2F523E] text-white'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800'
+                  }`}
+                >
+                  Simplificada
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const defaultFret =
+                      capoFret ??
+                      getEffectiveCifraParams(song, transposeOffset, 'capo').capoFret;
+                    onChangeCifraStyle?.('capo', defaultFret);
+                  }}
+                  aria-pressed={cifraParams.style === 'capo'}
+                  className={`min-h-[44px] px-2.5 sm:px-3.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                    cifraParams.style === 'capo'
+                      ? 'bg-[#B85414] text-white'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800'
+                  }`}
+                >
+                  Capo
+                </button>
+              </div>
+            </div>
+
+            {cifraParams.style === 'capo' && (
+              <div className="flex flex-wrap items-center justify-between sm:justify-end gap-2">
+                <div
+                  role="group"
+                  aria-label="Casa do capotraste"
+                  className="inline-flex items-center rounded-xl border border-[#B85414]/35 dark:border-amber-500/40 bg-[#B85414]/5 dark:bg-amber-950/30"
+                >
+                  <button
+                    type="button"
+                    onClick={() =>
+                      onChangeCapoFret?.(Math.max(1, cifraParams.capoFret - 1))
+                    }
+                    disabled={cifraParams.capoFret <= 1}
+                    aria-label="Diminuir casa do capotraste"
+                    className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-l-xl text-[#B85414] dark:text-amber-400 hover:bg-[#B85414]/10 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
+                  >
+                    <Minus className="w-4 h-4" aria-hidden="true" />
+                  </button>
+                  <span className="px-2.5 font-cifra text-xs font-bold text-[#B85414] dark:text-amber-300 whitespace-nowrap tabular-nums">
+                    Capo {cifraParams.capoFret}ª casa
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      onChangeCapoFret?.(Math.min(9, cifraParams.capoFret + 1))
+                    }
+                    disabled={cifraParams.capoFret >= 9}
+                    aria-label="Aumentar casa do capotraste"
+                    className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-r-xl text-[#B85414] dark:text-amber-400 hover:bg-[#B85414]/10 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
+                  >
+                    <Plus className="w-4 h-4" aria-hidden="true" />
+                  </button>
+                </div>
+
+                <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                  Formas em{' '}
+                  <strong className="font-cifra text-[#B85414] dark:text-amber-400">
+                    {cifraParams.fingeredKey}
+                  </strong>{' '}
+                  (soa em {cifraParams.soundingKey})
+                </span>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Always-accessible "Ouvir Música" Bar & Expandable Audio Studio (screen only) */}
         <section
@@ -892,7 +1066,7 @@ export function ChordViewer({
 
                     <button
                       type="button"
-                      onClick={() => handlePlaySingleChord(activeKey)}
+                      onClick={() => handlePlaySingleChord(activeKey, true)}
                       className="min-h-[44px] px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-100 inline-flex items-center gap-1.5 transition-colors"
                     >
                       <Volume2 className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />

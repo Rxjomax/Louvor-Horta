@@ -18,13 +18,17 @@ import {
 } from './firebase';
 import {
   AppTab,
+  CifraStyle,
+  CifraStylePref,
+  PlaylistSongItem,
   PlaylistState,
   ScheduleEntry,
   ScheduleState,
   Song,
   ThemeMode,
 } from './types/music';
-import { generateBalancedSetlist } from './utils/setlist';
+import { getEffectiveCifraParams } from './utils/chords';
+import { generateBalancedSetlist, isPlaylistMoment } from './utils/setlist';
 import {
   FullAppBackup,
   applySongDeltas,
@@ -33,6 +37,7 @@ import {
   loadActiveTab,
   loadPlaylist,
   loadRandomCount,
+  loadRepertoireCifraPrefs,
   loadRepertoireTranspose,
   loadSchedule,
   loadSongs,
@@ -40,6 +45,7 @@ import {
   saveActiveTab,
   savePlaylist,
   saveRandomCount,
+  saveRepertoireCifraPrefs,
   saveRepertoireTranspose,
   saveSchedule,
   saveSongs,
@@ -62,6 +68,9 @@ export default function App() {
   const [repertoireTranspose, setRepertoireTranspose] = useState<
     Record<string, number>
   >(() => loadRepertoireTranspose());
+  const [repertoireCifraPrefs, setRepertoireCifraPrefs] = useState<
+    Record<string, CifraStylePref>
+  >(() => loadRepertoireCifraPrefs());
 
   const [user, setUser] = useState<User | null>(null);
   const [isCloudConnected, setIsCloudConnected] = useState(false);
@@ -94,6 +103,11 @@ export default function App() {
     saveRepertoireTranspose(repertoireTranspose);
     setLastSavedAt(new Date());
   }, [repertoireTranspose]);
+
+  // Save repertoire cifra style preferences locally
+  useEffect(() => {
+    saveRepertoireCifraPrefs(repertoireCifraPrefs);
+  }, [repertoireCifraPrefs]);
 
   // Save active navigation tab locally
   useEffect(() => {
@@ -224,7 +238,12 @@ export default function App() {
   }, [playlist, repertoireTranspose, schedule, songs]);
 
   const playlistSongIds = useMemo(
-    () => new Set(playlist.items.map((item) => item.songId)),
+    () =>
+      new Set(
+        playlist.items
+          .filter((item): item is PlaylistSongItem => !isPlaylistMoment(item))
+          .map((item) => item.songId)
+      ),
     [playlist.items]
   );
 
@@ -239,19 +258,30 @@ export default function App() {
 
   const handleTogglePlaylistSong = (songId: string) => {
     setPlaylist((prev) => {
-      const exists = prev.items.some((item) => item.songId === songId);
+      const exists = prev.items.some(
+        (item) => !isPlaylistMoment(item) && item.songId === songId
+      );
       if (exists) {
         return {
           ...prev,
-          items: prev.items.filter((item) => item.songId !== songId),
+          items: prev.items.filter(
+            (item) => isPlaylistMoment(item) || item.songId !== songId
+          ),
         };
       }
+      const pref = repertoireCifraPrefs[songId];
+      const newSongItem: PlaylistSongItem = {
+        kind: 'song',
+        songId,
+        transposeOffset: repertoireTranspose[songId] ?? 0,
+        ...(pref?.style ? { cifraStyle: pref.style } : {}),
+        ...(pref?.style === 'capo' && pref.capoFret !== undefined
+          ? { capoFret: pref.capoFret }
+          : {}),
+      };
       return {
         ...prev,
-        items: [
-          ...prev.items,
-          { songId, transposeOffset: repertoireTranspose[songId] ?? 0 },
-        ],
+        items: [...prev.items, newSongItem],
       };
     });
   };
@@ -261,6 +291,7 @@ export default function App() {
     setPlaylist((prev) => ({
       ...prev,
       items: selected.map((song) => ({
+        kind: 'song',
         songId: song.id,
         transposeOffset: 0,
       })),
@@ -278,10 +309,62 @@ export default function App() {
     });
   };
 
-  const handleRemovePlaylistItem = (songId: string) => {
+  const handleRemovePlaylistItemAt = (index: number) => {
     setPlaylist((prev) => ({
       ...prev,
-      items: prev.items.filter((item) => item.songId !== songId),
+      items: prev.items.filter((_, idx) => idx !== index),
+    }));
+  };
+
+  const handleInsertPlaylistMoment = (
+    atIndex: number,
+    initialTitle = '',
+    initialNote = ''
+  ): string => {
+    const momentId = `moment-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
+    setPlaylist((prev) => {
+      const clampedIndex = Math.max(0, Math.min(prev.items.length, atIndex));
+      const nextItems = [...prev.items];
+      nextItems.splice(clampedIndex, 0, {
+        kind: 'moment',
+        id: momentId,
+        title: initialTitle,
+        note: initialNote,
+      });
+      return { ...prev, items: nextItems };
+    });
+    return momentId;
+  };
+
+  const handleUpdatePlaylistMoment = (
+    momentId: string,
+    patch: { title?: string; note?: string }
+  ) => {
+    setPlaylist((prev) => ({
+      ...prev,
+      items: prev.items.map((item) =>
+        isPlaylistMoment(item) && item.id === momentId
+          ? { ...item, ...patch }
+          : item
+      ),
+    }));
+  };
+
+  const handleUpdatePlaylistSongCifra = (
+    originalIndex: number,
+    cifraStyle: CifraStyle,
+    capoFret?: number
+  ) => {
+    setPlaylist((prev) => ({
+      ...prev,
+      items: prev.items.map((item, idx) => {
+        if (idx !== originalIndex || isPlaylistMoment(item)) return item;
+        return {
+          ...item,
+          cifraStyle,
+          capoFret: cifraStyle === 'capo' ? capoFret : undefined,
+        };
+      }),
     }));
   };
 
@@ -318,7 +401,9 @@ export default function App() {
     setSongs((prev) => prev.filter((s) => s.id !== songId));
     setPlaylist((prev) => ({
       ...prev,
-      items: prev.items.filter((item) => item.songId !== songId),
+      items: prev.items.filter(
+        (item) => isPlaylistMoment(item) || item.songId !== songId
+      ),
     }));
     setEditingSong(null);
     if (viewer?.songId === songId) {
@@ -424,7 +509,10 @@ export default function App() {
   if (viewer) {
     const activeSong = songsById.get(viewer.songId);
     if (activeSong) {
-      const playlistItems = playlist.items.filter((i) => songsById.has(i.songId));
+      const playlistItems = playlist.items.filter(
+        (i): i is PlaylistSongItem =>
+          !isPlaylistMoment(i) && songsById.has(i.songId)
+      );
       const playlistIdx =
         viewer.source === 'playlist'
           ? playlistItems.findIndex((i) => i.songId === activeSong.id)
@@ -435,13 +523,23 @@ export default function App() {
           ? playlistItems[playlistIdx].transposeOffset
           : repertoireTranspose[activeSong.id] ?? 0;
 
+      const currentCifraStyle: CifraStyle =
+        viewer.source === 'playlist' && playlistIdx >= 0
+          ? playlistItems[playlistIdx].cifraStyle ?? 'original'
+          : repertoireCifraPrefs[activeSong.id]?.style ?? 'original';
+
+      const currentCapoFret: number | undefined =
+        viewer.source === 'playlist' && playlistIdx >= 0
+          ? playlistItems[playlistIdx].capoFret
+          : repertoireCifraPrefs[activeSong.id]?.capoFret;
+
       const handleChangeTranspose = (delta: number) => {
         const nextOffset = currentOffset + delta;
         if (viewer.source === 'playlist' && playlistIdx >= 0) {
           setPlaylist((prev) => ({
             ...prev,
             items: prev.items.map((item) =>
-              item.songId === activeSong.id
+              !isPlaylistMoment(item) && item.songId === activeSong.id
                 ? { ...item, transposeOffset: nextOffset }
                 : item
             ),
@@ -459,13 +557,66 @@ export default function App() {
           setPlaylist((prev) => ({
             ...prev,
             items: prev.items.map((item) =>
-              item.songId === activeSong.id ? { ...item, transposeOffset: 0 } : item
+              !isPlaylistMoment(item) && item.songId === activeSong.id
+                ? { ...item, transposeOffset: 0 }
+                : item
             ),
           }));
         } else {
           setRepertoireTranspose((prev) => ({
             ...prev,
             [activeSong.id]: 0,
+          }));
+        }
+      };
+
+      const handleChangeCifraStyle = (nextStyle: CifraStyle, recommendedFret?: number) => {
+        const resolvedFret =
+          nextStyle === 'capo'
+            ? recommendedFret ??
+              currentCapoFret ??
+              getEffectiveCifraParams(activeSong, currentOffset, 'capo').capoFret
+            : undefined;
+
+        if (viewer.source === 'playlist' && playlistIdx >= 0) {
+          setPlaylist((prev) => ({
+            ...prev,
+            items: prev.items.map((item) =>
+              !isPlaylistMoment(item) && item.songId === activeSong.id
+                ? {
+                    ...item,
+                    cifraStyle: nextStyle,
+                    capoFret: resolvedFret,
+                  }
+                : item
+            ),
+          }));
+        } else {
+          setRepertoireCifraPrefs((prev) => ({
+            ...prev,
+            [activeSong.id]: {
+              style: nextStyle,
+              ...(resolvedFret !== undefined ? { capoFret: resolvedFret } : {}),
+            },
+          }));
+        }
+      };
+
+      const handleChangeCapoFret = (nextFret: number) => {
+        const clamped = Math.max(1, Math.min(9, Math.round(nextFret)));
+        if (viewer.source === 'playlist' && playlistIdx >= 0) {
+          setPlaylist((prev) => ({
+            ...prev,
+            items: prev.items.map((item) =>
+              !isPlaylistMoment(item) && item.songId === activeSong.id
+                ? { ...item, cifraStyle: 'capo', capoFret: clamped }
+                : item
+            ),
+          }));
+        } else {
+          setRepertoireCifraPrefs((prev) => ({
+            ...prev,
+            [activeSong.id]: { style: 'capo', capoFret: clamped },
           }));
         }
       };
@@ -480,6 +631,10 @@ export default function App() {
         <ChordViewer
           song={activeSong}
           transposeOffset={currentOffset}
+          cifraStyle={currentCifraStyle}
+          capoFret={currentCapoFret}
+          onChangeCifraStyle={handleChangeCifraStyle}
+          onChangeCapoFret={handleChangeCapoFret}
           onChangeTranspose={handleChangeTranspose}
           onResetTranspose={handleResetTranspose}
           theme={theme}
@@ -524,8 +679,8 @@ export default function App() {
     }
   }
 
-  const validPlaylistCount = playlist.items.filter((i) =>
-    songsById.has(i.songId)
+  const validPlaylistCount = playlist.items.filter(
+    (i) => !isPlaylistMoment(i) && songsById.has(i.songId)
   ).length;
 
   return (
@@ -576,7 +731,10 @@ export default function App() {
             }
             onGenerateRandom={handleGenerateRandomSetlist}
             onMoveItem={handleMovePlaylistItem}
-            onRemoveItem={handleRemovePlaylistItem}
+            onRemoveItemAt={handleRemovePlaylistItemAt}
+            onInsertMoment={handleInsertPlaylistMoment}
+            onUpdateMoment={handleUpdatePlaylistMoment}
+            onUpdateSongCifra={handleUpdatePlaylistSongCifra}
             onClearPlaylist={handleClearPlaylist}
             onOpenSongFromPlaylist={(songId) =>
               setViewer({ songId, source: 'playlist' })

@@ -13,10 +13,29 @@ export interface Song {
   createdAt: number;
 }
 
-export interface PlaylistItem {
+export type CifraStyle = 'original' | 'simplified' | 'capo';
+
+export interface CifraStylePref {
+  style: CifraStyle;
+  capoFret?: number;
+}
+
+export interface PlaylistSongItem {
+  kind?: 'song';
   songId: string;
   transposeOffset: number;
+  cifraStyle?: CifraStyle;
+  capoFret?: number;
 }
+
+export interface PlaylistMomentItem {
+  kind: 'moment';
+  id: string;
+  title: string;
+  note?: string;
+}
+
+export type PlaylistItem = PlaylistSongItem | PlaylistMomentItem;
 
 export interface PlaylistState {
   title: string;

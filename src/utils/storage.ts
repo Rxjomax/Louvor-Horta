@@ -1,6 +1,7 @@
 import { INITIAL_SONGS } from '../data/initialSongs';
 import {
   AppTab,
+  CifraStylePref,
   PlaylistState,
   ScheduleState,
   Song,
@@ -16,6 +17,7 @@ const THEME_KEY = 'ieb_horta_theme';
 const RANDOM_COUNT_KEY = 'ieb_horta_random_count_v1';
 const SCHEDULE_KEY = 'ieb_horta_schedule_v1';
 const REPERTOIRE_TRANSPOSE_KEY = 'ieb_horta_repertoire_transpose_v1';
+const REPERTOIRE_CIFRA_PREFS_KEY = 'ieb_horta_repertoire_cifra_prefs_v1';
 const ACTIVE_TAB_KEY = 'ieb_horta_active_tab_v1';
 const VIEWER_PREFS_KEY = 'ieb_horta_viewer_prefs_v1';
 
@@ -113,6 +115,7 @@ export function applySongDeltas(deltas: SongDeltas): Song[] {
         catalogSongs.push({
           ...normalizeSongCategory(override),
           number: override.number ?? baseSong.number,
+          youtubeUrl: override.youtubeUrl || baseSong.youtubeUrl,
           originalKey: baseSong.originalKey,
           cifra: baseSong.cifra,
         });
@@ -120,6 +123,7 @@ export function applySongDeltas(deltas: SongDeltas): Song[] {
         catalogSongs.push({
           ...normalizeSongCategory(override),
           number: override.number ?? baseSong.number,
+          youtubeUrl: override.youtubeUrl || baseSong.youtubeUrl,
         });
       }
     } else {
@@ -213,21 +217,28 @@ export function loadPlaylist(): PlaylistState {
     }
     const parsed = JSON.parse(raw) as PlaylistState;
     if (parsed && typeof parsed.title === 'string' && Array.isArray(parsed.items)) {
-      const hadRemovedSample = parsed.items.some((item) =>
-        REMOVED_SAMPLE_IDS.has(item.songId)
+      const hadRemovedSample = parsed.items.some(
+        (item) => item.kind !== 'moment' && REMOVED_SAMPLE_IDS.has(item.songId)
       );
-      if (hadRemovedSample) {
-        const validRemaining = parsed.items.filter(
-          (item) => !REMOVED_SAMPLE_IDS.has(item.songId)
+      const validItems = parsed.items.filter((item) => {
+        if (item && item.kind === 'moment') {
+          return typeof item.id === 'string' && typeof item.title === 'string';
+        }
+        return (
+          item &&
+          typeof item.songId === 'string' &&
+          !REMOVED_SAMPLE_IDS.has(item.songId)
         );
+      });
+      if (hadRemovedSample) {
         const migratedPlaylist: PlaylistState =
-          validRemaining.length > 0
-            ? { ...parsed, items: validRemaining }
+          validItems.length > 0
+            ? { ...parsed, items: validItems }
             : { ...parsed, items: DEFAULT_PLAYLIST.items };
         localStorage.setItem(PLAYLIST_KEY, JSON.stringify(migratedPlaylist));
         return migratedPlaylist;
       }
-      return parsed;
+      return { ...parsed, items: validItems };
     }
     return DEFAULT_PLAYLIST;
   } catch {
@@ -298,6 +309,30 @@ export function loadRepertoireTranspose(): Record<string, number> {
 export function saveRepertoireTranspose(map: Record<string, number>): void {
   try {
     localStorage.setItem(REPERTOIRE_TRANSPOSE_KEY, JSON.stringify(map));
+  } catch {
+    // Ignore storage quota errors gracefully
+  }
+}
+
+export function loadRepertoireCifraPrefs(): Record<string, CifraStylePref> {
+  try {
+    const raw = localStorage.getItem(REPERTOIRE_CIFRA_PREFS_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+      return parsed as Record<string, CifraStylePref>;
+    }
+    return {};
+  } catch {
+    return {};
+  }
+}
+
+export function saveRepertoireCifraPrefs(
+  map: Record<string, CifraStylePref>
+): void {
+  try {
+    localStorage.setItem(REPERTOIRE_CIFRA_PREFS_KEY, JSON.stringify(map));
   } catch {
     // Ignore storage quota errors gracefully
   }

@@ -1,5 +1,11 @@
-import { PlaylistItem, Song } from '../types/music';
-import { transposeKey } from './chords';
+import { PlaylistItem, PlaylistMomentItem, Song } from '../types/music';
+import { getEffectiveCifraParams } from './chords';
+
+export function isPlaylistMoment(
+  item: PlaylistItem
+): item is PlaylistMomentItem {
+  return item.kind === 'moment';
+}
 
 function shuffleArray<T>(items: T[], rng: () => number): T[] {
   const copy = [...items];
@@ -117,16 +123,40 @@ export function formatWhatsAppSetlist(
   ];
 
   let index = 1;
+  let hasContent = false;
   for (const item of items) {
+    if (isPlaylistMoment(item)) {
+      const label = item.title.trim() || 'Intervalo / Momento';
+      const detail = (item.note ?? '').trim().replace(/\r?\n+/g, ' · ');
+      lines.push(
+        detail ? `— *${label}* (${detail}) —` : `— *${label}* —`
+      );
+      hasContent = true;
+      continue;
+    }
+
     const song = songsById.get(item.songId);
     if (!song) continue;
-    const activeKey = transposeKey(song.originalKey, item.transposeOffset);
-    const keyLabel = activeKey === '—' ? 'Letra' : `Tom: *${activeKey}*`;
-    lines.push(`${index}. *${song.title}* (${song.artist}) — ${keyLabel}`);
+    const params = getEffectiveCifraParams(
+      song,
+      item.transposeOffset,
+      item.cifraStyle,
+      item.capoFret
+    );
+    const keyLabel =
+      params.soundingKey === '—' ? 'Letra' : `Tom: *${params.soundingKey}*`;
+    const styleSuffix =
+      params.style === 'simplified'
+        ? ' · _Simplificada_'
+        : params.style === 'capo'
+          ? ` · _Capo ${params.capoFret}ª casa (formas em ${params.fingeredKey})_`
+          : '';
+    lines.push(`${index}. *${song.title}* (${song.artist}) — ${keyLabel}${styleSuffix}`);
     index++;
+    hasContent = true;
   }
 
-  if (index === 1) {
+  if (!hasContent) {
     lines.push('Nenhuma música selecionada ainda.');
   }
 

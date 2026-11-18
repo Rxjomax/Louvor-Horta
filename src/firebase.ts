@@ -21,6 +21,8 @@ import {
 } from 'firebase/firestore';
 import firebaseConfig from '../firebase-applet-config.json';
 import {
+  CifraStyle,
+  PlaylistItem,
   PlaylistState,
   ScheduleEntry,
   ScheduleRole,
@@ -179,14 +181,45 @@ function buildSanitizedWorkspaceFields(state: CloudWorkspaceSnapshot) {
   );
   const playlistSongIds: string[] = [];
   const playlistTranspose: Record<string, number> = {};
+  const playlistEntries: Record<string, unknown>[] = [];
 
-  for (const item of state.playlist.items.slice(0, 100)) {
+  for (const item of state.playlist.items.slice(0, 150)) {
+    if (item.kind === 'moment') {
+      playlistEntries.push({
+        kind: 'moment',
+        id: sanitizeId(item.id, 'moment'),
+        title: clampString(item.title, 0, 160, ''),
+        note: clampString(item.note ?? '', 0, 500, ''),
+      });
+      continue;
+    }
+
     const safeSongId = sanitizeId(item.songId, 'song');
-    playlistSongIds.push(safeSongId);
     const offset = Number.isFinite(item.transposeOffset)
       ? Math.max(-24, Math.min(24, Math.round(item.transposeOffset)))
       : 0;
-    playlistTranspose[safeSongId] = offset;
+    const cifraStyle: CifraStyle =
+      item.cifraStyle === 'simplified' || item.cifraStyle === 'capo'
+        ? item.cifraStyle
+        : 'original';
+    const entryPayload: Record<string, unknown> = {
+      kind: 'song',
+      songId: safeSongId,
+      transposeOffset: offset,
+      cifraStyle,
+    };
+    if (
+      cifraStyle === 'capo' &&
+      typeof item.capoFret === 'number' &&
+      Number.isFinite(item.capoFret)
+    ) {
+      entryPayload.capoFret = Math.max(1, Math.min(9, Math.round(item.capoFret)));
+    }
+    if (playlistSongIds.length < 100) {
+      playlistSongIds.push(safeSongId);
+      playlistTranspose[safeSongId] = offset;
+    }
+    playlistEntries.push(entryPayload);
   }
 
   const repertoireTranspose: Record<string, number> = {};
@@ -264,6 +297,7 @@ function buildSanitizedWorkspaceFields(state: CloudWorkspaceSnapshot) {
     playlistTitle,
     playlistSongIds,
     playlistTranspose,
+    playlistEntries,
     repertoireTranspose,
     deletedSongIds,
     upsertedSongs,
@@ -308,22 +342,64 @@ export function parseCloudWorkspaceDoc(
 
   const rawSongIds = Array.isArray(data.playlistSongIds)
     ? (data.playlistSongIds as string[])
-    : fallback.playlist.items.map((i) => i.songId);
+    : fallback.playlist.items
+        .filter((i): i is Extract<PlaylistItem, { songId: string }> => i.kind !== 'moment')
+        .map((i) => i.songId);
 
   const rawPlaylistTranspose =
     data.playlistTranspose && typeof data.playlistTranspose === 'object'
       ? (data.playlistTranspose as Record<string, number>)
       : {};
 
-  const playlist: PlaylistState = {
-    title: playlistTitle,
-    items: rawSongIds.map((songId) => ({
+  let items: PlaylistItem[];
+  if (Array.isArray(data.playlistEntries)) {
+    items = [];
+    for (const rawEntry of data.playlistEntries as Record<string, unknown>[]) {
+      if (!rawEntry || typeof rawEntry !== 'object') continue;
+      if (rawEntry.kind === 'moment') {
+        items.push({
+          kind: 'moment',
+          id: String(rawEntry.id ?? `moment-${items.length}`),
+          title: String(rawEntry.title ?? ''),
+          note: rawEntry.note ? String(rawEntry.note) : '',
+        });
+      } else if (typeof rawEntry.songId === 'string') {
+        const cifraStyle: CifraStyle =
+          rawEntry.cifraStyle === 'simplified' || rawEntry.cifraStyle === 'capo'
+            ? rawEntry.cifraStyle
+            : 'original';
+        const capoFret =
+          cifraStyle === 'capo' &&
+          typeof rawEntry.capoFret === 'number' &&
+          Number.isFinite(rawEntry.capoFret)
+            ? Math.max(1, Math.min(9, Math.round(rawEntry.capoFret)))
+            : undefined;
+        items.push({
+          kind: 'song',
+          songId: String(rawEntry.songId),
+          transposeOffset:
+            typeof rawEntry.transposeOffset === 'number'
+              ? rawEntry.transposeOffset
+              : 0,
+          cifraStyle,
+          ...(capoFret !== undefined ? { capoFret } : {}),
+        });
+      }
+    }
+  } else {
+    items = rawSongIds.map((songId) => ({
+      kind: 'song',
       songId: String(songId),
       transposeOffset:
         typeof rawPlaylistTranspose[songId] === 'number'
           ? rawPlaylistTranspose[songId]
           : 0,
-    })),
+    }));
+  }
+
+  const playlist: PlaylistState = {
+    title: playlistTitle,
+    items,
   };
 
   const repertoireTranspose =
@@ -412,6 +488,7 @@ export async function updateSharedWorkspace(
         playlistTitle: sanitized.playlistTitle,
         playlistSongIds: sanitized.playlistSongIds,
         playlistTranspose: sanitized.playlistTranspose,
+        playlistEntries: sanitized.playlistEntries,
         repertoireTranspose: sanitized.repertoireTranspose,
         deletedSongIds: sanitized.deletedSongIds,
         upsertedSongs: sanitized.upsertedSongs,
