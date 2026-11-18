@@ -69,7 +69,7 @@ export function PWAInstallButton({ variant = 'header' }: PWAInstallButtonProps) 
                   alt="Ícone do aplicativo Louvor IEB Horta"
                   width={56}
                   height={56}
-                  className="w-14 h-14 rounded-xl border border-slate-200 dark:border-slate-700 bg-white shrink-0 object-contain"
+                  className="w-14 h-14 rounded-xl border border-slate-200 dark:border-slate-700 bg-[#0F2445] shrink-0 object-cover"
                 />
                 <div className="min-w-0">
                   <h2

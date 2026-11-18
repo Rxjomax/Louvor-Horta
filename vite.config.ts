@@ -30,7 +30,7 @@ export default defineConfig(() => {
           description:
             'Gestão de repertório, escalas de culto e visualização interativa de cifras para músicos e grupo de louvor da IEB Horta.',
           theme_color: '#ffffff',
-          background_color: '#ffffff',
+          background_color: '#0C1F3C',
           display: 'standalone',
           orientation: 'portrait',
           start_url: '/',
