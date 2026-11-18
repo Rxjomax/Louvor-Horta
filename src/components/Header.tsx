@@ -51,9 +51,9 @@ export function Header({
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const navItems: { id: AppTab; label: string }[] = [
-    { id: 'repertoire', label: 'Repertório' },
-    { id: 'playlist', label: `Culto do Dia (${playlistCount})` },
     { id: 'schedule', label: 'Escala' },
+    { id: 'playlist', label: `Culto do Dia (${playlistCount})` },
+    { id: 'repertoire', label: 'Repertório' },
     { id: 'add', label: 'Adicionar Música' },
   ];
 
@@ -89,7 +89,7 @@ export function Header({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4 sm:gap-8">
           <button
             type="button"
-            onClick={() => onSelectTab('repertoire')}
+            onClick={() => onSelectTab('schedule')}
             className="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-slate-50 whitespace-nowrap shrink-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 rounded-md py-1"
           >
             Louvor IEB Horta

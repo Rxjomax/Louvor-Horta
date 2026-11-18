@@ -344,9 +344,9 @@ export function loadActiveTab(): AppTab {
     if (raw && VALID_TABS.has(raw)) {
       return raw;
     }
-    return 'repertoire';
+    return 'schedule';
   } catch {
-    return 'repertoire';
+    return 'schedule';
   }
 }
 

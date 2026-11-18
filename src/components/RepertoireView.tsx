@@ -49,25 +49,32 @@ export function RepertoireView({
   const filteredSongs = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     const numericQuery = query.replace(/^#/, '');
-    return songs.filter((song) => {
-      const matchesSearch =
-        !query ||
-        song.title.toLowerCase().includes(query) ||
-        song.artist.toLowerCase().includes(query) ||
-        (numericQuery !== '' &&
-          song.number !== undefined &&
-          (String(song.number) === numericQuery ||
-            `#${song.number}` === query ||
-            String(song.number).padStart(2, '0').includes(numericQuery)));
+    return songs
+      .filter((song) => {
+        const matchesSearch =
+          !query ||
+          song.title.toLowerCase().includes(query) ||
+          song.artist.toLowerCase().includes(query) ||
+          (numericQuery !== '' &&
+            song.number !== undefined &&
+            (String(song.number) === numericQuery ||
+              `#${song.number}` === query ||
+              String(song.number).padStart(2, '0').includes(numericQuery)));
 
-      const matchesCategory =
-        selectedCategory === 'Todas' || song.category === selectedCategory;
+        const matchesCategory =
+          selectedCategory === 'Todas' || song.category === selectedCategory;
 
-      const matchesKey =
-        selectedKey === 'Todos' || song.originalKey === selectedKey;
+        const matchesKey =
+          selectedKey === 'Todos' || song.originalKey === selectedKey;
 
-      return matchesSearch && matchesCategory && matchesKey;
-    });
+        return matchesSearch && matchesCategory && matchesKey;
+      })
+      .sort((a, b) =>
+        a.title.trim().localeCompare(b.title.trim(), 'pt', {
+          sensitivity: 'base',
+          numeric: true,
+        })
+      );
   }, [songs, searchQuery, selectedCategory, selectedKey]);
 
   const displayedSongs = useMemo(

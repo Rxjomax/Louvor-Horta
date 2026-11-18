@@ -18,14 +18,14 @@ export function BottomNav({
     icon: typeof Music2;
     badge?: number;
   }[] = [
-    { id: 'repertoire', label: 'Repertório', icon: Music2 },
+    { id: 'schedule', label: 'Escala', icon: CalendarDays },
     {
       id: 'playlist',
       label: 'Culto do Dia',
       icon: ListMusic,
       badge: playlistCount,
     },
-    { id: 'schedule', label: 'Escala', icon: CalendarDays },
+    { id: 'repertoire', label: 'Repertório', icon: Music2 },
     { id: 'add', label: 'Adicionar', icon: PlusCircle },
   ];
 
