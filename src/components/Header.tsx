@@ -4,6 +4,7 @@ import {
   LogIn,
   LogOut,
   Moon,
+  RefreshCw,
   Sun,
   Upload,
   Users,
@@ -12,6 +13,7 @@ import {
 import { ChangeEvent, useRef, useState } from 'react';
 import { User } from '../firebase';
 import { AppTab, ThemeMode } from '../types/music';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface HeaderProps {
   activeTab: AppTab;
@@ -22,7 +24,9 @@ interface HeaderProps {
   user: User | null;
   isCloudConnected: boolean;
   isSyncing: boolean;
+  hasPendingSync: boolean;
   lastSavedText: string;
+  onForceSync: () => Promise<void>;
   onSignIn: () => Promise<void>;
   onSignOut: () => Promise<void>;
   onExportBackup: () => void;
@@ -38,7 +42,9 @@ export function Header({
   user,
   isCloudConnected,
   isSyncing,
+  hasPendingSync,
   lastSavedText,
+  onForceSync,
   onSignIn,
   onSignOut,
   onExportBackup,
@@ -90,7 +96,7 @@ export function Header({
           <button
             type="button"
             onClick={() => onSelectTab('schedule')}
-            className="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-slate-50 whitespace-nowrap shrink-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 rounded-md py-1"
+            className="text-sm sm:text-lg font-bold tracking-tight text-slate-900 dark:text-slate-50 whitespace-nowrap shrink-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 rounded-md py-1"
           >
             Louvor IEB Horta
           </button>
@@ -125,27 +131,38 @@ export function Header({
             })}
           </nav>
 
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <PWAInstallButton variant="header" />
+
             <button
               type="button"
               onClick={() => setShowSyncModal(true)}
               aria-label="Sincronização partilhada do grupo de louvor"
-              className={`min-h-[44px] px-3 py-2 inline-flex items-center gap-1.5 rounded-lg border text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
-                isCloudConnected
-                  ? 'border-emerald-300 dark:border-emerald-800/80 bg-emerald-50/80 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 hover:bg-emerald-100 dark:hover:bg-emerald-950/60'
-                  : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+              className={`min-h-[44px] min-w-[44px] px-2.5 sm:px-3 py-2 inline-flex items-center justify-center gap-1.5 rounded-lg border text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                hasPendingSync
+                  ? 'border-amber-300 dark:border-amber-700 bg-amber-50/90 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-950/60'
+                  : isCloudConnected
+                    ? 'border-emerald-300 dark:border-emerald-800/80 bg-emerald-50/80 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 hover:bg-emerald-100 dark:hover:bg-emerald-950/60'
+                    : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
               }`}
             >
-              <Cloud className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <Cloud
+                className={`w-4 h-4 shrink-0 ${
+                  hasPendingSync
+                    ? 'text-amber-600 dark:text-amber-400'
+                    : isCloudConnected
+                      ? 'text-emerald-600 dark:text-emerald-400'
+                      : 'text-slate-500 dark:text-slate-400'
+                }`}
+              />
               <span className="hidden sm:inline">
                 {isSyncing
                   ? 'A sincronizar...'
-                  : isCloudConnected
-                    ? 'Sincronizado p/ Todos'
-                    : 'Guardado'}
-              </span>
-              <span className="sm:hidden">
-                {isSyncing ? '...' : 'Guardado'}
+                  : hasPendingSync
+                    ? 'Pendente p/ nuvem'
+                    : isCloudConnected
+                      ? 'Sincronizado p/ Todos'
+                      : 'Guardado Localmente'}
               </span>
             </button>
 
@@ -155,7 +172,7 @@ export function Header({
               aria-label={
                 isDark ? 'Ativar Modo Claro' : 'Ativar Modo Palco (Escuro)'
               }
-              className="min-h-[44px] px-3.5 py-2 inline-flex items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+              className="min-h-[44px] min-w-[44px] px-2.5 sm:px-3.5 py-2 inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
             >
               {isDark ? (
                 <>
@@ -163,7 +180,7 @@ export function Header({
                     className="w-4 h-4 text-amber-400 shrink-0"
                     aria-hidden="true"
                   />
-                  <span>Modo Claro</span>
+                  <span className="hidden sm:inline">Modo Claro</span>
                 </>
               ) : (
                 <>
@@ -171,7 +188,7 @@ export function Header({
                     className="w-4 h-4 text-[#B85414] shrink-0"
                     aria-hidden="true"
                   />
-                  <span>Modo Palco</span>
+                  <span className="hidden sm:inline">Modo Palco</span>
                 </>
               )}
             </button>
@@ -196,8 +213,8 @@ export function Header({
                   Sincronizado para Todo o Grupo
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
-                  Todos os que abrem o site veem o mesmo Repertório, Culto do
-                  Dia e Escala em tempo real.
+                  Todos os que abrem o site ou a aplicação instalada no telemóvel
+                  veem o mesmo Repertório, Culto do Dia e Escala em tempo real.
                 </p>
               </div>
               <button
@@ -210,18 +227,63 @@ export function Header({
               </button>
             </div>
 
-            <div className="rounded-lg border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/70 dark:bg-emerald-950/30 p-3.5 space-y-1.5">
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-900 dark:text-emerald-200">
-                <Users className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Base de Dados Partilhada IEB Horta Ativa</span>
+            <div
+              className={`rounded-lg border p-3.5 space-y-2.5 ${
+                hasPendingSync
+                  ? 'border-amber-200 dark:border-amber-900/60 bg-amber-50/70 dark:bg-amber-950/30'
+                  : 'border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/70 dark:bg-emerald-950/30'
+              }`}
+            >
+              <div
+                className={`flex items-center gap-2 text-xs sm:text-sm font-semibold ${
+                  hasPendingSync
+                    ? 'text-amber-900 dark:text-amber-200'
+                    : 'text-emerald-900 dark:text-emerald-200'
+                }`}
+              >
+                <Users
+                  className={`w-4 h-4 shrink-0 ${
+                    hasPendingSync
+                      ? 'text-amber-600 dark:text-amber-400'
+                      : 'text-emerald-600 dark:text-emerald-400'
+                  }`}
+                />
+                <span>
+                  {hasPendingSync
+                    ? 'Alterações Guardadas no Telemóvel (Aguardando Internet)'
+                    : 'Base de Dados Partilhada IEB Horta Ativa'}
+                </span>
               </div>
-              <p className="text-xs text-emerald-800 dark:text-emerald-300/90 leading-relaxed">
-                Qualquer alteração feita na <strong>Escala</strong>, no{' '}
-                <strong>Culto do Dia</strong> ou nas <strong>Músicas</strong> é
-                guardada automaticamente na nuvem ({lastSavedText}) e aparece de
-                imediato para todos os músicos, sem necessidade de iniciar
-                sessão.
+              <p
+                className={`text-xs leading-relaxed ${
+                  hasPendingSync
+                    ? 'text-amber-800 dark:text-amber-300/90'
+                    : 'text-emerald-800 dark:text-emerald-300/90'
+                }`}
+              >
+                {hasPendingSync
+                  ? 'As suas alterações já estão guardadas neste dispositivo e serão enviadas automaticamente para todo o grupo assim que a ligação voltar.'
+                  : `Qualquer alteração feita na Escala, no Culto do Dia ou nas Músicas (no site ou na app instalada) é guardada automaticamente na nuvem (${lastSavedText}) e aparece para todos os músicos.`}
               </p>
+              <button
+                type="button"
+                onClick={() => void onForceSync()}
+                disabled={isSyncing}
+                className="w-full min-h-[44px] px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold inline-flex items-center justify-center gap-2 disabled:opacity-60"
+              >
+                <RefreshCw
+                  className={`w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 ${
+                    isSyncing ? 'animate-spin' : ''
+                  }`}
+                />
+                <span>
+                  {isSyncing ? 'A sincronizar agora...' : 'Sincronizar Agora'}
+                </span>
+              </button>
+            </div>
+
+            <div className="pt-1">
+              <PWAInstallButton variant="card" />
             </div>
 
             <div className="space-y-2.5 pt-1 border-t border-slate-200 dark:border-slate-800">

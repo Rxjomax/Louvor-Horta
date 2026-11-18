@@ -20,6 +20,7 @@ const REPERTOIRE_TRANSPOSE_KEY = 'ieb_horta_repertoire_transpose_v1';
 const REPERTOIRE_CIFRA_PREFS_KEY = 'ieb_horta_repertoire_cifra_prefs_v1';
 const ACTIVE_TAB_KEY = 'ieb_horta_active_tab_v1';
 const VIEWER_PREFS_KEY = 'ieb_horta_viewer_prefs_v1';
+const PENDING_CLOUD_SYNC_KEY = 'ieb_horta_pending_cloud_sync_v1';
 
 const VALID_CATEGORIES = new Set<SongCategory>(['Normal', 'Crianças', 'Hinos']);
 const VALID_TABS = new Set<AppTab>(['repertoire', 'playlist', 'schedule', 'add']);
@@ -338,6 +339,26 @@ export function saveRepertoireCifraPrefs(
   }
 }
 
+export function loadPendingCloudSync(): boolean {
+  try {
+    return localStorage.getItem(PENDING_CLOUD_SYNC_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+export function savePendingCloudSync(pending: boolean): void {
+  try {
+    if (pending) {
+      localStorage.setItem(PENDING_CLOUD_SYNC_KEY, '1');
+    } else {
+      localStorage.removeItem(PENDING_CLOUD_SYNC_KEY);
+    }
+  } catch {
+    // Ignore storage quota errors gracefully
+  }
+}
+
 export function loadActiveTab(): AppTab {
   try {
     const raw = localStorage.getItem(ACTIVE_TAB_KEY) as AppTab | null;
@@ -515,6 +536,7 @@ export interface FullAppBackup {
   playlist: PlaylistState;
   schedule: ScheduleState;
   repertoireTranspose: Record<string, number>;
+  repertoireCifraPrefs?: Record<string, CifraStylePref>;
   randomCount: number;
   theme: ThemeMode;
 }
@@ -524,6 +546,7 @@ export function createFullBackupPayload(params: {
   playlist: PlaylistState;
   schedule: ScheduleState;
   repertoireTranspose: Record<string, number>;
+  repertoireCifraPrefs?: Record<string, CifraStylePref>;
   theme: ThemeMode;
 }): FullAppBackup {
   return {
@@ -533,6 +556,9 @@ export function createFullBackupPayload(params: {
     playlist: params.playlist,
     schedule: params.schedule,
     repertoireTranspose: params.repertoireTranspose,
+    ...(params.repertoireCifraPrefs
+      ? { repertoireCifraPrefs: params.repertoireCifraPrefs }
+      : {}),
     randomCount: loadRandomCount(),
     theme: params.theme,
   };

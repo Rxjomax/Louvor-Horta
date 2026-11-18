@@ -61,6 +61,7 @@ service cloud.firestore {
           'playlistTranspose',
           'playlistEntries',
           'repertoireTranspose',
+          'repertoireCifraPrefs',
           'deletedSongIds',
           'upsertedSongs',
           'scheduleRoles',
@@ -87,6 +88,7 @@ service cloud.firestore {
         (!('playlistEntries' in data) || (data.playlistEntries is list && data.playlistEntries.size() <= 150 && (data.playlistEntries.size() == 0 || data.playlistEntries[0] is map))) &&
         data.repertoireTranspose is map &&
         data.repertoireTranspose.size() <= 1000 &&
+        (!('repertoireCifraPrefs' in data) || (data.repertoireCifraPrefs is map && data.repertoireCifraPrefs.size() <= 1000)) &&
         data.deletedSongIds is list &&
         data.deletedSongIds.size() <= 500 &&
         (data.deletedSongIds.size() == 0 || (data.deletedSongIds[0] is string && data.deletedSongIds[0].size() <= 128)) &&
@@ -131,6 +133,7 @@ service cloud.firestore {
             'playlistTranspose',
             'playlistEntries',
             'repertoireTranspose',
+            'repertoireCifraPrefs',
             'deletedSongIds',
             'upsertedSongs',
             'scheduleRoles',

@@ -1,15 +1,18 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BottomNav } from './components/BottomNav';
 import { ChordViewer } from './components/ChordViewer';
 import { Header } from './components/Header';
+import { OfflineIndicator } from './components/OfflineIndicator';
 import { PlaylistView } from './components/PlaylistView';
 import { RepertoireView } from './components/RepertoireView';
 import { ScheduleView } from './components/ScheduleView';
 import { SongFormView } from './components/SongFormView';
 import {
+  CloudWorkspaceSnapshot,
   User,
   auth,
   ensureAndSyncSharedWorkspace,
+  fetchLatestSharedWorkspace,
   onAuthStateChanged,
   signInWithGoogle,
   signOutGoogle,
@@ -35,6 +38,7 @@ import {
   computeSongDeltas,
   createFullBackupPayload,
   loadActiveTab,
+  loadPendingCloudSync,
   loadPlaylist,
   loadRandomCount,
   loadRepertoireCifraPrefs,
@@ -43,6 +47,7 @@ import {
   loadSongs,
   loadTheme,
   saveActiveTab,
+  savePendingCloudSync,
   savePlaylist,
   saveRandomCount,
   saveRepertoireCifraPrefs,
@@ -75,10 +80,64 @@ export default function App() {
   const [user, setUser] = useState<User | null>(null);
   const [isCloudConnected, setIsCloudConnected] = useState(false);
   const [isSyncing, setIsSyncing] = useState(false);
+  const [hasPendingCloudSync, setHasPendingCloudSync] = useState<boolean>(() =>
+    loadPendingCloudSync()
+  );
   const [lastSavedAt, setLastSavedAt] = useState<Date>(() => new Date());
 
   const isApplyingRemoteUpdateRef = useRef(false);
   const cloudBootstrappedRef = useRef(false);
+  const hasMountedEditWatchRef = useRef(false);
+  const syncInFlightRef = useRef(false);
+  const localMutationSeqRef = useRef(0);
+  const latestStateRef = useRef({
+    songs,
+    playlist,
+    schedule,
+    repertoireTranspose,
+    repertoireCifraPrefs,
+  });
+
+  latestStateRef.current = {
+    songs,
+    playlist,
+    schedule,
+    repertoireTranspose,
+    repertoireCifraPrefs,
+  };
+
+  const buildCurrentSnapshot = useCallback((): CloudWorkspaceSnapshot => {
+    const current = latestStateRef.current;
+    const deltas = computeSongDeltas(current.songs);
+    return {
+      playlist: current.playlist,
+      repertoireTranspose: current.repertoireTranspose,
+      repertoireCifraPrefs: current.repertoireCifraPrefs,
+      deletedSongIds: deltas.deletedIds,
+      upsertedSongs: deltas.upserted,
+      schedule: current.schedule,
+      randomCount: loadRandomCount(),
+    };
+  }, []);
+
+  const applyRemoteSnapshot = useCallback((remote: CloudWorkspaceSnapshot) => {
+    isApplyingRemoteUpdateRef.current = true;
+    setPlaylist(remote.playlist);
+    setRepertoireTranspose(remote.repertoireTranspose);
+    setRepertoireCifraPrefs(remote.repertoireCifraPrefs);
+    setSchedule(remote.schedule);
+    saveRandomCount(remote.randomCount);
+    setSongs(
+      applySongDeltas({
+        upserted: remote.upsertedSongs,
+        deletedIds: remote.deletedSongIds,
+      })
+    );
+    setLastSavedAt(new Date());
+    window.setTimeout(() => {
+      isApplyingRemoteUpdateRef.current = false;
+    }, 150);
+  }, []);
 
   // Save songs deltas locally on every change
   useEffect(() => {
@@ -107,6 +166,7 @@ export default function App() {
   // Save repertoire cifra style preferences locally
   useEffect(() => {
     saveRepertoireCifraPrefs(repertoireCifraPrefs);
+    setLastSavedAt(new Date());
   }, [repertoireCifraPrefs]);
 
   // Save active navigation tab locally
@@ -133,109 +193,153 @@ export default function App() {
     return () => unsub();
   }, []);
 
-  // Automatically connect ALL visitors/devices to the shared church workspace on boot
+  const syncWithCloud = useCallback(
+    async (preferServerFetch = false) => {
+      if (syncInFlightRef.current) return;
+      if (typeof navigator !== 'undefined' && !navigator.onLine) {
+        setIsCloudConnected(false);
+        return;
+      }
+
+      syncInFlightRef.current = true;
+      setIsSyncing(true);
+      let shouldFlushAgain = false;
+
+      try {
+        const snapshot = buildCurrentSnapshot();
+        const seqBefore = localMutationSeqRef.current;
+
+        if (loadPendingCloudSync()) {
+          await updateSharedWorkspace(snapshot);
+          if (localMutationSeqRef.current === seqBefore) {
+            savePendingCloudSync(false);
+            setHasPendingCloudSync(false);
+          } else {
+            shouldFlushAgain = true;
+          }
+          setIsCloudConnected(true);
+          setLastSavedAt(new Date());
+        } else {
+          const remoteWorkspace = preferServerFetch
+            ? await fetchLatestSharedWorkspace(snapshot)
+            : await ensureAndSyncSharedWorkspace(snapshot);
+
+          if (
+            remoteWorkspace &&
+            localMutationSeqRef.current === seqBefore &&
+            !loadPendingCloudSync()
+          ) {
+            applyRemoteSnapshot(remoteWorkspace);
+          }
+          setIsCloudConnected(true);
+        }
+      } catch (err) {
+        console.warn('Sincronização em espera (tentará novamente ao ligar):', err);
+        setIsCloudConnected(false);
+      } finally {
+        cloudBootstrappedRef.current = true;
+        syncInFlightRef.current = false;
+        setIsSyncing(false);
+        if (shouldFlushAgain) {
+          void syncWithCloud(false);
+        }
+      }
+    },
+    [applyRemoteSnapshot, buildCurrentSnapshot]
+  );
+
+  // Automatically connect ALL visitors/devices (web and installed PWA) to the shared church workspace
   useEffect(() => {
     let isCancelled = false;
-    let unsubWorkspace: (() => void) | undefined;
 
-    const currentDeltas = computeSongDeltas(songs);
-    const initialSnapshot = {
-      playlist,
-      repertoireTranspose,
-      deletedSongIds: currentDeltas.deletedIds,
-      upsertedSongs: currentDeltas.upserted,
-      schedule,
-      randomCount: loadRandomCount(),
+    const unsubWorkspace = subscribeToSharedWorkspace(
+      buildCurrentSnapshot(),
+      (cloudState, _updatedAtMs, meta) => {
+        if (isCancelled) return;
+        if (!meta.fromCache) {
+          setIsCloudConnected(true);
+        }
+        // Never overwrite unsynced local offline edits with a stale cached snapshot
+        if (loadPendingCloudSync()) return;
+        applyRemoteSnapshot(cloudState);
+      },
+      (meta) => {
+        if (isCancelled) return;
+        if (!meta.fromCache && !meta.hasPendingWrites) {
+          setIsCloudConnected(true);
+        }
+      },
+      () => {
+        if (isCancelled) return;
+        setIsCloudConnected(false);
+      }
+    );
+
+    void syncWithCloud(false);
+
+    const handleOnline = () => {
+      void syncWithCloud(true);
     };
 
-    const bootstrapSharedCloud = async () => {
-      setIsSyncing(true);
-      try {
-        const remoteWorkspace =
-          await ensureAndSyncSharedWorkspace(initialSnapshot);
-
-        if (isCancelled) return;
-
-        if (remoteWorkspace) {
-          isApplyingRemoteUpdateRef.current = true;
-          setPlaylist(remoteWorkspace.playlist);
-          setRepertoireTranspose(remoteWorkspace.repertoireTranspose);
-          setSchedule(remoteWorkspace.schedule);
-          saveRandomCount(remoteWorkspace.randomCount);
-          const mergedDeltas = {
-            upserted: {
-              ...computeSongDeltas(songs).upserted,
-              ...remoteWorkspace.upsertedSongs,
-            },
-            deletedIds: remoteWorkspace.deletedSongIds,
-          };
-          setSongs(applySongDeltas(mergedDeltas));
-          setTimeout(() => {
-            isApplyingRemoteUpdateRef.current = false;
-          }, 120);
-        }
-
-        cloudBootstrappedRef.current = true;
-        setIsCloudConnected(true);
-
-        unsubWorkspace = subscribeToSharedWorkspace(
-          initialSnapshot,
-          (cloudState) => {
-            isApplyingRemoteUpdateRef.current = true;
-            setPlaylist(cloudState.playlist);
-            setRepertoireTranspose(cloudState.repertoireTranspose);
-            setSchedule(cloudState.schedule);
-            saveRandomCount(cloudState.randomCount);
-            setSongs(
-              applySongDeltas({
-                upserted: cloudState.upsertedSongs,
-                deletedIds: cloudState.deletedSongIds,
-              })
-            );
-            setLastSavedAt(new Date());
-            setTimeout(() => {
-              isApplyingRemoteUpdateRef.current = false;
-            }, 120);
-          }
-        );
-      } finally {
-        if (!isCancelled) {
-          setIsSyncing(false);
-        }
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        void syncWithCloud(true);
       }
     };
 
-    void bootstrapSharedCloud();
+    window.addEventListener('online', handleOnline);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       isCancelled = true;
-      if (unsubWorkspace) unsubWorkspace();
+      unsubWorkspace();
+      window.removeEventListener('online', handleOnline);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, []);
+  }, [applyRemoteSnapshot, buildCurrentSnapshot, syncWithCloud]);
+
+  // Periodic retry while there are pending local edits waiting to reach the cloud
+  useEffect(() => {
+    if (!hasPendingCloudSync) return;
+    const interval = window.setInterval(() => {
+      if (typeof navigator === 'undefined' || navigator.onLine) {
+        void syncWithCloud(false);
+      }
+    }, 15000);
+    return () => window.clearInterval(interval);
+  }, [hasPendingCloudSync, syncWithCloud]);
 
   // Debounced sync of shared workspace state changes to Firestore whenever anyone edits
   useEffect(() => {
-    if (!cloudBootstrappedRef.current) return;
+    if (!hasMountedEditWatchRef.current) {
+      hasMountedEditWatchRef.current = true;
+      return;
+    }
     if (isApplyingRemoteUpdateRef.current) return;
 
+    localMutationSeqRef.current += 1;
+    savePendingCloudSync(true);
+    setHasPendingCloudSync(true);
+
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      setIsCloudConnected(false);
+      return;
+    }
+
     const timer = window.setTimeout(() => {
-      const deltas = computeSongDeltas(songs);
-      setIsSyncing(true);
-      void updateSharedWorkspace({
-        playlist,
-        repertoireTranspose,
-        deletedSongIds: deltas.deletedIds,
-        upsertedSongs: deltas.upserted,
-        schedule,
-        randomCount: loadRandomCount(),
-      }).finally(() => {
-        setIsSyncing(false);
-        setLastSavedAt(new Date());
-      });
+      if (!cloudBootstrappedRef.current) return;
+      void syncWithCloud(false);
     }, 350);
 
     return () => window.clearTimeout(timer);
-  }, [playlist, repertoireTranspose, schedule, songs]);
+  }, [
+    playlist,
+    repertoireTranspose,
+    repertoireCifraPrefs,
+    schedule,
+    songs,
+    syncWithCloud,
+  ]);
 
   const playlistSongIds = useMemo(
     () =>
@@ -448,6 +552,7 @@ export default function App() {
       playlist,
       schedule,
       repertoireTranspose,
+      repertoireCifraPrefs,
       theme,
     });
     const blob = new Blob([JSON.stringify(payload, null, 2)], {
@@ -485,6 +590,12 @@ export default function App() {
         typeof parsed.repertoireTranspose === 'object'
       ) {
         setRepertoireTranspose(parsed.repertoireTranspose);
+      }
+      if (
+        parsed.repertoireCifraPrefs &&
+        typeof parsed.repertoireCifraPrefs === 'object'
+      ) {
+        setRepertoireCifraPrefs(parsed.repertoireCifraPrefs);
       }
       if (typeof parsed.randomCount === 'number') {
         saveRandomCount(parsed.randomCount);
@@ -694,7 +805,11 @@ export default function App() {
         user={user}
         isCloudConnected={isCloudConnected}
         isSyncing={isSyncing}
+        hasPendingSync={hasPendingCloudSync}
         lastSavedText={lastSavedText}
+        onForceSync={async () => {
+          await syncWithCloud(true);
+        }}
         onSignIn={async () => {
           await signInWithGoogle();
         }}
@@ -770,6 +885,8 @@ export default function App() {
         onSelectTab={handleSelectTab}
         playlistCount={validPlaylistCount}
       />
+
+      <OfflineIndicator hasPendingSync={hasPendingCloudSync} />
     </div>
   );
 }

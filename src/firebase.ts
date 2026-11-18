@@ -8,13 +8,17 @@ import {
   signOut,
 } from 'firebase/auth';
 import {
+  Firestore,
   Timestamp,
   Unsubscribe,
   doc,
   getDoc,
   getDocFromServer,
   getFirestore,
+  initializeFirestore,
   onSnapshot,
+  persistentLocalCache,
+  persistentMultipleTabManager,
   serverTimestamp,
   setDoc,
   updateDoc,
@@ -22,6 +26,7 @@ import {
 import firebaseConfig from '../firebase-applet-config.json';
 import {
   CifraStyle,
+  CifraStylePref,
   PlaylistItem,
   PlaylistState,
   ScheduleEntry,
@@ -32,7 +37,23 @@ import {
 } from './types/music';
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+
+let db: Firestore;
+try {
+  db = initializeFirestore(
+    app,
+    {
+      localCache: persistentLocalCache({
+        tabManager: persistentMultipleTabManager(),
+      }),
+    },
+    firebaseConfig.firestoreDatabaseId
+  );
+} catch {
+  db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+}
+
+export { db };
 export const auth = getAuth(app);
 
 export const SHARED_WORKSPACE_ID = 'ieb_horta_main';
@@ -93,6 +114,23 @@ export function handleFirestoreError(
   throw new Error(JSON.stringify(errInfo));
 }
 
+export function isFirestoreOfflineError(error: unknown): boolean {
+  const raw =
+    error instanceof Error
+      ? `${(error as { code?: string }).code ?? ''} ${error.message}`
+      : String(error);
+  const lower = raw.toLowerCase();
+  return (
+    lower.includes('unavailable') ||
+    lower.includes('client is offline') ||
+    lower.includes('offline') ||
+    lower.includes('network') ||
+    lower.includes('failed to fetch') ||
+    lower.includes('aborted') ||
+    lower.includes('deadline-exceeded')
+  );
+}
+
 async function testConnection() {
   try {
     await getDocFromServer(doc(db, 'test', 'connection'));
@@ -142,6 +180,7 @@ function getActorUid(): string {
 export interface CloudWorkspaceSnapshot {
   playlist: PlaylistState;
   repertoireTranspose: Record<string, number>;
+  repertoireCifraPrefs: Record<string, CifraStylePref>;
   deletedSongIds: string[];
   upsertedSongs: Record<string, Song>;
   schedule: ScheduleState;
@@ -237,6 +276,31 @@ function buildSanitizedWorkspaceFields(state: CloudWorkspaceSnapshot) {
     }
   }
 
+  const repertoireCifraPrefs: Record<string, CifraStylePref> = {};
+  const prefEntries = Object.entries(state.repertoireCifraPrefs || {}).slice(
+    0,
+    1000
+  );
+  for (const [songId, pref] of prefEntries) {
+    if (!pref || typeof pref !== 'object') continue;
+    const style: CifraStyle =
+      pref.style === 'simplified' || pref.style === 'capo'
+        ? pref.style
+        : 'original';
+    if (style === 'original') continue;
+    const safeSongId = sanitizeId(songId, 'song');
+    const capoFret =
+      style === 'capo' &&
+      typeof pref.capoFret === 'number' &&
+      Number.isFinite(pref.capoFret)
+        ? Math.max(1, Math.min(9, Math.round(pref.capoFret)))
+        : undefined;
+    repertoireCifraPrefs[safeSongId] = {
+      style,
+      ...(capoFret !== undefined ? { capoFret } : {}),
+    };
+  }
+
   const deletedSongIds = (state.deletedSongIds || [])
     .slice(0, 500)
     .map((id) => sanitizeId(id, 'song'));
@@ -299,6 +363,7 @@ function buildSanitizedWorkspaceFields(state: CloudWorkspaceSnapshot) {
     playlistTranspose,
     playlistEntries,
     repertoireTranspose,
+    repertoireCifraPrefs,
     deletedSongIds,
     upsertedSongs,
     scheduleRoles,
@@ -314,7 +379,15 @@ export async function ensureAndSyncSharedWorkspace(
   const path = `workspaces/${SHARED_WORKSPACE_ID}`;
   const ref = doc(db, 'workspaces', SHARED_WORKSPACE_ID);
   try {
-    const snap = await getDoc(ref);
+    let snap;
+    try {
+      snap = await getDocFromServer(ref);
+    } catch (serverErr) {
+      if (!isFirestoreOfflineError(serverErr)) {
+        throw serverErr;
+      }
+      snap = await getDoc(ref);
+    }
     if (!snap.exists()) {
       const sanitized = buildSanitizedWorkspaceFields(localState);
       await setDoc(ref, {
@@ -326,6 +399,20 @@ export async function ensureAndSyncSharedWorkspace(
     }
     const data = snap.data();
     return parseCloudWorkspaceDoc(data, localState);
+  } catch (error) {
+    handleFirestoreError(error, OperationType.GET, path);
+  }
+}
+
+export async function fetchLatestSharedWorkspace(
+  fallback: CloudWorkspaceSnapshot
+): Promise<CloudWorkspaceSnapshot | null> {
+  const path = `workspaces/${SHARED_WORKSPACE_ID}`;
+  const ref = doc(db, 'workspaces', SHARED_WORKSPACE_ID);
+  try {
+    const snap = await getDocFromServer(ref);
+    if (!snap.exists()) return null;
+    return parseCloudWorkspaceDoc(snap.data(), fallback);
   } catch (error) {
     handleFirestoreError(error, OperationType.GET, path);
   }
@@ -407,6 +494,36 @@ export function parseCloudWorkspaceDoc(
       ? (data.repertoireTranspose as Record<string, number>)
       : fallback.repertoireTranspose;
 
+  const repertoireCifraPrefs: Record<string, CifraStylePref> = {};
+  if (
+    data.repertoireCifraPrefs &&
+    typeof data.repertoireCifraPrefs === 'object' &&
+    !Array.isArray(data.repertoireCifraPrefs)
+  ) {
+    for (const [id, rawPref] of Object.entries(
+      data.repertoireCifraPrefs as Record<string, Record<string, unknown>>
+    )) {
+      if (!rawPref || typeof rawPref !== 'object') continue;
+      const style: CifraStyle =
+        rawPref.style === 'simplified' || rawPref.style === 'capo'
+          ? rawPref.style
+          : 'original';
+      if (style === 'original') continue;
+      const capoFret =
+        style === 'capo' &&
+        typeof rawPref.capoFret === 'number' &&
+        Number.isFinite(rawPref.capoFret)
+          ? Math.max(1, Math.min(9, Math.round(rawPref.capoFret)))
+          : undefined;
+      repertoireCifraPrefs[id] = {
+        style,
+        ...(capoFret !== undefined ? { capoFret } : {}),
+      };
+    }
+  } else if (fallback.repertoireCifraPrefs) {
+    Object.assign(repertoireCifraPrefs, fallback.repertoireCifraPrefs);
+  }
+
   const deletedSongIds = Array.isArray(data.deletedSongIds)
     ? (data.deletedSongIds as string[]).map(String)
     : fallback.deletedSongIds;
@@ -461,6 +578,7 @@ export function parseCloudWorkspaceDoc(
   return {
     playlist,
     repertoireTranspose,
+    repertoireCifraPrefs,
     deletedSongIds,
     upsertedSongs,
     schedule,
@@ -475,8 +593,20 @@ export async function updateSharedWorkspace(
   const ref = doc(db, 'workspaces', SHARED_WORKSPACE_ID);
   const sanitized = buildSanitizedWorkspaceFields(state);
   try {
-    const snap = await getDoc(ref);
-    if (!snap.exists()) {
+    let exists = true;
+    try {
+      const snap = await getDoc(ref);
+      exists = snap.exists();
+    } catch (readErr) {
+      if (!isFirestoreOfflineError(readErr)) {
+        throw readErr;
+      }
+      // When offline before initial cache hydration, optimistically attempt updateDoc
+      // so Firestore's persistent IndexedDB queue stores the write for sync on reconnect.
+      exists = true;
+    }
+
+    if (!exists) {
       await setDoc(ref, {
         ...sanitized,
         createdAt: serverTimestamp(),
@@ -490,6 +620,7 @@ export async function updateSharedWorkspace(
         playlistTranspose: sanitized.playlistTranspose,
         playlistEntries: sanitized.playlistEntries,
         repertoireTranspose: sanitized.repertoireTranspose,
+        repertoireCifraPrefs: sanitized.repertoireCifraPrefs,
         deletedSongIds: sanitized.deletedSongIds,
         upsertedSongs: sanitized.upsertedSongs,
         scheduleRoles: sanitized.scheduleRoles,
@@ -506,13 +637,25 @@ export async function updateSharedWorkspace(
 
 export function subscribeToSharedWorkspace(
   fallback: CloudWorkspaceSnapshot,
-  onUpdate: (snapshot: CloudWorkspaceSnapshot, updatedAtMs: number) => void
+  onUpdate: (
+    snapshot: CloudWorkspaceSnapshot,
+    updatedAtMs: number,
+    meta: { hasPendingWrites: boolean; fromCache: boolean }
+  ) => void,
+  onStatus?: (meta: { hasPendingWrites: boolean; fromCache: boolean }) => void,
+  onError?: (error: unknown) => void
 ): Unsubscribe {
   const path = `workspaces/${SHARED_WORKSPACE_ID}`;
   const ref = doc(db, 'workspaces', SHARED_WORKSPACE_ID);
   return onSnapshot(
     ref,
+    { includeMetadataChanges: true },
     (snap) => {
+      const meta = {
+        hasPendingWrites: snap.metadata.hasPendingWrites,
+        fromCache: snap.metadata.fromCache,
+      };
+      onStatus?.(meta);
       if (!snap.exists()) return;
       if (snap.metadata.hasPendingWrites) return;
       const data = snap.data();
@@ -520,9 +663,14 @@ export function subscribeToSharedWorkspace(
         data.updatedAt instanceof Timestamp
           ? data.updatedAt.toMillis()
           : Date.now();
-      onUpdate(parseCloudWorkspaceDoc(data, fallback), updatedAt);
+      onUpdate(parseCloudWorkspaceDoc(data, fallback), updatedAt, meta);
     },
     (error) => {
+      onError?.(error);
+      if (isFirestoreOfflineError(error)) {
+        console.warn('Ligação em tempo real em espera (offline):', error);
+        return;
+      }
       handleFirestoreError(error, OperationType.GET, path);
     }
   );

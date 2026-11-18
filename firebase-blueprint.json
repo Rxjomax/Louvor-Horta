@@ -42,6 +42,10 @@
           "type": "object",
           "description": "Map of songId to transpose semitone offset in the general repertoire."
         },
+        "repertoireCifraPrefs": {
+          "type": "object",
+          "description": "Map of songId to preferred cifra style (original, simplified, capo) and capo fret in the general repertoire."
+        },
         "deletedSongIds": {
           "type": "array",
           "description": "List of catalog song IDs removed from the shared repertoire (bounded to 500)."
