@@ -189,7 +189,7 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
 
       // Brand kicker
       const kickerY = logoY + logoSize + (isStory ? 68 : 48);
-      ctx.fillStyle = isNavy ? '#E4B84F' : '#B85414';
+      ctx.fillStyle = isNavy ? '#E4B84F' : '#8F620B';
       ctx.font = `700 ${isStory ? 28 : 22}px "Plus Jakarta Sans", system-ui, -apple-system, sans-serif`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
@@ -200,7 +200,7 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
         message.trim() || 'Aceda ao aplicativo do Louvor IEB Horta';
       const fontSize = isStory ? 54 : 40;
       const lineHeight = isStory ? 68 : 50;
-      ctx.fillStyle = isNavy ? '#FFFFFF' : '#0F172A';
+      ctx.fillStyle = isNavy ? '#FFFFFF' : '#0B1D3A';
       ctx.font = `700 ${fontSize}px "Plus Jakarta Sans", system-ui, -apple-system, sans-serif`;
       const lines = wrapCanvasLines(ctx, displayMessage, width - 170);
 
@@ -386,22 +386,22 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="qr-modal-title"
-      className="no-print fixed inset-0 z-50 bg-slate-950/65 flex items-center justify-center p-3 sm:p-4"
+      className="no-print fixed inset-0 z-50 bg-[#061022]/70 flex items-center justify-center p-3 sm:p-4"
     >
-      <div className="w-full max-w-3xl max-h-[92dvh] overflow-y-auto rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 sm:p-6 space-y-5 shadow-xl">
-        <div className="flex items-start justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+      <div className="w-full max-w-3xl max-h-[92dvh] overflow-y-auto rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-4 sm:p-6 space-y-5 shadow-xl text-[#0B1D3A] dark:text-[#F4F8FC]">
+        <div className="flex items-start justify-between gap-3 border-b border-[#D7E2F0] dark:border-[#1F3B68] pb-4">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-xl bg-[#0F2445] text-[#E4B84F] flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#0B1D3A] text-[#E4B84F] flex items-center justify-center shrink-0">
               <QrCode className="w-5 h-5" aria-hidden="true" />
             </div>
             <div className="min-w-0">
               <h2
                 id="qr-modal-title"
-                className="text-base sm:text-lg font-bold text-slate-900 dark:text-white"
+                className="text-base sm:text-lg font-bold text-[#0B1D3A] dark:text-white"
               >
                 QR Code para Redes Sociais
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-xs sm:text-sm text-[#465B78] dark:text-[#9BB2CE]">
                 Personalize a mensagem e baixe o cartão pronto para Instagram,
                 WhatsApp ou cartazes.
               </p>
@@ -411,7 +411,7 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
             type="button"
             onClick={onClose}
             aria-label="Fechar gerador de QR Code"
-            className="min-h-[44px] min-w-[44px] -mr-2 -mt-2 inline-flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white"
+            className="min-h-[44px] min-w-[44px] -mr-2 -mt-2 inline-flex items-center justify-center rounded-lg text-[#526886] hover:text-[#0B1D3A] dark:text-[#9BB2CE] dark:hover:text-white"
           >
             <X className="w-5 h-5" aria-hidden="true" />
           </button>
@@ -423,7 +423,7 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
             <div className="space-y-1.5">
               <label
                 htmlFor="qr-message-input"
-                className="block text-xs font-semibold text-slate-700 dark:text-slate-300"
+                className="block text-xs font-semibold text-[#243B5A] dark:text-[#C4D5EB]"
               >
                 Mensagem do Cartão (para as redes sociais)
               </label>
@@ -434,7 +434,7 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Escreva a mensagem que aparecerá acima do QR Code..."
-                className="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2.5 text-base sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#B85414]"
+                className="w-full rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#08162E] px-3 py-2.5 text-base sm:text-sm text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               />
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {MESSAGE_PRESETS.map((preset, idx) => {
@@ -450,10 +450,10 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
                       key={preset}
                       type="button"
                       onClick={() => setMessage(preset)}
-                      className={`min-h-[44px] px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] ${
+                      className={`min-h-[44px] px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                         isSelected
-                          ? 'border-[#0F2445] bg-[#0F2445] text-white dark:border-amber-400 dark:bg-amber-400 dark:text-slate-950'
-                          : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
+                          ? 'border-[#10284F] bg-[#10284F] text-white dark:border-[#E4B84F] dark:bg-[#E4B84F] dark:text-[#0B1D3A]'
+                          : 'border-[#D7E2F0] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#0B1D3A] text-[#243B5A] dark:text-[#C4D5EB] hover:bg-[#E7F0FA] dark:hover:bg-[#153463]'
                       }`}
                     >
                       {shortLabels[idx]}
@@ -466,7 +466,7 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
             <div className="space-y-1.5">
               <label
                 htmlFor="qr-subtitle-input"
-                className="block text-xs font-semibold text-slate-700 dark:text-slate-300"
+                className="block text-xs font-semibold text-[#243B5A] dark:text-[#C4D5EB]"
               >
                 Texto de Rodapé (opcional)
               </label>
@@ -477,23 +477,23 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
                 value={subtitle}
                 onChange={(e) => setSubtitle(e.target.value)}
                 placeholder="Ex: Cultos aos Domingos · 18h30"
-                className="w-full min-h-[44px] rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-2 text-base sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#B85414]"
+                className="w-full min-h-[44px] rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#08162E] px-3 py-2 text-base sm:text-sm text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
-                <span className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
+                <span className="block text-xs font-semibold text-[#243B5A] dark:text-[#C4D5EB]">
                   Formato
                 </span>
-                <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800">
+                <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-[#EAF1F8] dark:bg-[#08162E]">
                   <button
                     type="button"
                     onClick={() => setFormat('square')}
-                    className={`min-h-[44px] rounded-lg text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] ${
+                    className={`min-h-[44px] rounded-lg text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                       format === 'square'
-                        ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm'
-                        : 'text-slate-600 dark:text-slate-400'
+                        ? 'bg-white dark:bg-[#153463] text-[#0B1D3A] dark:text-white shadow-sm'
+                        : 'text-[#526886] dark:text-[#9BB2CE]'
                     }`}
                   >
                     Post 1:1
@@ -501,10 +501,10 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
                   <button
                     type="button"
                     onClick={() => setFormat('story')}
-                    className={`min-h-[44px] rounded-lg text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] ${
+                    className={`min-h-[44px] rounded-lg text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                       format === 'story'
-                        ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm'
-                        : 'text-slate-600 dark:text-slate-400'
+                        ? 'bg-white dark:bg-[#153463] text-[#0B1D3A] dark:text-white shadow-sm'
+                        : 'text-[#526886] dark:text-[#9BB2CE]'
                     }`}
                   >
                     Story 9:16
@@ -513,17 +513,17 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
               </div>
 
               <div className="space-y-1.5">
-                <span className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
+                <span className="block text-xs font-semibold text-[#243B5A] dark:text-[#C4D5EB]">
                   Visual
                 </span>
-                <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800">
+                <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-[#EAF1F8] dark:bg-[#08162E]">
                   <button
                     type="button"
                     onClick={() => setCardTheme('navy')}
-                    className={`min-h-[44px] rounded-lg text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] ${
+                    className={`min-h-[44px] rounded-lg text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                       cardTheme === 'navy'
-                        ? 'bg-[#0F2445] text-white shadow-sm'
-                        : 'text-slate-600 dark:text-slate-400'
+                        ? 'bg-[#0B1D3A] text-white shadow-sm'
+                        : 'text-[#526886] dark:text-[#9BB2CE]'
                     }`}
                   >
                     Azul IEBH
@@ -531,10 +531,10 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
                   <button
                     type="button"
                     onClick={() => setCardTheme('light')}
-                    className={`min-h-[44px] rounded-lg text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] ${
+                    className={`min-h-[44px] rounded-lg text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                       cardTheme === 'light'
-                        ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm'
-                        : 'text-slate-600 dark:text-slate-400'
+                        ? 'bg-white dark:bg-[#153463] text-[#0B1D3A] dark:text-white shadow-sm'
+                        : 'text-[#526886] dark:text-[#9BB2CE]'
                     }`}
                   >
                     Claro
@@ -548,7 +548,7 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
                 type="button"
                 disabled={isExporting}
                 onClick={() => void handleDownloadPoster()}
-                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-[#0F2445] hover:bg-[#183A6A] text-white text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors disabled:opacity-60"
+                className="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-[#10284F] hover:bg-[#183A6E] dark:bg-[#E4B84F] dark:hover:bg-[#EBC467] text-white dark:text-[#0B1D3A] text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors disabled:opacity-60"
               >
                 <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>Baixar Imagem para Redes Sociais</span>
@@ -559,7 +559,7 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
                   type="button"
                   disabled={isExporting}
                   onClick={() => void handleSharePoster()}
-                  className="min-h-[44px] px-3 py-2 rounded-xl bg-[#2F523E] hover:bg-[#244030] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors disabled:opacity-60"
+                  className="min-h-[44px] px-3 py-2 rounded-xl bg-[#1668A3] hover:bg-[#125587] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors disabled:opacity-60"
                 >
                   <Share2 className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Partilhar Agora</span>
@@ -569,7 +569,7 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
                   type="button"
                   disabled={isExporting}
                   onClick={() => void handleDownloadRawQR()}
-                  className="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors disabled:opacity-60"
+                  className="min-h-[44px] px-3 py-2 rounded-xl border border-[#D7E2F0] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E7F0FA] dark:hover:bg-[#153463] text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors disabled:opacity-60"
                 >
                   <QrCode className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Só o QR Code</span>
@@ -577,22 +577,22 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
               </div>
 
               {shareFeedback && (
-                <p className="text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                <p className="text-xs font-medium text-[#1668A3] dark:text-[#75C2F6]">
                   {shareFeedback}
                 </p>
               )}
             </div>
 
-            <div className="pt-2 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 text-xs text-slate-600 dark:text-slate-400">
+            <div className="pt-2 border-t border-[#D7E2F0] dark:border-[#1F3B68] flex items-center justify-between gap-2 text-xs text-[#465B78] dark:text-[#9BB2CE]">
               <span className="font-mono truncate">louvor-horta.vercel.app</span>
               <button
                 type="button"
                 onClick={() => void handleCopyUrl()}
-                className="min-h-[44px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold inline-flex items-center gap-1.5 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
+                className="min-h-[44px] px-3 py-1.5 rounded-lg border border-[#D7E2F0] dark:border-[#284A7F] hover:bg-[#F4F8FC] dark:hover:bg-[#153463] text-[#0B1D3A] dark:text-[#F4F8FC] font-semibold inline-flex items-center gap-1.5 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
               >
                 {copiedUrl ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
+                    <Check className="w-3.5 h-3.5 text-[#1668A3] dark:text-[#75C2F6]" />
                     <span>Copiado</span>
                   </>
                 ) : (
@@ -606,17 +606,17 @@ export function SocialQRModal({ isOpen, onClose }: SocialQRModalProps) {
           </div>
 
           {/* Right: Live High-Res Canvas Preview */}
-          <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/70 dark:bg-slate-950/60 p-3 sm:p-4">
+          <div className="flex flex-col items-center justify-center rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#EDF4FB] dark:bg-[#08162E] p-3 sm:p-4">
             <canvas
               ref={canvasRef}
               aria-label="Pré-visualização do cartão com QR Code do Louvor IEB Horta"
-              className={`rounded-xl shadow-md border border-slate-200/80 dark:border-slate-800 ${
+              className={`rounded-xl shadow-md border border-[#D7E2F0] dark:border-[#1F3B68] ${
                 format === 'story'
                   ? 'w-auto max-h-[360px] sm:max-h-[430px] aspect-[9/16]'
                   : 'w-full max-w-[320px] aspect-square'
               }`}
             />
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2.5 text-center">
+            <p className="text-[11px] text-[#526886] dark:text-[#9BB2CE] mt-2.5 text-center">
               O QR Code aponta diretamente para{' '}
               <span className="font-mono">louvor-horta.vercel.app</span>
             </p>

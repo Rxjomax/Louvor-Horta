@@ -32,7 +32,7 @@ export function BottomNav({
   return (
     <nav
       aria-label="Menu inferior"
-      className="no-print md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#0F172A]/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 pb-safe"
+      className="no-print md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#0B1D3A]/95 backdrop-blur-md border-t border-[#D7E2F0] dark:border-[#1F3B68] pb-safe"
     >
       <div className="grid grid-cols-4 h-14 items-center">
         {tabs.map((tab) => {
@@ -44,12 +44,18 @@ export function BottomNav({
               type="button"
               onClick={() => onSelectTab(tab.id)}
               aria-current={isActive ? 'page' : undefined}
-              className={`relative min-h-[44px] h-full flex flex-col items-center justify-center gap-0.5 px-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+              className={`relative min-h-[44px] h-full flex flex-col items-center justify-center gap-0.5 px-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                 isActive
-                  ? 'text-[#B85414] dark:text-amber-400'
-                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                  ? 'text-[#10284F] dark:text-[#E4B84F] font-semibold'
+                  : 'text-[#526886] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-[#F4F8FC]'
               }`}
             >
+              {isActive && (
+                <span
+                  aria-hidden="true"
+                  className="absolute top-0 left-3 right-3 h-0.5 rounded-full bg-[#DCA93B] dark:bg-[#E4B84F]"
+                />
+              )}
               <div className="relative flex items-center justify-center">
                 <Icon
                   className="w-5 h-5"

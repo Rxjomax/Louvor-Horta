@@ -100,16 +100,16 @@ export function RepertoireView({
       className="max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-24 md:pb-12"
     >
       {/* Top Section Heading & Count */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-4 border-b border-[#D7E2F0] dark:border-[#1F3B68]">
         <div>
           <h1
             id="repertoire-heading"
-            className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50"
+            className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0B1D3A] dark:text-[#F4F8FC]"
           >
             Repertório Geral
           </h1>
-          <p className="mt-1 text-sm sm:text-base text-slate-600 dark:text-slate-400">
-            <span className="tabular-nums font-medium text-slate-800 dark:text-slate-200">
+          <p className="mt-1 text-sm sm:text-base text-[#465B78] dark:text-[#9BB2CE]">
+            <span className="tabular-nums font-medium text-[#0B1D3A] dark:text-[#F4F8FC]">
               {filteredSongs.length}
             </span>{' '}
             {filteredSongs.length === 1 ? 'música encontrada' : 'músicas disponíveis'} · Toque numa música para ver a cifra e ouvir
@@ -118,7 +118,7 @@ export function RepertoireView({
         <button
           type="button"
           onClick={onGoToAdd}
-          className="hidden sm:inline-flex min-h-[44px] items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 text-sm font-semibold hover:bg-slate-800 dark:hover:bg-amber-400 transition-colors duration-150 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-400"
+          className="hidden sm:inline-flex min-h-[44px] items-center gap-2 px-4 py-2 rounded-lg bg-[#10284F] dark:bg-[#E4B84F] text-white dark:text-[#0B1D3A] text-sm font-semibold hover:bg-[#183A6E] dark:hover:bg-[#EBC467] transition-colors duration-150 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
         >
           <Plus className="w-4 h-4 shrink-0" aria-hidden="true" />
           <span>Nova Música</span>
@@ -130,7 +130,7 @@ export function RepertoireView({
         {/* Search Input */}
         <div className="relative">
           <Search
-            className="w-4 h-4 text-slate-400 dark:text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+            className="w-4 h-4 text-[#526886] dark:text-[#9BB2CE] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
             aria-hidden="true"
           />
           <label htmlFor="song-search" className="sr-only">
@@ -145,7 +145,7 @@ export function RepertoireView({
               setVisibleLimit(VISIBLE_BATCH);
             }}
             placeholder="Pesquisar por nome, número (#89) ou intérprete..."
-            className="w-full min-h-[46px] pl-10 pr-11 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-base text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500 focus:border-transparent transition-colors duration-150"
+            className="w-full min-h-[46px] pl-10 pr-11 py-2.5 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#11264A] text-base text-[#0B1D3A] dark:text-[#F4F8FC] placeholder:text-[#6B82A0] dark:placeholder:text-[#829CBE] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F] focus:border-transparent transition-colors duration-150"
           />
           {searchQuery && (
             <button
@@ -155,7 +155,7 @@ export function RepertoireView({
                 setVisibleLimit(VISIBLE_BATCH);
               }}
               aria-label="Limpar pesquisa"
-              className="absolute right-1 top-1/2 -translate-y-1/2 min-h-[44px] min-w-[44px] flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 rounded-lg"
+              className="absolute right-1 top-1/2 -translate-y-1/2 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#526886] hover:text-[#0B1D3A] dark:text-[#9BB2CE] dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] rounded-lg"
             >
               <X className="w-4 h-4" aria-hidden="true" />
             </button>
@@ -180,10 +180,10 @@ export function RepertoireView({
                     setVisibleLimit(VISIBLE_BATCH);
                   }}
                   aria-pressed={isSelected}
-                  className={`min-h-[44px] px-3.5 py-2 rounded-lg text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                  className={`min-h-[44px] px-3.5 py-2 rounded-lg text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                     isSelected
-                      ? 'bg-[#B85414] dark:bg-amber-500 text-white dark:text-slate-950 font-semibold'
-                      : 'bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
+                      ? 'bg-[#10284F] dark:bg-[#E4B84F] text-white dark:text-[#0B1D3A] font-semibold'
+                      : 'bg-white dark:bg-[#11264A] text-[#243B5A] dark:text-[#C4D5EB] border border-[#D7E2F0] dark:border-[#1F3B68] hover:bg-[#EAF1F8] dark:hover:bg-[#153463]'
                   }`}
                 >
                   {category}
@@ -198,7 +198,7 @@ export function RepertoireView({
             aria-label="Filtrar por tom original"
             className="flex items-center gap-1 overflow-x-auto sm:flex-wrap sm:overflow-visible no-scrollbar pb-0.5"
           >
-            <span className="text-xs font-medium text-slate-500 dark:text-slate-400 mr-1.5 whitespace-nowrap shrink-0">
+            <span className="text-xs font-medium text-[#526886] dark:text-[#9BB2CE] mr-1.5 whitespace-nowrap shrink-0">
               Tom:
             </span>
             {availableKeys.map((keyOption) => {
@@ -212,10 +212,10 @@ export function RepertoireView({
                     setVisibleLimit(VISIBLE_BATCH);
                   }}
                   aria-pressed={isSelected}
-                  className={`min-h-[44px] min-w-[44px] px-2.5 py-1.5 rounded-lg text-sm font-cifra font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                  className={`min-h-[44px] min-w-[44px] px-2.5 py-1.5 rounded-lg text-sm font-cifra font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                     isSelected
-                      ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-bold'
-                      : 'bg-white dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
+                      ? 'bg-[#1668A3] dark:bg-[#75C2F6] text-white dark:text-[#0B1D3A] font-bold'
+                      : 'bg-white dark:bg-[#11264A] text-[#243B5A] dark:text-[#C4D5EB] border border-[#D7E2F0] dark:border-[#1F3B68] hover:bg-[#EAF1F8] dark:hover:bg-[#153463]'
                   }`}
                 >
                   {keyOption}
@@ -228,18 +228,18 @@ export function RepertoireView({
 
       {/* Song List / Grid */}
       {filteredSongs.length === 0 ? (
-        <div className="mt-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-8 text-center">
-          <p className="text-base font-semibold text-slate-900 dark:text-slate-100">
+        <div className="mt-8 rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-8 text-center">
+          <p className="text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]">
             Nenhuma música encontrada
           </p>
-          <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
+          <p className="mt-1 text-sm text-[#465B78] dark:text-[#9BB2CE] max-w-md mx-auto">
             Tente outro termo de pesquisa ou limpe os filtros para ver todo o repertório do grupo.
           </p>
           {hasActiveFilters && (
             <button
               type="button"
               onClick={clearFilters}
-              className="mt-4 min-h-[44px] px-5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+              className="mt-4 min-h-[44px] px-5 py-2.5 rounded-lg border border-[#C6D6E8] dark:border-[#284A7F] text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#EAF1F8] dark:hover:bg-[#153463] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
             >
               Limpar filtros
             </button>
@@ -256,26 +256,26 @@ export function RepertoireView({
             return (
               <li
                 key={song.id}
-                className="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 hover:border-slate-300 dark:hover:border-slate-700 transition-colors duration-150 flex items-stretch"
+                className="group rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] hover:border-[#75C2F6] dark:hover:border-[#3A65A3] transition-colors duration-150 flex items-stretch"
               >
                 {/* Main clickable card area opens Chord Viewer */}
                 <button
                   type="button"
                   onClick={() => onOpenSong(song.id)}
-                  className="flex-1 min-w-0 text-left p-3.5 sm:p-4 flex items-center gap-3.5 rounded-l-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                  className="flex-1 min-w-0 text-left p-3.5 sm:p-4 flex items-center gap-3.5 rounded-l-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
                 >
                   {/* Key Block */}
-                  <div className="w-11 h-11 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center shrink-0">
+                  <div className="w-11 h-11 rounded-lg bg-[#EDF4FB] dark:bg-[#0B1D3A] border border-[#D7E2F0] dark:border-[#284A7F] flex flex-col items-center justify-center shrink-0">
                     {song.originalKey === '—' ? (
-                      <span className="text-[11px] leading-none font-semibold text-slate-500 dark:text-slate-400">
+                      <span className="text-[11px] leading-none font-semibold text-[#526886] dark:text-[#9BB2CE]">
                         Letra
                       </span>
                     ) : (
                       <>
-                        <span className="text-[10px] leading-none text-slate-500 dark:text-slate-400 font-medium">
+                        <span className="text-[10px] leading-none text-[#526886] dark:text-[#9BB2CE] font-medium">
                           Tom
                         </span>
-                        <span className="font-cifra text-sm font-bold text-[#B85414] dark:text-amber-400 leading-tight mt-0.5">
+                        <span className="font-cifra text-sm font-bold text-[#8F620B] dark:text-[#E4B84F] leading-tight mt-0.5">
                           {song.originalKey}
                         </span>
                       </>
@@ -284,18 +284,18 @@ export function RepertoireView({
 
                   {/* Title & Unboxed Metadata */}
                   <div className="min-w-0 flex-1">
-                    <h2 className="text-base font-semibold text-slate-900 dark:text-slate-50 truncate group-hover:text-[#B85414] dark:group-hover:text-amber-400 transition-colors duration-150">
+                    <h2 className="text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] truncate group-hover:text-[#1668A3] dark:group-hover:text-[#E4B84F] transition-colors duration-150">
                       {song.number !== undefined && (
-                        <span className="font-cifra text-xs font-semibold text-slate-400 dark:text-slate-500 mr-1.5 tabular-nums">
+                        <span className="font-cifra text-xs font-semibold text-[#6B82A0] dark:text-[#829CBE] mr-1.5 tabular-nums">
                           #{String(song.number).padStart(2, '0')}
                         </span>
                       )}
                       {song.title}
                     </h2>
-                    <p className="mt-0.5 text-sm font-medium text-slate-700 dark:text-slate-300 truncate">
+                    <p className="mt-0.5 text-sm font-medium text-[#243B5A] dark:text-[#C4D5EB] truncate">
                       {song.artist}
                     </p>
-                    <div className="mt-0.5 flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 truncate">
+                    <div className="mt-0.5 flex items-center gap-1.5 text-xs text-[#526886] dark:text-[#9BB2CE] truncate">
                       {song.bpm && song.bpm > 0 ? (
                         <>
                           <span className="tabular-nums shrink-0">{song.bpm} BPM</span>
@@ -314,13 +314,13 @@ export function RepertoireView({
                 </button>
 
                 {/* Right Action Buttons (>= 44px touch targets) */}
-                <div className="flex items-center gap-1 pr-2.5 pl-1 border-l border-slate-100 dark:border-slate-800/80 shrink-0">
+                <div className="flex items-center gap-1 pr-2.5 pl-1 border-l border-[#E6EEF8] dark:border-[#1F3B68] shrink-0">
                   <button
                     type="button"
                     onClick={() => onEditSong(song)}
                     aria-label={`Editar ${song.title}`}
                     title={`Editar ${song.title}`}
-                    className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                    className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#6B82A0] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-white hover:bg-[#EAF1F8] dark:hover:bg-[#153463] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
                   >
                     <Pencil className="w-4 h-4" aria-hidden="true" />
                   </button>
@@ -335,10 +335,10 @@ export function RepertoireView({
                         : `Adicionar ${song.title} à lista do culto`
                     }
                     title={inPlaylist ? 'Na lista do culto' : 'Adicionar ao culto'}
-                    className={`min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                    className={`min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                       inPlaylist
-                        ? 'bg-emerald-600/10 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border border-emerald-600/30 dark:border-emerald-500/30 hover:bg-emerald-600/20'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-[#B85414] hover:text-white dark:hover:bg-amber-500 dark:hover:text-slate-950'
+                        ? 'bg-[#1668A3]/12 dark:bg-[#75C2F6]/20 text-[#1668A3] dark:text-[#75C2F6] border border-[#1668A3]/35 dark:border-[#75C2F6]/40 hover:bg-[#1668A3]/20'
+                        : 'bg-[#EDF4FB] dark:bg-[#0B1D3A] text-[#10284F] dark:text-[#F4F8FC] hover:bg-[#10284F] hover:text-white dark:hover:bg-[#E4B84F] dark:hover:text-[#0B1D3A]'
                     }`}
                   >
                     {inPlaylist ? (
@@ -358,7 +358,7 @@ export function RepertoireView({
               <button
                 type="button"
                 onClick={() => setVisibleLimit((prev) => prev + VISIBLE_BATCH)}
-                className="w-full sm:w-auto min-h-[48px] px-6 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-semibold text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                className="w-full sm:w-auto min-h-[48px] px-6 py-2.5 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#11264A] text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#EAF1F8] dark:hover:bg-[#153463] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
               >
                 Mostrar mais músicas ({displayedSongs.length} de {filteredSongs.length})
               </button>

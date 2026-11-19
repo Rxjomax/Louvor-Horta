@@ -258,15 +258,15 @@ export function PlaylistView({
       aria-labelledby="playlist-heading"
       className="max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-24 md:pb-12"
     >
-      <div className="pb-4 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+      <div className="pb-4 border-b border-[#D7E2F0] dark:border-[#1F3B68] flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
           <h1
             id="playlist-heading"
-            className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50"
+            className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0B1D3A] dark:text-[#F4F8FC]"
           >
             Culto do Dia
           </h1>
-          <p className="mt-1 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+          <p className="mt-1 text-sm sm:text-base text-[#465B78] dark:text-[#9BB2CE]">
             Organize a ordem do louvor, intercale pregação ou momentos entre músicas e partilhe ou transfira o PDF completo.
           </p>
         </div>
@@ -275,7 +275,7 @@ export function PlaylistView({
           <button
             type="button"
             onClick={() => onOpenSongFromPlaylist(resolvedSongs[0].song.id)}
-            className="min-h-[44px] px-4 py-2 rounded-lg bg-[#B85414] dark:bg-amber-500 text-white dark:text-slate-950 text-sm font-semibold inline-flex items-center justify-center gap-2 hover:opacity-95 transition-opacity duration-150 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-400"
+            className="min-h-[44px] px-4 py-2 rounded-lg bg-[#0B1D3A] hover:bg-[#153463] dark:bg-[#E4B84F] dark:hover:bg-[#EBC668] text-white dark:text-[#0B1D3A] text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors duration-150 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
           >
             <Play className="w-4 h-4 fill-current shrink-0" aria-hidden="true" />
             <span>Iniciar Culto (1ª Cifra)</span>
@@ -286,10 +286,10 @@ export function PlaylistView({
       {/* Asymmetric 2-Column Layout on Desktop; Title -> Setlist -> Generator -> WhatsApp on Mobile */}
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
         {/* Title Card */}
-        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 sm:p-5">
+        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1 rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-4 sm:p-5">
           <label
             htmlFor="playlist-title-input"
-            className="block text-sm font-semibold text-slate-900 dark:text-slate-100"
+            className="block text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]"
           >
             Título / Data do Culto
           </label>
@@ -299,16 +299,16 @@ export function PlaylistView({
             value={playlist.title}
             onChange={(e) => onUpdateTitle(e.target.value)}
             placeholder="Ex: Culto de Domingo - 18h30"
-            className="mt-2 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 text-base font-medium text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500 focus:border-transparent"
+            className="mt-2 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#081429] text-base font-medium text-[#0B1D3A] dark:text-[#F4F8FC] placeholder:text-[#6B82A1] dark:placeholder:text-[#7E98BA] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F] focus:border-transparent"
           />
         </div>
 
         {/* Ordered Worship Songs & Service Moments (Appears 2nd on Mobile, Right Column on Desktop) */}
         <div className="lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:row-span-3">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-            <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+            <h2 className="text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]">
               Ordem do Culto{' '}
-              <span className="text-slate-500 dark:text-slate-400 font-normal tabular-nums">
+              <span className="text-[#526886] dark:text-[#9BB2CE] font-normal tabular-nums">
                 ({resolvedSongs.length}{' '}
                 {resolvedSongs.length === 1 ? 'música' : 'músicas'}
                 {momentCount > 0
@@ -321,7 +321,7 @@ export function PlaylistView({
               <button
                 type="button"
                 onClick={() => handleAddMomentAt(playlist.items.length)}
-                className="min-h-[44px] px-3 py-1.5 rounded-lg border border-[#2F523E]/30 dark:border-emerald-700/60 bg-[#2F523E]/5 dark:bg-emerald-950/30 text-[#2F523E] dark:text-emerald-300 text-sm font-semibold inline-flex items-center gap-1.5 whitespace-nowrap hover:bg-[#2F523E]/10 dark:hover:bg-emerald-950/50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] dark:focus-visible:ring-emerald-400"
+                className="min-h-[44px] px-3 py-1.5 rounded-lg border border-[#1668A3]/30 dark:border-[#75C2F6]/40 bg-[#EBF5FE] dark:bg-[#13345D] text-[#1668A3] dark:text-[#75C2F6] text-sm font-semibold inline-flex items-center gap-1.5 whitespace-nowrap hover:bg-[#DCEEFF] dark:hover:bg-[#1A4375] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6]"
               >
                 <Plus className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>Espaço / Momento</span>
@@ -331,7 +331,7 @@ export function PlaylistView({
                 <button
                   type="button"
                   onClick={onClearPlaylist}
-                  className="min-h-[44px] px-3 text-sm font-medium text-slate-500 hover:text-rose-600 dark:text-slate-400 dark:hover:text-rose-400 transition-colors duration-150 rounded-lg whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
+                  className="min-h-[44px] px-3 text-sm font-medium text-[#526886] hover:text-rose-600 dark:text-[#9BB2CE] dark:hover:text-rose-400 transition-colors duration-150 rounded-lg whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
                 >
                   Limpar lista
                 </button>
@@ -340,29 +340,29 @@ export function PlaylistView({
           </div>
 
           {resolvedEntries.length === 0 ? (
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-8 text-center">
+            <div className="rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-8 text-center">
               <ListMusic
-                className="w-8 h-8 mx-auto text-slate-400 dark:text-slate-500"
+                className="w-8 h-8 mx-auto text-[#6B82A1] dark:text-[#7E98BA]"
                 aria-hidden="true"
               />
-              <p className="mt-3 text-base font-semibold text-slate-900 dark:text-slate-100">
+              <p className="mt-3 text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]">
                 Nenhuma música na lista deste culto
               </p>
-              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-sm mx-auto">
+              <p className="mt-1 text-sm text-[#465B78] dark:text-[#9BB2CE] max-w-sm mx-auto">
                 Adicione músicas através do botão + no Repertório, gere uma lista aleatória ou crie espaços para pregação e oração.
               </p>
               <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
                 <button
                   type="button"
                   onClick={onGoToRepertoire}
-                  className="min-h-[44px] px-5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 whitespace-nowrap"
+                  className="min-h-[44px] px-5 py-2.5 rounded-lg border border-[#C3D3E8] dark:border-[#294B7F] text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#EEF4FB] dark:hover:bg-[#16315D] transition-colors duration-150 whitespace-nowrap"
                 >
                   Explorar Repertório
                 </button>
                 <button
                   type="button"
                   onClick={() => handleAddMomentAt(0, 'Oração Inicial')}
-                  className="min-h-[44px] px-4 py-2.5 rounded-lg border border-[#2F523E]/30 dark:border-emerald-700/60 bg-[#2F523E]/5 dark:bg-emerald-950/30 text-sm font-semibold text-[#2F523E] dark:text-emerald-300 hover:bg-[#2F523E]/10 dark:hover:bg-emerald-950/50 transition-colors duration-150 whitespace-nowrap inline-flex items-center gap-1.5"
+                  className="min-h-[44px] px-4 py-2.5 rounded-lg border border-[#1668A3]/30 dark:border-[#75C2F6]/40 bg-[#EBF5FE] dark:bg-[#13345D] text-sm font-semibold text-[#1668A3] dark:text-[#75C2F6] hover:bg-[#DCEEFF] dark:hover:bg-[#1A4375] transition-colors duration-150 whitespace-nowrap inline-flex items-center gap-1.5"
                 >
                   <Plus className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Adicionar Espaço</span>
@@ -372,7 +372,7 @@ export function PlaylistView({
           ) : (
             <ol
               aria-label="Ordem do culto com músicas e momentos"
-              className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 overflow-hidden"
+              className="rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] overflow-hidden"
             >
               {resolvedEntries.map((entry, resolvedIdx) => {
                 const isFirst = resolvedIdx === 0;
@@ -386,10 +386,10 @@ export function PlaylistView({
                   return (
                     <li
                       key={entry.id}
-                      className="border-b border-slate-200 dark:border-slate-800 last:border-b-0 bg-[#2F523E]/[0.04] dark:bg-emerald-950/20 p-3.5 sm:p-4"
+                      className="border-b border-[#D7E2F0] dark:border-[#1F3B68] last:border-b-0 bg-[#EBF5FE]/70 dark:bg-[#13345D]/45 p-3.5 sm:p-4"
                     >
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-xs font-semibold tracking-wide text-[#2F523E] dark:text-emerald-300 uppercase">
+                        <span className="text-xs font-semibold tracking-wide text-[#1668A3] dark:text-[#75C2F6] uppercase">
                           Espaço / Momento no Culto
                         </span>
 
@@ -399,7 +399,7 @@ export function PlaylistView({
                             onClick={() => onMoveItem(entry.originalIndex, 'up')}
                             disabled={isFirst}
                             aria-label="Mover momento para cima"
-                            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-white/80 dark:hover:bg-slate-800 disabled:opacity-30 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] dark:focus-visible:ring-emerald-400"
+                            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#526886] hover:text-[#0B1D3A] dark:text-[#9BB2CE] dark:hover:text-white hover:bg-white/80 dark:hover:bg-[#16315D] disabled:opacity-30 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6]"
                           >
                             <ArrowUp className="w-4 h-4" aria-hidden="true" />
                           </button>
@@ -409,7 +409,7 @@ export function PlaylistView({
                             onClick={() => onMoveItem(entry.originalIndex, 'down')}
                             disabled={isLast}
                             aria-label="Mover momento para baixo"
-                            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-white/80 dark:hover:bg-slate-800 disabled:opacity-30 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] dark:focus-visible:ring-emerald-400"
+                            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#526886] hover:text-[#0B1D3A] dark:text-[#9BB2CE] dark:hover:text-white hover:bg-white/80 dark:hover:bg-[#16315D] disabled:opacity-30 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6]"
                           >
                             <ArrowDown className="w-4 h-4" aria-hidden="true" />
                           </button>
@@ -418,7 +418,7 @@ export function PlaylistView({
                             type="button"
                             onClick={() => onRemoveItemAt(entry.originalIndex)}
                             aria-label="Remover espaço da ordem do culto"
-                            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-rose-600 dark:text-slate-500 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
+                            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#6B82A1] hover:text-rose-600 dark:text-[#7E98BA] dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
                           >
                             <Trash2 className="w-4 h-4" aria-hidden="true" />
                           </button>
@@ -442,7 +442,7 @@ export function PlaylistView({
                               onUpdateMoment(entry.id, { title: e.target.value })
                             }
                             placeholder="O que acontece aqui? (Ex: Pregação, Oração, Ceia...)"
-                            className="w-full min-h-[44px] px-3 py-2 rounded-xl border border-[#2F523E]/25 dark:border-emerald-800/70 bg-white dark:bg-slate-950/80 text-base font-semibold text-slate-900 dark:text-slate-100 placeholder:font-normal placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2F523E] dark:focus:ring-emerald-400 focus:border-transparent"
+                            className="w-full min-h-[44px] px-3 py-2 rounded-xl border border-[#1668A3]/30 dark:border-[#75C2F6]/35 bg-white dark:bg-[#081429] text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] placeholder:font-normal placeholder:text-[#6B82A1] dark:placeholder:text-[#7E98BA] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#75C2F6] focus:border-transparent"
                           />
                         </div>
 
@@ -459,7 +459,7 @@ export function PlaylistView({
                                 onClick={() =>
                                   onUpdateMoment(entry.id, { title: suggestion })
                                 }
-                                className="min-h-[44px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-200 hover:border-[#2F523E] hover:text-[#2F523E] dark:hover:border-emerald-500 dark:hover:text-emerald-300 transition-colors"
+                                className="min-h-[44px] px-3 py-1.5 rounded-lg border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#0B1D3A] text-xs font-medium text-[#2A3F5F] dark:text-[#DCE8F6] hover:border-[#1668A3] hover:text-[#1668A3] dark:hover:border-[#75C2F6] dark:hover:text-[#75C2F6] transition-colors"
                               >
                                 {suggestion}
                               </button>
@@ -483,7 +483,7 @@ export function PlaylistView({
                               onUpdateMoment(entry.id, { note: e.target.value })
                             }
                             placeholder="Detalhes opcionais que também aparecerão no PDF (ex: Pr. João · Salmos 23, leitura, avisos...)"
-                            className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-950/60 text-base sm:text-sm text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2F523E] dark:focus:ring-emerald-400 focus:border-transparent resize-y"
+                            className="w-full px-3 py-2 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white/95 dark:bg-[#081429] text-base sm:text-sm text-[#1E3352] dark:text-[#DCE8F6] placeholder:text-[#6B82A1] dark:placeholder:text-[#7E98BA] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#75C2F6] focus:border-transparent resize-y"
                           />
                         </div>
                       </div>
@@ -494,11 +494,11 @@ export function PlaylistView({
                 return (
                   <li
                     key={`${entry.song.id}-${entry.originalIndex}`}
-                    className="border-b border-slate-200 dark:border-slate-800 last:border-b-0"
+                    className="border-b border-[#D7E2F0] dark:border-[#1F3B68] last:border-b-0"
                   >
-                    <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors duration-150">
+                    <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 hover:bg-[#F4F8FC] dark:hover:bg-[#16315D]/50 transition-colors duration-150">
                       {/* Order Index */}
-                      <span className="w-7 text-center font-cifra text-sm font-bold text-slate-400 dark:text-slate-500 tabular-nums shrink-0">
+                      <span className="w-7 text-center font-cifra text-sm font-bold text-[#1668A3] dark:text-[#75C2F6] tabular-nums shrink-0">
                         {String(entry.songOrder).padStart(2, '0')}
                       </span>
 
@@ -506,13 +506,13 @@ export function PlaylistView({
                       <button
                         type="button"
                         onClick={() => onOpenSongFromPlaylist(entry.song.id)}
-                        className="flex-1 min-w-0 text-left py-1 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                        className="flex-1 min-w-0 text-left py-1 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
                       >
-                        <div className="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-50 truncate">
+                        <div className="text-sm sm:text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] truncate">
                           {entry.song.title}
                         </div>
-                        <div className="mt-1 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-slate-600 dark:text-slate-400">
-                          <span className="font-cifra text-[11px] font-bold px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[#B85414] dark:text-amber-400 border border-slate-200 dark:border-slate-700 shrink-0">
+                        <div className="mt-1 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-[#465B78] dark:text-[#9BB2CE]">
+                          <span className="font-cifra text-[11px] font-bold px-1.5 py-0.5 rounded bg-[#FBF4DF] dark:bg-[#E4B84F]/15 text-[#8F620B] dark:text-[#E4B84F] border border-[#E4B84F]/40 dark:border-[#E4B84F]/30 shrink-0">
                             {entry.activeKey === '—' ? 'Letra' : `Tom ${entry.activeKey}`}
                           </span>
                           <span className="truncate max-w-[140px] sm:max-w-none">{entry.song.artist}</span>
@@ -522,10 +522,10 @@ export function PlaylistView({
                               <span
                                 className={`font-semibold shrink-0 ${
                                   entry.cifraStyle === 'simplified'
-                                    ? 'text-[#2F523E] dark:text-emerald-400'
+                                    ? 'text-[#1668A3] dark:text-[#75C2F6]'
                                     : entry.cifraStyle === 'capo'
-                                      ? 'text-[#B85414] dark:text-amber-400'
-                                      : 'text-slate-500 dark:text-slate-400'
+                                      ? 'text-[#8F620B] dark:text-[#E4B84F]'
+                                      : 'text-[#526886] dark:text-[#9BB2CE]'
                                 }`}
                               >
                                 {entry.styleShortLabel}
@@ -535,7 +535,7 @@ export function PlaylistView({
                           {entry.transposeOffset !== 0 && (
                             <>
                               <span aria-hidden="true">·</span>
-                              <span className="font-cifra text-xs text-[#B85414] dark:text-amber-400 shrink-0">
+                              <span className="font-cifra text-xs text-[#8F620B] dark:text-[#E4B84F] shrink-0">
                                 {entry.transposeOffset > 0
                                   ? `+${entry.transposeOffset}`
                                   : entry.transposeOffset}{' '}
@@ -553,7 +553,7 @@ export function PlaylistView({
                           onClick={() => onMoveItem(entry.originalIndex, 'up')}
                           disabled={isFirst}
                           aria-label={`Mover ${entry.song.title} para cima`}
-                          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#526886] hover:text-[#0B1D3A] dark:text-[#9BB2CE] dark:hover:text-white hover:bg-[#EEF4FB] dark:hover:bg-[#16315D] disabled:opacity-30 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
                         >
                           <ArrowUp className="w-4 h-4" aria-hidden="true" />
                         </button>
@@ -563,7 +563,7 @@ export function PlaylistView({
                           onClick={() => onMoveItem(entry.originalIndex, 'down')}
                           disabled={isLast}
                           aria-label={`Mover ${entry.song.title} para baixo`}
-                          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#526886] hover:text-[#0B1D3A] dark:text-[#9BB2CE] dark:hover:text-white hover:bg-[#EEF4FB] dark:hover:bg-[#16315D] disabled:opacity-30 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
                         >
                           <ArrowDown className="w-4 h-4" aria-hidden="true" />
                         </button>
@@ -572,7 +572,7 @@ export function PlaylistView({
                           type="button"
                           onClick={() => onRemoveItemAt(entry.originalIndex)}
                           aria-label={`Remover ${entry.song.title} da playlist`}
-                          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-rose-600 dark:text-slate-500 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
+                          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#6B82A1] hover:text-rose-600 dark:text-[#7E98BA] dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
                         >
                           <Trash2 className="w-4 h-4" aria-hidden="true" />
                         </button>
@@ -585,16 +585,16 @@ export function PlaylistView({
                         <div
                           role="group"
                           aria-label={`Versão da cifra para ${entry.song.title}`}
-                          className="grid grid-cols-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 p-0.5 gap-0.5 sm:max-w-xs w-full"
+                          className="grid grid-cols-3 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#081429] p-0.5 gap-0.5 sm:max-w-xs w-full"
                         >
                           <button
                             type="button"
                             onClick={() => onUpdateSongCifra(entry.originalIndex, 'original')}
                             aria-pressed={entry.cifraStyle === 'original'}
-                            className={`min-h-[44px] px-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] ${
+                            className={`min-h-[44px] px-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                               entry.cifraStyle === 'original'
-                                ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
-                                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                                ? 'bg-[#0B1D3A] dark:bg-[#F4F8FC] text-white dark:text-[#0B1D3A]'
+                                : 'text-[#465B78] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-[#F4F8FC]'
                             }`}
                           >
                             Completa
@@ -603,10 +603,10 @@ export function PlaylistView({
                             type="button"
                             onClick={() => onUpdateSongCifra(entry.originalIndex, 'simplified')}
                             aria-pressed={entry.cifraStyle === 'simplified'}
-                            className={`min-h-[44px] px-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] ${
+                            className={`min-h-[44px] px-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6] ${
                               entry.cifraStyle === 'simplified'
-                                ? 'bg-[#2F523E] text-white'
-                                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                                ? 'bg-[#1668A3] dark:bg-[#75C2F6] text-white dark:text-[#0B1D3A]'
+                                : 'text-[#465B78] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-[#F4F8FC]'
                             }`}
                           >
                             Simplificada
@@ -625,10 +625,10 @@ export function PlaylistView({
                               onUpdateSongCifra(entry.originalIndex, 'capo', recommended);
                             }}
                             aria-pressed={entry.cifraStyle === 'capo'}
-                            className={`min-h-[44px] px-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] ${
+                            className={`min-h-[44px] px-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F620B] dark:focus-visible:ring-[#E4B84F] ${
                               entry.cifraStyle === 'capo'
-                                ? 'bg-[#B85414] text-white'
-                                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                                ? 'bg-[#8F620B] dark:bg-[#E4B84F] text-white dark:text-[#0B1D3A]'
+                                : 'text-[#465B78] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-[#F4F8FC]'
                             }`}
                           >
                             Capo
@@ -640,7 +640,7 @@ export function PlaylistView({
                             <div
                               role="group"
                               aria-label={`Casa do capotraste para ${entry.song.title}`}
-                              className="inline-flex items-center rounded-xl border border-[#B85414]/35 dark:border-amber-500/40 bg-[#B85414]/5 dark:bg-amber-950/30"
+                              className="inline-flex items-center rounded-xl border border-[#E4B84F]/50 dark:border-[#E4B84F]/40 bg-[#FBF4DF] dark:bg-[#E4B84F]/15"
                             >
                               <button
                                 type="button"
@@ -653,11 +653,11 @@ export function PlaylistView({
                                 }
                                 disabled={entry.capoFret <= 1}
                                 aria-label="Diminuir casa do capotraste"
-                                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-l-xl text-[#B85414] dark:text-amber-400 hover:bg-[#B85414]/10 disabled:opacity-35 transition-colors"
+                                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-l-xl text-[#8F620B] dark:text-[#E4B84F] hover:bg-[#E4B84F]/20 disabled:opacity-35 transition-colors"
                               >
                                 <Minus className="w-3.5 h-3.5" aria-hidden="true" />
                               </button>
-                              <span className="px-2 font-cifra text-xs font-bold text-[#B85414] dark:text-amber-300 whitespace-nowrap tabular-nums">
+                              <span className="px-2 font-cifra text-xs font-bold text-[#8F620B] dark:text-[#E4B84F] whitespace-nowrap tabular-nums">
                                 {entry.capoFret}ª casa · em {entry.fingeredKey}
                               </span>
                               <button
@@ -671,7 +671,7 @@ export function PlaylistView({
                                 }
                                 disabled={entry.capoFret >= 9}
                                 aria-label="Aumentar casa do capotraste"
-                                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-r-xl text-[#B85414] dark:text-amber-400 hover:bg-[#B85414]/10 disabled:opacity-35 transition-colors"
+                                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-r-xl text-[#8F620B] dark:text-[#E4B84F] hover:bg-[#E4B84F]/20 disabled:opacity-35 transition-colors"
                               >
                                 <Plus className="w-3.5 h-3.5" aria-hidden="true" />
                               </button>
@@ -683,16 +683,16 @@ export function PlaylistView({
 
                     {showInsertBetween && (
                       <div className="px-3 sm:px-4 pb-1 -mt-1 flex items-center gap-2">
-                        <div className="h-px flex-1 border-t border-dashed border-slate-200 dark:border-slate-800" />
+                        <div className="h-px flex-1 border-t border-dashed border-[#D7E2F0] dark:border-[#1F3B68]" />
                         <button
                           type="button"
                           onClick={() => handleAddMomentAt(entry.originalIndex + 1)}
-                          className="min-h-[44px] px-3 py-1.5 rounded-md text-xs font-medium text-slate-500 hover:text-[#2F523E] dark:text-slate-400 dark:hover:text-emerald-300 hover:bg-[#2F523E]/5 dark:hover:bg-emerald-950/30 inline-flex items-center gap-1 whitespace-nowrap transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] dark:focus-visible:ring-emerald-400"
+                          className="min-h-[44px] px-3 py-1.5 rounded-md text-xs font-medium text-[#526886] hover:text-[#1668A3] dark:text-[#9BB2CE] dark:hover:text-[#75C2F6] hover:bg-[#EBF5FE] dark:hover:bg-[#13345D]/60 inline-flex items-center gap-1 whitespace-nowrap transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6]"
                         >
                           <Plus className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                           <span>Inserir espaço entre músicas</span>
                         </button>
-                        <div className="h-px flex-1 border-t border-dashed border-slate-200 dark:border-slate-800" />
+                        <div className="h-px flex-1 border-t border-dashed border-[#D7E2F0] dark:border-[#1F3B68]" />
                       </div>
                     )}
                   </li>
@@ -703,32 +703,32 @@ export function PlaylistView({
         </div>
 
         {/* Magic Setlist Generator */}
-        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 sm:p-5">
-          <h2 className="text-base font-semibold text-slate-900 dark:text-slate-50">
+        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2 rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-4 sm:p-5">
+          <h2 className="text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]">
             Gerar Lista Aleatória
           </h2>
-          <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p className="mt-1 text-sm text-[#465B78] dark:text-[#9BB2CE] leading-relaxed">
             Combina músicas de celebração, adoração e hinos do seu repertório sem repetir faixas.
           </p>
 
           <div className="mt-4 flex items-center justify-between gap-3">
             <label
               htmlFor="random-setlist-count"
-              className="text-sm font-medium text-slate-700 dark:text-slate-300"
+              className="text-sm font-medium text-[#2A3F5F] dark:text-[#DCE8F6]"
             >
               Quantidade:
             </label>
             <div
               role="group"
               aria-label="Quantidade de músicas na lista aleatória"
-              className="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80"
+              className="inline-flex items-center gap-1 p-1 rounded-xl bg-[#F4F8FC] dark:bg-[#081429] border border-[#D7E2F0] dark:border-[#1F3B68]"
             >
               <button
                 type="button"
                 onClick={() => stepRandomCount(-1)}
                 disabled={songs.length === 0 || effectiveRandomCount <= 1}
                 aria-label="Diminuir quantidade de músicas"
-                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-900 disabled:opacity-35 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#0B1D3A] dark:text-[#DCE8F6] hover:bg-white dark:hover:bg-[#16315D] disabled:opacity-35 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
               >
                 <Minus className="w-4 h-4" aria-hidden="true" />
               </button>
@@ -752,7 +752,7 @@ export function PlaylistView({
                   }
                 }}
                 disabled={songs.length === 0}
-                className="min-h-[44px] w-14 px-2 text-center rounded-lg bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 text-base font-semibold tabular-nums text-[#B85414] dark:text-amber-400 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500"
+                className="min-h-[44px] w-14 px-2 text-center rounded-lg bg-white dark:bg-[#11264A] border border-[#D7E2F0] dark:border-[#1F3B68] text-base font-semibold tabular-nums text-[#8F620B] dark:text-[#E4B84F] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               />
 
               <button
@@ -760,7 +760,7 @@ export function PlaylistView({
                 onClick={() => stepRandomCount(1)}
                 disabled={songs.length === 0 || effectiveRandomCount >= maxRandomCount}
                 aria-label="Aumentar quantidade de músicas"
-                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-900 disabled:opacity-35 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-[#0B1D3A] dark:text-[#DCE8F6] hover:bg-white dark:hover:bg-[#16315D] disabled:opacity-35 disabled:pointer-events-none transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
               >
                 <Plus className="w-4 h-4" aria-hidden="true" />
               </button>
@@ -771,7 +771,7 @@ export function PlaylistView({
             type="button"
             onClick={() => onGenerateRandom(effectiveRandomCount)}
             disabled={songs.length === 0}
-            className="mt-4 w-full min-h-[48px] px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 border border-slate-900 dark:border-amber-500/50 text-white dark:text-amber-400 text-sm font-semibold inline-flex items-center justify-center gap-2 hover:bg-slate-800 dark:hover:bg-slate-700 disabled:opacity-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-400"
+            className="mt-4 w-full min-h-[48px] px-4 py-2.5 rounded-xl bg-[#0B1D3A] hover:bg-[#153463] dark:bg-[#16315D] dark:hover:bg-[#1E3F75] border border-[#0B1D3A] dark:border-[#E4B84F]/50 text-white dark:text-[#E4B84F] text-sm font-semibold inline-flex items-center justify-center gap-2 disabled:opacity-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
           >
             <Shuffle className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span>
@@ -782,16 +782,16 @@ export function PlaylistView({
         </div>
 
         {/* WhatsApp Share & PDF Export Box */}
-        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 sm:p-5">
-          <h2 className="text-base font-semibold text-slate-900 dark:text-slate-50">
+        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-3 rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-4 sm:p-5">
+          <h2 className="text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]">
             Partilhar Lista no WhatsApp
           </h2>
-          <p className="mt-1 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+          <p className="mt-1 text-xs sm:text-sm text-[#526886] dark:text-[#9BB2CE]">
             Envie a ordem do culto no WhatsApp ou guarde em PDF para imprimir e partilhar o ficheiro.
           </p>
           <pre
             aria-label="Pré-visualização da mensagem para o WhatsApp"
-            className="mt-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-cifra text-slate-700 dark:text-slate-300 whitespace-pre-wrap break-words leading-relaxed"
+            className="mt-3 p-3 rounded-xl bg-[#F4F8FC] dark:bg-[#081429] border border-[#D7E2F0] dark:border-[#1F3B68] text-xs sm:text-sm font-cifra text-[#2A3F5F] dark:text-[#DCE8F6] whitespace-pre-wrap break-words leading-relaxed"
           >
             {whatsAppMessage}
           </pre>
@@ -801,11 +801,11 @@ export function PlaylistView({
               type="button"
               onClick={handleCopyWhatsApp}
               disabled={resolvedEntries.length === 0}
-              className="min-h-[46px] px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+              className="min-h-[46px] px-4 py-2 rounded-xl border border-[#C3D3E8] dark:border-[#294B7F] bg-white dark:bg-[#16315D] text-[#0B1D3A] dark:text-[#F4F8FC] text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-[#EEF4FB] dark:hover:bg-[#1E3F75] disabled:opacity-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
             >
               {copied ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                  <Check className="w-4 h-4 text-[#1668A3] dark:text-[#75C2F6] shrink-0" aria-hidden="true" />
                   <span>Copiado!</span>
                 </>
               ) : (
@@ -824,10 +824,10 @@ export function PlaylistView({
               onClick={(e) => {
                 if (resolvedEntries.length === 0) e.preventDefault();
               }}
-              className={`min-h-[46px] px-4 py-2 rounded-xl text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 ${
+              className={`min-h-[46px] px-4 py-2 rounded-xl text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6] ${
                 resolvedEntries.length === 0
-                  ? 'bg-emerald-600/40 text-white/70 pointer-events-none'
-                  : 'bg-emerald-700 hover:bg-emerald-800 text-white'
+                  ? 'bg-[#1668A3]/40 text-white/70 pointer-events-none'
+                  : 'bg-[#1668A3] hover:bg-[#125486] dark:bg-[#75C2F6] dark:hover:bg-[#8ECDFA] text-white dark:text-[#0B1D3A]'
               }`}
             >
               <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -838,11 +838,11 @@ export function PlaylistView({
               type="button"
               onClick={() => handleDownloadPlaylistPdf(false)}
               disabled={resolvedEntries.length === 0}
-              className="min-h-[46px] px-4 py-2 rounded-xl border border-[#2F523E]/30 dark:border-emerald-700/60 bg-[#2F523E]/5 dark:bg-emerald-950/30 text-[#2F523E] dark:text-emerald-300 text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-[#2F523E]/10 dark:hover:bg-emerald-950/50 disabled:opacity-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] dark:focus-visible:ring-emerald-400"
+              className="min-h-[46px] px-4 py-2 rounded-xl border border-[#1668A3]/30 dark:border-[#75C2F6]/40 bg-[#EBF5FE] dark:bg-[#13345D] text-[#1668A3] dark:text-[#75C2F6] text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-[#DCEEFF] dark:hover:bg-[#1A4375] disabled:opacity-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6]"
             >
               {pdfSavedMode === 'list' ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                  <Check className="w-4 h-4 text-[#1668A3] dark:text-[#75C2F6] shrink-0" aria-hidden="true" />
                   <span>PDF Guardado!</span>
                 </>
               ) : (
@@ -857,11 +857,11 @@ export function PlaylistView({
               type="button"
               onClick={() => handleDownloadPlaylistPdf(true)}
               disabled={resolvedEntries.length === 0}
-              className="min-h-[46px] px-4 py-2 rounded-xl border border-[#B85414]/35 dark:border-amber-500/40 bg-[#B85414]/5 dark:bg-amber-950/30 text-[#B85414] dark:text-amber-300 text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-[#B85414]/10 dark:hover:bg-amber-950/50 disabled:opacity-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-400"
+              className="min-h-[46px] px-4 py-2 rounded-xl border border-[#E4B84F]/50 dark:border-[#E4B84F]/40 bg-[#FBF4DF] dark:bg-[#E4B84F]/15 text-[#8F620B] dark:text-[#E4B84F] text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-[#F5E7BC] dark:hover:bg-[#E4B84F]/25 disabled:opacity-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F620B] dark:focus-visible:ring-[#E4B84F]"
             >
               {pdfSavedMode === 'chords' ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                  <Check className="w-4 h-4 text-[#8F620B] dark:text-[#E4B84F] shrink-0" aria-hidden="true" />
                   <span>PDF Transferido!</span>
                 </>
               ) : (

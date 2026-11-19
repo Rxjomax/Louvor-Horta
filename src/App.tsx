@@ -795,7 +795,7 @@ export default function App() {
   ).length;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0F172A] text-slate-900 dark:text-slate-50 transition-colors duration-150">
+    <div className="min-h-screen bg-[#F4F8FC] dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] transition-colors duration-150">
       <Header
         activeTab={activeTab}
         onSelectTab={handleSelectTab}

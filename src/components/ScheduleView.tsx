@@ -368,15 +368,15 @@ export function ScheduleView({
       className="max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-24 md:pb-12"
     >
       {/* Top Header */}
-      <div className="pb-4 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+      <div className="pb-4 border-b border-[#D7E2F0] dark:border-[#1F3B68] flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
           <h1
             id="schedule-heading"
-            className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50"
+            className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0B1D3A] dark:text-[#F4F8FC]"
           >
             Escala do Louvor
           </h1>
-          <p className="mt-1 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+          <p className="mt-1 text-sm sm:text-base text-[#465B78] dark:text-[#9BB2CE]">
             Organize quem participa em cada data, passagem, tema e função no grupo de louvor.
           </p>
         </div>
@@ -386,10 +386,10 @@ export function ScheduleView({
             type="button"
             onClick={() => setShowManagePanel((prev) => !prev)}
             aria-expanded={showManagePanel}
-            className={`min-h-[44px] px-3.5 py-2 rounded-lg border text-sm font-semibold inline-flex items-center gap-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+            className={`min-h-[44px] px-3.5 py-2 rounded-lg border text-sm font-semibold inline-flex items-center gap-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
               showManagePanel
-                ? 'border-[#386641] bg-[#386641] text-white dark:border-emerald-500 dark:bg-emerald-600'
-                : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700'
+                ? 'border-[#1668A3] bg-[#1668A3] text-white dark:border-[#75C2F6] dark:bg-[#75C2F6] dark:text-[#0B1D3A]'
+                : 'border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#11264A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#EAF1F8] dark:hover:bg-[#153463]'
             }`}
           >
             <Settings2 className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -399,7 +399,7 @@ export function ScheduleView({
           <button
             type="button"
             onClick={handleAddEntry}
-            className="min-h-[44px] px-4 py-2 rounded-lg bg-[#386641] hover:bg-[#2d5334] dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-sm font-semibold inline-flex items-center gap-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#386641] dark:focus-visible:ring-amber-400"
+            className="min-h-[44px] px-4 py-2 rounded-lg bg-[#10284F] hover:bg-[#183A6E] dark:bg-[#E4B84F] dark:hover:bg-[#EBC467] text-white dark:text-[#0B1D3A] text-sm font-semibold inline-flex items-center gap-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
           >
             <Plus className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span>Nova Data</span>
@@ -409,14 +409,14 @@ export function ScheduleView({
 
       {/* Expandable Team Members & Roles/Locations Configuration Panel */}
       {showManagePanel && (
-        <div className="mt-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-4 sm:p-5 grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="mt-4 rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-4 sm:p-5 grid grid-cols-1 md:grid-cols-3 gap-5">
           {/* Team Members */}
           <div>
-            <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
-              <Users className="w-4 h-4 text-[#386641] dark:text-amber-400" aria-hidden="true" />
+            <h2 className="text-sm font-bold text-[#0B1D3A] dark:text-[#F4F8FC] flex items-center gap-1.5">
+              <Users className="w-4 h-4 text-[#1668A3] dark:text-[#E4B84F]" aria-hidden="true" />
               <span>Elementos do Grupo ({schedule.members.length})</span>
             </h2>
-            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+            <p className="mt-0.5 text-xs text-[#526886] dark:text-[#9BB2CE]">
               Nomes disponíveis para seleção rápida na escala.
             </p>
 
@@ -427,11 +427,11 @@ export function ScheduleView({
                 onChange={(e) => setNewMemberName(e.target.value)}
                 placeholder="Ex: Lucas, Ana..."
                 aria-label="Nome do novo elemento"
-                className="flex-1 min-w-0 min-h-[44px] px-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
+                className="flex-1 min-w-0 min-h-[44px] px-3 rounded-lg border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-sm text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               />
               <button
                 type="submit"
-                className="min-h-[44px] px-3 rounded-lg bg-slate-900 dark:bg-slate-800 text-white text-xs font-semibold inline-flex items-center gap-1 hover:bg-slate-800 shrink-0"
+                className="min-h-[44px] px-3 rounded-lg bg-[#10284F] dark:bg-[#1B3C71] text-white text-xs font-semibold inline-flex items-center gap-1 hover:bg-[#183A6E] shrink-0"
               >
                 <UserPlus className="w-4 h-4" aria-hidden="true" />
                 <span>Adicionar</span>
@@ -442,14 +442,14 @@ export function ScheduleView({
               {schedule.members.map((member) => (
                 <span
                   key={member}
-                  className="inline-flex items-center gap-1 pl-2.5 pr-1 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700"
+                  className="inline-flex items-center gap-1 pl-2.5 pr-1 py-1 rounded-lg bg-[#EDF4FB] dark:bg-[#0B1D3A] text-xs font-semibold text-[#10284F] dark:text-[#F4F8FC] border border-[#D7E2F0] dark:border-[#284A7F]"
                 >
                   <span>{member}</span>
                   <button
                     type="button"
                     onClick={() => handleRemoveMember(member)}
                     aria-label={`Remover elemento ${member}`}
-                    className="w-6 h-6 inline-flex items-center justify-center rounded hover:bg-rose-100 dark:hover:bg-rose-950/60 text-slate-400 hover:text-rose-600 dark:hover:text-rose-400"
+                    className="w-6 h-6 inline-flex items-center justify-center rounded hover:bg-rose-100 dark:hover:bg-rose-950/60 text-[#6B82A0] hover:text-rose-600 dark:hover:text-rose-400"
                   >
                     <X className="w-3.5 h-3.5" aria-hidden="true" />
                   </button>
@@ -460,11 +460,11 @@ export function ScheduleView({
 
           {/* Roles / Instrument Locations */}
           <div>
-            <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
-              <Settings2 className="w-4 h-4 text-[#386641] dark:text-amber-400" aria-hidden="true" />
+            <h2 className="text-sm font-bold text-[#0B1D3A] dark:text-[#F4F8FC] flex items-center gap-1.5">
+              <Settings2 className="w-4 h-4 text-[#1668A3] dark:text-[#E4B84F]" aria-hidden="true" />
               <span>Locais / Funções ({schedule.roles.length})</span>
             </h2>
-            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+            <p className="mt-0.5 text-xs text-[#526886] dark:text-[#9BB2CE]">
               Colunas da escala (ex: Ordem de Culto, Voz, Guitarra, Teclado, Som).
             </p>
 
@@ -475,11 +475,11 @@ export function ScheduleView({
                 onChange={(e) => setNewRoleLabel(e.target.value)}
                 placeholder="Ex: Teclado, Baixo, Som..."
                 aria-label="Nome da nova função ou instrumento"
-                className="flex-1 min-w-0 min-h-[44px] px-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
+                className="flex-1 min-w-0 min-h-[44px] px-3 rounded-lg border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-sm text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               />
               <button
                 type="submit"
-                className="min-h-[44px] px-3 rounded-lg bg-slate-900 dark:bg-slate-800 text-white text-xs font-semibold inline-flex items-center gap-1 hover:bg-slate-800 shrink-0"
+                className="min-h-[44px] px-3 rounded-lg bg-[#10284F] dark:bg-[#1B3C71] text-white text-xs font-semibold inline-flex items-center gap-1 hover:bg-[#183A6E] shrink-0"
               >
                 <Plus className="w-4 h-4" aria-hidden="true" />
                 <span>Criar</span>
@@ -490,7 +490,7 @@ export function ScheduleView({
               {schedule.roles.map((role) => (
                 <span
                   key={role.id}
-                  className="inline-flex items-center gap-1 pl-2.5 pr-1 py-1 rounded-lg bg-emerald-50 dark:bg-slate-800 text-xs font-semibold text-[#2d5334] dark:text-emerald-300 border border-emerald-200 dark:border-slate-700"
+                  className="inline-flex items-center gap-1 pl-2.5 pr-1 py-1 rounded-lg bg-[#EAF4FC] dark:bg-[#0B1D3A] text-xs font-semibold text-[#1668A3] dark:text-[#75C2F6] border border-[#BBD9F0] dark:border-[#284A7F]"
                 >
                   <span>{role.label}</span>
                   {schedule.roles.length > 1 && (
@@ -498,7 +498,7 @@ export function ScheduleView({
                       type="button"
                       onClick={() => handleRemoveRole(role.id)}
                       aria-label={`Remover coluna ${role.label}`}
-                      className="w-6 h-6 inline-flex items-center justify-center rounded hover:bg-rose-100 dark:hover:bg-rose-950/60 text-slate-400 hover:text-rose-600 dark:hover:text-rose-400"
+                      className="w-6 h-6 inline-flex items-center justify-center rounded hover:bg-rose-100 dark:hover:bg-rose-950/60 text-[#6B82A0] hover:text-rose-600 dark:hover:text-rose-400"
                     >
                       <X className="w-3.5 h-3.5" aria-hidden="true" />
                     </button>
@@ -510,11 +510,11 @@ export function ScheduleView({
 
           {/* Quick Month Sundays Generator */}
           <div>
-            <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
-              <CalendarPlus className="w-4 h-4 text-[#386641] dark:text-amber-400" aria-hidden="true" />
+            <h2 className="text-sm font-bold text-[#0B1D3A] dark:text-[#F4F8FC] flex items-center gap-1.5">
+              <CalendarPlus className="w-4 h-4 text-[#8F620B] dark:text-[#E4B84F]" aria-hidden="true" />
               <span>Preencher Domingos do Mês</span>
             </h2>
-            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+            <p className="mt-0.5 text-xs text-[#526886] dark:text-[#9BB2CE]">
               Adiciona automaticamente todos os domingos do mês escolhido.
             </p>
 
@@ -523,7 +523,7 @@ export function ScheduleView({
                 value={generatorMonth}
                 onChange={(e) => setGeneratorMonth(e.target.value)}
                 aria-label="Selecionar mês para gerar domingos"
-                className="flex-1 min-h-[44px] px-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm font-medium text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
+                className="flex-1 min-h-[44px] px-3 rounded-lg border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-sm font-medium text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               >
                 {MONTHS_PT.map((m) => (
                   <option key={m} value={m}>
@@ -534,7 +534,7 @@ export function ScheduleView({
               <button
                 type="button"
                 onClick={handleGenerateSundaysForMonth}
-                className="min-h-[44px] px-3.5 rounded-lg bg-[#386641] hover:bg-[#2d5334] dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-xs font-semibold inline-flex items-center gap-1.5 shrink-0"
+                className="min-h-[44px] px-3.5 rounded-lg bg-[#1668A3] hover:bg-[#125587] dark:bg-[#E4B84F] dark:hover:bg-[#EBC467] text-white dark:text-[#0B1D3A] text-xs font-semibold inline-flex items-center gap-1.5 shrink-0"
               >
                 <CalendarPlus className="w-4 h-4" aria-hidden="true" />
                 <span>Gerar</span>
@@ -549,8 +549,8 @@ export function ScheduleView({
         <div className="flex flex-wrap items-center justify-between gap-3">
           {/* Month & Day Filters */}
           <div className="flex flex-wrap items-center gap-2">
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400">
-              <Filter className="w-3.5 h-3.5 text-[#386641] dark:text-amber-400" aria-hidden="true" />
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#465B78] dark:text-[#9BB2CE]">
+              <Filter className="w-3.5 h-3.5 text-[#1668A3] dark:text-[#E4B84F]" aria-hidden="true" />
               <span>Mês:</span>
             </div>
             <select
@@ -560,7 +560,7 @@ export function ScheduleView({
                 setSelectedDay('Todas');
               }}
               aria-label="Filtrar por mês"
-              className="min-h-[44px] px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-semibold text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
+              className="min-h-[44px] px-3 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#11264A] text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
             >
               <option value="Todos">Todos os meses</option>
               {availableMonths.map((m) => (
@@ -570,14 +570,14 @@ export function ScheduleView({
               ))}
             </select>
 
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 ml-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#465B78] dark:text-[#9BB2CE] ml-1">
               <span>Data:</span>
             </div>
             <select
               value={selectedDay}
               onChange={(e) => setSelectedDay(e.target.value)}
               aria-label="Filtrar por dia"
-              className="min-h-[44px] px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-semibold text-slate-800 dark:text-slate-100 tabular-nums focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
+              className="min-h-[44px] px-3 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#11264A] text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] tabular-nums focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
             >
               <option value="Todas">Todas</option>
               {availableDays.map((d) => (
@@ -592,7 +592,7 @@ export function ScheduleView({
           <div
             role="group"
             aria-label="Modo de visualização da escala"
-            className="inline-flex items-center p-1 rounded-xl bg-slate-200/70 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
+            className="inline-flex items-center p-1 rounded-xl bg-[#E4EEF9] dark:bg-[#08162E] border border-[#D7E2F0] dark:border-[#1F3B68]"
           >
             <button
               type="button"
@@ -600,8 +600,8 @@ export function ScheduleView({
               aria-pressed={viewMode === 'table'}
               className={`min-h-[40px] px-3 rounded-lg text-xs font-semibold inline-flex items-center gap-1.5 transition-colors ${
                 viewMode === 'table'
-                  ? 'bg-white dark:bg-slate-950 text-[#386641] dark:text-amber-400 shadow-xs'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-white dark:bg-[#153463] text-[#10284F] dark:text-[#E4B84F] shadow-xs'
+                  : 'text-[#465B78] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-white'
               }`}
             >
               <Table2 className="w-4 h-4" aria-hidden="true" />
@@ -613,8 +613,8 @@ export function ScheduleView({
               aria-pressed={viewMode === 'cards'}
               className={`min-h-[40px] px-3 rounded-lg text-xs font-semibold inline-flex items-center gap-1.5 transition-colors ${
                 viewMode === 'cards'
-                  ? 'bg-white dark:bg-slate-950 text-[#386641] dark:text-amber-400 shadow-xs'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-white dark:bg-[#153463] text-[#10284F] dark:text-[#E4B84F] shadow-xs'
+                  : 'text-[#465B78] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-white'
               }`}
             >
               <LayoutGrid className="w-4 h-4" aria-hidden="true" />
@@ -629,7 +629,7 @@ export function ScheduleView({
           aria-label="Filtrar escala por elemento"
           className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1"
         >
-          <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 mr-1 shrink-0">
+          <span className="text-xs font-semibold text-[#526886] dark:text-[#9BB2CE] mr-1 shrink-0">
             Elemento:
           </span>
           {['Todos', ...schedule.members].map((member) => {
@@ -640,10 +640,10 @@ export function ScheduleView({
                 type="button"
                 onClick={() => setSelectedMember(member)}
                 aria-pressed={active}
-                className={`min-h-[40px] px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#386641] dark:focus-visible:ring-amber-500 ${
+                className={`min-h-[44px] px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                   active
-                    ? 'bg-[#386641] dark:bg-amber-500 text-white dark:text-slate-950'
-                    : 'bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    ? 'bg-[#10284F] dark:bg-[#E4B84F] text-white dark:text-[#0B1D3A]'
+                    : 'bg-white dark:bg-[#11264A] text-[#243B5A] dark:text-[#C4D5EB] border border-[#D7E2F0] dark:border-[#1F3B68] hover:bg-[#EAF1F8] dark:hover:bg-[#153463]'
                 }`}
               >
                 {member}
@@ -655,14 +655,14 @@ export function ScheduleView({
 
       {/* Main Schedule Display: Spreadsheet Table OR Mobile Cards */}
       {viewMode === 'table' ? (
-        <div className="mt-4 rounded-2xl border border-[#386641]/30 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-xs">
+        <div className="mt-4 rounded-2xl border border-[#C6D6E8] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] overflow-hidden shadow-xs">
           <div className="overflow-x-auto">
             <table
               aria-label="Tabela da escala do grupo de louvor"
               className="w-full border-collapse text-left text-sm"
             >
               <thead>
-                <tr className="bg-[#3E6B48] dark:bg-slate-800 text-white border-b border-[#2d5334] dark:border-slate-700">
+                <tr className="bg-[#10284F] dark:bg-[#153463] text-white border-b border-[#0B1D3A] dark:border-[#284A7F]">
                   <th className="py-3 px-2.5 font-bold text-xs uppercase tracking-wider border-r border-white/15 min-w-[132px]">
                     Mês
                   </th>
@@ -688,12 +688,12 @@ export function ScheduleView({
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#c8dec4] dark:divide-slate-800">
+              <tbody className="divide-y divide-[#D7E2F0] dark:divide-[#1F3B68]">
                 {filteredEntries.length === 0 ? (
                   <tr>
                     <td
                       colSpan={5 + schedule.roles.length}
-                      className="py-10 px-4 text-center text-slate-500 dark:text-slate-400"
+                      className="py-10 px-4 text-center text-[#526886] dark:text-[#9BB2CE]"
                     >
                       Nenhuma data encontrada para o filtro selecionado.
                     </td>
@@ -706,12 +706,12 @@ export function ScheduleView({
                         key={entry.id}
                         className={
                           isEven
-                            ? 'bg-[#DFEDE0]/75 dark:bg-slate-900/90 hover:bg-[#d3e6d5] dark:hover:bg-slate-800/70 transition-colors'
-                            : 'bg-[#EEF6EE]/85 dark:bg-slate-900/40 hover:bg-[#d3e6d5] dark:hover:bg-slate-800/70 transition-colors'
+                            ? 'bg-[#EDF4FB]/80 dark:bg-[#11264A] hover:bg-[#E1EEF9] dark:hover:bg-[#173566] transition-colors'
+                            : 'bg-white dark:bg-[#0D2140] hover:bg-[#E1EEF9] dark:hover:bg-[#173566] transition-colors'
                         }
                       >
                         {/* Mês */}
-                        <td className="p-1.5 border-r border-[#c8dec4] dark:border-slate-800">
+                        <td className="p-1.5 border-r border-[#D7E2F0] dark:border-[#1F3B68]">
                           <select
                             value={entry.month}
                             onChange={(e) =>
@@ -722,7 +722,7 @@ export function ScheduleView({
                               )
                             }
                             aria-label={`Mês da linha ${rowIdx + 1}`}
-                            className="w-full min-h-[38px] px-2 rounded-lg bg-transparent hover:bg-white/70 dark:hover:bg-slate-800 focus:bg-white dark:focus:bg-slate-950 text-sm font-medium text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
+                            className="w-full min-h-[38px] px-2 rounded-lg bg-transparent hover:bg-white/80 dark:hover:bg-[#0B1D3A] focus:bg-white dark:focus:bg-[#08162E] text-sm font-medium text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
                           >
                             {MONTHS_PT.map((m) => (
                               <option key={m} value={m}>
@@ -733,7 +733,7 @@ export function ScheduleView({
                         </td>
 
                         {/* Data */}
-                        <td className="p-1.5 border-r border-[#c8dec4] dark:border-slate-800">
+                        <td className="p-1.5 border-r border-[#D7E2F0] dark:border-[#1F3B68]">
                           <input
                             type="text"
                             inputMode="numeric"
@@ -747,12 +747,12 @@ export function ScheduleView({
                             }
                             placeholder="Dia"
                             aria-label={`Dia do culto (${entry.month})`}
-                            className="w-full min-h-[38px] px-1.5 text-center rounded-lg bg-transparent hover:bg-white/70 dark:hover:bg-slate-800 focus:bg-white dark:focus:bg-slate-950 text-sm font-semibold tabular-nums text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
+                            className="w-full min-h-[38px] px-1.5 text-center rounded-lg bg-transparent hover:bg-white/80 dark:hover:bg-[#0B1D3A] focus:bg-white dark:focus:bg-[#08162E] text-sm font-semibold tabular-nums text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
                           />
                         </td>
 
                         {/* Passagem */}
-                        <td className="p-1.5 border-r border-[#c8dec4] dark:border-slate-800">
+                        <td className="p-1.5 border-r border-[#D7E2F0] dark:border-[#1F3B68]">
                           <input
                             type="text"
                             value={entry.passage}
@@ -765,12 +765,12 @@ export function ScheduleView({
                             }
                             placeholder="Ex: Atos 8:25-40"
                             aria-label={`Passagem bíblica do dia ${entry.day}`}
-                            className="w-full min-h-[38px] px-2 text-center rounded-lg bg-transparent hover:bg-white/70 dark:hover:bg-slate-800 focus:bg-white dark:focus:bg-slate-950 text-sm text-slate-800 dark:text-slate-100 placeholder:text-slate-400/80 focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
+                            className="w-full min-h-[38px] px-2 text-center rounded-lg bg-transparent hover:bg-white/80 dark:hover:bg-[#0B1D3A] focus:bg-white dark:focus:bg-[#08162E] text-sm text-[#0B1D3A] dark:text-[#F4F8FC] placeholder:text-[#6B82A0] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
                           />
                         </td>
 
                         {/* Tema */}
-                        <td className="p-1.5 border-r border-[#c8dec4] dark:border-slate-800">
+                        <td className="p-1.5 border-r border-[#D7E2F0] dark:border-[#1F3B68]">
                           <input
                             type="text"
                             value={entry.theme}
@@ -783,7 +783,7 @@ export function ScheduleView({
                             }
                             placeholder="Tema do culto"
                             aria-label={`Tema do culto do dia ${entry.day}`}
-                            className="w-full min-h-[38px] px-2 text-center rounded-lg bg-transparent hover:bg-white/70 dark:hover:bg-slate-800 focus:bg-white dark:focus:bg-slate-950 text-sm text-slate-800 dark:text-slate-100 placeholder:text-slate-400/80 focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500"
+                            className="w-full min-h-[38px] px-2 text-center rounded-lg bg-transparent hover:bg-white/80 dark:hover:bg-[#0B1D3A] focus:bg-white dark:focus:bg-[#08162E] text-sm text-[#0B1D3A] dark:text-[#F4F8FC] placeholder:text-[#6B82A0] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
                           />
                         </td>
 
@@ -803,7 +803,7 @@ export function ScheduleView({
                           return (
                             <td
                               key={role.id}
-                              className="p-1.5 border-r border-[#c8dec4] dark:border-slate-800"
+                              className="p-1.5 border-r border-[#D7E2F0] dark:border-[#1F3B68]"
                             >
                               <select
                                 value={assigned}
@@ -815,12 +815,12 @@ export function ScheduleView({
                                   )
                                 }
                                 aria-label={`${role.label} no dia ${entry.day || rowIdx + 1}`}
-                                className={`w-full min-h-[38px] px-2 text-center rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#386641] dark:focus:ring-amber-500 ${
+                                className={`w-full min-h-[38px] px-2 text-center rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F] ${
                                   isHighlighted
-                                    ? 'bg-[#386641] text-white dark:bg-amber-500 dark:text-slate-950 font-bold'
+                                    ? 'bg-[#E4B84F] text-[#0B1D3A] font-bold'
                                     : assigned
-                                      ? 'bg-transparent hover:bg-white/70 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100'
-                                      : 'bg-transparent hover:bg-white/70 dark:hover:bg-slate-800 text-slate-400 dark:text-slate-500'
+                                      ? 'bg-transparent hover:bg-white/80 dark:hover:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC]'
+                                      : 'bg-transparent hover:bg-white/80 dark:hover:bg-[#0B1D3A] text-[#6B82A0] dark:text-[#829CBE]'
                                 }`}
                               >
                                 <option value="">—</option>
@@ -842,7 +842,7 @@ export function ScheduleView({
                               onClick={() => onUseInCultoDoDia(entry)}
                               title="Utilizar esta data no Culto do Dia"
                               aria-label={`Preparar repertório para o dia ${entry.day} de ${entry.month}`}
-                              className="min-h-[38px] min-w-[38px] flex items-center justify-center rounded-lg text-[#386641] dark:text-amber-400 hover:bg-white/80 dark:hover:bg-slate-800 transition-colors"
+                              className="min-h-[38px] min-w-[38px] flex items-center justify-center rounded-lg text-[#1668A3] dark:text-[#E4B84F] hover:bg-white/80 dark:hover:bg-[#0B1D3A] transition-colors"
                             >
                               <ListMusic className="w-4 h-4" aria-hidden="true" />
                             </button>
@@ -851,7 +851,7 @@ export function ScheduleView({
                               onClick={() => handleDeleteEntry(entry.id)}
                               title="Remover linha da escala"
                               aria-label={`Remover escala do dia ${entry.day} de ${entry.month}`}
-                              className="min-h-[38px] min-w-[38px] flex items-center justify-center rounded-lg text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors"
+                              className="min-h-[38px] min-w-[38px] flex items-center justify-center rounded-lg text-[#6B82A0] hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors"
                             >
                               <Trash2 className="w-4 h-4" aria-hidden="true" />
                             </button>
@@ -871,10 +871,10 @@ export function ScheduleView({
           {filteredEntries.map((entry, idx) => (
             <article
               key={entry.id}
-              className="rounded-2xl border border-[#386641]/30 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden"
+              className="rounded-2xl border border-[#C6D6E8] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] overflow-hidden"
             >
-              {/* Card Green Header */}
-              <div className="bg-[#3E6B48] dark:bg-slate-800 px-4 py-3 text-white flex items-center justify-between gap-2">
+              {/* Card Navy Header */}
+              <div className="bg-[#10284F] dark:bg-[#153463] px-4 py-3 text-white flex items-center justify-between gap-2 border-b border-[#0B1D3A] dark:border-[#284A7F]">
                 <div className="flex items-center gap-2">
                   <select
                     value={entry.month}
@@ -882,17 +882,17 @@ export function ScheduleView({
                       handleUpdateEntryField(entry.id, 'month', e.target.value)
                     }
                     aria-label="Mês do culto"
-                    className="min-h-[36px] px-2 rounded-lg bg-white/15 text-white text-sm font-bold focus:outline-none focus:ring-2 focus:ring-white"
+                    className="min-h-[36px] px-2 rounded-lg bg-white/15 text-white text-sm font-bold focus:outline-none focus:ring-2 focus:ring-[#E4B84F]"
                   >
                     {MONTHS_PT.map((m) => (
-                      <option key={m} value={m} className="text-slate-900">
+                      <option key={m} value={m} className="text-[#0B1D3A]">
                         {m}
                       </option>
                     ))}
                   </select>
-                  <span className="text-white/70">·</span>
+                  <span className="text-[#E4B84F]">·</span>
                   <div className="inline-flex items-center gap-1">
-                    <span className="text-xs uppercase tracking-wider text-white/80">
+                    <span className="text-xs uppercase tracking-wider text-[#C4D5EB]">
                       Dia
                     </span>
                     <input
@@ -903,7 +903,7 @@ export function ScheduleView({
                         handleUpdateEntryField(entry.id, 'day', e.target.value)
                       }
                       aria-label="Dia do culto"
-                      className="w-12 min-h-[36px] px-1.5 text-center rounded-lg bg-white/15 text-white font-bold text-sm tabular-nums focus:outline-none focus:ring-2 focus:ring-white"
+                      className="w-12 min-h-[36px] px-1.5 text-center rounded-lg bg-white/15 text-[#E4B84F] font-bold text-sm tabular-nums focus:outline-none focus:ring-2 focus:ring-[#E4B84F]"
                     />
                   </div>
                 </div>
@@ -912,7 +912,7 @@ export function ScheduleView({
                   <button
                     type="button"
                     onClick={() => onUseInCultoDoDia(entry)}
-                    className="min-h-[36px] px-2.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-semibold inline-flex items-center gap-1"
+                    className="min-h-[36px] px-2.5 rounded-lg bg-[#75C2F6]/20 hover:bg-[#75C2F6]/30 text-[#D8EEFD] text-xs font-semibold inline-flex items-center gap-1"
                   >
                     <ListMusic className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Culto do Dia</span>
@@ -929,9 +929,9 @@ export function ScheduleView({
               </div>
 
               {/* Passage & Theme */}
-              <div className="p-4 bg-[#EEF6EE]/60 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="p-4 bg-[#EDF4FB]/70 dark:bg-[#0D2140] border-b border-[#D7E2F0] dark:border-[#1F3B68] grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#526886] dark:text-[#9BB2CE]">
                     Passagem
                   </label>
                   <input
@@ -945,11 +945,11 @@ export function ScheduleView({
                       )
                     }
                     placeholder="Ex: Atos 8:25-40"
-                    className="mt-1 w-full min-h-[42px] px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-slate-900 dark:text-slate-100"
+                    className="mt-1 w-full min-h-[42px] px-3 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#08162E] text-sm text-[#0B1D3A] dark:text-[#F4F8FC]"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#526886] dark:text-[#9BB2CE]">
                     Tema
                   </label>
                   <input
@@ -959,7 +959,7 @@ export function ScheduleView({
                       handleUpdateEntryField(entry.id, 'theme', e.target.value)
                     }
                     placeholder="Ex: Ceia e baptismo"
-                    className="mt-1 w-full min-h-[42px] px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-slate-900 dark:text-slate-100"
+                    className="mt-1 w-full min-h-[42px] px-3 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#08162E] text-sm text-[#0B1D3A] dark:text-[#F4F8FC]"
                   />
                 </div>
               </div>
@@ -980,7 +980,7 @@ export function ScheduleView({
 
                   return (
                     <div key={role.id}>
-                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 truncate">
+                      <label className="block text-[11px] font-bold uppercase tracking-wider text-[#526886] dark:text-[#9BB2CE] truncate">
                         {role.label}
                       </label>
                       <select
@@ -995,8 +995,8 @@ export function ScheduleView({
                         aria-label={`${role.label} no culto ${idx + 1}`}
                         className={`mt-1 w-full min-h-[42px] px-2.5 rounded-xl border text-sm font-semibold transition-colors ${
                           isHighlighted
-                            ? 'border-[#386641] bg-[#386641] text-white dark:border-amber-400 dark:bg-amber-500 dark:text-slate-950'
-                            : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100'
+                            ? 'border-[#DCA93B] bg-[#E4B84F] text-[#0B1D3A]'
+                            : 'border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-[#0B1D3A] dark:text-[#F4F8FC]'
                         }`}
                       >
                         <option value="">— Vazio —</option>
@@ -1016,13 +1016,13 @@ export function ScheduleView({
       )}
 
       {/* WhatsApp Schedule Share & PDF Card */}
-      <div className="mt-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 sm:p-5">
+      <div className="mt-6 rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-4 sm:p-5">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
           <div>
-            <h2 className="text-base font-semibold text-slate-900 dark:text-slate-50">
+            <h2 className="text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]">
               Partilhar Escala no WhatsApp
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            <p className="text-xs sm:text-sm text-[#465B78] dark:text-[#9BB2CE]">
               Partilha a escala filtrada acima no WhatsApp ou transfira a tabela completa em PDF para guardar e enviar.
             </p>
           </div>
@@ -1032,11 +1032,11 @@ export function ScheduleView({
               type="button"
               onClick={handleDownloadSchedulePdf}
               disabled={filteredEntries.length === 0}
-              className="min-h-[44px] px-4 py-2 rounded-xl border border-[#2F523E]/30 dark:border-emerald-700/60 bg-[#2F523E]/5 dark:bg-emerald-950/30 text-[#2F523E] dark:text-emerald-300 text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-[#2F523E]/10 dark:hover:bg-emerald-950/50 disabled:opacity-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] dark:focus-visible:ring-emerald-400"
+              className="min-h-[44px] px-4 py-2 rounded-xl border border-[#BBD9F0] dark:border-[#75C2F6]/40 bg-[#EAF4FC] dark:bg-[#75C2F6]/12 text-[#1668A3] dark:text-[#75C2F6] text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-[#DCEDFB] dark:hover:bg-[#75C2F6]/20 disabled:opacity-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6]"
             >
               {pdfSaved ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                  <Check className="w-4 h-4 text-[#1668A3] dark:text-[#75C2F6] shrink-0" aria-hidden="true" />
                   <span>PDF Guardado!</span>
                 </>
               ) : (
@@ -1051,11 +1051,11 @@ export function ScheduleView({
               type="button"
               onClick={handleCopyWhatsApp}
               disabled={filteredEntries.length === 0}
-              className="min-h-[44px] px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F523E] dark:focus-visible:ring-amber-400"
+              className="min-h-[44px] px-4 py-2 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap hover:bg-[#F4F8FC] dark:hover:bg-[#153463] disabled:opacity-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
             >
               {copied ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                  <Check className="w-4 h-4 text-[#1668A3] dark:text-[#75C2F6] shrink-0" aria-hidden="true" />
                   <span>Escala Copiada!</span>
                 </>
               ) : (
@@ -1074,10 +1074,10 @@ export function ScheduleView({
               onClick={(e) => {
                 if (filteredEntries.length === 0) e.preventDefault();
               }}
-              className={`min-h-[44px] px-4 py-2 rounded-xl text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 ${
+              className={`min-h-[44px] px-4 py-2 rounded-xl text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                 filteredEntries.length === 0
-                  ? 'bg-emerald-600/40 text-white/70 pointer-events-none'
-                  : 'bg-emerald-700 hover:bg-emerald-800 text-white'
+                  ? 'bg-[#10284F]/40 text-white/70 pointer-events-none'
+                  : 'bg-[#10284F] hover:bg-[#183A6E] dark:bg-[#E4B84F] dark:hover:bg-[#EBC467] text-white dark:text-[#0B1D3A]'
               }`}
             >
               <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -1088,7 +1088,7 @@ export function ScheduleView({
 
         <pre
           aria-label="Pré-visualização da escala para o WhatsApp"
-          className="mt-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-cifra text-slate-700 dark:text-slate-300 whitespace-pre-wrap break-words leading-relaxed max-h-60 overflow-y-auto"
+          className="mt-3 p-3 rounded-xl bg-[#F4F8FC] dark:bg-[#08162E] border border-[#D7E2F0] dark:border-[#1F3B68] text-xs sm:text-sm font-cifra text-[#243B5A] dark:text-[#C4D5EB] whitespace-pre-wrap break-words leading-relaxed max-h-60 overflow-y-auto"
         >
           {whatsAppMessage}
         </pre>

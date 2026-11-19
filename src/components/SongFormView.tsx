@@ -255,15 +255,15 @@ export function SongFormView({
       aria-labelledby="song-form-heading"
       className="max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-24 md:pb-12"
     >
-      <div className="pb-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4">
+      <div className="pb-4 border-b border-[#D7E2F0] dark:border-[#1F3B68] flex items-center justify-between gap-4">
         <div>
           <h1
             id="song-form-heading"
-            className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50"
+            className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0B1D3A] dark:text-[#F4F8FC]"
           >
             {editingSong ? 'Editar Música' : 'Adicionar Música'}
           </h1>
-          <p className="mt-1 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+          <p className="mt-1 text-sm sm:text-base text-[#465B78] dark:text-[#9BB2CE]">
             Guardada automaticamente no repertório partilhado do grupo.
           </p>
         </div>
@@ -271,7 +271,7 @@ export function SongFormView({
         <button
           type="button"
           onClick={onCancel}
-          className="min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 inline-flex items-center gap-1.5 transition-colors duration-150 shrink-0"
+          className="min-h-[44px] px-3.5 py-2 rounded-lg border border-[#C6D6E8] dark:border-[#284A7F] text-sm font-medium text-[#243B5A] dark:text-[#C4D5EB] hover:bg-[#EAF1F8] dark:hover:bg-[#153463] inline-flex items-center gap-1.5 transition-colors duration-150 shrink-0"
         >
           <X className="w-4 h-4" aria-hidden="true" />
           <span>Cancelar</span>
@@ -279,17 +279,17 @@ export function SongFormView({
       </div>
 
       {/* Automatic Link / Song Importer Banner */}
-      <div className="mt-5 rounded-2xl border border-[#2F523E]/30 dark:border-emerald-500/30 bg-[#DCE8DC]/45 dark:bg-emerald-950/20 p-4 sm:p-5">
+      <div className="mt-5 rounded-2xl border border-[#BBD9F0] dark:border-[#75C2F6]/30 bg-[#EAF4FC] dark:bg-[#11264A] p-4 sm:p-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h2 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+            <h2 className="text-base font-bold text-[#0B1D3A] dark:text-[#F4F8FC] flex items-center gap-2">
               <DownloadCloud
-                className="w-5 h-5 text-[#2F523E] dark:text-emerald-400 shrink-0"
+                className="w-5 h-5 text-[#1668A3] dark:text-[#75C2F6] shrink-0"
                 aria-hidden="true"
               />
               <span>Importar Letra e Cifra Automaticamente por Link ou Nome</span>
             </h2>
-            <p className="mt-0.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <p className="mt-0.5 text-xs sm:text-sm text-[#243B5A] dark:text-[#C4D5EB]">
               Cole a ligação do <strong>YouTube</strong>, do <strong>Cifra Club</strong> ou escreva o <strong>nome da música e cantor</strong> — o sistema preenche o título, intérprete, tom, BPM e a cifra completa:
             </p>
           </div>
@@ -314,13 +314,13 @@ export function SongFormView({
               }
             }}
             placeholder="Cole aqui o link do YouTube, link do Cifra Club ou escreva ex: Bondade de Deus Isaías Saad..."
-            className="flex-1 min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-base text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2F523E] dark:focus:ring-emerald-500"
+            className="flex-1 min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#BBD9F0] dark:border-[#284A7F] bg-white dark:bg-[#08162E] text-base text-[#0B1D3A] dark:text-[#F4F8FC] placeholder:text-[#6B82A0] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
           />
           <button
             type="button"
             disabled={isExtracting}
             onClick={() => void handleAutoExtract()}
-            className="min-h-[46px] px-5 py-2.5 rounded-xl bg-[#2F523E] hover:bg-[#244030] disabled:opacity-60 text-white text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            className="min-h-[46px] px-5 py-2.5 rounded-xl bg-[#1668A3] hover:bg-[#125587] disabled:opacity-60 text-white text-sm font-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#75C2F6]"
           >
             {isExtracting ? (
               <>
@@ -346,7 +346,7 @@ export function SongFormView({
         )}
 
         {extractSuccess && (
-          <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-semibold text-[#2F523E] dark:text-emerald-400">
+          <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-semibold text-[#1668A3] dark:text-[#75C2F6]">
             <div className="inline-flex items-center gap-1.5">
               <Check className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>{extractSuccess}</span>
@@ -356,7 +356,7 @@ export function SongFormView({
               <button
                 type="button"
                 onClick={handleConvertCapoToConcertKey}
-                className="min-h-[38px] px-3 py-1.5 rounded-lg bg-[#B85414] hover:bg-[#9E460F] text-white text-xs font-semibold transition-colors"
+                className="min-h-[44px] px-3 py-1.5 rounded-lg bg-[#10284F] hover:bg-[#183A6E] dark:bg-[#E4B84F] dark:text-[#0B1D3A] text-white text-xs font-semibold transition-colors"
               >
                 Converter acordes para o tom real ({capoInfo.concertKey}) sem capotraste
               </button>
@@ -366,8 +366,8 @@ export function SongFormView({
 
         {/* Alternative versions found on Cifra Club */}
         {candidates.length > 1 && (
-          <div className="mt-3 pt-2.5 border-t border-[#2F523E]/15 dark:border-slate-800">
-            <span className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">
+          <div className="mt-3 pt-2.5 border-t border-[#BBD9F0] dark:border-[#1F3B68]">
+            <span className="block text-xs font-medium text-[#465B78] dark:text-[#9BB2CE] mb-1.5">
               Outras versões encontradas (toque para carregar outra versão):
             </span>
             <div className="flex flex-wrap gap-1.5">
@@ -381,10 +381,10 @@ export function SongFormView({
                     type="button"
                     disabled={isExtracting}
                     onClick={() => void handleSelectCandidate(cand)}
-                    className={`min-h-[38px] px-3 py-1.5 rounded-lg border text-xs font-semibold inline-flex items-center gap-1.5 transition-colors ${
+                    className={`min-h-[44px] px-3 py-1.5 rounded-lg border text-xs font-semibold inline-flex items-center gap-1.5 transition-colors ${
                       isSelected
-                        ? 'border-[#2F523E] bg-[#2F523E] text-white dark:border-emerald-500 dark:bg-emerald-600'
-                        : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                        ? 'border-[#10284F] bg-[#10284F] text-white dark:border-[#E4B84F] dark:bg-[#E4B84F] dark:text-[#0B1D3A]'
+                        : 'border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#0B1D3A] text-[#243B5A] dark:text-[#C4D5EB] hover:bg-[#F4F8FC] dark:hover:bg-[#153463]'
                     }`}
                   >
                     <Music2 className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
@@ -403,13 +403,13 @@ export function SongFormView({
         <form
           onSubmit={handleSubmit}
           noValidate
-          className="lg:col-span-7 space-y-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 sm:p-6"
+          className="lg:col-span-7 space-y-4 rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-4 sm:p-6"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label
                 htmlFor="song-title"
-                className="block text-sm font-semibold text-slate-800 dark:text-slate-200"
+                className="block text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]"
               >
                 Nome da Música *
               </label>
@@ -424,7 +424,7 @@ export function SongFormView({
                 }}
                 placeholder="Ex: Caminho no Deserto"
                 aria-invalid={Boolean(errors.title)}
-                className="mt-1.5 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 text-base text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500"
+                className="mt-1.5 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-base text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               />
               {errors.title && (
                 <p role="alert" className="mt-1 text-xs font-medium text-rose-600 dark:text-rose-400">
@@ -436,7 +436,7 @@ export function SongFormView({
             <div>
               <label
                 htmlFor="song-artist"
-                className="block text-sm font-semibold text-slate-800 dark:text-slate-200"
+                className="block text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]"
               >
                 Intérprete / Grupo *
               </label>
@@ -451,7 +451,7 @@ export function SongFormView({
                 }}
                 placeholder="Ex: Soraya Moraes"
                 aria-invalid={Boolean(errors.artist)}
-                className="mt-1.5 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 text-base text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500"
+                className="mt-1.5 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-base text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               />
               {errors.artist && (
                 <p role="alert" className="mt-1 text-xs font-medium text-rose-600 dark:text-rose-400">
@@ -465,7 +465,7 @@ export function SongFormView({
             <div>
               <label
                 htmlFor="song-key"
-                className="block text-sm font-semibold text-slate-800 dark:text-slate-200"
+                className="block text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]"
               >
                 Tom Original
               </label>
@@ -473,7 +473,7 @@ export function SongFormView({
                 id="song-key"
                 value={originalKey}
                 onChange={(e) => setOriginalKey(e.target.value)}
-                className="mt-1.5 w-full min-h-[46px] px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 text-base font-cifra font-semibold text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500"
+                className="mt-1.5 w-full min-h-[46px] px-3 py-2.5 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-base font-cifra font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               >
                 {KEY_OPTIONS.map((k) => (
                   <option key={k} value={k}>
@@ -486,7 +486,7 @@ export function SongFormView({
             <div>
               <label
                 htmlFor="song-bpm"
-                className="block text-sm font-semibold text-slate-800 dark:text-slate-200"
+                className="block text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]"
               >
                 BPM (opcional)
               </label>
@@ -502,7 +502,7 @@ export function SongFormView({
                   if (errors.bpm) setErrors((prev) => ({ ...prev, bpm: '' }));
                 }}
                 aria-invalid={Boolean(errors.bpm)}
-                className="mt-1.5 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 text-base tabular-nums text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500"
+                className="mt-1.5 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-base tabular-nums text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               />
               {errors.bpm && (
                 <p role="alert" className="mt-1 text-xs font-medium text-rose-600 dark:text-rose-400">
@@ -514,7 +514,7 @@ export function SongFormView({
             <div className="col-span-2 sm:col-span-1">
               <label
                 htmlFor="song-category"
-                className="block text-sm font-semibold text-slate-800 dark:text-slate-200"
+                className="block text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]"
               >
                 Categoria
               </label>
@@ -522,7 +522,7 @@ export function SongFormView({
                 id="song-category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value as SongCategory)}
-                className="mt-1.5 w-full min-h-[46px] px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 text-base text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500"
+                className="mt-1.5 w-full min-h-[46px] px-3 py-2.5 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-base text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
               >
                 {CATEGORY_OPTIONS.map((cat) => (
                   <option key={cat} value={cat}>
@@ -537,7 +537,7 @@ export function SongFormView({
             <div className="flex flex-wrap items-center justify-between gap-2">
               <label
                 htmlFor="song-youtube"
-                className="block text-sm font-semibold text-slate-800 dark:text-slate-200"
+                className="block text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]"
               >
                 Ligação do YouTube / Referência (opcional)
               </label>
@@ -546,7 +546,7 @@ export function SongFormView({
                   type="button"
                   disabled={isExtracting}
                   onClick={() => void handleAutoExtract(youtubeUrl)}
-                  className="text-xs font-semibold text-[#2F523E] dark:text-emerald-400 hover:underline inline-flex items-center gap-1"
+                  className="text-xs font-semibold text-[#1668A3] dark:text-[#75C2F6] hover:underline inline-flex items-center gap-1"
                 >
                   <DownloadCloud className="w-3.5 h-3.5" aria-hidden="true" />
                   <span>Extrair letra e cifra desta ligação</span>
@@ -564,7 +564,7 @@ export function SongFormView({
               }}
               placeholder="https://www.youtube.com/watch?v=..."
               aria-invalid={Boolean(errors.youtubeUrl)}
-              className="mt-1.5 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 text-base text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500"
+              className="mt-1.5 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] text-base text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
             />
             {errors.youtubeUrl && (
               <p role="alert" className="mt-1 text-xs font-medium text-rose-600 dark:text-rose-400">
@@ -576,11 +576,11 @@ export function SongFormView({
           <div>
             <label
               htmlFor="song-cifra"
-              className="block text-sm font-semibold text-slate-800 dark:text-slate-200"
+              className="block text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]"
             >
               Letra com Cifra *
             </label>
-            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+            <p className="mt-0.5 text-xs text-[#526886] dark:text-[#9BB2CE]">
               Coloque os acordes numa linha própria acima da letra. Utilize [Verso], [Refrão] ou [Ponte] para identificar as secções.
             </p>
             <textarea
@@ -594,7 +594,7 @@ export function SongFormView({
               }}
               placeholder={SAMPLE_CIFRA_PLACEHOLDER}
               aria-invalid={Boolean(errors.cifra)}
-              className="mt-1.5 w-full p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 font-cifra text-sm sm:text-base leading-relaxed text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#B85414] dark:focus:ring-amber-500"
+              className="mt-1.5 w-full p-3.5 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#08162E] font-cifra text-sm sm:text-base leading-relaxed text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
             />
             {errors.cifra && (
               <p role="alert" className="mt-1 text-xs font-medium text-rose-600 dark:text-rose-400">
@@ -627,7 +627,7 @@ export function SongFormView({
                   <button
                     type="button"
                     onClick={() => setConfirmDelete(false)}
-                    className="min-h-[46px] px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300"
+                    className="min-h-[46px] px-3 py-2 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] text-sm font-medium text-[#243B5A] dark:text-[#C4D5EB]"
                   >
                     Manter
                   </button>
@@ -639,7 +639,7 @@ export function SongFormView({
 
             <button
               type="submit"
-              className="min-h-[48px] px-6 py-2.5 rounded-xl bg-[#B85414] dark:bg-amber-500 text-white dark:text-slate-950 text-sm font-semibold inline-flex items-center justify-center gap-2 hover:opacity-95 transition-opacity duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-400"
+              className="min-h-[48px] px-6 py-2.5 rounded-xl bg-[#10284F] hover:bg-[#183A6E] dark:bg-[#E4B84F] dark:hover:bg-[#EBC467] text-white dark:text-[#0B1D3A] text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
             >
               <Save className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>{editingSong ? 'Guardar Alterações' : 'Guardar Música no Repertório'}</span>
@@ -650,18 +650,18 @@ export function SongFormView({
         {/* Live Cifra Recognition Preview */}
         <aside
           aria-label="Pré-visualização da cifra"
-          className="lg:col-span-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-4 sm:p-5"
+          className="lg:col-span-5 rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-4 sm:p-5"
         >
-          <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+          <h2 className="text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]">
             Pré-visualização de Alinhamento
           </h2>
-          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+          <p className="mt-1 text-xs text-[#526886] dark:text-[#9BB2CE]">
             As linhas reconhecidas como acordes surgem realçadas para verificação imediata.
           </p>
 
-          <div className="mt-3 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0F172A] min-h-[220px] overflow-x-auto font-cifra text-xs sm:text-sm leading-relaxed">
+          <div className="mt-3 p-3.5 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#0B1D3A] min-h-[220px] overflow-x-auto font-cifra text-xs sm:text-sm leading-relaxed">
             {previewLines.length === 0 ? (
-              <p className="text-slate-400 dark:text-slate-500 font-sans text-sm">
+              <p className="text-[#6B82A0] dark:text-[#829CBE] font-sans text-sm">
                 Escreva, cole a cifra ao lado ou utilize a importação automática acima para pré-visualizar o realce dos acordes.
               </p>
             ) : (
@@ -673,7 +673,7 @@ export function SongFormView({
                   return (
                     <div
                       key={i}
-                      className="font-sans text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-2 mb-0.5"
+                      className="font-sans text-xs font-bold uppercase tracking-wider text-[#526886] dark:text-[#9BB2CE] mt-2 mb-0.5"
                     >
                       {line.raw}
                     </div>
@@ -686,14 +686,14 @@ export function SongFormView({
                         seg.isChord ? (
                           <span
                             key={j}
-                            className="text-[#B85414] dark:text-amber-400"
+                            className="text-[#8F620B] dark:text-[#E4B84F]"
                           >
                             {seg.text}
                           </span>
                         ) : (
                           <span
                             key={j}
-                            className="text-slate-500 dark:text-slate-400"
+                            className="text-[#526886] dark:text-[#9BB2CE]"
                           >
                             {seg.text}
                           </span>
@@ -705,7 +705,7 @@ export function SongFormView({
                 return (
                   <div
                     key={i}
-                    className="whitespace-pre text-slate-800 dark:text-slate-100"
+                    className="whitespace-pre text-[#0B1D3A] dark:text-[#F4F8FC]"
                   >
                     {line.raw}
                   </div>

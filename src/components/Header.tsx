@@ -94,12 +94,12 @@ export function Header({
 
   return (
     <>
-      <header className="no-print border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0F172A] transition-colors duration-150">
+      <header className="no-print border-b border-[#1F3B68] bg-[#0B1D3A] text-white transition-colors duration-150">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-3 lg:gap-4">
           <button
             type="button"
             onClick={() => onSelectTab('schedule')}
-            className="text-sm sm:text-lg font-bold tracking-tight text-slate-900 dark:text-slate-50 whitespace-nowrap shrink-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 rounded-md py-1"
+            className="text-sm sm:text-lg font-bold tracking-tight text-white whitespace-nowrap shrink-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F] rounded-md py-1"
           >
             Louvor IEB Horta
           </button>
@@ -116,17 +116,17 @@ export function Header({
                   type="button"
                   onClick={() => onSelectTab(item.id)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`relative min-h-[44px] px-1 text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 rounded-md ${
+                  className={`relative min-h-[44px] px-1 text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F] rounded-md ${
                     isActive
-                      ? 'text-[#B85414] dark:text-amber-400 font-semibold'
-                      : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                      ? 'text-[#E4B84F] font-semibold'
+                      : 'text-[#C4D5EB] hover:text-white'
                   }`}
                 >
                   <span className="tabular-nums">{item.label}</span>
                   {isActive && (
                     <span
                       aria-hidden="true"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#B85414] dark:bg-amber-400"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E4B84F]"
                     />
                   )}
                 </button>
@@ -142,10 +142,10 @@ export function Header({
               onClick={() => setShowQRModal(true)}
               aria-label="Gerar QR Code para redes sociais"
               title="Gerar QR Code para redes sociais"
-              className="min-h-[44px] min-w-[44px] px-2.5 2xl:px-3 py-2 inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+              className="min-h-[44px] min-w-[44px] px-2.5 2xl:px-3 py-2 inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#284A7F] bg-[#132C55] text-[#F4F8FC] hover:bg-[#1B3C71] text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F]"
             >
               <QrCode
-                className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0"
+                className="w-4 h-4 text-[#E4B84F] shrink-0"
                 aria-hidden="true"
               />
               <span className="hidden 2xl:inline">QR Code</span>
@@ -155,21 +155,21 @@ export function Header({
               type="button"
               onClick={() => setShowSyncModal(true)}
               aria-label="Sincronização partilhada do grupo de louvor"
-              className={`min-h-[44px] min-w-[44px] px-2.5 2xl:px-3 py-2 inline-flex items-center justify-center gap-1.5 rounded-lg border text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+              className={`min-h-[44px] min-w-[44px] px-2.5 2xl:px-3 py-2 inline-flex items-center justify-center gap-1.5 rounded-lg border text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F] ${
                 hasPendingSync
-                  ? 'border-amber-300 dark:border-amber-700 bg-amber-50/90 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-950/60'
+                  ? 'border-[#E4B84F]/60 bg-[#E4B84F]/15 text-[#F6DE9B] hover:bg-[#E4B84F]/25'
                   : isCloudConnected
-                    ? 'border-emerald-300 dark:border-emerald-800/80 bg-emerald-50/80 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 hover:bg-emerald-100 dark:hover:bg-emerald-950/60'
-                    : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    ? 'border-[#75C2F6]/45 bg-[#75C2F6]/15 text-[#D8EEFD] hover:bg-[#75C2F6]/25'
+                    : 'border-[#284A7F] bg-[#132C55] text-[#C4D5EB] hover:bg-[#1B3C71]'
               }`}
             >
               <Cloud
                 className={`w-4 h-4 shrink-0 ${
                   hasPendingSync
-                    ? 'text-amber-600 dark:text-amber-400'
+                    ? 'text-[#E4B84F]'
                     : isCloudConnected
-                      ? 'text-emerald-600 dark:text-emerald-400'
-                      : 'text-slate-500 dark:text-slate-400'
+                      ? 'text-[#75C2F6]'
+                      : 'text-[#9BB2CE]'
                 }`}
               />
               <span className="hidden 2xl:inline">
@@ -189,12 +189,12 @@ export function Header({
               aria-label={
                 isDark ? 'Ativar Modo Claro' : 'Ativar Modo Palco (Escuro)'
               }
-              className="min-h-[44px] min-w-[44px] px-2.5 2xl:px-3.5 py-2 inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+              className="min-h-[44px] min-w-[44px] px-2.5 2xl:px-3.5 py-2 inline-flex items-center justify-center gap-2 rounded-lg border border-[#284A7F] bg-[#132C55] text-[#F4F8FC] hover:bg-[#1B3C71] text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F]"
             >
               {isDark ? (
                 <>
                   <Sun
-                    className="w-4 h-4 text-amber-400 shrink-0"
+                    className="w-4 h-4 text-[#E4B84F] shrink-0"
                     aria-hidden="true"
                   />
                   <span className="hidden 2xl:inline">Modo Claro</span>
@@ -202,7 +202,7 @@ export function Header({
               ) : (
                 <>
                   <Moon
-                    className="w-4 h-4 text-[#B85414] shrink-0"
+                    className="w-4 h-4 text-[#75C2F6] shrink-0"
                     aria-hidden="true"
                   />
                   <span className="hidden 2xl:inline">Modo Palco</span>
@@ -219,18 +219,18 @@ export function Header({
           role="dialog"
           aria-modal="true"
           aria-labelledby="sync-modal-title"
-          className="no-print fixed inset-0 z-50 bg-slate-950/60 flex items-center justify-center p-4"
+          className="no-print fixed inset-0 z-50 bg-[#061022]/70 flex items-center justify-center p-4"
         >
-          <div className="w-full max-w-md max-h-[92dvh] overflow-y-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6 space-y-5 shadow-xl">
-            <div className="flex items-start justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+          <div className="w-full max-w-md max-h-[92dvh] overflow-y-auto rounded-2xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white dark:bg-[#11264A] p-5 sm:p-6 space-y-5 shadow-xl">
+            <div className="flex items-start justify-between gap-3 border-b border-[#D7E2F0] dark:border-[#1F3B68] pb-4">
               <div>
                 <h2
                   id="sync-modal-title"
-                  className="text-base sm:text-lg font-bold text-slate-900 dark:text-white"
+                  className="text-base sm:text-lg font-bold text-[#0B1D3A] dark:text-white"
                 >
                   Sincronizado para Todo o Grupo
                 </h2>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+                <p className="text-xs sm:text-sm text-[#465B78] dark:text-[#9BB2CE] mt-0.5">
                   Todos os que abrem o site ou a aplicação instalada no telemóvel
                   veem o mesmo Repertório, Culto do Dia e Escala em tempo real.
                 </p>
@@ -239,31 +239,31 @@ export function Header({
                 type="button"
                 onClick={() => setShowSyncModal(false)}
                 aria-label="Fechar janela de sincronização"
-                className="min-h-[44px] min-w-[44px] -mr-2 -mt-2 inline-flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white"
+                className="min-h-[44px] min-w-[44px] -mr-2 -mt-2 inline-flex items-center justify-center rounded-lg text-[#526886] hover:text-[#0B1D3A] dark:text-[#9BB2CE] dark:hover:text-white"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             <div
-              className={`rounded-lg border p-3.5 space-y-2.5 ${
+              className={`rounded-xl border p-3.5 space-y-2.5 ${
                 hasPendingSync
-                  ? 'border-amber-200 dark:border-amber-900/60 bg-amber-50/70 dark:bg-amber-950/30'
-                  : 'border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/70 dark:bg-emerald-950/30'
+                  ? 'border-[#DCA93B]/50 dark:border-[#E4B84F]/40 bg-[#FDF6E3] dark:bg-[#E4B84F]/10'
+                  : 'border-[#BBD9F0] dark:border-[#75C2F6]/30 bg-[#EAF4FC] dark:bg-[#75C2F6]/10'
               }`}
             >
               <div
                 className={`flex items-center gap-2 text-xs sm:text-sm font-semibold ${
                   hasPendingSync
-                    ? 'text-amber-900 dark:text-amber-200'
-                    : 'text-emerald-900 dark:text-emerald-200'
+                    ? 'text-[#7A5207] dark:text-[#F6DE9B]'
+                    : 'text-[#10284F] dark:text-[#D8EEFD]'
                 }`}
               >
                 <Users
                   className={`w-4 h-4 shrink-0 ${
                     hasPendingSync
-                      ? 'text-amber-600 dark:text-amber-400'
-                      : 'text-emerald-600 dark:text-emerald-400'
+                      ? 'text-[#8F620B] dark:text-[#E4B84F]'
+                      : 'text-[#1668A3] dark:text-[#75C2F6]'
                   }`}
                 />
                 <span>
@@ -275,8 +275,8 @@ export function Header({
               <p
                 className={`text-xs leading-relaxed ${
                   hasPendingSync
-                    ? 'text-amber-800 dark:text-amber-300/90'
-                    : 'text-emerald-800 dark:text-emerald-300/90'
+                    ? 'text-[#7A5207] dark:text-[#F0D388]'
+                    : 'text-[#284A7F] dark:text-[#C4D5EB]'
                 }`}
               >
                 {hasPendingSync
@@ -287,10 +287,10 @@ export function Header({
                 type="button"
                 onClick={() => void onForceSync()}
                 disabled={isSyncing}
-                className="w-full min-h-[44px] px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold inline-flex items-center justify-center gap-2 disabled:opacity-60"
+                className="w-full min-h-[44px] px-3 py-2 rounded-lg border border-[#D7E2F0] dark:border-[#284A7F] bg-white dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#F4F8FC] dark:hover:bg-[#153463] text-xs font-semibold inline-flex items-center justify-center gap-2 disabled:opacity-60"
               >
                 <RefreshCw
-                  className={`w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 ${
+                  className={`w-3.5 h-3.5 text-[#1668A3] dark:text-[#E4B84F] ${
                     isSyncing ? 'animate-spin' : ''
                   }`}
                 />
@@ -308,36 +308,36 @@ export function Header({
                   setShowSyncModal(false);
                   setShowQRModal(true);
                 }}
-                className="w-full min-h-[46px] px-3.5 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
+                className="w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#D7E2F0] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E7F0FA] dark:hover:bg-[#153463] text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
               >
                 <QrCode
-                  className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0"
+                  className="w-4 h-4 text-[#8F620B] dark:text-[#E4B84F] shrink-0"
                   aria-hidden="true"
                 />
                 <span>Gerar QR Code para Redes Sociais</span>
               </button>
             </div>
 
-            <div className="space-y-2.5 pt-1 border-t border-slate-200 dark:border-slate-800">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <div className="space-y-2.5 pt-1 border-t border-[#D7E2F0] dark:border-[#1F3B68]">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#526886] dark:text-[#9BB2CE]">
                 Cópia de Segurança em Ficheiro
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <button
                   type="button"
                   onClick={onExportBackup}
-                  className="min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs sm:text-sm font-medium inline-flex items-center justify-center gap-2"
+                  className="min-h-[44px] px-3.5 py-2 rounded-lg border border-[#D7E2F0] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E7F0FA] dark:hover:bg-[#153463] text-xs sm:text-sm font-medium inline-flex items-center justify-center gap-2"
                 >
-                  <Download className="w-4 h-4 text-[#B85414] dark:text-amber-400" />
+                  <Download className="w-4 h-4 text-[#1668A3] dark:text-[#75C2F6]" />
                   <span>Transferir Cópia (.json)</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs sm:text-sm font-medium inline-flex items-center justify-center gap-2"
+                  className="min-h-[44px] px-3.5 py-2 rounded-lg border border-[#D7E2F0] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E7F0FA] dark:hover:bg-[#153463] text-xs sm:text-sm font-medium inline-flex items-center justify-center gap-2"
                 >
-                  <Upload className="w-4 h-4 text-[#B85414] dark:text-amber-400" />
+                  <Upload className="w-4 h-4 text-[#8F620B] dark:text-[#E4B84F]" />
                   <span>Restaurar Cópia</span>
                 </button>
                 <input
@@ -349,30 +349,30 @@ export function Header({
                 />
               </div>
               {importStatus && (
-                <p className="text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                <p className="text-xs font-medium text-[#1668A3] dark:text-[#75C2F6]">
                   {importStatus}
                 </p>
               )}
             </div>
 
-            <div className="space-y-2.5 pt-2 border-t border-slate-200 dark:border-slate-800">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <div className="space-y-2.5 pt-2 border-t border-[#D7E2F0] dark:border-[#1F3B68]">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#526886] dark:text-[#9BB2CE]">
                 Identificação Opcional
               </h3>
               {user ? (
-                <div className="flex items-center justify-between gap-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-3">
+                <div className="flex items-center justify-between gap-3 rounded-lg border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#0B1D3A]/80 p-3">
                   <div className="text-xs min-w-0">
-                    <p className="font-semibold text-slate-900 dark:text-white truncate">
+                    <p className="font-semibold text-[#0B1D3A] dark:text-white truncate">
                       {user.displayName || user.email}
                     </p>
-                    <p className="text-slate-500 dark:text-slate-400 truncate">
+                    <p className="text-[#526886] dark:text-[#9BB2CE] truncate">
                       Sessão iniciada
                     </p>
                   </div>
                   <button
                     type="button"
                     onClick={() => void onSignOut()}
-                    className="min-h-[44px] px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 inline-flex items-center gap-1.5 shrink-0"
+                    className="min-h-[44px] px-3 py-1.5 rounded-lg border border-[#C6D6E8] dark:border-[#284A7F] text-xs font-semibold text-[#10284F] dark:text-[#F4F8FC] inline-flex items-center gap-1.5 shrink-0"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     <span>Terminar sessão</span>
@@ -382,14 +382,14 @@ export function Header({
                 <button
                   type="button"
                   onClick={() => void handleSignInClick()}
-                  className="w-full min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs sm:text-sm font-medium inline-flex items-center justify-center gap-2"
+                  className="w-full min-h-[44px] px-3.5 py-2 rounded-lg border border-[#D7E2F0] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E7F0FA] dark:hover:bg-[#153463] text-xs sm:text-sm font-medium inline-flex items-center justify-center gap-2"
                 >
-                  <LogIn className="w-4 h-4 text-[#B85414] dark:text-amber-400" />
+                  <LogIn className="w-4 h-4 text-[#1668A3] dark:text-[#E4B84F]" />
                   <span>Iniciar sessão com Google (Opcional)</span>
                 </button>
               )}
               {authError && (
-                <p className="text-xs text-red-600 dark:text-red-400">
+                <p className="text-xs text-rose-600 dark:text-rose-400">
                   {authError}
                 </p>
               )}

@@ -5,6 +5,16 @@
   :root {
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    --iebh-navy: #0B1D3A;
+    --iebh-navy-mid: #10284F;
+    --iebh-navy-surface: #11264A;
+    --iebh-navy-border: #1F3B68;
+    --iebh-gold: #E4B84F;
+    --iebh-gold-ink: #8F620B;
+    --iebh-sky: #75C2F6;
+    --iebh-sky-ink: #1668A3;
+    --iebh-canvas: #F4F8FC;
+    --iebh-border: #D7E2F0;
   }
 
   html {
@@ -41,7 +51,7 @@
 /* Interactive Print Sheet Mode (works inside sandboxed preview iframes & mobile) */
 .is-print-mode {
   background: #ffffff !important;
-  color: #0f172a !important;
+  color: #0B1D3A !important;
   min-height: 100vh;
 }
 
@@ -63,13 +73,13 @@
   margin: 0 auto !important;
   padding: 2rem 1.5rem 4rem !important;
   background: #ffffff !important;
-  color: #0f172a !important;
+  color: #0B1D3A !important;
 }
 
 .is-print-mode [data-testid="chord-sheet-content"],
 .is-print-mode [data-testid="chord-sheet-content"] p,
 .is-print-mode [data-testid="chord-sheet-content"] div {
-  color: #0f172a !important;
+  color: #0B1D3A !important;
 }
 
 @media print {
@@ -81,7 +91,7 @@
   body,
   .print-chord-sheet {
     background: #ffffff !important;
-    color: #0f172a !important;
+    color: #0B1D3A !important;
     overflow: visible !important;
     height: auto !important;
     min-height: 0 !important;
@@ -115,7 +125,7 @@
   .print-chord-sheet [data-testid="chord-sheet-content"] div {
     overflow: visible !important;
     padding-bottom: 0 !important;
-    color: #0f172a !important;
+    color: #0B1D3A !important;
   }
 
   .print-chord-sheet h2 {

@@ -291,7 +291,7 @@ function appendSongPages(
 
   if (kickerLabel) {
     currentStream().push(
-      `BT /F1 8.5 Tf 0.24 0.42 0.28 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(kickerLabel.toUpperCase())} Tj ET`
+      `BT /F1 8.5 Tf 0.086 0.408 0.639 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(kickerLabel.toUpperCase())} Tj ET`
     );
     currentY -= 15;
   }
@@ -301,7 +301,7 @@ function appendSongPages(
   const titleLines = wrapTextToWidth(fullTitle, pageWidth - marginX * 2, 16, true);
   for (const tLine of titleLines) {
     currentStream().push(
-      `BT /F1 16 Tf 0.06 0.09 0.16 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(tLine)} Tj ET`
+      `BT /F1 16 Tf 0.043 0.114 0.227 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(tLine)} Tj ET`
     );
     currentY -= 19;
   }
@@ -332,14 +332,14 @@ function appendSongPages(
   );
   for (const mLine of metaLines) {
     currentStream().push(
-      `BT /F2 10 Tf 0.39 0.45 0.55 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(mLine)} Tj ET`
+      `BT /F2 10 Tf 0.275 0.357 0.471 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(mLine)} Tj ET`
     );
     currentY -= 12;
   }
   currentY += 2;
 
   currentStream().push(
-    `0.82 0.84 0.88 RG 0.75 w ${marginX} ${currentY.toFixed(2)} m ${(pageWidth - marginX).toFixed(2)} ${currentY.toFixed(2)} l S`
+    `0.843 0.886 0.941 RG 0.75 w ${marginX} ${currentY.toFixed(2)} m ${(pageWidth - marginX).toFixed(2)} ${currentY.toFixed(2)} l S`
   );
   currentY -= 18;
 
@@ -356,13 +356,13 @@ function appendSongPages(
         currentY -= 4;
         const label = line.trim().replace(/^\[|\]$/g, '').toUpperCase();
         currentStream().push(
-          `BT /F1 9.5 Tf 0.72 0.33 0.08 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(label)} Tj ET`
+          `BT /F1 9.5 Tf 0.561 0.384 0.043 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(label)} Tj ET`
         );
         currentY -= 14;
       } else {
         ensureSpace(15);
         currentStream().push(
-          `BT /F2 11 Tf 0.06 0.09 0.16 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(line)} Tj ET`
+          `BT /F2 11 Tf 0.043 0.114 0.227 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(line)} Tj ET`
         );
         currentY -= 15;
       }
@@ -386,7 +386,7 @@ function appendSongPages(
         currentY -= 4;
         const label = line.raw.replace(/^\[|\]$/g, '').toUpperCase();
         currentStream().push(
-          `BT /F1 9.5 Tf 0.39 0.45 0.55 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(label)} Tj ET`
+          `BT /F1 9.5 Tf 0.086 0.408 0.639 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(label)} Tj ET`
         );
         currentY -= 13;
         continue;
@@ -396,7 +396,7 @@ function appendSongPages(
         const nextIsLyrics = i + 1 < parsed.length && parsed[i + 1].type === 'lyrics';
         ensureSpace(nextIsLyrics ? 26 : 13);
         currentStream().push(
-          `BT /F3 10 Tf 0.72 0.33 0.08 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(line.raw)} Tj ET`
+          `BT /F3 10 Tf 0.561 0.384 0.043 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(line.raw)} Tj ET`
         );
         currentY -= 12;
         continue;
@@ -404,7 +404,7 @@ function appendSongPages(
 
       ensureSpace(14);
       currentStream().push(
-        `BT /F4 10 Tf 0.06 0.09 0.16 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(line.raw)} Tj ET`
+        `BT /F4 10 Tf 0.043 0.114 0.227 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(line.raw)} Tj ET`
       );
       currentY -= 13.5;
     }
@@ -589,7 +589,7 @@ export function generatePlaylistPdfBytes(
 
   // Header brand kicker
   currentStream().push(
-    `BT /F1 9.5 Tf 0.24 0.42 0.28 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString('LOUVOR IEB HORTA  ·  ORDEM DO CULTO')} Tj ET`
+    `BT /F1 9.5 Tf 0.086 0.408 0.639 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString('LOUVOR IEB HORTA  ·  ORDEM DO CULTO')} Tj ET`
   );
   currentY -= 20;
 
@@ -597,7 +597,7 @@ export function generatePlaylistPdfBytes(
   const titleLines = wrapTextToWidth(mainTitle, contentWidth, 18, true);
   for (const line of titleLines) {
     currentStream().push(
-      `BT /F1 18 Tf 0.06 0.09 0.16 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(line)} Tj ET`
+      `BT /F1 18 Tf 0.043 0.114 0.227 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(line)} Tj ET`
     );
     currentY -= 22;
   }
@@ -619,19 +619,19 @@ export function generatePlaylistPdfBytes(
     includeChords ? 'Lista + Cifras completas' : 'Lista do culto'
   }  ·  Gerado a ${todayStr}`;
   currentStream().push(
-    `BT /F2 9.5 Tf 0.39 0.45 0.55 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(summarySubtitle)} Tj ET`
+    `BT /F2 9.5 Tf 0.275 0.357 0.471 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(summarySubtitle)} Tj ET`
   );
   currentY -= 12;
 
-  // Forest-green rule
+  // IEBH Deep Navy & Gold accent rule
   currentStream().push(
-    `0.24 0.42 0.28 RG 1.2 w ${marginX} ${currentY.toFixed(2)} m ${(pageWidth - marginX).toFixed(2)} ${currentY.toFixed(2)} l S`
+    `0.043 0.114 0.227 RG 1.4 w ${marginX} ${currentY.toFixed(2)} m ${(pageWidth - marginX).toFixed(2)} ${currentY.toFixed(2)} l S`
   );
   currentY -= 20;
 
   if (resolved.length === 0) {
     currentStream().push(
-      `BT /F2 11 Tf 0.39 0.45 0.55 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString('Nenhum item adicionado à lista deste culto.')} Tj ET`
+      `BT /F2 11 Tf 0.275 0.357 0.471 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString('Nenhum item adicionado à lista deste culto.')} Tj ET`
     );
   } else {
     resolved.forEach((entry, idx) => {
@@ -657,21 +657,21 @@ export function generatePlaylistPdfBytes(
 
         const boxBottom = currentY - boxHeight + 10;
         currentStream().push(
-          `0.933 0.965 0.933 rg ${marginX} ${boxBottom.toFixed(2)} ${contentWidth.toFixed(2)} ${boxHeight.toFixed(2)} re f`
+          `0.922 0.961 0.996 rg ${marginX} ${boxBottom.toFixed(2)} ${contentWidth.toFixed(2)} ${boxHeight.toFixed(2)} re f`
         );
         currentStream().push(
-          `0.243 0.420 0.282 RG 0.8 w ${marginX} ${boxBottom.toFixed(2)} ${contentWidth.toFixed(2)} ${boxHeight.toFixed(2)} re S`
+          `0.086 0.408 0.639 RG 0.8 w ${marginX} ${boxBottom.toFixed(2)} ${contentWidth.toFixed(2)} ${boxHeight.toFixed(2)} re S`
         );
 
         let textY = currentY - 3;
         currentStream().push(
-          `BT /F1 8 Tf 0.24 0.42 0.28 rg ${(marginX + 12).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString('MOMENTO / INTERVALO DO CULTO')} Tj ET`
+          `BT /F1 8 Tf 0.086 0.408 0.639 rg ${(marginX + 12).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString('MOMENTO / INTERVALO DO CULTO')} Tj ET`
         );
         textY -= 14;
 
         for (const tLine of momentTitleLines) {
           currentStream().push(
-            `BT /F1 11.5 Tf 0.06 0.09 0.16 rg ${(marginX + 12).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(tLine)} Tj ET`
+            `BT /F1 11.5 Tf 0.043 0.114 0.227 rg ${(marginX + 12).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(tLine)} Tj ET`
           );
           textY -= 14.5;
         }
@@ -684,7 +684,7 @@ export function generatePlaylistPdfBytes(
               continue;
             }
             currentStream().push(
-              `BT /F2 9.5 Tf 0.24 0.29 0.37 rg ${(marginX + 12).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(nLine)} Tj ET`
+              `BT /F2 9.5 Tf 0.200 0.282 0.396 rg ${(marginX + 12).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(nLine)} Tj ET`
             );
             textY -= 13;
           }
@@ -731,25 +731,25 @@ export function generatePlaylistPdfBytes(
 
       if (idx % 2 === 1) {
         currentStream().push(
-          `0.96 0.97 0.96 rg ${marginX} ${(currentY - rowHeight + 10).toFixed(2)} ${contentWidth.toFixed(2)} ${rowHeight.toFixed(2)} re f`
+          `0.957 0.973 0.988 rg ${marginX} ${(currentY - rowHeight + 10).toFixed(2)} ${contentWidth.toFixed(2)} ${rowHeight.toFixed(2)} re f`
         );
       }
 
       currentStream().push(
-        `BT /F3 12 Tf 0.24 0.42 0.28 rg ${(marginX + 8).toFixed(2)} ${(currentY - 4).toFixed(2)} Td ${encodePdfString(orderStr)} Tj ET`
+        `BT /F3 12 Tf 0.086 0.408 0.639 rg ${(marginX + 8).toFixed(2)} ${(currentY - 4).toFixed(2)} Td ${encodePdfString(orderStr)} Tj ET`
       );
 
       const keyDisplay =
         entry.activeKey === '—' ? 'Letra' : `Tom: ${entry.activeKey}`;
       const keyWidth = estimateTextWidth(keyDisplay, 11, true);
       currentStream().push(
-        `BT /F1 11 Tf 0.72 0.33 0.08 rg ${(pageWidth - marginX - keyWidth - 8).toFixed(2)} ${(currentY - 4).toFixed(2)} Td ${encodePdfString(keyDisplay)} Tj ET`
+        `BT /F1 11 Tf 0.561 0.384 0.043 rg ${(pageWidth - marginX - keyWidth - 8).toFixed(2)} ${(currentY - 4).toFixed(2)} Td ${encodePdfString(keyDisplay)} Tj ET`
       );
 
       let titleY = currentY - 4;
       for (const tLine of songTitleLines) {
         currentStream().push(
-          `BT /F1 12 Tf 0.06 0.09 0.16 rg ${(marginX + 36).toFixed(2)} ${titleY.toFixed(2)} Td ${encodePdfString(tLine)} Tj ET`
+          `BT /F1 12 Tf 0.043 0.114 0.227 rg ${(marginX + 36).toFixed(2)} ${titleY.toFixed(2)} Td ${encodePdfString(tLine)} Tj ET`
         );
         titleY -= 15;
       }
@@ -757,7 +757,7 @@ export function generatePlaylistPdfBytes(
       let metaY = titleY + 1;
       for (const mLine of songMetaLines) {
         currentStream().push(
-          `BT /F2 9.5 Tf 0.39 0.45 0.55 rg ${(marginX + 36).toFixed(2)} ${metaY.toFixed(2)} Td ${encodePdfString(mLine)} Tj ET`
+          `BT /F2 9.5 Tf 0.275 0.357 0.471 rg ${(marginX + 36).toFixed(2)} ${metaY.toFixed(2)} Td ${encodePdfString(mLine)} Tj ET`
         );
         metaY -= 12;
       }
@@ -765,7 +765,7 @@ export function generatePlaylistPdfBytes(
       currentY -= rowHeight;
 
       currentStream().push(
-        `0.87 0.89 0.91 RG 0.5 w ${marginX} ${(currentY + 10).toFixed(2)} m ${(pageWidth - marginX).toFixed(2)} ${(currentY + 10).toFixed(2)} l S`
+        `0.843 0.886 0.941 RG 0.5 w ${marginX} ${(currentY + 10).toFixed(2)} m ${(pageWidth - marginX).toFixed(2)} ${(currentY + 10).toFixed(2)} l S`
       );
     });
   }
@@ -808,21 +808,21 @@ export function generatePlaylistPdfBytes(
       const boxBottom = bookletY - boxHeight + 8;
 
       stream.push(
-        `0.933 0.965 0.933 rg ${marginX} ${boxBottom.toFixed(2)} ${contentWidth.toFixed(2)} ${boxHeight.toFixed(2)} re f`
+        `0.922 0.961 0.996 rg ${marginX} ${boxBottom.toFixed(2)} ${contentWidth.toFixed(2)} ${boxHeight.toFixed(2)} re f`
       );
       stream.push(
-        `0.243 0.420 0.282 RG 1 w ${marginX} ${boxBottom.toFixed(2)} ${contentWidth.toFixed(2)} ${boxHeight.toFixed(2)} re S`
+        `0.086 0.408 0.639 RG 1 w ${marginX} ${boxBottom.toFixed(2)} ${contentWidth.toFixed(2)} ${boxHeight.toFixed(2)} re S`
       );
 
       let textY = bookletY - 6;
       stream.push(
-        `BT /F1 8.5 Tf 0.24 0.42 0.28 rg ${(marginX + 14).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(contextKicker.toUpperCase())} Tj ET`
+        `BT /F1 8.5 Tf 0.086 0.408 0.639 rg ${(marginX + 14).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(contextKicker.toUpperCase())} Tj ET`
       );
       textY -= 16;
 
       for (const tLine of mTitleLines) {
         stream.push(
-          `BT /F1 13 Tf 0.06 0.09 0.16 rg ${(marginX + 14).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(tLine)} Tj ET`
+          `BT /F1 13 Tf 0.043 0.114 0.227 rg ${(marginX + 14).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(tLine)} Tj ET`
         );
         textY -= 16;
       }
@@ -835,7 +835,7 @@ export function generatePlaylistPdfBytes(
             continue;
           }
           stream.push(
-            `BT /F2 10.5 Tf 0.24 0.29 0.37 rg ${(marginX + 14).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(nLine)} Tj ET`
+            `BT /F2 10.5 Tf 0.200 0.282 0.396 rg ${(marginX + 14).toFixed(2)} ${textY.toFixed(2)} Td ${encodePdfString(nLine)} Tj ET`
           );
           textY -= 14;
         }
@@ -914,7 +914,7 @@ export interface SchedulePdfFilters {
 
 /**
  * Generates an A4 Landscape PDF table of the Worship Team Schedule ("Escala"),
- * matching the church's green header aesthetic (#3E6B48) and supporting dynamic roles & filters.
+ * matching the IEBH Deep Navy header aesthetic (#0B1D3A) and supporting dynamic roles & filters.
  */
 export function generateSchedulePdfBytes(
   entries: ScheduleEntry[],
@@ -985,7 +985,7 @@ export function generateSchedulePdfBytes(
       ? 'Louvor IEB Horta  ·  Escala do Grupo de Louvor (continuação)'
       : 'Louvor IEB Horta  ·  Escala do Grupo de Louvor';
     currentStream().push(
-      `BT /F1 13.5 Tf 0.18 0.32 0.24 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(title)} Tj ET`
+      `BT /F1 13.5 Tf 0.043 0.114 0.227 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(title)} Tj ET`
     );
     currentY -= 15;
 
@@ -996,7 +996,7 @@ export function generateSchedulePdfBytes(
     });
     const subtitle = `Filtro: ${filterSummaryParts.join('  ·  ')}  ·  Emitido a ${todayStr}`;
     currentStream().push(
-      `BT /F2 8.5 Tf 0.39 0.45 0.55 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(subtitle)} Tj ET`
+      `BT /F2 8.5 Tf 0.275 0.357 0.471 rg ${marginX} ${currentY.toFixed(2)} Td ${encodePdfString(subtitle)} Tj ET`
     );
     currentY -= 12;
   };
@@ -1010,9 +1010,9 @@ export function generateSchedulePdfBytes(
     const maxHeaderLines = Math.max(1, ...headerWrapped.map((l) => l.length));
     const headerHeight = Math.max(22, maxHeaderLines * (headerFontSize + 2.5) + 8);
 
-    // Solid green header background (#3E6B48)
+    // Solid IEBH Deep Navy header background (#0B1D3A)
     currentStream().push(
-      `0.243 0.420 0.282 rg ${marginX} ${(currentY - headerHeight).toFixed(2)} ${tableWidth.toFixed(2)} ${headerHeight.toFixed(2)} re f`
+      `0.043 0.114 0.227 rg ${marginX} ${(currentY - headerHeight).toFixed(2)} ${tableWidth.toFixed(2)} ${headerHeight.toFixed(2)} re f`
     );
 
     let cursorX = marginX;
@@ -1036,7 +1036,7 @@ export function generateSchedulePdfBytes(
       // Vertical column border inside header
       if (cIdx > 0) {
         currentStream().push(
-          `0.33 0.53 0.37 RG 0.5 w ${cursorX.toFixed(2)} ${currentY.toFixed(2)} m ${cursorX.toFixed(2)} ${(currentY - headerHeight).toFixed(2)} l S`
+          `0.122 0.231 0.408 RG 0.5 w ${cursorX.toFixed(2)} ${currentY.toFixed(2)} m ${cursorX.toFixed(2)} ${(currentY - headerHeight).toFixed(2)} l S`
         );
       }
       cursorX += col.width;
@@ -1051,13 +1051,13 @@ export function generateSchedulePdfBytes(
   if (entries.length === 0) {
     const emptyH = 34;
     currentStream().push(
-      `0.96 0.97 0.96 rg ${marginX} ${(currentY - emptyH).toFixed(2)} ${tableWidth.toFixed(2)} ${emptyH.toFixed(2)} re f`
+      `0.957 0.973 0.988 rg ${marginX} ${(currentY - emptyH).toFixed(2)} ${tableWidth.toFixed(2)} ${emptyH.toFixed(2)} re f`
     );
     currentStream().push(
-      `0.78 0.85 0.80 RG 0.5 w ${marginX} ${(currentY - emptyH).toFixed(2)} ${tableWidth.toFixed(2)} ${emptyH.toFixed(2)} re S`
+      `0.843 0.886 0.941 RG 0.5 w ${marginX} ${(currentY - emptyH).toFixed(2)} ${tableWidth.toFixed(2)} ${emptyH.toFixed(2)} re S`
     );
     currentStream().push(
-      `BT /F2 9.5 Tf 0.39 0.45 0.55 rg ${(marginX + 10).toFixed(2)} ${(currentY - 21).toFixed(2)} Td ${encodePdfString('Nenhuma data encontrada para os filtros selecionados.')} Tj ET`
+      `BT /F2 9.5 Tf 0.275 0.357 0.471 rg ${(marginX + 10).toFixed(2)} ${(currentY - 21).toFixed(2)} Td ${encodePdfString('Nenhuma data encontrada para os filtros selecionados.')} Tj ET`
     );
   } else {
     entries.forEach((entry, rowIdx) => {
@@ -1083,10 +1083,10 @@ export function generateSchedulePdfBytes(
         drawTableHeader();
       }
 
-      // Alternating row fill (#EEF6EE on odd rows, crisp white on even)
+      // Alternating row fill (#F4F8FC on odd rows, crisp white on even)
       if (rowIdx % 2 === 1) {
         currentStream().push(
-          `0.933 0.965 0.933 rg ${marginX} ${(currentY - rowHeight).toFixed(2)} ${tableWidth.toFixed(2)} ${rowHeight.toFixed(2)} re f`
+          `0.957 0.973 0.988 rg ${marginX} ${(currentY - rowHeight).toFixed(2)} ${tableWidth.toFixed(2)} ${rowHeight.toFixed(2)} re f`
         );
       } else {
         currentStream().push(
@@ -1104,7 +1104,7 @@ export function generateSchedulePdfBytes(
 
         if (isHighlighted) {
           currentStream().push(
-            `0.84 0.93 0.85 rg ${cursorX.toFixed(2)} ${(currentY - rowHeight).toFixed(2)} ${col.width.toFixed(2)} ${rowHeight.toFixed(2)} re f`
+            `0.984 0.957 0.875 rg ${cursorX.toFixed(2)} ${(currentY - rowHeight).toFixed(2)} ${col.width.toFixed(2)} ${rowHeight.toFixed(2)} re f`
           );
         }
 
@@ -1112,10 +1112,10 @@ export function generateSchedulePdfBytes(
         const useBold = cIdx <= 1 || isHighlighted;
         const fontTag = useBold ? '/F1' : '/F2';
         const colorCmd = isHighlighted
-          ? '0.12 0.32 0.18 rg'
+          ? '0.561 0.384 0.043 rg'
           : cIdx === 2 || cIdx === 3
-            ? '0.24 0.29 0.37 rg'
-            : '0.08 0.11 0.17 rg';
+            ? '0.200 0.282 0.396 rg'
+            : '0.043 0.114 0.227 rg';
 
         const blockHeight = lines.length * lineHeight;
         let textY = currentY - (rowHeight - blockHeight) / 2 - bodyFontSize + 1.5;
@@ -1134,17 +1134,17 @@ export function generateSchedulePdfBytes(
 
         // Cell grid border
         currentStream().push(
-          `0.81 0.86 0.82 RG 0.45 w ${cursorX.toFixed(2)} ${currentY.toFixed(2)} m ${cursorX.toFixed(2)} ${(currentY - rowHeight).toFixed(2)} l S`
+          `0.843 0.886 0.941 RG 0.45 w ${cursorX.toFixed(2)} ${currentY.toFixed(2)} m ${cursorX.toFixed(2)} ${(currentY - rowHeight).toFixed(2)} l S`
         );
         cursorX += col.width;
       });
 
       // Outer right border + bottom row border
       currentStream().push(
-        `0.81 0.86 0.82 RG 0.45 w ${(marginX + tableWidth).toFixed(2)} ${currentY.toFixed(2)} m ${(marginX + tableWidth).toFixed(2)} ${(currentY - rowHeight).toFixed(2)} l S`
+        `0.843 0.886 0.941 RG 0.45 w ${(marginX + tableWidth).toFixed(2)} ${currentY.toFixed(2)} m ${(marginX + tableWidth).toFixed(2)} ${(currentY - rowHeight).toFixed(2)} l S`
       );
       currentStream().push(
-        `0.81 0.86 0.82 RG 0.45 w ${marginX} ${(currentY - rowHeight).toFixed(2)} m ${(marginX + tableWidth).toFixed(2)} ${(currentY - rowHeight).toFixed(2)} l S`
+        `0.843 0.886 0.941 RG 0.45 w ${marginX} ${(currentY - rowHeight).toFixed(2)} m ${(marginX + tableWidth).toFixed(2)} ${(currentY - rowHeight).toFixed(2)} l S`
       );
 
       currentY -= rowHeight;
@@ -1157,7 +1157,7 @@ export function generateSchedulePdfBytes(
     const footer = `Louvor IEB Horta  ·  Escala de Louvor  ·  Página ${p + 1} de ${totalPages}`;
     const footerW = estimateTextWidth(footer, 8, false);
     pages[p].push(
-      `BT /F2 8 Tf 0.52 0.58 0.65 rg ${((pageWidth - footerW) / 2).toFixed(2)} 18 Td ${encodePdfString(footer)} Tj ET`
+      `BT /F2 8 Tf 0.420 0.510 0.631 rg ${((pageWidth - footerW) / 2).toFixed(2)} 18 Td ${encodePdfString(footer)} Tj ET`
     );
   }
 

@@ -323,7 +323,7 @@ export function ChordViewer({
 
   return (
     <div
-      className={`print-chord-sheet min-h-screen bg-white dark:bg-[#0F172A] text-slate-900 dark:text-slate-50 transition-colors duration-150 ${
+      className={`print-chord-sheet min-h-screen bg-white dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] transition-colors duration-150 ${
         isPrintMode ? 'is-print-mode' : ''
       }`}
     >
@@ -332,10 +332,10 @@ export function ChordViewer({
         <div
           role="region"
           aria-label="Opções de impressão da cifra"
-          className="print-mode-bar sticky top-0 z-50 border-b border-slate-200 bg-slate-900 text-white px-3 sm:px-6 py-2.5"
+          className="print-mode-bar sticky top-0 z-50 border-b border-[#1F3B68] bg-[#0B1D3A] text-white px-3 sm:px-6 py-2.5"
         >
           <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-2">
-            <div className="text-xs sm:text-sm font-medium text-slate-200">
+            <div className="text-xs sm:text-sm font-medium text-[#DCE8F6]">
               Modo Folha de Impressão (cabeçalho, rodapé e navegação ocultos)
             </div>
             <div className="flex items-center gap-2">
@@ -350,7 +350,7 @@ export function ChordViewer({
                     cifraParams.capoFret
                   )
                 }
-                className="min-h-[44px] px-3.5 py-2 rounded-lg bg-[#B85414] hover:bg-[#9E460F] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                className="min-h-[44px] px-3.5 py-2 rounded-lg bg-[#E4B84F] hover:bg-[#EBC668] text-[#0B1D3A] text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F]"
               >
                 <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>Transferir PDF</span>
@@ -371,7 +371,7 @@ export function ChordViewer({
                     );
                   }
                 }}
-                className="min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                className="min-h-[44px] px-3.5 py-2 rounded-lg border border-[#294B7F] bg-[#16315D] hover:bg-[#1E3F75] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#75C2F6]"
               >
                 <Printer className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>Imprimir</span>
@@ -381,7 +381,7 @@ export function ChordViewer({
                 type="button"
                 onClick={() => setIsPrintMode(false)}
                 aria-label="Fechar modo de impressão"
-                className="min-h-[44px] px-3 py-2 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 text-slate-200 text-xs sm:text-sm font-medium inline-flex items-center gap-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                className="min-h-[44px] px-3 py-2 rounded-lg border border-[#294B7F] bg-[#11264A] hover:bg-[#16315D] text-[#DCE8F6] text-xs sm:text-sm font-medium inline-flex items-center gap-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#75C2F6]"
               >
                 <X className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>Voltar</span>
@@ -392,7 +392,7 @@ export function ChordViewer({
       )}
 
       {/* Compact Top Stage Bar (non-fixed on mobile to keep fixed surfaces <= 15%, sticky on md+) */}
-      <header className="no-print md:sticky md:top-0 z-30 border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0F172A]/95 backdrop-blur-md">
+      <header className="no-print md:sticky md:top-0 z-30 border-b border-[#1F3B68] bg-[#0B1D3A] text-white">
         <div className="max-w-4xl mx-auto px-2 sm:px-6 h-13 sm:h-14 flex items-center justify-between gap-2">
           <button
             type="button"
@@ -401,18 +401,18 @@ export function ChordViewer({
               onBack();
             }}
             aria-label="Voltar para a lista"
-            className="min-h-[44px] min-w-[44px] px-2.5 inline-flex items-center gap-1.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+            className="min-h-[44px] min-w-[44px] px-2.5 inline-flex items-center gap-1.5 rounded-lg text-[#DCE8F6] hover:bg-[#16315D] hover:text-white text-sm font-medium shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F]"
           >
             <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
             <span className="hidden sm:inline">Voltar</span>
           </button>
 
           <div className="min-w-0 flex-1 text-center px-1">
-            <h1 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-50 truncate">
+            <h1 className="text-sm sm:text-base font-bold text-white truncate">
               {song.number !== undefined ? `#${song.number} · ` : ''}
               {song.title}
             </h1>
-            <p className="text-xs text-slate-500 dark:text-slate-400 truncate">
+            <p className="text-xs text-[#9BB2CE] truncate">
               {song.artist}
               {song.bpm && song.bpm > 0 ? (
                 <>
@@ -438,10 +438,10 @@ export function ChordViewer({
               aria-expanded={isListenOpen}
               aria-label="Ouvir música (versão original, tocada e acordes)"
               title="Ouvir música (versão original, tocada e acordes)"
-              className={`min-h-[44px] px-2.5 flex items-center justify-center gap-1.5 rounded-lg border text-xs font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+              className={`min-h-[44px] px-2.5 flex items-center justify-center gap-1.5 rounded-lg border text-xs font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F] ${
                 isListenOpen || isPlayingProgression
-                  ? 'border-[#2F523E] bg-[#2F523E] text-white dark:border-emerald-500 dark:bg-emerald-600'
-                  : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  ? 'border-[#75C2F6] bg-[#75C2F6] text-[#0B1D3A]'
+                  : 'border-[#294B7F] bg-[#11264A] text-[#DCE8F6] hover:bg-[#16315D] hover:text-white'
               }`}
             >
               <Headphones className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -453,7 +453,7 @@ export function ChordViewer({
               onClick={handleOpenPrintSheet}
               aria-label={`Imprimir cifra de ${song.title}`}
               title="Imprimir / Transferir PDF da cifra"
-              className="min-h-[44px] min-w-[44px] px-2.5 flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+              className="min-h-[44px] min-w-[44px] px-2.5 flex items-center justify-center gap-1.5 rounded-lg border border-[#294B7F] bg-[#11264A] text-[#DCE8F6] hover:bg-[#16315D] hover:text-white text-xs font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F]"
             >
               <Printer className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span className="hidden sm:inline">Imprimir</span>
@@ -467,7 +467,7 @@ export function ChordViewer({
               }}
               aria-label={`Editar cifra de ${song.title}`}
               title="Editar cifra"
-              className="hidden sm:flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+              className="hidden sm:flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-[#DCE8F6] hover:bg-[#16315D] hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F]"
             >
               <Pencil className="w-4 h-4" aria-hidden="true" />
             </button>
@@ -479,12 +479,12 @@ export function ChordViewer({
                 isDark ? 'Mudar para Modo Claro' : 'Mudar para Modo Palco'
               }
               title={isDark ? 'Modo Claro' : 'Modo Palco'}
-              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg border border-[#294B7F] bg-[#11264A] text-[#E4B84F] hover:bg-[#16315D] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F]"
             >
               {isDark ? (
                 <Sun className="w-4 h-4" aria-hidden="true" />
               ) : (
-                <Moon className="w-4 h-4 text-[#B85414]" aria-hidden="true" />
+                <Moon className="w-4 h-4" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -498,19 +498,19 @@ export function ChordViewer({
         }`}
       >
         {/* Print-only Sheet Header (replaces interactive header on paper) */}
-        <div className="print-only mb-4 pb-3 border-b border-slate-300">
+        <div className="print-only mb-4 pb-3 border-b border-[#C3D3E8]">
           <div className="flex items-baseline justify-between gap-4">
-            <h1 className="text-xl font-bold text-slate-900">
+            <h1 className="text-xl font-bold text-[#0B1D3A]">
               {song.number !== undefined ? `#${song.number} · ` : ''}
               {song.title}
             </h1>
             {song.originalKey !== '—' && (
-              <span className="font-cifra text-sm font-bold text-[#B85414]">
+              <span className="font-cifra text-sm font-bold text-[#8F620B]">
                 Tom: {activeKey}
               </span>
             )}
           </div>
-          <p className="mt-0.5 text-xs text-slate-600">
+          <p className="mt-0.5 text-xs text-[#465B78]">
             {song.artist}
             {song.originalKey !== '—' && !lyricsOnly && cifraParams.style !== 'original'
               ? ` · ${cifraParams.fullLabel}`
@@ -521,32 +521,32 @@ export function ChordViewer({
         </div>
 
         {/* Key, Category & Font Size Strip (screen only) */}
-        <div className="no-print mb-3 pb-3 border-b border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+        <div className="no-print mb-3 pb-3 border-b border-[#E3ECF7] dark:border-[#1F3B68] flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-[#465B78] dark:text-[#9BB2CE]">
           <div className="flex flex-wrap items-center gap-2">
             {song.originalKey === '—' ? (
-              <span className="font-medium text-slate-600 dark:text-slate-300">
+              <span className="font-medium text-[#465B78] dark:text-[#DCE8F6]">
                 Só letra (sem cifra)
               </span>
             ) : (
               <>
                 <span>Tom:</span>
-                <span className="font-cifra font-bold text-base text-[#B85414] dark:text-amber-400">
+                <span className="font-cifra font-bold text-base text-[#8F620B] dark:text-[#E4B84F]">
                   {activeKey}
                 </span>
                 <button
                   type="button"
                   onClick={() => handlePlaySingleChord(activeKey, true)}
                   title={`Ouvir o acorde do tom (${activeKey})`}
-                  className="min-h-[38px] px-2.5 py-1 inline-flex items-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
+                  className="min-h-[38px] px-2.5 py-1 inline-flex items-center gap-1.5 rounded-lg border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] text-xs font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#EEF4FB] dark:hover:bg-[#16315D] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
                 >
-                  <Volume2 className="w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                  <Volume2 className="w-3.5 h-3.5 text-[#8F620B] dark:text-[#E4B84F] shrink-0" aria-hidden="true" />
                   <span>Ouvir Tom ({activeKey})</span>
                 </button>
                 {transposeOffset !== 0 && (
                   <button
                     type="button"
                     onClick={onResetTranspose}
-                    className="min-h-[38px] px-2 inline-flex items-center gap-1 rounded-lg border border-slate-200 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                    className="min-h-[38px] px-2 inline-flex items-center gap-1 rounded-lg border border-[#D7E2F0] dark:border-[#1F3B68] text-xs text-[#465B78] dark:text-[#DCE8F6] hover:bg-[#EEF4FB] dark:hover:bg-[#16315D]"
                     title="Voltar ao tom original"
                   >
                     <RotateCcw className="w-3 h-3" aria-hidden="true" />
@@ -562,14 +562,14 @@ export function ChordViewer({
             <div
               role="group"
               aria-label="Tamanho da letra"
-              className="flex items-center rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shrink-0"
+              className="flex items-center rounded-lg border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] shrink-0"
             >
               <button
                 type="button"
                 onClick={() => setFontSize((s) => Math.max(11, s - 1))}
                 disabled={fontSize <= 11}
                 aria-label="Diminuir tamanho da letra"
-                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-l-lg text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-l-lg text-xs font-bold text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E3ECF7] dark:hover:bg-[#16315D] disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
               >
                 <span className="flex items-center">
                   A<Minus className="w-3 h-3" aria-hidden="true" />
@@ -580,7 +580,7 @@ export function ChordViewer({
                 onClick={() => setFontSize((s) => Math.min(24, s + 1))}
                 disabled={fontSize >= 24}
                 aria-label="Aumentar tamanho da letra"
-                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-r-lg border-l border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-r-lg border-l border-[#D7E2F0] dark:border-[#1F3B68] text-xs font-bold text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E3ECF7] dark:hover:bg-[#16315D] disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
               >
                 <span className="flex items-center">
                   A<Plus className="w-3 h-3" aria-hidden="true" />
@@ -592,24 +592,24 @@ export function ChordViewer({
 
         {/* Cifra Style Switcher: Completa | Simplificada | Capotraste (screen only) */}
         {song.originalKey !== '—' && !lyricsOnly && (
-          <div className="no-print mb-3 pb-3 border-b border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <div className="no-print mb-3 pb-3 border-b border-[#E3ECF7] dark:border-[#1F3B68] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 min-w-0">
-              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider shrink-0">
+              <span className="text-xs font-semibold text-[#526886] dark:text-[#9BB2CE] uppercase tracking-wider shrink-0">
                 Cifra:
               </span>
               <div
                 role="group"
                 aria-label="Modo da cifra"
-                className="grid grid-cols-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 p-1 gap-1"
+                className="grid grid-cols-3 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#081429] p-1 gap-1"
               >
                 <button
                   type="button"
                   onClick={() => onChangeCifraStyle?.('original')}
                   aria-pressed={cifraParams.style === 'original'}
-                  className={`min-h-[44px] px-2.5 sm:px-3.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                  className={`min-h-[44px] px-2.5 sm:px-3.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                     cifraParams.style === 'original'
-                      ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800'
+                      ? 'bg-[#0B1D3A] dark:bg-[#F4F8FC] text-white dark:text-[#0B1D3A]'
+                      : 'text-[#2A3F5F] dark:text-[#DCE8F6] hover:bg-white dark:hover:bg-[#16315D]'
                   }`}
                 >
                   Completa
@@ -618,10 +618,10 @@ export function ChordViewer({
                   type="button"
                   onClick={() => onChangeCifraStyle?.('simplified')}
                   aria-pressed={cifraParams.style === 'simplified'}
-                  className={`min-h-[44px] px-2.5 sm:px-3.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                  className={`min-h-[44px] px-2.5 sm:px-3.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6] ${
                     cifraParams.style === 'simplified'
-                      ? 'bg-[#2F523E] text-white'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800'
+                      ? 'bg-[#1668A3] dark:bg-[#75C2F6] text-white dark:text-[#0B1D3A]'
+                      : 'text-[#2A3F5F] dark:text-[#DCE8F6] hover:bg-white dark:hover:bg-[#16315D]'
                   }`}
                 >
                   Simplificada
@@ -635,10 +635,10 @@ export function ChordViewer({
                     onChangeCifraStyle?.('capo', defaultFret);
                   }}
                   aria-pressed={cifraParams.style === 'capo'}
-                  className={`min-h-[44px] px-2.5 sm:px-3.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                  className={`min-h-[44px] px-2.5 sm:px-3.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F620B] dark:focus-visible:ring-[#E4B84F] ${
                     cifraParams.style === 'capo'
-                      ? 'bg-[#B85414] text-white'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800'
+                      ? 'bg-[#8F620B] dark:bg-[#E4B84F] text-white dark:text-[#0B1D3A]'
+                      : 'text-[#2A3F5F] dark:text-[#DCE8F6] hover:bg-white dark:hover:bg-[#16315D]'
                   }`}
                 >
                   Capo
@@ -651,7 +651,7 @@ export function ChordViewer({
                 <div
                   role="group"
                   aria-label="Casa do capotraste"
-                  className="inline-flex items-center rounded-xl border border-[#B85414]/35 dark:border-amber-500/40 bg-[#B85414]/5 dark:bg-amber-950/30"
+                  className="inline-flex items-center rounded-xl border border-[#E4B84F]/50 dark:border-[#E4B84F]/40 bg-[#FBF4DF] dark:bg-[#E4B84F]/15"
                 >
                   <button
                     type="button"
@@ -660,11 +660,11 @@ export function ChordViewer({
                     }
                     disabled={cifraParams.capoFret <= 1}
                     aria-label="Diminuir casa do capotraste"
-                    className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-l-xl text-[#B85414] dark:text-amber-400 hover:bg-[#B85414]/10 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
+                    className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-l-xl text-[#8F620B] dark:text-[#E4B84F] hover:bg-[#E4B84F]/20 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F620B] dark:focus-visible:ring-[#E4B84F]"
                   >
                     <Minus className="w-4 h-4" aria-hidden="true" />
                   </button>
-                  <span className="px-2.5 font-cifra text-xs font-bold text-[#B85414] dark:text-amber-300 whitespace-nowrap tabular-nums">
+                  <span className="px-2.5 font-cifra text-xs font-bold text-[#8F620B] dark:text-[#E4B84F] whitespace-nowrap tabular-nums">
                     Capo {cifraParams.capoFret}ª casa
                   </span>
                   <button
@@ -674,15 +674,15 @@ export function ChordViewer({
                     }
                     disabled={cifraParams.capoFret >= 9}
                     aria-label="Aumentar casa do capotraste"
-                    className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-r-xl text-[#B85414] dark:text-amber-400 hover:bg-[#B85414]/10 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
+                    className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-r-xl text-[#8F620B] dark:text-[#E4B84F] hover:bg-[#E4B84F]/20 disabled:opacity-35 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F620B] dark:focus-visible:ring-[#E4B84F]"
                   >
                     <Plus className="w-4 h-4" aria-hidden="true" />
                   </button>
                 </div>
 
-                <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                <span className="text-xs font-medium text-[#465B78] dark:text-[#DCE8F6]">
                   Formas em{' '}
-                  <strong className="font-cifra text-[#B85414] dark:text-amber-400">
+                  <strong className="font-cifra text-[#8F620B] dark:text-[#E4B84F]">
                     {cifraParams.fingeredKey}
                   </strong>{' '}
                   (soa em {cifraParams.soundingKey})
@@ -695,7 +695,7 @@ export function ChordViewer({
         {/* Always-accessible "Ouvir Música" Bar & Expandable Audio Studio (screen only) */}
         <section
           aria-label="Ouvir música e referências de ensaio"
-          className="no-print mb-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 overflow-hidden"
+          className="no-print mb-5 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] overflow-hidden"
         >
           {/* Compact Quick-Listen Strip */}
           <div className="p-2.5 sm:px-4 flex flex-wrap items-center justify-between gap-2">
@@ -711,7 +711,7 @@ export function ChordViewer({
                 });
               }}
               aria-expanded={isListenOpen}
-              className="min-h-[44px] px-3 py-2 rounded-lg bg-[#2F523E] hover:bg-[#244030] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              className="min-h-[44px] px-3 py-2 rounded-lg bg-[#0B1D3A] hover:bg-[#153463] dark:bg-[#1668A3] dark:hover:bg-[#1C7BC0] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6]"
             >
               <Headphones className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>Ouvir Música (Original, Tocada e Acordes)</span>
@@ -730,9 +730,9 @@ export function ChordViewer({
                     setIsListenOpen(true);
                     setShowEmbeddedVideo(true);
                   }}
-                  className="min-h-[40px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-100 inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                  className="min-h-[40px] px-3 py-1.5 rounded-lg border border-[#D7E2F0] dark:border-[#294B7F] bg-white dark:bg-[#16315D] hover:bg-[#EEF4FB] dark:hover:bg-[#1E3F75] text-xs font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
                 >
-                  <Play className="w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                  <Play className="w-3.5 h-3.5 text-[#8F620B] dark:text-[#E4B84F] shrink-0" aria-hidden="true" />
                   <span>Ouvir Versão Original Aqui</span>
                 </button>
               ) : (
@@ -740,11 +740,11 @@ export function ChordViewer({
                   href={listeningLinks.originalYoutube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-h-[40px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-100 inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                  className="min-h-[40px] px-3 py-1.5 rounded-lg border border-[#D7E2F0] dark:border-[#294B7F] bg-white dark:bg-[#16315D] hover:bg-[#EEF4FB] dark:hover:bg-[#1E3F75] text-xs font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
                 >
-                  <Play className="w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                  <Play className="w-3.5 h-3.5 text-[#8F620B] dark:text-[#E4B84F] shrink-0" aria-hidden="true" />
                   <span>Versão Original</span>
-                  <ExternalLink className="w-3 h-3 text-slate-400 shrink-0" aria-hidden="true" />
+                  <ExternalLink className="w-3 h-3 text-[#6B82A1] dark:text-[#9BB2CE] shrink-0" aria-hidden="true" />
                 </a>
               )}
 
@@ -752,11 +752,11 @@ export function ChordViewer({
                 href={listeningLinks.acousticYoutube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="min-h-[40px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-100 inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                className="min-h-[40px] px-3 py-1.5 rounded-lg border border-[#D7E2F0] dark:border-[#294B7F] bg-white dark:bg-[#16315D] hover:bg-[#EEF4FB] dark:hover:bg-[#1E3F75] text-xs font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
               >
-                <Music2 className="w-3.5 h-3.5 text-[#2F523E] dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                <Music2 className="w-3.5 h-3.5 text-[#1668A3] dark:text-[#75C2F6] shrink-0" aria-hidden="true" />
                 <span>Tocada / Acústica</span>
-                <ExternalLink className="w-3 h-3 text-slate-400 shrink-0" aria-hidden="true" />
+                <ExternalLink className="w-3 h-3 text-[#6B82A1] dark:text-[#9BB2CE] shrink-0" aria-hidden="true" />
               </a>
 
               {songChords.steps.length > 0 && (
@@ -768,8 +768,8 @@ export function ChordViewer({
                   }}
                   className={`min-h-[40px] px-3 py-1.5 rounded-lg border text-xs font-semibold inline-flex items-center gap-1.5 transition-colors whitespace-nowrap ${
                     isPlayingProgression
-                      ? 'border-emerald-600 bg-emerald-600 text-white'
-                      : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100'
+                      ? 'border-[#1668A3] bg-[#1668A3] dark:border-[#75C2F6] dark:bg-[#75C2F6] text-white dark:text-[#0B1D3A]'
+                      : 'border-[#D7E2F0] dark:border-[#294B7F] bg-white dark:bg-[#16315D] hover:bg-[#EEF4FB] dark:hover:bg-[#1E3F75] text-[#0B1D3A] dark:text-[#F4F8FC]'
                   }`}
                 >
                   {isPlayingProgression ? (
@@ -779,7 +779,7 @@ export function ChordViewer({
                     </>
                   ) : (
                     <>
-                      <Volume2 className="w-3.5 h-3.5 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                      <Volume2 className="w-3.5 h-3.5 text-[#8F620B] dark:text-[#E4B84F] shrink-0" aria-hidden="true" />
                       <span>Tocar Acordes ({activeKey})</span>
                     </>
                   )}
@@ -790,15 +790,15 @@ export function ChordViewer({
 
           {/* Expanded "Ouvir & Ensaiar" Panel */}
           {isListenOpen && (
-            <div className="border-t border-slate-200 dark:border-slate-800 p-3.5 sm:p-5 space-y-5 bg-white dark:bg-slate-900/90">
+            <div className="border-t border-[#D7E2F0] dark:border-[#1F3B68] p-3.5 sm:p-5 space-y-5 bg-white dark:bg-[#0E2140]">
               {/* Part 1: Original Recording, Embedded Player, Acoustic, Tutorial, Playback */}
               <div>
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                   <div>
-                    <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                    <h2 className="text-sm font-bold text-[#0B1D3A] dark:text-[#F4F8FC]">
                       1. Ouvir Gravação Original e Versões de «{listeningLinks.cleanTitle}»
                     </h2>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-[#526886] dark:text-[#9BB2CE]">
                       {listeningLinks.firstLyricSnippet
                         ? `Verso inicial: "${listeningLinks.firstLyricSnippet}"`
                         : 'Escolha a versão para ouvir sem sair da cifra ou abrir no YouTube / Spotify:'}
@@ -809,7 +809,7 @@ export function ChordViewer({
                     <button
                       type="button"
                       onClick={() => setShowUrlEditor((prev) => !prev)}
-                      className="min-h-[38px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 inline-flex items-center gap-1.5 transition-colors"
+                      className="min-h-[38px] px-3 py-1.5 rounded-lg border border-[#D7E2F0] dark:border-[#294B7F] text-xs font-semibold text-[#2A3F5F] dark:text-[#DCE8F6] hover:bg-[#EEF4FB] dark:hover:bg-[#16315D] inline-flex items-center gap-1.5 transition-colors"
                     >
                       <Link2 className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                       <span>
@@ -828,7 +828,7 @@ export function ChordViewer({
                       <button
                         type="button"
                         onClick={() => setShowEmbeddedVideo(true)}
-                        className="w-full sm:w-auto min-h-[44px] px-4 py-2.5 rounded-xl bg-[#B85414] hover:bg-[#9E460F] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 transition-colors"
+                        className="w-full sm:w-auto min-h-[44px] px-4 py-2.5 rounded-xl bg-[#0B1D3A] hover:bg-[#153463] dark:bg-[#E4B84F] dark:hover:bg-[#EBC668] text-white dark:text-[#0B1D3A] text-xs sm:text-sm font-semibold inline-flex items-center gap-2 transition-colors"
                       >
                         <Play className="w-4 h-4 shrink-0" aria-hidden="true" />
                         <span>
@@ -841,7 +841,7 @@ export function ChordViewer({
                         </span>
                       </button>
                     ) : (
-                      <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-black aspect-video max-w-2xl">
+                      <div className="rounded-xl overflow-hidden border border-[#D7E2F0] dark:border-[#1F3B68] bg-black aspect-video max-w-2xl">
                         <iframe
                           title={`Vídeo de referência: ${song.title}`}
                           src={embedInfo.embedUrl}
@@ -858,11 +858,11 @@ export function ChordViewer({
                 {showUrlEditor && onUpdateYoutubeUrl && (
                   <form
                     onSubmit={handleSaveCustomYoutubeUrl}
-                    className="mb-3.5 p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 space-y-2"
+                    className="mb-3.5 p-3 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] space-y-2"
                   >
                     <label
                       htmlFor="song-youtube-pin"
-                      className="block text-xs font-semibold text-slate-700 dark:text-slate-200"
+                      className="block text-xs font-semibold text-[#2A3F5F] dark:text-[#DCE8F6]"
                     >
                       Cole a ligação do YouTube da versão exata desta música (fica guardada para todo o grupo):
                     </label>
@@ -873,19 +873,19 @@ export function ChordViewer({
                         value={youtubeInput}
                         onChange={(e) => setYoutubeInput(e.target.value)}
                         placeholder="https://www.youtube.com/watch?v=..."
-                        className="flex-1 min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#2F523E]"
+                        className="flex-1 min-h-[44px] px-3 py-2 rounded-lg border border-[#C3D3E8] dark:border-[#294B7F] bg-white dark:bg-[#081429] text-sm text-[#0B1D3A] dark:text-[#F4F8FC] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F]"
                       />
                       <div className="flex items-center gap-2">
                         <button
                           type="submit"
-                          className="min-h-[44px] px-4 py-2 rounded-lg bg-[#2F523E] hover:bg-[#244030] text-white text-xs font-semibold whitespace-nowrap transition-colors"
+                          className="min-h-[44px] px-4 py-2 rounded-lg bg-[#1668A3] hover:bg-[#125486] dark:bg-[#75C2F6] dark:hover:bg-[#8ECDFA] text-white dark:text-[#0B1D3A] text-xs font-semibold whitespace-nowrap transition-colors"
                         >
                           Guardar Vídeo
                         </button>
                         <button
                           type="button"
                           onClick={() => setShowUrlEditor(false)}
-                          className="min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-xs font-medium text-slate-700 dark:text-slate-300"
+                          className="min-h-[44px] px-3 py-2 rounded-lg border border-[#C3D3E8] dark:border-[#294B7F] text-xs font-medium text-[#2A3F5F] dark:text-[#DCE8F6]"
                         >
                           Cancelar
                         </button>
@@ -895,7 +895,7 @@ export function ChordViewer({
                 )}
 
                 {savedUrlBanner && (
-                  <div className="mb-3 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+                  <div className="mb-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#1668A3] dark:text-[#75C2F6]">
                     <Check className="w-4 h-4" aria-hidden="true" />
                     <span>Ligação guardada e sincronizada com o grupo!</span>
                   </div>
@@ -907,104 +907,104 @@ export function ChordViewer({
                     href={listeningLinks.originalYoutube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-[#B85414] dark:hover:border-amber-500 text-left flex items-center justify-between gap-2 transition-colors"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] hover:border-[#8F620B] dark:hover:border-[#E4B84F] text-left flex items-center justify-between gap-2 transition-colors"
                   >
                     <div className="min-w-0">
-                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                      <div className="text-xs font-bold text-[#0B1D3A] dark:text-[#F4F8FC] truncate">
                         Versão Original (YouTube)
                       </div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                      <div className="text-[11px] text-[#526886] dark:text-[#9BB2CE] truncate">
                         {song.youtubeUrl
                           ? 'Abrir vídeo oficial da coletânea'
                           : `Ouvir "${listeningLinks.cleanTitle}"`}
                       </div>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                    <ExternalLink className="w-4 h-4 text-[#8F620B] dark:text-[#E4B84F] shrink-0" aria-hidden="true" />
                   </a>
 
                   <a
                     href={listeningLinks.acousticYoutube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-[#2F523E] dark:hover:border-emerald-500 text-left flex items-center justify-between gap-2 transition-colors"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] hover:border-[#1668A3] dark:hover:border-[#75C2F6] text-left flex items-center justify-between gap-2 transition-colors"
                   >
                     <div className="min-w-0">
-                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                      <div className="text-xs font-bold text-[#0B1D3A] dark:text-[#F4F8FC] truncate">
                         Versão Tocada / Acústica
                       </div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                      <div className="text-[11px] text-[#526886] dark:text-[#9BB2CE] truncate">
                         Voz e guitarra de «{listeningLinks.cleanTitle}»
                       </div>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-[#2F523E] dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                    <ExternalLink className="w-4 h-4 text-[#1668A3] dark:text-[#75C2F6] shrink-0" aria-hidden="true" />
                   </a>
 
                   <a
                     href={listeningLinks.tutorialYoutube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-[#B85414] dark:hover:border-amber-500 text-left flex items-center justify-between gap-2 transition-colors"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] hover:border-[#8F620B] dark:hover:border-[#E4B84F] text-left flex items-center justify-between gap-2 transition-colors"
                   >
                     <div className="min-w-0">
-                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                      <div className="text-xs font-bold text-[#0B1D3A] dark:text-[#F4F8FC] truncate">
                         Como Tocar (Aula / Cifra)
                       </div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                      <div className="text-[11px] text-[#526886] dark:text-[#9BB2CE] truncate">
                         Ritmo e acordes na guitarra
                       </div>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                    <ExternalLink className="w-4 h-4 text-[#8F620B] dark:text-[#E4B84F] shrink-0" aria-hidden="true" />
                   </a>
 
                   <a
                     href={listeningLinks.playbackYoutube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-slate-400 text-left flex items-center justify-between gap-2 transition-colors"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] hover:border-[#1668A3] dark:hover:border-[#75C2F6] text-left flex items-center justify-between gap-2 transition-colors"
                   >
                     <div className="min-w-0">
-                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                      <div className="text-xs font-bold text-[#0B1D3A] dark:text-[#F4F8FC] truncate">
                         Playback / Instrumental
                       </div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                      <div className="text-[11px] text-[#526886] dark:text-[#9BB2CE] truncate">
                         Base instrumental para treinar vozes
                       </div>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-slate-500 shrink-0" aria-hidden="true" />
+                    <ExternalLink className="w-4 h-4 text-[#526886] dark:text-[#9BB2CE] shrink-0" aria-hidden="true" />
                   </a>
 
                   <a
                     href={listeningLinks.spotifySearch}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:border-emerald-600 text-left flex items-center justify-between gap-2 transition-colors"
+                    className="min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] hover:border-[#1668A3] dark:hover:border-[#75C2F6] text-left flex items-center justify-between gap-2 transition-colors"
                   >
                     <div className="min-w-0">
-                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
+                      <div className="text-xs font-bold text-[#0B1D3A] dark:text-[#F4F8FC] truncate">
                         Ouvir no Spotify
                       </div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                      <div className="text-[11px] text-[#526886] dark:text-[#9BB2CE] truncate">
                         Pesquisar «{listeningLinks.cleanTitle}» no Spotify
                       </div>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                    <ExternalLink className="w-4 h-4 text-[#1668A3] dark:text-[#75C2F6] shrink-0" aria-hidden="true" />
                   </a>
                 </div>
               </div>
 
               {/* Part 2: Interactive Chord Synthesizer ("Versão Tocada dos Acordes no Tom Atual") */}
               {song.originalKey !== '—' && songChords.unique.length > 0 && (
-                <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
+                <div className="pt-4 border-t border-[#D7E2F0] dark:border-[#1F3B68]">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3">
                     <div>
-                      <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                      <h2 className="text-sm font-bold text-[#0B1D3A] dark:text-[#F4F8FC]">
                         2. Ouvir Acordes desta Cifra Tocados na Aplicação (Tom:{' '}
-                        <span className="font-cifra text-[#B85414] dark:text-amber-400">
+                        <span className="font-cifra text-[#8F620B] dark:text-[#E4B84F]">
                           {activeKey}
                         </span>
                         )
                       </h2>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                      <p className="text-xs text-[#526886] dark:text-[#9BB2CE]">
                         Ouça os acordes exatos de «{listeningLinks.cleanTitle}» acompanhados verso a verso ou toque num acorde:
                       </p>
                     </div>
@@ -1013,15 +1013,15 @@ export function ChordViewer({
                     <div
                       role="group"
                       aria-label="Escolher instrumento de reprodução"
-                      className="inline-flex items-center p-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 self-start"
+                      className="inline-flex items-center p-1 rounded-lg bg-[#F4F8FC] dark:bg-[#081429] border border-[#D7E2F0] dark:border-[#1F3B68] self-start"
                     >
                       <button
                         type="button"
                         onClick={() => setInstrument('guitar')}
                         className={`min-h-[36px] px-3 py-1 rounded-md text-xs font-semibold transition-colors ${
                           instrument === 'guitar'
-                            ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
-                            : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                            ? 'bg-white dark:bg-[#16315D] text-[#0B1D3A] dark:text-white shadow-xs'
+                            : 'text-[#526886] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-white'
                         }`}
                       >
                         Guitarra Acústica
@@ -1031,8 +1031,8 @@ export function ChordViewer({
                         onClick={() => setInstrument('piano')}
                         className={`min-h-[36px] px-3 py-1 rounded-md text-xs font-semibold transition-colors ${
                           instrument === 'piano'
-                            ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
-                            : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                            ? 'bg-white dark:bg-[#16315D] text-[#0B1D3A] dark:text-white shadow-xs'
+                            : 'text-[#526886] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-white'
                         }`}
                       >
                         Piano Suave
@@ -1047,8 +1047,8 @@ export function ChordViewer({
                       onClick={() => setIsPlayingProgression((prev) => !prev)}
                       className={`min-h-[44px] px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-2 transition-colors ${
                         isPlayingProgression
-                          ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
-                          : 'bg-[#B85414] hover:bg-[#9E460F] text-white'
+                          ? 'bg-[#1668A3] hover:bg-[#125486] dark:bg-[#75C2F6] dark:hover:bg-[#8ECDFA] text-white dark:text-[#0B1D3A]'
+                          : 'bg-[#0B1D3A] hover:bg-[#153463] dark:bg-[#E4B84F] dark:hover:bg-[#EBC668] text-white dark:text-[#0B1D3A]'
                       }`}
                     >
                       {isPlayingProgression ? (
@@ -1067,31 +1067,31 @@ export function ChordViewer({
                     <button
                       type="button"
                       onClick={() => handlePlaySingleChord(activeKey, true)}
-                      className="min-h-[44px] px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-100 inline-flex items-center gap-1.5 transition-colors"
+                      className="min-h-[44px] px-3.5 py-2 rounded-xl border border-[#D7E2F0] dark:border-[#294B7F] bg-[#F4F8FC] dark:bg-[#16315D] hover:bg-[#EEF4FB] dark:hover:bg-[#1E3F75] text-xs sm:text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] inline-flex items-center gap-1.5 transition-colors"
                     >
-                      <Volume2 className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0" aria-hidden="true" />
+                      <Volume2 className="w-4 h-4 text-[#8F620B] dark:text-[#E4B84F] shrink-0" aria-hidden="true" />
                       <span>Dar o Tom ({activeKey})</span>
                     </button>
 
                     {/* Tempo (BPM) adjuster */}
-                    <div className="flex items-center gap-1.5 ml-auto text-xs text-slate-600 dark:text-slate-400">
+                    <div className="flex items-center gap-1.5 ml-auto text-xs text-[#465B78] dark:text-[#9BB2CE]">
                       <span>Ritmo:</span>
                       <button
                         type="button"
                         onClick={() => setPlaybackBpm((b) => Math.max(50, b - 6))}
                         aria-label="Diminuir velocidade dos acordes"
-                        className="min-h-[36px] min-w-[36px] rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800"
+                        className="min-h-[36px] min-w-[36px] rounded-lg border border-[#D7E2F0] dark:border-[#294B7F] flex items-center justify-center hover:bg-[#EEF4FB] dark:hover:bg-[#16315D]"
                       >
                         <Minus className="w-3.5 h-3.5" aria-hidden="true" />
                       </button>
-                      <span className="font-cifra font-bold text-slate-800 dark:text-slate-200 tabular-nums min-w-[58px] text-center">
+                      <span className="font-cifra font-bold text-[#0B1D3A] dark:text-[#F4F8FC] tabular-nums min-w-[58px] text-center">
                         {playbackBpm} BPM
                       </span>
                       <button
                         type="button"
                         onClick={() => setPlaybackBpm((b) => Math.min(150, b + 6))}
                         aria-label="Aumentar velocidade dos acordes"
-                        className="min-h-[36px] min-w-[36px] rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800"
+                        className="min-h-[36px] min-w-[36px] rounded-lg border border-[#D7E2F0] dark:border-[#294B7F] flex items-center justify-center hover:bg-[#EEF4FB] dark:hover:bg-[#16315D]"
                       >
                         <Plus className="w-3.5 h-3.5" aria-hidden="true" />
                       </button>
@@ -1100,17 +1100,17 @@ export function ChordViewer({
 
                   {/* Active Lyric + Chord Synchronized Display when playing */}
                   {isPlayingProgression && activeStep && (
-                    <div className="mb-3 p-3 rounded-xl border border-[#B85414]/30 dark:border-amber-500/30 bg-[#B85414]/5 dark:bg-amber-500/10 space-y-2">
+                    <div className="mb-3 p-3 rounded-xl border border-[#E4B84F]/50 dark:border-[#E4B84F]/40 bg-[#FBF4DF] dark:bg-[#E4B84F]/15 space-y-2">
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#B85414] dark:text-amber-400">
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#8F620B] dark:text-[#E4B84F]">
                           {activeStep.section} · Acorde a soar:{' '}
                           <span className="font-cifra text-sm">{activeStep.chord}</span>
                         </span>
-                        <span className="text-xs font-cifra text-slate-500 dark:text-slate-400 tabular-nums">
+                        <span className="text-xs font-cifra text-[#526886] dark:text-[#9BB2CE] tabular-nums">
                           Passo {(activeChordIdx ?? 0) + 1}/{songChords.steps.length}
                         </span>
                       </div>
-                      <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                      <p className="text-sm font-semibold text-[#0B1D3A] dark:text-[#F4F8FC]">
                         «{activeStep.lyricLine}»
                       </p>
                       <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-1">
@@ -1121,8 +1121,8 @@ export function ChordViewer({
                             onClick={() => handlePlaySingleChord(step.chord)}
                             className={`px-2 py-1 rounded font-cifra text-xs font-bold shrink-0 transition-colors ${
                               idx === activeChordIdx
-                                ? 'bg-[#B85414] text-white'
-                                : 'bg-white/80 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                                ? 'bg-[#0B1D3A] dark:bg-[#E4B84F] text-white dark:text-[#0B1D3A]'
+                                : 'bg-white/90 dark:bg-[#11264A] text-[#465B78] dark:text-[#9BB2CE] hover:text-[#0B1D3A] dark:hover:text-white'
                             }`}
                           >
                             {step.chord}
@@ -1134,7 +1134,7 @@ export function ChordViewer({
 
                   {/* Interactive Chords of this Song */}
                   <div>
-                    <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400 mb-1.5">
+                    <div className="text-[11px] font-medium text-[#526886] dark:text-[#9BB2CE] mb-1.5">
                       Acordes desta música (toque num acorde para o ouvir na{' '}
                       {instrument === 'guitar' ? 'guitarra' : 'piano'}):
                     </div>
@@ -1148,8 +1148,8 @@ export function ChordViewer({
                             onClick={() => handlePlaySingleChord(chord)}
                             className={`min-h-[42px] min-w-[52px] px-3 py-1.5 rounded-lg font-cifra text-sm font-bold border transition-colors inline-flex items-center justify-center gap-1.5 ${
                               isCurrentlySounding
-                                ? 'border-[#B85414] dark:border-amber-400 bg-[#B85414]/15 dark:bg-amber-400/20 text-[#B85414] dark:text-amber-300'
-                                : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 hover:border-[#B85414] dark:hover:border-amber-400'
+                                ? 'border-[#8F620B] dark:border-[#E4B84F] bg-[#FBF4DF] dark:bg-[#E4B84F]/20 text-[#8F620B] dark:text-[#E4B84F]'
+                                : 'border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:border-[#8F620B] dark:hover:border-[#E4B84F]'
                             }`}
                           >
                             <Volume2 className="w-3 h-3 opacity-70 shrink-0" aria-hidden="true" />
@@ -1186,7 +1186,7 @@ export function ChordViewer({
                   return (
                     <h2
                       key={index}
-                      className="pt-4 pb-1 text-xs font-sans font-bold uppercase tracking-wider text-[#B85414] dark:text-amber-400"
+                      className="pt-4 pb-1 text-xs font-sans font-bold uppercase tracking-wider text-[#8F620B] dark:text-[#E4B84F]"
                     >
                       {line.replace(/^\[|\]$/g, '')}
                     </h2>
@@ -1195,7 +1195,7 @@ export function ChordViewer({
                 return (
                   <p
                     key={index}
-                    className="font-sans text-slate-900 dark:text-slate-100 font-medium"
+                    className="font-sans text-[#0B1D3A] dark:text-[#F4F8FC] font-medium"
                   >
                     {line}
                   </p>
@@ -1210,7 +1210,7 @@ export function ChordViewer({
                   return (
                     <h2
                       key={index}
-                      className="pt-3 pb-1 font-sans text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400"
+                      className="pt-3 pb-1 font-sans text-xs font-bold uppercase tracking-wider text-[#1668A3] dark:text-[#75C2F6]"
                     >
                       {line.raw.replace(/^\[|\]$/g, '')}
                     </h2>
@@ -1229,14 +1229,14 @@ export function ChordViewer({
                             key={segIdx}
                             onClick={() => handlePlaySingleChord(seg.text.trim())}
                             title={`Toque para ouvir o acorde ${seg.text.trim()}`}
-                            className="text-[#B85414] dark:text-[#F59E0B] cursor-pointer hover:underline decoration-dotted underline-offset-4"
+                            className="text-[#8F620B] dark:text-[#E4B84F] cursor-pointer hover:underline decoration-dotted underline-offset-4"
                           >
                             {seg.text}
                           </span>
                         ) : (
                           <span
                             key={segIdx}
-                            className="text-slate-500 dark:text-slate-400 font-normal"
+                            className="text-[#526886] dark:text-[#9BB2CE] font-normal"
                           >
                             {seg.text}
                           </span>
@@ -1249,7 +1249,7 @@ export function ChordViewer({
                 return (
                   <div
                     key={index}
-                    className="whitespace-pre text-slate-900 dark:text-slate-100 leading-snug mb-1.5"
+                    className="whitespace-pre text-[#0B1D3A] dark:text-[#F4F8FC] leading-snug mb-1.5"
                   >
                     {line.raw}
                   </div>
@@ -1261,17 +1261,17 @@ export function ChordViewer({
       {/* Fixed Stage Toolbar at Bottom (Ergonomic Thumb Zone, >= 44px buttons) */}
       <footer
         aria-label="Controlos de palco"
-        className="no-print fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0F172A]/95 backdrop-blur-md pb-safe"
+        className="no-print fixed bottom-0 left-0 right-0 z-40 border-t border-[#D7E2F0] dark:border-[#1F3B68] bg-white/95 dark:bg-[#0B1D3A]/95 backdrop-blur-md pb-safe"
       >
         <div className="max-w-4xl mx-auto px-2 sm:px-4">
           {/* Playlist Prev / Next Stepper (only when opened from Culto do Dia) */}
           {playlistContext && (
-            <div className="flex items-center justify-between gap-2 py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+            <div className="flex items-center justify-between gap-2 py-1.5 border-b border-[#E3ECF7] dark:border-[#1F3B68]">
               <button
                 type="button"
                 onClick={playlistContext.onPrev}
                 disabled={!playlistContext.onPrev}
-                className="min-h-[44px] px-2.5 inline-flex items-center gap-1 rounded-lg text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-35 disabled:pointer-events-none min-w-0 max-w-[44%]"
+                className="min-h-[44px] px-2.5 inline-flex items-center gap-1 rounded-lg text-xs sm:text-sm font-medium text-[#2A3F5F] dark:text-[#DCE8F6] hover:bg-[#EEF4FB] dark:hover:bg-[#16315D] disabled:opacity-35 disabled:pointer-events-none min-w-0 max-w-[44%]"
               >
                 <ChevronLeft className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span className="truncate">
@@ -1281,7 +1281,7 @@ export function ChordViewer({
                 </span>
               </button>
 
-              <span className="text-xs font-cifra font-semibold text-slate-500 dark:text-slate-400 tabular-nums shrink-0">
+              <span className="text-xs font-cifra font-semibold text-[#526886] dark:text-[#9BB2CE] tabular-nums shrink-0">
                 {playlistContext.currentIndex + 1}/{playlistContext.total}
               </span>
 
@@ -1289,7 +1289,7 @@ export function ChordViewer({
                 type="button"
                 onClick={playlistContext.onNext}
                 disabled={!playlistContext.onNext}
-                className="min-h-[44px] px-2.5 inline-flex items-center justify-end gap-1 rounded-lg text-xs sm:text-sm font-semibold text-[#B85414] dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-35 disabled:pointer-events-none min-w-0 max-w-[44%]"
+                className="min-h-[44px] px-2.5 inline-flex items-center justify-end gap-1 rounded-lg text-xs sm:text-sm font-semibold text-[#1668A3] dark:text-[#E4B84F] hover:bg-[#EEF4FB] dark:hover:bg-[#16315D] disabled:opacity-35 disabled:pointer-events-none min-w-0 max-w-[44%]"
               >
                 <span className="truncate">
                   {playlistContext.nextTitle
@@ -1305,7 +1305,7 @@ export function ChordViewer({
           <div className="py-1.5 flex items-center justify-between gap-2">
             {/* Transpose (-1/2 | Key | +1/2) */}
             {song.originalKey === '—' ? (
-              <div className="min-h-[44px] px-3 flex items-center rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-xs font-medium text-slate-500 dark:text-slate-400 shrink-0">
+              <div className="min-h-[44px] px-3 flex items-center rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] text-xs font-medium text-[#526886] dark:text-[#9BB2CE] shrink-0">
                 Só letra
               </div>
             ) : (
@@ -1313,13 +1313,13 @@ export function ChordViewer({
                 <div
                   role="group"
                   aria-label="Transpositor de tom"
-                  className="flex items-center rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shrink-0"
+                  className="flex items-center rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] shrink-0"
                 >
                   <button
                     type="button"
                     onClick={() => onChangeTranspose(-1)}
                     aria-label="Diminuir meio tom"
-                    className="min-h-[44px] min-w-[44px] px-2 flex items-center justify-center rounded-l-xl text-xs font-cifra font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                    className="min-h-[44px] min-w-[44px] px-2 flex items-center justify-center rounded-l-xl text-xs font-cifra font-bold text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E3ECF7] dark:hover:bg-[#16315D] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
                   >
                     -½
                   </button>
@@ -1327,7 +1327,7 @@ export function ChordViewer({
                     type="button"
                     onClick={onResetTranspose}
                     aria-label={`Tom atual ${activeKey}. Toque para repor o tom original`}
-                    className="min-h-[44px] min-w-[36px] px-1.5 flex items-center justify-center font-cifra text-sm font-bold text-[#B85414] dark:text-amber-400 border-x border-slate-200 dark:border-slate-700"
+                    className="min-h-[44px] min-w-[36px] px-1.5 flex items-center justify-center font-cifra text-sm font-bold text-[#8F620B] dark:text-[#E4B84F] border-x border-[#D7E2F0] dark:border-[#1F3B68]"
                   >
                     {activeKey}
                   </button>
@@ -1335,7 +1335,7 @@ export function ChordViewer({
                     type="button"
                     onClick={() => onChangeTranspose(1)}
                     aria-label="Aumentar meio tom"
-                    className="min-h-[44px] min-w-[44px] px-2 flex items-center justify-center rounded-r-xl text-xs font-cifra font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                    className="min-h-[44px] min-w-[44px] px-2 flex items-center justify-center rounded-r-xl text-xs font-cifra font-bold text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E3ECF7] dark:hover:bg-[#16315D] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
                   >
                     +½
                   </button>
@@ -1347,10 +1347,10 @@ export function ChordViewer({
                   onClick={() => setLyricsOnly((prev) => !prev)}
                   aria-pressed={lyricsOnly}
                   aria-label={lyricsOnly ? 'Mostrar Letra e Cifra' : 'Mostrar Só Letra'}
-                  className={`min-h-[44px] px-3 rounded-xl border text-xs font-semibold inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                  className={`min-h-[44px] px-3 rounded-xl border text-xs font-semibold inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F] ${
                     lyricsOnly
-                      ? 'border-[#B85414] dark:border-amber-400 bg-[#B85414] dark:bg-amber-500 text-white dark:text-slate-950'
-                      : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                      ? 'border-[#0B1D3A] dark:border-[#E4B84F] bg-[#0B1D3A] dark:bg-[#E4B84F] text-white dark:text-[#0B1D3A]'
+                      : 'border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#EEF4FB] dark:hover:bg-[#16315D]'
                   }`}
                 >
                   {lyricsOnly ? (
@@ -1364,7 +1364,7 @@ export function ChordViewer({
             )}
 
             {/* Auto-Scroll Play/Pause & Speed */}
-            <div className="flex items-center rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shrink-0">
+            <div className="flex items-center rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#11264A] shrink-0">
               <button
                 type="button"
                 onClick={() => setIsScrolling((prev) => !prev)}
@@ -1372,10 +1372,10 @@ export function ChordViewer({
                 aria-label={
                   isScrolling ? 'Pausar deslocamento automático' : 'Iniciar deslocamento automático'
                 }
-                className={`min-h-[44px] min-w-[44px] px-2.5 flex items-center justify-center gap-1 rounded-l-xl text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+                className={`min-h-[44px] min-w-[44px] px-2.5 flex items-center justify-center gap-1 rounded-l-xl text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#75C2F6] ${
                   isScrolling
-                    ? 'bg-emerald-600 text-white'
-                    : 'text-slate-700 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800'
+                    ? 'bg-[#1668A3] dark:bg-[#75C2F6] text-white dark:text-[#0B1D3A]'
+                    : 'text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E3ECF7] dark:hover:bg-[#16315D]'
                 }`}
               >
                 {isScrolling ? (
@@ -1389,7 +1389,7 @@ export function ChordViewer({
                 type="button"
                 onClick={cycleSpeed}
                 aria-label={`Velocidade do deslocamento: ${SCROLL_SPEEDS[speedIndex].label}. Toque para alterar`}
-                className="min-h-[44px] min-w-[44px] px-2 flex items-center justify-center rounded-r-xl border-l border-slate-200 dark:border-slate-700 font-cifra text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+                className="min-h-[44px] min-w-[44px] px-2 flex items-center justify-center rounded-r-xl border-l border-[#D7E2F0] dark:border-[#1F3B68] font-cifra text-xs font-bold text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E3ECF7] dark:hover:bg-[#16315D] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
               >
                 {SCROLL_SPEEDS[speedIndex].label}
               </button>

@@ -29,8 +29,8 @@ export default defineConfig(() => {
           short_name: 'IEBH Louvor',
           description:
             'Gestão de repertório, escalas de culto e visualização interativa de cifras para músicos e grupo de louvor da IEB Horta.',
-          theme_color: '#ffffff',
-          background_color: '#0C1F3C',
+          theme_color: '#0B1D3A',
+          background_color: '#0B1D3A',
           display: 'standalone',
           orientation: 'portrait',
           start_url: '/',
