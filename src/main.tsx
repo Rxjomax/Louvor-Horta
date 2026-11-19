@@ -4,7 +4,12 @@ import App from './App.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import './index.css';
 
-registerSW({ immediate: true });
+registerSW({
+  immediate: true,
+  onRegisterError(error) {
+    console.warn('PWA service worker registration skipped:', error);
+  },
+});
 
 createRoot(document.getElementById('root')!).render(
   <ErrorBoundary>
