@@ -19,6 +19,7 @@ import { useMemo, useState } from 'react';
 import { ScheduleEntry, ScheduleRole, ScheduleState } from '../types/music';
 import { downloadSchedulePdf } from '../utils/pdfExport';
 import { buildWhatsAppShareUrl } from '../utils/setlist';
+import { BufferedInput } from './BufferedTextFields';
 
 interface ScheduleViewProps {
   schedule: ScheduleState;
@@ -734,16 +735,12 @@ export function ScheduleView({
 
                         {/* Data */}
                         <td className="p-1.5 border-r border-[#D7E2F0] dark:border-[#1F3B68]">
-                          <input
+                          <BufferedInput
                             type="text"
                             inputMode="numeric"
                             value={entry.day}
-                            onChange={(e) =>
-                              handleUpdateEntryField(
-                                entry.id,
-                                'day',
-                                e.target.value
-                              )
+                            onCommit={(nextVal) =>
+                              handleUpdateEntryField(entry.id, 'day', nextVal)
                             }
                             placeholder="Dia"
                             aria-label={`Dia do culto (${entry.month})`}
@@ -753,14 +750,14 @@ export function ScheduleView({
 
                         {/* Passagem */}
                         <td className="p-1.5 border-r border-[#D7E2F0] dark:border-[#1F3B68]">
-                          <input
+                          <BufferedInput
                             type="text"
                             value={entry.passage}
-                            onChange={(e) =>
+                            onCommit={(nextVal) =>
                               handleUpdateEntryField(
                                 entry.id,
                                 'passage',
-                                e.target.value
+                                nextVal
                               )
                             }
                             placeholder="Ex: Atos 8:25-40"
@@ -771,15 +768,11 @@ export function ScheduleView({
 
                         {/* Tema */}
                         <td className="p-1.5 border-r border-[#D7E2F0] dark:border-[#1F3B68]">
-                          <input
+                          <BufferedInput
                             type="text"
                             value={entry.theme}
-                            onChange={(e) =>
-                              handleUpdateEntryField(
-                                entry.id,
-                                'theme',
-                                e.target.value
-                              )
+                            onCommit={(nextVal) =>
+                              handleUpdateEntryField(entry.id, 'theme', nextVal)
                             }
                             placeholder="Tema do culto"
                             aria-label={`Tema do culto do dia ${entry.day}`}
@@ -895,12 +888,12 @@ export function ScheduleView({
                     <span className="text-xs uppercase tracking-wider text-[#C4D5EB]">
                       Dia
                     </span>
-                    <input
+                    <BufferedInput
                       type="text"
                       inputMode="numeric"
                       value={entry.day}
-                      onChange={(e) =>
-                        handleUpdateEntryField(entry.id, 'day', e.target.value)
+                      onCommit={(nextVal) =>
+                        handleUpdateEntryField(entry.id, 'day', nextVal)
                       }
                       aria-label="Dia do culto"
                       className="w-12 min-h-[36px] px-1.5 text-center rounded-lg bg-white/15 text-[#E4B84F] font-bold text-sm tabular-nums focus:outline-none focus:ring-2 focus:ring-[#E4B84F]"
@@ -934,15 +927,11 @@ export function ScheduleView({
                   <label className="block text-[11px] font-bold uppercase tracking-wider text-[#526886] dark:text-[#9BB2CE]">
                     Passagem
                   </label>
-                  <input
+                  <BufferedInput
                     type="text"
                     value={entry.passage}
-                    onChange={(e) =>
-                      handleUpdateEntryField(
-                        entry.id,
-                        'passage',
-                        e.target.value
-                      )
+                    onCommit={(nextVal) =>
+                      handleUpdateEntryField(entry.id, 'passage', nextVal)
                     }
                     placeholder="Ex: Atos 8:25-40"
                     className="mt-1 w-full min-h-[42px] px-3 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#08162E] text-sm text-[#0B1D3A] dark:text-[#F4F8FC]"
@@ -952,11 +941,11 @@ export function ScheduleView({
                   <label className="block text-[11px] font-bold uppercase tracking-wider text-[#526886] dark:text-[#9BB2CE]">
                     Tema
                   </label>
-                  <input
+                  <BufferedInput
                     type="text"
                     value={entry.theme}
-                    onChange={(e) =>
-                      handleUpdateEntryField(entry.id, 'theme', e.target.value)
+                    onCommit={(nextVal) =>
+                      handleUpdateEntryField(entry.id, 'theme', nextVal)
                     }
                     placeholder="Ex: Ceia e baptismo"
                     className="mt-1 w-full min-h-[42px] px-3 rounded-xl border border-[#C6D6E8] dark:border-[#284A7F] bg-white dark:bg-[#08162E] text-sm text-[#0B1D3A] dark:text-[#F4F8FC]"

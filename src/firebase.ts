@@ -373,6 +373,28 @@ function buildSanitizedWorkspaceFields(state: CloudWorkspaceSnapshot) {
   };
 }
 
+function stableSortValue(val: unknown): unknown {
+  if (Array.isArray(val)) {
+    return val.map(stableSortValue);
+  }
+  if (val && typeof val === 'object') {
+    const sorted: Record<string, unknown> = {};
+    for (const key of Object.keys(val as Record<string, unknown>).sort()) {
+      sorted[key] = stableSortValue((val as Record<string, unknown>)[key]);
+    }
+    return sorted;
+  }
+  return val;
+}
+
+export function computeWorkspaceSignature(
+  state: CloudWorkspaceSnapshot
+): string {
+  const fields = buildSanitizedWorkspaceFields(state);
+  const { updatedByUid: _ignored, ...comparable } = fields;
+  return JSON.stringify(stableSortValue(comparable));
+}
+
 export async function ensureAndSyncSharedWorkspace(
   localState: CloudWorkspaceSnapshot
 ): Promise<CloudWorkspaceSnapshot | null> {
@@ -593,26 +615,7 @@ export async function updateSharedWorkspace(
   const ref = doc(db, 'workspaces', SHARED_WORKSPACE_ID);
   const sanitized = buildSanitizedWorkspaceFields(state);
   try {
-    let exists = true;
     try {
-      const snap = await getDoc(ref);
-      exists = snap.exists();
-    } catch (readErr) {
-      if (!isFirestoreOfflineError(readErr)) {
-        throw readErr;
-      }
-      // When offline before initial cache hydration, optimistically attempt updateDoc
-      // so Firestore's persistent IndexedDB queue stores the write for sync on reconnect.
-      exists = true;
-    }
-
-    if (!exists) {
-      await setDoc(ref, {
-        ...sanitized,
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp(),
-      });
-    } else {
       await updateDoc(ref, {
         updatedByUid: sanitized.updatedByUid,
         playlistTitle: sanitized.playlistTitle,
@@ -629,6 +632,17 @@ export async function updateSharedWorkspace(
         randomCount: sanitized.randomCount,
         updatedAt: serverTimestamp(),
       });
+    } catch (updateErr) {
+      const code = (updateErr as { code?: string })?.code ?? '';
+      if (code === 'not-found') {
+        await setDoc(ref, {
+          ...sanitized,
+          createdAt: serverTimestamp(),
+          updatedAt: serverTimestamp(),
+        });
+      } else {
+        throw updateErr;
+      }
     }
   } catch (error) {
     handleFirestoreError(error, OperationType.WRITE, path);

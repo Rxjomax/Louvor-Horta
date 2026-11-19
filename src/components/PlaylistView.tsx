@@ -23,6 +23,7 @@ import {
   isPlaylistMoment,
 } from '../utils/setlist';
 import { loadRandomCount, saveRandomCount } from '../utils/storage';
+import { BufferedInput, BufferedTextarea } from './BufferedTextFields';
 
 const MOMENT_SUGGESTIONS = [
   'Pregação',
@@ -293,11 +294,11 @@ export function PlaylistView({
           >
             Título / Data do Culto
           </label>
-          <input
+          <BufferedInput
             id="playlist-title-input"
             type="text"
             value={playlist.title}
-            onChange={(e) => onUpdateTitle(e.target.value)}
+            onCommit={onUpdateTitle}
             placeholder="Ex: Culto de Domingo - 18h30"
             className="mt-2 w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-[#F4F8FC] dark:bg-[#081429] text-base font-medium text-[#0B1D3A] dark:text-[#F4F8FC] placeholder:text-[#6B82A1] dark:placeholder:text-[#7E98BA] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#E4B84F] focus:border-transparent"
           />
@@ -433,13 +434,13 @@ export function PlaylistView({
                           >
                             Nome do momento no culto
                           </label>
-                          <input
+                          <BufferedInput
                             id={`moment-title-${entry.id}`}
                             type="text"
                             value={entry.title}
                             maxLength={160}
-                            onChange={(e) =>
-                              onUpdateMoment(entry.id, { title: e.target.value })
+                            onCommit={(nextTitle) =>
+                              onUpdateMoment(entry.id, { title: nextTitle })
                             }
                             placeholder="O que acontece aqui? (Ex: Pregação, Oração, Ceia...)"
                             className="w-full min-h-[44px] px-3 py-2 rounded-xl border border-[#1668A3]/30 dark:border-[#75C2F6]/35 bg-white dark:bg-[#081429] text-base font-semibold text-[#0B1D3A] dark:text-[#F4F8FC] placeholder:font-normal placeholder:text-[#6B82A1] dark:placeholder:text-[#7E98BA] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#75C2F6] focus:border-transparent"
@@ -474,13 +475,13 @@ export function PlaylistView({
                           >
                             Detalhes ou observações do momento para o PDF
                           </label>
-                          <textarea
+                          <BufferedTextarea
                             id={`moment-note-${entry.id}`}
-                            rows={2}
+                            rows={3}
                             maxLength={500}
                             value={entry.note}
-                            onChange={(e) =>
-                              onUpdateMoment(entry.id, { note: e.target.value })
+                            onCommit={(nextNote) =>
+                              onUpdateMoment(entry.id, { note: nextNote })
                             }
                             placeholder="Detalhes opcionais que também aparecerão no PDF (ex: Pr. João · Salmos 23, leitura, avisos...)"
                             className="w-full px-3 py-2 rounded-xl border border-[#D7E2F0] dark:border-[#1F3B68] bg-white/95 dark:bg-[#081429] text-base sm:text-sm text-[#1E3352] dark:text-[#DCE8F6] placeholder:text-[#6B82A1] dark:placeholder:text-[#7E98BA] focus:outline-none focus:ring-2 focus:ring-[#1668A3] dark:focus:ring-[#75C2F6] focus:border-transparent resize-y"

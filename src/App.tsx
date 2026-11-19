@@ -11,6 +11,7 @@ import {
   CloudWorkspaceSnapshot,
   User,
   auth,
+  computeWorkspaceSignature,
   ensureAndSyncSharedWorkspace,
   fetchLatestSharedWorkspace,
   onAuthStateChanged,
@@ -85,11 +86,13 @@ export default function App() {
   );
   const [lastSavedAt, setLastSavedAt] = useState<Date>(() => new Date());
 
-  const isApplyingRemoteUpdateRef = useRef(false);
   const cloudBootstrappedRef = useRef(false);
-  const hasMountedEditWatchRef = useRef(false);
   const syncInFlightRef = useRef(false);
   const localMutationSeqRef = useRef(0);
+  const lastLocalEditAtRef = useRef(0);
+  const hasDirtyLocalChangesRef = useRef<boolean>(loadPendingCloudSync());
+  const lastUploadedSigRef = useRef<string | null>(null);
+  const syncDebounceTimerRef = useRef<number | null>(null);
   const latestStateRef = useRef({
     songs,
     playlist,
@@ -120,24 +123,50 @@ export default function App() {
     };
   }, []);
 
-  const applyRemoteSnapshot = useCallback((remote: CloudWorkspaceSnapshot) => {
-    isApplyingRemoteUpdateRef.current = true;
-    setPlaylist(remote.playlist);
-    setRepertoireTranspose(remote.repertoireTranspose);
-    setRepertoireCifraPrefs(remote.repertoireCifraPrefs);
-    setSchedule(remote.schedule);
-    saveRandomCount(remote.randomCount);
-    setSongs(
-      applySongDeltas({
-        upserted: remote.upsertedSongs,
-        deletedIds: remote.deletedSongIds,
-      })
-    );
-    setLastSavedAt(new Date());
-    window.setTimeout(() => {
-      isApplyingRemoteUpdateRef.current = false;
-    }, 150);
-  }, []);
+  const applyRemoteSnapshot = useCallback(
+    (remote: CloudWorkspaceSnapshot) => {
+      // Never overwrite unsynced local edits or active typing
+      if (hasDirtyLocalChangesRef.current || loadPendingCloudSync()) {
+        return;
+      }
+      const msSinceLastEdit = Date.now() - lastLocalEditAtRef.current;
+      if (msSinceLastEdit < 2500) {
+        return;
+      }
+      const activeEl =
+        typeof document !== 'undefined' ? document.activeElement : null;
+      if (
+        activeEl &&
+        (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA') &&
+        msSinceLastEdit < 5000
+      ) {
+        return;
+      }
+
+      const remoteSig = computeWorkspaceSignature(remote);
+      if (remoteSig === lastUploadedSigRef.current) {
+        return;
+      }
+      const currentSig = computeWorkspaceSignature(buildCurrentSnapshot());
+      if (remoteSig === currentSig) {
+        return;
+      }
+
+      setPlaylist(remote.playlist);
+      setRepertoireTranspose(remote.repertoireTranspose);
+      setRepertoireCifraPrefs(remote.repertoireCifraPrefs);
+      setSchedule(remote.schedule);
+      saveRandomCount(remote.randomCount);
+      setSongs(
+        applySongDeltas({
+          upserted: remote.upsertedSongs,
+          deletedIds: remote.deletedSongIds,
+        })
+      );
+      setLastSavedAt(new Date());
+    },
+    [buildCurrentSnapshot]
+  );
 
   // Save songs deltas locally on every change
   useEffect(() => {
@@ -209,9 +238,11 @@ export default function App() {
         const snapshot = buildCurrentSnapshot();
         const seqBefore = localMutationSeqRef.current;
 
-        if (loadPendingCloudSync()) {
+        if (hasDirtyLocalChangesRef.current || loadPendingCloudSync()) {
+          lastUploadedSigRef.current = computeWorkspaceSignature(snapshot);
           await updateSharedWorkspace(snapshot);
           if (localMutationSeqRef.current === seqBefore) {
+            hasDirtyLocalChangesRef.current = false;
             savePendingCloudSync(false);
             setHasPendingCloudSync(false);
           } else {
@@ -227,6 +258,7 @@ export default function App() {
           if (
             remoteWorkspace &&
             localMutationSeqRef.current === seqBefore &&
+            !hasDirtyLocalChangesRef.current &&
             !loadPendingCloudSync()
           ) {
             applyRemoteSnapshot(remoteWorkspace);
@@ -240,13 +272,38 @@ export default function App() {
         cloudBootstrappedRef.current = true;
         syncInFlightRef.current = false;
         setIsSyncing(false);
-        if (shouldFlushAgain) {
-          void syncWithCloud(false);
+        if (shouldFlushAgain && !syncDebounceTimerRef.current) {
+          syncDebounceTimerRef.current = window.setTimeout(() => {
+            syncDebounceTimerRef.current = null;
+            void syncWithCloud(false);
+          }, 450);
         }
       }
     },
     [applyRemoteSnapshot, buildCurrentSnapshot]
   );
+
+  const markLocalMutation = useCallback(() => {
+    localMutationSeqRef.current += 1;
+    lastLocalEditAtRef.current = Date.now();
+    hasDirtyLocalChangesRef.current = true;
+    savePendingCloudSync(true);
+    setHasPendingCloudSync(true);
+
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      setIsCloudConnected(false);
+      return;
+    }
+
+    if (syncDebounceTimerRef.current !== null) {
+      window.clearTimeout(syncDebounceTimerRef.current);
+    }
+    syncDebounceTimerRef.current = window.setTimeout(() => {
+      syncDebounceTimerRef.current = null;
+      if (!cloudBootstrappedRef.current) return;
+      void syncWithCloud(false);
+    }, 900);
+  }, [syncWithCloud]);
 
   // Automatically connect ALL visitors/devices (web and installed PWA) to the shared church workspace
   useEffect(() => {
@@ -259,8 +316,6 @@ export default function App() {
         if (!meta.fromCache) {
           setIsCloudConnected(true);
         }
-        // Never overwrite unsynced local offline edits with a stale cached snapshot
-        if (loadPendingCloudSync()) return;
         applyRemoteSnapshot(cloudState);
       },
       (meta) => {
@@ -282,18 +337,46 @@ export default function App() {
     };
 
     const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        void syncWithCloud(true);
+      if (document.visibilityState === 'hidden') {
+        if (hasDirtyLocalChangesRef.current || loadPendingCloudSync()) {
+          if (syncDebounceTimerRef.current !== null) {
+            window.clearTimeout(syncDebounceTimerRef.current);
+            syncDebounceTimerRef.current = null;
+          }
+          void syncWithCloud(false);
+        }
+      } else if (document.visibilityState === 'visible') {
+        if (hasDirtyLocalChangesRef.current || loadPendingCloudSync()) {
+          void syncWithCloud(false);
+        } else {
+          void syncWithCloud(true);
+        }
+      }
+    };
+
+    const handlePageHide = () => {
+      if (hasDirtyLocalChangesRef.current || loadPendingCloudSync()) {
+        if (syncDebounceTimerRef.current !== null) {
+          window.clearTimeout(syncDebounceTimerRef.current);
+          syncDebounceTimerRef.current = null;
+        }
+        void syncWithCloud(false);
       }
     };
 
     window.addEventListener('online', handleOnline);
+    window.addEventListener('pagehide', handlePageHide);
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       isCancelled = true;
       unsubWorkspace();
+      if (syncDebounceTimerRef.current !== null) {
+        window.clearTimeout(syncDebounceTimerRef.current);
+        syncDebounceTimerRef.current = null;
+      }
       window.removeEventListener('online', handleOnline);
+      window.removeEventListener('pagehide', handlePageHide);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [applyRemoteSnapshot, buildCurrentSnapshot, syncWithCloud]);
@@ -302,44 +385,15 @@ export default function App() {
   useEffect(() => {
     if (!hasPendingCloudSync) return;
     const interval = window.setInterval(() => {
-      if (typeof navigator === 'undefined' || navigator.onLine) {
+      if (
+        (typeof navigator === 'undefined' || navigator.onLine) &&
+        Date.now() - lastLocalEditAtRef.current >= 900
+      ) {
         void syncWithCloud(false);
       }
     }, 15000);
     return () => window.clearInterval(interval);
   }, [hasPendingCloudSync, syncWithCloud]);
-
-  // Debounced sync of shared workspace state changes to Firestore whenever anyone edits
-  useEffect(() => {
-    if (!hasMountedEditWatchRef.current) {
-      hasMountedEditWatchRef.current = true;
-      return;
-    }
-    if (isApplyingRemoteUpdateRef.current) return;
-
-    localMutationSeqRef.current += 1;
-    savePendingCloudSync(true);
-    setHasPendingCloudSync(true);
-
-    if (typeof navigator !== 'undefined' && !navigator.onLine) {
-      setIsCloudConnected(false);
-      return;
-    }
-
-    const timer = window.setTimeout(() => {
-      if (!cloudBootstrappedRef.current) return;
-      void syncWithCloud(false);
-    }, 350);
-
-    return () => window.clearTimeout(timer);
-  }, [
-    playlist,
-    repertoireTranspose,
-    repertoireCifraPrefs,
-    schedule,
-    songs,
-    syncWithCloud,
-  ]);
 
   const playlistSongIds = useMemo(
     () =>
@@ -361,6 +415,7 @@ export default function App() {
   };
 
   const handleTogglePlaylistSong = (songId: string) => {
+    markLocalMutation();
     setPlaylist((prev) => {
       const exists = prev.items.some(
         (item) => !isPlaylistMoment(item) && item.songId === songId
@@ -391,6 +446,7 @@ export default function App() {
   };
 
   const handleGenerateRandomSetlist = (count: number) => {
+    markLocalMutation();
     const selected = generateBalancedSetlist(songs, count);
     setPlaylist((prev) => ({
       ...prev,
@@ -403,6 +459,7 @@ export default function App() {
   };
 
   const handleMovePlaylistItem = (index: number, direction: 'up' | 'down') => {
+    markLocalMutation();
     setPlaylist((prev) => {
       const targetIndex = direction === 'up' ? index - 1 : index + 1;
       if (targetIndex < 0 || targetIndex >= prev.items.length) return prev;
@@ -414,6 +471,7 @@ export default function App() {
   };
 
   const handleRemovePlaylistItemAt = (index: number) => {
+    markLocalMutation();
     setPlaylist((prev) => ({
       ...prev,
       items: prev.items.filter((_, idx) => idx !== index),
@@ -425,6 +483,7 @@ export default function App() {
     initialTitle = '',
     initialNote = ''
   ): string => {
+    markLocalMutation();
     const momentId = `moment-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
     setPlaylist((prev) => {
       const clampedIndex = Math.max(0, Math.min(prev.items.length, atIndex));
@@ -444,6 +503,7 @@ export default function App() {
     momentId: string,
     patch: { title?: string; note?: string }
   ) => {
+    markLocalMutation();
     setPlaylist((prev) => ({
       ...prev,
       items: prev.items.map((item) =>
@@ -459,6 +519,7 @@ export default function App() {
     cifraStyle: CifraStyle,
     capoFret?: number
   ) => {
+    markLocalMutation();
     setPlaylist((prev) => ({
       ...prev,
       items: prev.items.map((item, idx) => {
@@ -473,6 +534,7 @@ export default function App() {
   };
 
   const handleClearPlaylist = () => {
+    markLocalMutation();
     setPlaylist((prev) => ({ ...prev, items: [] }));
   };
 
@@ -480,6 +542,7 @@ export default function App() {
     data: Omit<Song, 'id' | 'createdAt'>,
     existingId?: string
   ) => {
+    markLocalMutation();
     if (existingId) {
       setSongs((prev) =>
         prev.map((s) => (s.id === existingId ? { ...s, ...data } : s))
@@ -502,6 +565,7 @@ export default function App() {
   };
 
   const handleDeleteSong = (songId: string) => {
+    markLocalMutation();
     setSongs((prev) => prev.filter((s) => s.id !== songId));
     setPlaylist((prev) => ({
       ...prev,
@@ -531,6 +595,7 @@ export default function App() {
   };
 
   const handleUseScheduleEntryInCulto = (entry: ScheduleEntry) => {
+    markLocalMutation();
     const parts = [`Culto ${entry.day ? `${entry.day} de ` : ''}${entry.month}`];
     if (entry.theme.trim()) {
       parts.push(entry.theme.trim());
@@ -544,6 +609,13 @@ export default function App() {
       title: parts.join(' — '),
     }));
     setActiveTab('playlist');
+  };
+
+  const handleUpdateSchedule = (
+    updater: (prev: ScheduleState) => ScheduleState
+  ) => {
+    markLocalMutation();
+    setSchedule(updater);
   };
 
   const handleExportBackup = () => {
@@ -575,6 +647,7 @@ export default function App() {
       const parsed = JSON.parse(text) as Partial<FullAppBackup>;
       if (!parsed || typeof parsed !== 'object') return false;
 
+      markLocalMutation();
       if (parsed.songDeltas && typeof parsed.songDeltas === 'object') {
         const restoredSongs = applySongDeltas(parsed.songDeltas);
         setSongs(restoredSongs);
@@ -645,6 +718,7 @@ export default function App() {
           : repertoireCifraPrefs[activeSong.id]?.capoFret;
 
       const handleChangeTranspose = (delta: number) => {
+        markLocalMutation();
         const nextOffset = currentOffset + delta;
         if (viewer.source === 'playlist' && playlistIdx >= 0) {
           setPlaylist((prev) => ({
@@ -664,6 +738,7 @@ export default function App() {
       };
 
       const handleResetTranspose = () => {
+        markLocalMutation();
         if (viewer.source === 'playlist' && playlistIdx >= 0) {
           setPlaylist((prev) => ({
             ...prev,
@@ -682,6 +757,7 @@ export default function App() {
       };
 
       const handleChangeCifraStyle = (nextStyle: CifraStyle, recommendedFret?: number) => {
+        markLocalMutation();
         const resolvedFret =
           nextStyle === 'capo'
             ? recommendedFret ??
@@ -714,6 +790,7 @@ export default function App() {
       };
 
       const handleChangeCapoFret = (nextFret: number) => {
+        markLocalMutation();
         const clamped = Math.max(1, Math.min(9, Math.round(nextFret)));
         if (viewer.source === 'playlist' && playlistIdx >= 0) {
           setPlaylist((prev) => ({
@@ -753,6 +830,7 @@ export default function App() {
           onBack={() => setViewer(null)}
           onEdit={handleStartEdit}
           onUpdateYoutubeUrl={(nextUrl) => {
+            markLocalMutation();
             setSongs((prev) =>
               prev.map((s) =>
                 s.id === activeSong.id
@@ -841,9 +919,10 @@ export default function App() {
           <PlaylistView
             playlist={playlist}
             songs={songs}
-            onUpdateTitle={(title) =>
-              setPlaylist((prev) => ({ ...prev, title }))
-            }
+            onUpdateTitle={(title) => {
+              markLocalMutation();
+              setPlaylist((prev) => ({ ...prev, title }));
+            }}
             onGenerateRandom={handleGenerateRandomSetlist}
             onMoveItem={handleMovePlaylistItem}
             onRemoveItemAt={handleRemovePlaylistItemAt}
@@ -861,7 +940,7 @@ export default function App() {
         {activeTab === 'schedule' && (
           <ScheduleView
             schedule={schedule}
-            onUpdateSchedule={setSchedule}
+            onUpdateSchedule={handleUpdateSchedule}
             onUseInCultoDoDia={handleUseScheduleEntryInCulto}
           />
         )}
