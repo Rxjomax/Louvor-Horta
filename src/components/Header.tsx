@@ -4,7 +4,6 @@ import {
   LogIn,
   LogOut,
   Moon,
-  QrCode,
   RefreshCw,
   Sun,
   Upload,
@@ -15,7 +14,6 @@ import { ChangeEvent, useRef, useState } from 'react';
 import { User } from '../firebase';
 import { AppTab, ThemeMode } from '../types/music';
 import { PWAInstallButton } from './PWAInstallButton';
-import { SocialQRModal } from './SocialQRModal';
 
 interface HeaderProps {
   activeTab: AppTab;
@@ -54,7 +52,6 @@ export function Header({
 }: HeaderProps) {
   const isDark = theme === 'dark';
   const [showSyncModal, setShowSyncModal] = useState(false);
-  const [showQRModal, setShowQRModal] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
   const [importStatus, setImportStatus] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -136,20 +133,6 @@ export function Header({
 
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <PWAInstallButton variant="header" />
-
-            <button
-              type="button"
-              onClick={() => setShowQRModal(true)}
-              aria-label="Gerar QR Code para redes sociais"
-              title="Gerar QR Code para redes sociais"
-              className="min-h-[44px] min-w-[44px] px-2.5 2xl:px-3 py-2 inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#284A7F] bg-[#132C55] text-[#F4F8FC] hover:bg-[#1B3C71] text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E4B84F]"
-            >
-              <QrCode
-                className="w-4 h-4 text-[#E4B84F] shrink-0"
-                aria-hidden="true"
-              />
-              <span className="hidden 2xl:inline">QR Code</span>
-            </button>
 
             <button
               type="button"
@@ -300,22 +283,8 @@ export function Header({
               </button>
             </div>
 
-            <div className="pt-1 space-y-2.5">
+            <div className="pt-1">
               <PWAInstallButton variant="card" />
-              <button
-                type="button"
-                onClick={() => {
-                  setShowSyncModal(false);
-                  setShowQRModal(true);
-                }}
-                className="w-full min-h-[46px] px-3.5 py-2.5 rounded-xl border border-[#D7E2F0] dark:border-[#284A7F] bg-[#F4F8FC] dark:bg-[#0B1D3A] text-[#0B1D3A] dark:text-[#F4F8FC] hover:bg-[#E7F0FA] dark:hover:bg-[#153463] text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1668A3] dark:focus-visible:ring-[#E4B84F]"
-              >
-                <QrCode
-                  className="w-4 h-4 text-[#8F620B] dark:text-[#E4B84F] shrink-0"
-                  aria-hidden="true"
-                />
-                <span>Gerar QR Code para Redes Sociais</span>
-              </button>
             </div>
 
             <div className="space-y-2.5 pt-1 border-t border-[#D7E2F0] dark:border-[#1F3B68]">
@@ -397,11 +366,6 @@ export function Header({
           </div>
         </div>
       )}
-
-      <SocialQRModal
-        isOpen={showQRModal}
-        onClose={() => setShowQRModal(false)}
-      />
     </>
   );
 }
