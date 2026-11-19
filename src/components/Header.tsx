@@ -4,6 +4,7 @@ import {
   LogIn,
   LogOut,
   Moon,
+  QrCode,
   RefreshCw,
   Sun,
   Upload,
@@ -14,6 +15,7 @@ import { ChangeEvent, useRef, useState } from 'react';
 import { User } from '../firebase';
 import { AppTab, ThemeMode } from '../types/music';
 import { PWAInstallButton } from './PWAInstallButton';
+import { SocialQRModal } from './SocialQRModal';
 
 interface HeaderProps {
   activeTab: AppTab;
@@ -52,6 +54,7 @@ export function Header({
 }: HeaderProps) {
   const isDark = theme === 'dark';
   const [showSyncModal, setShowSyncModal] = useState(false);
+  const [showQRModal, setShowQRModal] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
   const [importStatus, setImportStatus] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -92,7 +95,7 @@ export function Header({
   return (
     <>
       <header className="no-print border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0F172A] transition-colors duration-150">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4 sm:gap-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-3 lg:gap-4">
           <button
             type="button"
             onClick={() => onSelectTab('schedule')}
@@ -103,7 +106,7 @@ export function Header({
 
           <nav
             aria-label="Navegação principal"
-            className="hidden md:flex items-center gap-6"
+            className="hidden md:flex items-center gap-4 lg:gap-5"
           >
             {navItems.map((item) => {
               const isActive = activeTab === item.id;
@@ -136,9 +139,23 @@ export function Header({
 
             <button
               type="button"
+              onClick={() => setShowQRModal(true)}
+              aria-label="Gerar QR Code para redes sociais"
+              title="Gerar QR Code para redes sociais"
+              className="min-h-[44px] min-w-[44px] px-2.5 2xl:px-3 py-2 inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+            >
+              <QrCode
+                className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0"
+                aria-hidden="true"
+              />
+              <span className="hidden 2xl:inline">QR Code</span>
+            </button>
+
+            <button
+              type="button"
               onClick={() => setShowSyncModal(true)}
               aria-label="Sincronização partilhada do grupo de louvor"
-              className={`min-h-[44px] min-w-[44px] px-2.5 sm:px-3 py-2 inline-flex items-center justify-center gap-1.5 rounded-lg border text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
+              className={`min-h-[44px] min-w-[44px] px-2.5 2xl:px-3 py-2 inline-flex items-center justify-center gap-1.5 rounded-lg border text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500 ${
                 hasPendingSync
                   ? 'border-amber-300 dark:border-amber-700 bg-amber-50/90 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-950/60'
                   : isCloudConnected
@@ -155,7 +172,7 @@ export function Header({
                       : 'text-slate-500 dark:text-slate-400'
                 }`}
               />
-              <span className="hidden sm:inline">
+              <span className="hidden 2xl:inline">
                 {isSyncing
                   ? 'A sincronizar...'
                   : hasPendingSync
@@ -172,7 +189,7 @@ export function Header({
               aria-label={
                 isDark ? 'Ativar Modo Claro' : 'Ativar Modo Palco (Escuro)'
               }
-              className="min-h-[44px] min-w-[44px] px-2.5 sm:px-3.5 py-2 inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
+              className="min-h-[44px] min-w-[44px] px-2.5 2xl:px-3.5 py-2 inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414] dark:focus-visible:ring-amber-500"
             >
               {isDark ? (
                 <>
@@ -180,7 +197,7 @@ export function Header({
                     className="w-4 h-4 text-amber-400 shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="hidden sm:inline">Modo Claro</span>
+                  <span className="hidden 2xl:inline">Modo Claro</span>
                 </>
               ) : (
                 <>
@@ -188,12 +205,13 @@ export function Header({
                     className="w-4 h-4 text-[#B85414] shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="hidden sm:inline">Modo Palco</span>
+                  <span className="hidden 2xl:inline">Modo Palco</span>
                 </>
               )}
             </button>
           </div>
         </div>
+        <PWAInstallButton variant="mobile-bar" />
       </header>
 
       {showSyncModal && (
@@ -203,7 +221,7 @@ export function Header({
           aria-labelledby="sync-modal-title"
           className="no-print fixed inset-0 z-50 bg-slate-950/60 flex items-center justify-center p-4"
         >
-          <div className="w-full max-w-md rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6 space-y-5 shadow-xl">
+          <div className="w-full max-w-md max-h-[92dvh] overflow-y-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6 space-y-5 shadow-xl">
             <div className="flex items-start justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
               <div>
                 <h2
@@ -282,8 +300,22 @@ export function Header({
               </button>
             </div>
 
-            <div className="pt-1">
+            <div className="pt-1 space-y-2.5">
               <PWAInstallButton variant="card" />
+              <button
+                type="button"
+                onClick={() => {
+                  setShowSyncModal(false);
+                  setShowQRModal(true);
+                }}
+                className="w-full min-h-[46px] px-3.5 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B85414]"
+              >
+                <QrCode
+                  className="w-4 h-4 text-[#B85414] dark:text-amber-400 shrink-0"
+                  aria-hidden="true"
+                />
+                <span>Gerar QR Code para Redes Sociais</span>
+              </button>
             </div>
 
             <div className="space-y-2.5 pt-1 border-t border-slate-200 dark:border-slate-800">
@@ -365,6 +397,11 @@ export function Header({
           </div>
         </div>
       )}
+
+      <SocialQRModal
+        isOpen={showQRModal}
+        onClose={() => setShowQRModal(false)}
+      />
     </>
   );
 }
